@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'OpenDyslexic';
-    src: url('docs/assets/fonts/OpenDyslexic3-Regular.ttf') format('woff2'),
-         url('docs/assets/fonts/OpenDyslexic3-Bold.ttf') format('woff');
+    src: url('docs/assets/fonts/OpenDyslexic3-Regular.ttf') format(truetype),
+         url('/docs/assets/fonts/OpenDyslexic3-Regular.ttf') format(truetype);
     font-weight: normal;
     font-style: normal;
   }
@@ -9,7 +9,7 @@
   body, html {
     margin: 0;
     padding: 0;
-    font-family: 'CustomFont', Arial, sans-serif;
+    font-family: 'OpenDyslexic', Arial, sans-serif;
   }
   
   .container {
