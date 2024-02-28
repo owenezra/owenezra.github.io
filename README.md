@@ -1,2 +1,1 @@
-# owenezra.github.io
-learning voyage
+personalized learning services website
