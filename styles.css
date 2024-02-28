@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'OpenDyslexic';
-    src: url('docs/assets/fonts/OpenDyslexic3-Regular.ttf') format('tff'),
-         url('docs/assets/fonts/OpenDyslexic3-Bold.ttf') format('tff');
+    src: url(/docs/assets/fonts/OpenDyslexic3-Regular.ttf) format('tff'),
+         url(/docs/assets/fonts/OpenDyslexic3-Bold.ttf) format('tff');
     font-weight: normal;
     font-style: normal;
   }
