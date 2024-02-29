@@ -70,7 +70,20 @@ header h1, h6 {
     cursor: pointer;
   }
   
+  button text {
+    color: white;
+  }
+
   button:hover {
     background-color: #005599;
   }
   
+  button:active {
+    color: red;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+ 
