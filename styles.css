@@ -15,7 +15,7 @@ header img {
   padding-bottom: 30px;
 }
 
-header h1 {
+header h1, h6 {
   color:#333;
   margin-top: 0; /* Removes the top margin from the h1 */
   margin-bottom: 0; /* Removes the bottom margin from the h1 */
