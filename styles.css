@@ -16,6 +16,7 @@ header img {
 }
 
 header h1 {
+  color: #000000;
   margin-top: 0; /* Removes the top margin from the h1 */
   margin-bottom: 0; /* Removes the bottom margin from the h1 */
 }
