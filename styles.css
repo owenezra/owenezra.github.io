@@ -74,6 +74,9 @@ header h1, h6 {
     background-color: #005599;
   }
   
- 
+  #myImage {
+    width: 50%;
+    height: 50%;
+}
   
  
