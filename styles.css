@@ -79,4 +79,31 @@ header h1, h6 {
     height: 50%;
 }
   
- 
+.services ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.services li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.services h3, .contact h3 {
+  color: #0056b3;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  margin: 5px 0;
+}
+
+.contact a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
