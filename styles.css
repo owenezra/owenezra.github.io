@@ -96,7 +96,7 @@ header h1, h6 {
 }
 
 .contact-section {
-  margin-top: 2em; /* Space before contact section */
+  margin-top: 2em; /* Adjust as needed */
 }
 
 .contact-header {
@@ -106,10 +106,6 @@ header h1, h6 {
 .contact-info {
   display: flex;
   flex-direction: column;
-}
-
-.contact-link {
-  margin-bottom: 0.5em; /* Space between email and phone */
 }
 
 .contact-link,
@@ -123,6 +119,21 @@ header h1, h6 {
   text-decoration: underline;
 }
 
+.contact-link {
+  margin-bottom: 0.3em; /* Space between email and phone */
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+  .contact-info {
+      flex-direction: column; /* Keep stacked on larger screens */
+  }
+
+  .contact-link {
+      margin-bottom: 0.3em; /* Maintain space between email and phone */
+  }
+}
+}
 /* Adjustments for header spacing */
 header h1 {
   margin-bottom: 0.5em; /* Adjust as needed */
