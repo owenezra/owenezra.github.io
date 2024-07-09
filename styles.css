@@ -82,6 +82,7 @@ header h1, h6 {
 .services ul {
   list-style-type: none;
   padding: 0;
+  margin-bottom: 2em; /* Increased space after the services list */
 }
 
 .services li {
@@ -90,22 +91,26 @@ header h1, h6 {
   color: #333;
 }
 
+.contact-section {
+  margin-top: 2em; /* Increased space before the contact section */
+}
+
 .contact-header {
-  margin-bottom: 5px; /* Reduced space between "Contact Us" and email */
+  margin-bottom: 0.2em; /* Reduced space between "Contact Us" and email */
   color: #333; /* Or whatever color you prefer for regular text */
 }
 
 .contact-link,
 .contact-phone {
-    color: #0056b3; /* Adjust this blue color to match your logo palette */
-    text-decoration: none;
+  color: #0056b3; /* Adjust this blue color to match your logo palette */
+  text-decoration: none;
 }
 
 .contact-link:hover,
 .contact-phone:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .contact-phone {
-    margin-top: 5px;
+  margin-top: 0.2em; /* Reduced space between email and phone */
 }
