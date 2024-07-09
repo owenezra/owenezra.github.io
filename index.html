@@ -7,6 +7,22 @@
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add custom spacing controls */
+        .services ul {
+            margin-bottom: 2em; /* Adjust space after services list */
+        }
+        .contact-section {
+            margin-top: 2em; /* Adjust space before contact section */
+        }
+        .contact-header {
+            margin-bottom: 0.2em; /* Adjust space between "Contact Us" and email */
+        }
+        .contact-link {
+            margin-bottom: 0.2em; /* Adjust space between email and phone */
+        }
+        /* You can adjust these values as needed */
+    </style>
 </head>
 <body>
     <div class="container">
@@ -26,9 +42,11 @@
                 </ul>
             </section>
             <section class="contact-section">
-                <h5 class="contact-header">Contact Us</h5>
-                <h5><a href="mailto:contact@learning.voyage" class="contact-link">contact@learning.voyage</a></h5>
-                <h6><a href="tel:+14345441885" class="contact-phone">+1.434.544.1885</a></h6>
+                <h4 class="contact-header">Contact Us</h4>
+                <div class="contact-info">
+                    <a href="mailto:contact@learning.voyage" class="contact-link">contact@learning.voyage</a>
+                    <a href="tel:+14345441885" class="contact-phone">+1.434.544.1885</a>
+                </div>
             </section>
             <footer>
             </footer>

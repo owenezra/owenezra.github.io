@@ -79,10 +79,14 @@ header h1, h6 {
     height: 50%;
 }
   
+/* Existing styles */
+/* ... (keep your existing styles here) ... */
+
+/* New and updated styles for spacing */
 .services ul {
   list-style-type: none;
   padding: 0;
-  margin-bottom: 2em; /* Increased space after the services list */
+  margin-bottom: 2em; /* Space after services list */
 }
 
 .services li {
@@ -92,17 +96,25 @@ header h1, h6 {
 }
 
 .contact-section {
-  margin-top: 2em; /* Increased space before the contact section */
+  margin-top: 2em; /* Space before contact section */
 }
 
 .contact-header {
-  margin-bottom: 0.2em; /* Reduced space between "Contact Us" and email */
-  color: #333; /* Or whatever color you prefer for regular text */
+  margin-bottom: 0.5em; /* Space between "Contact Us" and contact info */
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-link {
+  margin-bottom: 0.5em; /* Space between email and phone */
 }
 
 .contact-link,
 .contact-phone {
-  color: #0056b3; /* Adjust this blue color to match your logo palette */
+  color: #0056b3; /* Adjust to match your logo's blue */
   text-decoration: none;
 }
 
@@ -111,6 +123,15 @@ header h1, h6 {
   text-decoration: underline;
 }
 
-.contact-phone {
-  margin-top: 0.2em; /* Reduced space between email and phone */
+/* Adjustments for header spacing */
+header h1 {
+  margin-bottom: 0.5em; /* Adjust as needed */
+}
+
+header img {
+  margin-bottom: 0.5em; /* Adjust as needed */
+}
+
+header h4 {
+  margin-top: 0.5em; /* Adjust as needed */
 }
