@@ -1,0 +1,198 @@
+{
+    "basics": {
+      "name": "Owen Onderdonk",
+      "label": "Online Learning Specialist – STEM Subject Matter Expert",
+      "email": "owen.onderdonk@gmail.com",
+      "phone": "+1 (434) 544-1885",
+      "url": "https://linkedin.com/in/owenonderdonk",
+      "location": {
+        "region": "Virginia",
+        "countryCode": "US"
+      },
+      "summary": "Advanced degree in education; expertise in instructional strategies with 15 years of teaching experience. Highly skilled in online instructional design and technical communication, consistently achieving high satisfaction rates (95-98%) in adult and K-12 virtual learning environments."
+    },
+    "work": [
+      {
+        "name": "Learning Voyage",
+        "position": "AI Consultant | Mathematics, Physics",
+        "startDate": "2023",
+        "endDate": "Present",
+        "highlights": [
+          "Work with product teams to understand and scope AI model training projects to improve accuracy for specialized use cases.",
+          "Innovate frontier data generation and curation strategies to ensure the highest levels of integrity.",
+          "100% client satisfaction."
+        ]
+      },
+      {
+        "name": "LCS Virtual Academy",
+        "location": "Lynchburg, Virginia",
+        "position": "Remote Instructor | Engineering, Computer Science, Mathematics",
+        "startDate": "2021",
+        "endDate": "2024",
+        "highlights": [
+          "As part of the founding team, designed protocols for program operation.",
+          "Implement adaptive, personalized projects through virtual collaboration tools, online learning resources, and live 1:1 and group sessions.",
+          "Manage simultaneous projects in traditional topics (programming, mathematics) and emerging fields (genAI, LLMs, GPTs).",
+          "Utilize opinion polling and feedback analysis to audit and personalize interactions.",
+          "Helped grow user acquisition (+20%) YoY by providing a superior experience."
+        ]
+      },
+      {
+        "name": "Piedmont Virginia Community College",
+        "location": "Charlottesville, Virginia",
+        "position": "Instructor",
+        "startDate": "2015",
+        "endDate": "Present",
+        "highlights": [
+          "Collaborate with faculty to design and manage summer programs, resulting in median participant satisfaction of 95%."
+        ]
+      },
+      {
+        "name": "NCPS Engineering and Design Academy",
+        "location": "Lovingston, Virginia",
+        "position": "Instructor | Engineering",
+        "startDate": "2012",
+        "endDate": "2020",
+        "highlights": [
+          "Spearheaded increase in STEM education participation (+33%) through engaging experiential learning practices.",
+          "Worked with School Board, Superintendent, and stakeholders to conceptualize, develop an innovative design and manufacturing program spanning multiple schools.",
+          "Prepared 2000 students for advanced education in Industry 4.0 fields, with over 200 professional certifications earned.",
+          "Developed advanced capstone projects in AR, VR, robotics, CAD and additive manufacturing.",
+          "Managed simultaneous projects in a fast-paced, highly variable, technical environment."
+        ]
+      },
+      {
+        "name": "Code.org / CodeVA",
+        "location": "Richmond, Virginia",
+        "position": "Training Facilitator",
+        "startDate": "2014",
+        "endDate": "2018",
+        "highlights": [
+          "Trained 100+ adult learners to implement functional programming and general computer science curricula in their classrooms.",
+          "Achieved 98% participant satisfaction by applying adult learning theory principles.",
+          "Utilized opinion polling for actionable feedback and breakouts to adjust pace and focus on relevant instruction."
+        ]
+      },
+      {
+        "name": "Bedford County Public Schools",
+        "location": "Bedford, Virginia",
+        "position": "Instructor | Mathematics",
+        "startDate": "2010",
+        "endDate": "2012",
+        "highlights": [
+          "Increased state testing scores by 20% and achieved a 96% passing rate by leveraging the use of online learning tools and data analysis to personalize and accelerate student learning."
+        ]
+      },
+      {
+        "name": "Campbell County Public Schools",
+        "location": "Rustburg, Virginia",
+        "position": "Instructor | Mathematics",
+        "startDate": "2010",
+        "endDate": "2012",
+        "highlights": [
+          "Increased state testing scores by 20% and achieved a 96% passing rate by leveraging the use of online learning tools and data analysis to personalize and accelerate student learning."
+        ]
+      },
+      {
+        "name": "Heart English School",
+        "location": "Japan",
+        "position": "Education experience",
+        "startDate": "2008",
+        "endDate": "2009"
+      },
+      {
+        "name": "NC State University Physics Department",
+        "position": "CAD experience",
+        "startDate": "2006",
+        "endDate": "2008"
+      }
+    ],
+    "education": [
+      {
+        "institution": "Randolph College",
+        "location": "Lynchburg, Virginia",
+        "area": "Curriculum and Instruction",
+        "studyType": "Master's degree",
+        "highlights": [
+          "Research in spatial reasoning development, coursework on the neural basis of learning.",
+          "Taught Advanced Physics.",
+          "Postgraduate Professional Teaching License."
+        ]
+      },
+      {
+        "institution": "North Carolina State University",
+        "location": "Raleigh, North Carolina",
+        "area": "Physics",
+        "studyType": "Bachelor's degree",
+        "highlights": [
+          "Minors in English, Math, and Philosophy.",
+          "Dean's List, Scholars Program, Society of Physics Students (SPS)."
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "name": "Online Instructional Design",
+        "level": "Advanced",
+        "keywords": ["STEM", "Virtual Learning", "Adaptive Learning"]
+      },
+      {
+        "name": "Technical Communication",
+        "level": "Advanced",
+        "keywords": ["Content Creation", "Documentation"]
+      },
+      {
+        "name": "Project Management",
+        "level": "Advanced",
+        "keywords": ["Cross-functional Collaboration", "Strategic Thinking"]
+      },
+      {
+        "name": "AI and Technical Fluency",
+        "level": "Advanced",
+        "keywords": ["AI Model Training", "Data Generation", "LLMs", "GPTs"]
+      },
+      {
+        "name": "Feedback Integration",
+        "level": "Advanced",
+        "keywords": ["Opinion Polling", "Feedback Analysis"]
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "fluency": "Native speaker"
+      }
+    ],
+    "interests": [
+      {
+        "name": "Volunteer Work",
+        "keywords": ["Meals on Wheels"]
+      }
+    ],
+    "certificates": [
+      {
+        "name": "Licensed Teacher - Virginia PGP-0640988",
+        "issuer": "Virginia Department of Education",
+        "url": "https://doe.virginia.gov/teaching-learning-assessment/teaching/licensure"
+      },
+      {
+        "name": "Certified Code.org Trainer",
+        "issuer": "Code.org",
+        "url": "https://code.org/"
+      }
+    ],
+    "awards": [
+      {
+        "title": "Eagle Scout",
+        "awarder": "Boy Scouts of America"
+      }
+    ],
+    "volunteer": [
+      {
+        "organization": "Meals on Wheels",
+        "position": "Volunteer",
+        "startDate": "1994",
+        "endDate": "Present"
+      }
+    ]
+  }
