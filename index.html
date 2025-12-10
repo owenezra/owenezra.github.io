@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="docs/assets/images/Icon4kTransparent.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-746JVQHL8L"></script>
@@ -43,24 +43,40 @@
 
     <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">AI Strategy & Data Excellence</div>
-            <h1 class="hero-title">
-                <span class="title-line">Charting Your Course.</span>
-                <span class="title-line highlight">Navigating Together.</span>
-            </h1>
-            <p class="hero-subtitle">
-                We partner with organizations to build intelligent systems, curate high-quality datasets, 
-                and develop the AI strategies that drive meaningful outcomes.
-            </p>
-            <div class="hero-cta">
-                <a href="#services" class="btn btn-primary">Explore Services</a>
-                <a href="#contact" class="btn btn-secondary">Start a Conversation</a>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="logo-container">
-                <img src="docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage Logo" class="hero-logo">
+        <div class="hero-layout">
+            <div class="hero-content">
+                <!-- Logo with curved text -->
+                <div class="logo-with-text">
+                    <div class="logo-glow"></div>
+                    <img src="docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="hero-logo">
+                    
+                    <!-- Curved text hugging bottom of circle -->
+                    <svg class="curved-text-svg" viewBox="0 0 420 420">
+                        <defs>
+                            <!-- Arc path with more space from logo -->
+                            <path id="bottom-curve" 
+                                  d="M 20,210 A 190,190 0 0,0 400,210" 
+                                  fill="none"/>
+                        </defs>
+                        <text class="curved-text-letters">
+                            <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
+                                <tspan class="letter" style="--delay: 0">L</tspan><tspan class="letter" style="--delay: 1">E</tspan><tspan class="letter" style="--delay: 2">A</tspan><tspan class="letter" style="--delay: 3">R</tspan><tspan class="letter" style="--delay: 4">N</tspan><tspan class="letter" style="--delay: 5">I</tspan><tspan class="letter" style="--delay: 6">N</tspan><tspan class="letter" style="--delay: 7">G</tspan><tspan class="letter space" style="--delay: 8">  </tspan><tspan class="letter" style="--delay: 9">V</tspan><tspan class="letter" style="--delay: 10">O</tspan><tspan class="letter" style="--delay: 11">Y</tspan><tspan class="letter" style="--delay: 12">A</tspan><tspan class="letter" style="--delay: 13">G</tspan><tspan class="letter" style="--delay: 14">E</tspan>
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="title-line">Charting Your Course.</span>
+                    <span class="title-line highlight">Navigating Together.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    AI Strategy · Data Curation · LLM Benchmarks · Context Engineering
+                </p>
+                <div class="hero-cta">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
             </div>
         </div>
     </header>
