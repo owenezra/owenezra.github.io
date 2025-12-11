@@ -1,5 +1,6 @@
 /* ============================================
    Learning Voyage - Modern Website Styles
+   Typography scaled from radial logo text
    ============================================ */
 
 /* CSS Custom Properties */
@@ -18,17 +19,40 @@
     --text-secondary: #8b9cad;
     --text-muted: #5a6a7a;
     
-    /* Spacing */
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 2.5rem;
-    --space-xl: 4rem;
-    --space-2xl: 6rem;
+    /* Ocean colors */
+    --ocean-deep: #0a1628;
     
-    /* Typography */
-    --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-body: 'Lexend', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Typography Scale */
+    --logo-text-size: clamp(16px, 4vw, 30px);
+    
+    --text-scale-hero: 2;
+    --text-scale-section: 1.5;
+    --text-scale-card-title: 0.8;
+    --text-scale-body: 0.6;
+    --text-scale-small: 0.5;
+    --text-scale-nav: 0.55;
+    --text-scale-label: 0.45;
+    --text-scale-stat: 2.5;
+    
+    --font-size-hero: calc(var(--logo-text-size) * var(--text-scale-hero));
+    --font-size-section: calc(var(--logo-text-size) * var(--text-scale-section));
+    --font-size-card-title: calc(var(--logo-text-size) * var(--text-scale-card-title));
+    --font-size-body: calc(var(--logo-text-size) * var(--text-scale-body));
+    --font-size-small: calc(var(--logo-text-size) * var(--text-scale-small));
+    --font-size-nav: calc(var(--logo-text-size) * var(--text-scale-nav));
+    --font-size-label: calc(var(--logo-text-size) * var(--text-scale-label));
+    --font-size-stat: calc(var(--logo-text-size) * var(--text-scale-stat));
+    
+    /* Spacing */
+    --space-xs: calc(var(--logo-text-size) * 0.35);
+    --space-sm: calc(var(--logo-text-size) * 0.6);
+    --space-md: calc(var(--logo-text-size) * 1);
+    --space-lg: calc(var(--logo-text-size) * 1.5);
+    --space-xl: calc(var(--logo-text-size) * 2.5);
+    --space-2xl: calc(var(--logo-text-size) * 4);
+    
+    /* Typography - Montserrat */
+    --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     
     /* Transitions */
     --transition-fast: 150ms ease;
@@ -51,82 +75,213 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
 }
 
 body {
-    font-family: var(--font-body);
+    font-family: var(--font-primary);
     font-weight: 400;
+    font-size: var(--font-size-body);
     line-height: 1.6;
     color: var(--text-primary);
-    background-color: var(--bg-dark);
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--ocean-deep) 100%);
+    min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Background Effects */
-.bg-grid {
+/* ============================================
+   STARFIELD BACKGROUND
+   ============================================ */
+
+.bg-stars {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.stars-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.stars-small {
     background-image: 
-        linear-gradient(rgba(79, 198, 215, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(79, 198, 215, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
+        radial-gradient(1px 1px at 100px 50px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 200px 150px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 300px 80px, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1px 1px at 400px 200px, rgba(255,255,255,0.25), transparent),
+        radial-gradient(1px 1px at 500px 100px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 600px 250px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 700px 60px, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1px 1px at 800px 180px, rgba(255,255,255,0.25), transparent),
+        radial-gradient(1px 1px at 900px 120px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 1000px 220px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 1100px 40px, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1px 1px at 1200px 160px, rgba(255,255,255,0.25), transparent),
+        radial-gradient(1px 1px at 150px 300px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 350px 350px, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1px 1px at 550px 320px, rgba(255,255,255,0.25), transparent),
+        radial-gradient(1px 1px at 750px 380px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 950px 340px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 1150px 310px, rgba(255,255,255,0.35), transparent);
+    background-size: 1300px 600px;
+    animation: twinkle 8s ease-in-out infinite;
 }
 
-.gradient-orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(80px);
+.stars-medium {
+    background-image: 
+        radial-gradient(1.5px 1.5px at 120px 90px, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 380px 180px, rgba(255,255,255,0.45), transparent),
+        radial-gradient(1.5px 1.5px at 620px 70px, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 880px 200px, rgba(255,255,255,0.45), transparent),
+        radial-gradient(1.5px 1.5px at 1100px 130px, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 200px 350px, rgba(255,255,255,0.45), transparent),
+        radial-gradient(1.5px 1.5px at 480px 280px, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 720px 400px, rgba(255,255,255,0.45), transparent);
+    background-size: 1200px 500px;
+    animation: twinkle 6s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.stars-large {
+    background-image: 
+        radial-gradient(2px 2px at 250px 120px, rgba(118,225,230,0.6), transparent),
+        radial-gradient(2px 2px at 700px 80px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 1050px 180px, rgba(118,225,230,0.55), transparent),
+        radial-gradient(2px 2px at 400px 350px, rgba(255,255,255,0.65), transparent),
+        radial-gradient(2px 2px at 850px 280px, rgba(118,225,230,0.6), transparent);
+    background-size: 1150px 450px;
+    animation: twinkle 10s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* ============================================
+   CONSTELLATION DIVIDERS
+   ============================================ */
+
+.constellation-divider {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.constellation-svg {
+    width: 240px;
+    height: auto;
+    max-height: 160px;
+}
+
+.constellation-divider[data-constellation="orion"] .constellation-svg {
+    width: 280px;
+}
+
+.constellation-divider[data-constellation="big-dipper"] .constellation-svg {
+    width: 280px;
+}
+
+.constellation-divider[data-constellation="sagittarius"] .constellation-svg {
+    width: 220px;
+}
+
+/* Constellation stars */
+.constellation-divider .star {
+    fill: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Constellation lines */
+.constellation-line {
+    stroke: rgba(118, 225, 230, 0.5);
+    stroke-width: 1.5;
+    fill: none;
+    stroke-linecap: round;
+}
+
+/* ============================================
+   OCEAN WAVES - Bottom of page
+   ============================================ */
+
+.ocean-waves {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+    margin-top: -50px;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+}
+
+.wave-back {
     opacity: 0.4;
-    pointer-events: none;
-    z-index: 0;
+    animation: waveMove 25s linear infinite;
 }
 
-.orb-1 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-    top: -200px;
-    right: -200px;
-    animation: float 20s ease-in-out infinite;
+.wave-back path {
+    fill: var(--primary-dark);
 }
 
-.orb-2 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, var(--primary-dark) 0%, transparent 70%);
-    bottom: 20%;
-    left: -100px;
-    animation: float 15s ease-in-out infinite reverse;
-}
-
-.orb-3 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-    top: 60%;
-    right: 10%;
-    animation: float 18s ease-in-out infinite;
+.wave-mid {
+    opacity: 0.3;
+    animation: waveMove 20s linear infinite reverse;
     animation-delay: -5s;
 }
 
-@keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(30px, -30px) scale(1.05); }
-    66% { transform: translate(-20px, 20px) scale(0.95); }
+.wave-mid path {
+    fill: var(--primary);
 }
 
-/* Typography */
+.wave-front {
+    opacity: 0.2;
+    animation: waveMove 15s linear infinite;
+    animation-delay: -2s;
+}
+
+.wave-front path {
+    fill: var(--primary-light);
+}
+
+@keyframes waveMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    font-weight: 600;
+    font-family: var(--font-primary);
+    font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.02em;
 }
@@ -137,7 +292,10 @@ a {
     transition: color var(--transition-fast);
 }
 
-/* Navigation */
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
 .nav {
     position: fixed;
     top: 0;
@@ -163,7 +321,7 @@ a {
 }
 
 .nav-logo-img {
-    height: 40px;
+    height: calc(var(--logo-text-size) * 1.5);
     width: auto;
 }
 
@@ -174,7 +332,7 @@ a {
 }
 
 .nav-links a {
-    font-size: 0.9rem;
+    font-size: var(--font-size-nav);
     font-weight: 500;
     color: var(--text-secondary);
     transition: color var(--transition-fast);
@@ -197,7 +355,10 @@ a {
     box-shadow: 0 8px 30px rgba(79, 198, 215, 0.3);
 }
 
-/* Hero Section */
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
 .hero {
     position: relative;
     min-height: 100vh;
@@ -225,7 +386,7 @@ a {
 .logo-with-text {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: calc(var(--logo-text-size) * 16);
     margin-bottom: var(--space-xl);
     animation: logoFadeIn 1s ease-out forwards, gentleFloat 5s ease-in-out infinite;
     animation-delay: 0s, 1s;
@@ -256,8 +417,8 @@ a {
     height: 90%;
     background: radial-gradient(
         ellipse at center,
-        rgba(79, 198, 215, 0.3) 0%,
-        rgba(79, 198, 215, 0.1) 40%,
+        rgba(79, 198, 215, 0.25) 0%,
+        rgba(79, 198, 215, 0.08) 40%,
         transparent 70%
     );
     filter: blur(40px);
@@ -295,8 +456,18 @@ a {
     overflow: visible;
 }
 
+.curved-text-reference {
+    font-family: var(--font-primary);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    fill: transparent;
+    visibility: hidden;
+}
+
 .curved-text-letters {
-    font-family: var(--font-display);
+    font-family: var(--font-primary);
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 0.18em;
@@ -305,27 +476,23 @@ a {
 
 .curved-text-letters .letter {
     fill: var(--primary-light);
-    opacity: 0;
-    animation: letterReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: calc(0.6s + (var(--delay) * 0.08s));
+    fill-opacity: 0;
+    animation: letterFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(0.6s + (var(--i) * 0.08s));
 }
 
 .curved-text-letters .letter.space {
-    opacity: 0;
+    fill-opacity: 0;
 }
 
-@keyframes letterReveal {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+@keyframes letterFadeIn {
+    0% { fill-opacity: 0; }
+    100% { fill-opacity: 1; }
 }
 
 /* Hero Title */
 .hero-title {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: var(--font-size-hero);
     margin-bottom: var(--space-md);
     line-height: 1.3;
 }
@@ -346,7 +513,7 @@ a {
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: calc(var(--font-size-body) * 1.1);
     color: var(--text-secondary);
     margin-bottom: var(--space-xl);
     animation: fadeInUp 0.6s ease backwards;
@@ -367,7 +534,7 @@ a {
     padding: var(--space-sm) var(--space-lg);
     border-radius: var(--radius-full);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: var(--font-size-body);
     transition: all var(--transition-base);
     cursor: pointer;
 }
@@ -393,7 +560,10 @@ a {
     border-color: var(--primary);
 }
 
-/* Sections Common */
+/* ============================================
+   SECTIONS COMMON
+   ============================================ */
+
 section {
     position: relative;
     z-index: 1;
@@ -413,29 +583,28 @@ section {
 
 .section-label {
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: var(--font-size-label);
     font-weight: 600;
     color: var(--primary);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     margin-bottom: var(--space-sm);
 }
 
 .section-title {
-    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-size: var(--font-size-section);
     margin-bottom: var(--space-md);
 }
 
 .section-description {
-    font-size: 1.1rem;
+    font-size: var(--font-size-body);
     color: var(--text-secondary);
     line-height: 1.7;
 }
 
-/* Services Section */
-.services {
-    background: linear-gradient(180deg, transparent 0%, rgba(79, 198, 215, 0.02) 50%, transparent 100%);
-}
+/* ============================================
+   SERVICES GRID
+   ============================================ */
 
 .services-grid {
     display: grid;
@@ -444,8 +613,9 @@ section {
 }
 
 .service-card {
-    background: var(--bg-card);
-    border: 1px solid rgba(79, 198, 215, 0.08);
+    background: rgba(17, 25, 32, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(79, 198, 215, 0.1);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     transition: all var(--transition-base);
@@ -459,15 +629,15 @@ section {
 }
 
 .service-card:hover {
-    background: var(--bg-card-hover);
-    border-color: rgba(79, 198, 215, 0.2);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    background: rgba(26, 36, 45, 0.9);
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(79, 198, 215, 0.1);
 }
 
 .service-icon {
-    width: 48px;
-    height: 48px;
+    width: calc(var(--logo-text-size) * 2);
+    height: calc(var(--logo-text-size) * 2);
     margin-bottom: var(--space-md);
     color: var(--primary);
 }
@@ -478,33 +648,55 @@ section {
 }
 
 .service-title {
-    font-size: 1.25rem;
+    font-size: var(--font-size-card-title);
     margin-bottom: var(--space-sm);
 }
 
 .service-description {
+    font-size: var(--font-size-body);
     color: var(--text-secondary);
-    font-size: 0.95rem;
     margin-bottom: var(--space-md);
     line-height: 1.7;
 }
 
 .service-features {
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-xs);
 }
 
 .service-features li {
-    font-size: 0.8rem;
+    font-size: var(--font-size-small);
+    color: var(--text-muted);
+    padding: var(--space-xs) 0;
+    padding-left: var(--space-md);
+    position: relative;
+}
+
+.service-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+.service-features li:hover {
     color: var(--primary-light);
+}
+
+.service-card:hover .service-features li {
     background: rgba(79, 198, 215, 0.1);
     padding: 4px 12px;
     border-radius: var(--radius-full);
 }
 
-/* Approach Section */
+/* ============================================
+   APPROACH SECTION
+   ============================================ */
+
 .approach-content {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -518,7 +710,7 @@ section {
 }
 
 .approach-description {
-    font-size: 1.1rem;
+    font-size: calc(var(--font-size-body) * 1.1);
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: var(--space-xl);
@@ -554,19 +746,20 @@ section {
 }
 
 .principle-content h4 {
-    font-size: 1.1rem;
+    font-size: calc(var(--font-size-body) * 1.1);
     margin-bottom: var(--space-xs);
     color: var(--text-primary);
 }
 
 .principle-content p {
-    font-size: 0.95rem;
+    font-size: var(--font-size-body);
     color: var(--text-secondary);
     line-height: 1.6;
 }
 
 .visual-card {
-    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(79, 198, 215, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(17, 25, 32, 0.8) 0%, rgba(79, 198, 215, 0.05) 100%);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(79, 198, 215, 0.15);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
@@ -590,7 +783,7 @@ section {
 
 .stat-number {
     display: block;
-    font-size: 3rem;
+    font-size: var(--font-size-stat);
     font-weight: 700;
     background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
     -webkit-background-clip: text;
@@ -601,14 +794,17 @@ section {
 }
 
 .stat-label {
-    font-size: 0.9rem;
+    font-size: var(--font-size-small);
     color: var(--text-secondary);
     font-weight: 500;
 }
 
-/* Contact Section */
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+
 .contact {
-    background: linear-gradient(180deg, transparent 0%, rgba(79, 198, 215, 0.03) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(79, 198, 215, 0.02) 100%);
 }
 
 .contact-content {
@@ -622,7 +818,7 @@ section {
 }
 
 .contact-description {
-    font-size: 1.1rem;
+    font-size: calc(var(--font-size-body) * 1.1);
     color: var(--text-secondary);
     margin-bottom: var(--space-xl);
     line-height: 1.7;
@@ -639,7 +835,8 @@ section {
     flex-direction: column;
     align-items: center;
     padding: var(--space-xl);
-    background: var(--bg-card);
+    background: rgba(17, 25, 32, 0.8);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(79, 198, 215, 0.1);
     border-radius: var(--radius-lg);
     transition: all var(--transition-base);
@@ -654,15 +851,15 @@ section {
 }
 
 .contact-card:hover {
-    background: var(--bg-card-hover);
+    background: rgba(26, 36, 45, 0.9);
     border-color: var(--primary);
     transform: translateY(-5px);
     box-shadow: 0 20px 60px rgba(79, 198, 215, 0.15);
 }
 
 .contact-icon {
-    width: 48px;
-    height: 48px;
+    width: calc(var(--logo-text-size) * 1.8);
+    height: calc(var(--logo-text-size) * 1.8);
     margin-bottom: var(--space-md);
     color: var(--primary);
 }
@@ -673,7 +870,7 @@ section {
 }
 
 .contact-label {
-    font-size: 0.85rem;
+    font-size: var(--font-size-label);
     color: var(--text-muted);
     margin-bottom: var(--space-xs);
     text-transform: uppercase;
@@ -681,15 +878,22 @@ section {
 }
 
 .contact-value {
-    font-size: 1.1rem;
+    font-size: calc(var(--font-size-body) * 1.1);
     color: var(--primary-light);
     font-weight: 500;
 }
 
-/* Footer */
+/* ============================================
+   FOOTER
+   ============================================ */
+
 .footer {
+    position: relative;
+    z-index: 2;
     border-top: 1px solid rgba(79, 198, 215, 0.1);
-    background: rgba(10, 15, 20, 0.8);
+    background: var(--bg-dark);
+    margin-top: -50px;
+    padding-top: 50px;
 }
 
 .footer-container {
@@ -710,12 +914,12 @@ section {
 }
 
 .footer-logo {
-    height: 50px;
+    height: calc(var(--logo-text-size) * 2);
     width: auto;
 }
 
 .footer-tagline {
-    font-size: 0.85rem;
+    font-size: var(--font-size-small);
     color: var(--text-muted);
 }
 
@@ -725,7 +929,7 @@ section {
 }
 
 .footer-links a {
-    font-size: 0.9rem;
+    font-size: var(--font-size-nav);
     color: var(--text-secondary);
 }
 
@@ -742,11 +946,14 @@ section {
 }
 
 .footer-copyright p {
-    font-size: 0.85rem;
+    font-size: var(--font-size-small);
     color: var(--text-muted);
 }
 
-/* Animations */
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -763,13 +970,17 @@ section {
     }
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
 @media (max-width: 1024px) {
-    .logo-with-text {
-        max-width: 420px;
+    :root {
+        --logo-text-size: clamp(14px, 3.5vw, 26px);
     }
     
-    .curved-text-letters {
+    .curved-text-letters,
+    .curved-text-reference {
         font-size: 26px;
     }
     
@@ -791,24 +1002,44 @@ section {
         justify-content: space-around;
         flex-wrap: wrap;
     }
+    
+    .ocean-waves {
+        height: 120px;
+        margin-top: -30px;
+    }
+    
+    .constellation-divider {
+        height: 160px;
+    }
+    
+    .constellation-svg {
+        width: 200px;
+    }
+    
+    .constellation-divider[data-constellation="orion"] .constellation-svg {
+        width: 240px;
+    }
+    
+    .constellation-divider[data-constellation="big-dipper"] .constellation-svg {
+        width: 240px;
+    }
+    
+    .constellation-divider[data-constellation="sagittarius"] .constellation-svg {
+        width: 180px;
+    }
 }
 
 @media (max-width: 768px) {
     :root {
-        --space-lg: 2rem;
-        --space-xl: 3rem;
-        --space-2xl: 4rem;
+        --logo-text-size: clamp(12px, 3vw, 20px);
     }
     
     .nav-links {
         display: none;
     }
     
-    .logo-with-text {
-        max-width: 340px;
-    }
-    
-    .curved-text-letters {
+    .curved-text-letters,
+    .curved-text-reference {
         font-size: 20px;
         letter-spacing: 0.14em;
     }
@@ -826,10 +1057,6 @@ section {
         width: 100%;
         max-width: 280px;
         justify-content: center;
-    }
-    
-    .stat-number {
-        font-size: 2.5rem;
     }
     
     .visual-card {
@@ -854,20 +1081,74 @@ section {
     .footer-brand {
         align-items: center;
     }
+    
+    .ocean-waves {
+        height: 80px;
+        margin-top: -20px;
+    }
+    
+    .constellation-divider {
+        height: 140px;
+    }
+    
+    .constellation-svg {
+        width: 180px;
+    }
+    
+    .constellation-divider[data-constellation="orion"] .constellation-svg {
+        width: 200px;
+    }
+    
+    .constellation-divider[data-constellation="big-dipper"] .constellation-svg {
+        width: 200px;
+    }
+    
+    .constellation-divider[data-constellation="sagittarius"] .constellation-svg {
+        width: 150px;
+    }
 }
 
 @media (max-width: 480px) {
-    .logo-with-text {
-        max-width: 280px;
+    :root {
+        --logo-text-size: clamp(10px, 2.5vw, 16px);
     }
     
-    .curved-text-letters {
+    .curved-text-letters,
+    .curved-text-reference {
         font-size: 16px;
         letter-spacing: 0.1em;
     }
+    
+    .ocean-waves {
+        height: 60px;
+        margin-top: -15px;
+    }
+    
+    .constellation-divider {
+        height: 120px;
+    }
+    
+    .constellation-svg {
+        width: 150px;
+    }
+    
+    .constellation-divider[data-constellation="orion"] .constellation-svg {
+        width: 180px;
+    }
+    
+    .constellation-divider[data-constellation="big-dipper"] .constellation-svg {
+        width: 180px;
+    }
+    
+    .constellation-divider[data-constellation="sagittarius"] .constellation-svg {
+        width: 130px;
+    }
 }
 
-/* Accessibility */
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -875,7 +1156,8 @@ section {
         transition-duration: 0.01ms !important;
     }
     
-    .gradient-orb {
+    .stars-layer,
+    .wave {
         animation: none;
     }
     
@@ -884,8 +1166,20 @@ section {
     }
     
     .curved-text-letters .letter {
-        opacity: 1;
+        fill-opacity: 1;
         animation: none;
+    }
+    
+    .constellation-divider {
+        opacity: 1 !important;
+    }
+    
+    .constellation-divider .star {
+        opacity: 1 !important;
+    }
+    
+    .constellation-line {
+        stroke-dashoffset: 0 !important;
     }
 }
 

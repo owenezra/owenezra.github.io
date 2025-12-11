@@ -11,8 +11,7 @@
     <link rel="apple-touch-icon" href="docs/assets/images/Icon4kTransparent.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Lexend:wght@300;400;500;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <!-- Google Analytics -->
@@ -27,10 +26,11 @@
 
 <body>
     <!-- Animated background -->
-    <div class="bg-grid"></div>
-    <div class="gradient-orb orb-1"></div>
-    <div class="gradient-orb orb-2"></div>
-    <div class="gradient-orb orb-3"></div>
+    <div class="bg-stars" aria-hidden="true">
+        <div class="stars-layer stars-small"></div>
+        <div class="stars-layer stars-medium"></div>
+        <div class="stars-layer stars-large"></div>
+    </div>
 
     <!-- Navigation -->
     <nav class="nav">
@@ -55,29 +55,31 @@
                     <div class="logo-glow"></div>
                     <img src="docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="hero-logo">
 
-                    <!-- Curved text hugging bottom of circle -->
                     <svg class="curved-text-svg" viewBox="0 0 420 420">
                         <defs>
-                            <!-- Arc path with more space from logo -->
                             <path id="bottom-curve" d="M 20,210 A 190,190 0 0,0 400,210" fill="none" />
                         </defs>
+                        <text class="curved-text-reference" aria-hidden="true">
+                            <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">LEARNING VOYAGE
+                            </textPath>
+                        </text>
                         <text class="curved-text-letters">
                             <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
-                                <tspan class="letter" style="--delay: 0">L</tspan>
-                                <tspan class="letter" style="--delay: 1">E</tspan>
-                                <tspan class="letter" style="--delay: 2">A</tspan>
-                                <tspan class="letter" style="--delay: 3">R</tspan>
-                                <tspan class="letter" style="--delay: 4">N</tspan>
-                                <tspan class="letter" style="--delay: 5">I</tspan>
-                                <tspan class="letter" style="--delay: 6">N</tspan>
-                                <tspan class="letter" style="--delay: 7">G</tspan>
-                                <tspan class="letter space" style="--delay: 8"> </tspan>
-                                <tspan class="letter" style="--delay: 9">V</tspan>
-                                <tspan class="letter" style="--delay: 10">O</tspan>
-                                <tspan class="letter" style="--delay: 11">Y</tspan>
-                                <tspan class="letter" style="--delay: 12">A</tspan>
-                                <tspan class="letter" style="--delay: 13">G</tspan>
-                                <tspan class="letter" style="--delay: 14">E</tspan>
+                                <tspan class="letter" style="--i: 0">L</tspan>
+                                <tspan class="letter" style="--i: 1">E</tspan>
+                                <tspan class="letter" style="--i: 2">A</tspan>
+                                <tspan class="letter" style="--i: 3">R</tspan>
+                                <tspan class="letter" style="--i: 4">N</tspan>
+                                <tspan class="letter" style="--i: 5">I</tspan>
+                                <tspan class="letter" style="--i: 6">N</tspan>
+                                <tspan class="letter" style="--i: 7">G</tspan>
+                                <tspan class="letter space" style="--i: 8"> </tspan>
+                                <tspan class="letter" style="--i: 9">V</tspan>
+                                <tspan class="letter" style="--i: 10">O</tspan>
+                                <tspan class="letter" style="--i: 11">Y</tspan>
+                                <tspan class="letter" style="--i: 12">A</tspan>
+                                <tspan class="letter" style="--i: 13">G</tspan>
+                                <tspan class="letter" style="--i: 14">E</tspan>
                             </textPath>
                         </text>
                     </svg>
@@ -97,6 +99,34 @@
             </div>
         </div>
     </header>
+
+    <!-- ORION CONSTELLATION - Between Hero and Services (rotated 90°) -->
+    <div class="constellation-divider" data-constellation="orion" aria-hidden="true">
+        <svg class="constellation-svg" viewBox="0 0 300 180">
+            <!-- Stars - Orion rotated 90 degrees (horizontal) -->
+            <!-- Left side (feet) -->
+            <circle cx="30" cy="50" r="4" class="star star-1 rigel" />
+            <circle cx="25" cy="130" r="2.5" class="star star-2" />
+            <!-- Belt (center) -->
+            <circle cx="120" cy="75" r="2.5" class="star star-3" />
+            <circle cx="130" cy="90" r="2.5" class="star star-4" />
+            <circle cx="140" cy="105" r="2.5" class="star star-5" />
+            <!-- Sword/Nebula -->
+            <circle cx="170" cy="90" r="2" class="star star-6 nebula" />
+            <!-- Right side (shoulders) -->
+            <circle cx="260" cy="40" r="3" class="star star-7" />
+            <circle cx="270" cy="140" r="4" class="star star-8 betelgeuse" />
+
+            <!-- Constellation lines -->
+            <path class="constellation-line line-1" d="M30,50 L120,75" />
+            <path class="constellation-line line-2" d="M25,130 L140,105" />
+            <path class="constellation-line line-3" d="M120,75 L130,90" />
+            <path class="constellation-line line-4" d="M130,90 L140,105" />
+            <path class="constellation-line line-5" d="M130,90 L170,90" />
+            <path class="constellation-line line-6" d="M120,75 L260,40" />
+            <path class="constellation-line line-7" d="M140,105 L270,140" />
+        </svg>
+    </div>
 
     <!-- Services Section -->
     <section id="services" class="services">
@@ -191,6 +221,33 @@
         </div>
     </section>
 
+    <!-- BIG DIPPER CONSTELLATION - Between Services and Approach -->
+    <div class="constellation-divider" data-constellation="big-dipper" aria-hidden="true">
+        <svg class="constellation-svg" viewBox="0 0 300 180">
+            <!-- Stars - Big Dipper (accurate positions) -->
+            <!-- Bowl stars -->
+            <circle cx="50" cy="70" r="3.5" class="star star-1" /> <!-- Dubhe -->
+            <circle cx="90" cy="65" r="3" class="star star-2" /> <!-- Merak -->
+            <circle cx="95" cy="110" r="3" class="star star-3" /> <!-- Phecda -->
+            <circle cx="55" cy="105" r="3" class="star star-4" /> <!-- Megrez -->
+            <!-- Handle stars -->
+            <circle cx="140" cy="115" r="3" class="star star-5" /> <!-- Alioth -->
+            <circle cx="200" cy="130" r="3.5" class="star star-6" /> <!-- Mizar -->
+            <circle cx="260" cy="150" r="3" class="star star-7" /> <!-- Alkaid -->
+
+            <!-- Constellation lines - the dipper shape -->
+            <!-- Bowl -->
+            <path class="constellation-line line-1" d="M50,70 L90,65" />
+            <path class="constellation-line line-2" d="M90,65 L95,110" />
+            <path class="constellation-line line-3" d="M95,110 L55,105" />
+            <path class="constellation-line line-4" d="M55,105 L50,70" />
+            <!-- Handle -->
+            <path class="constellation-line line-5" d="M55,105 L140,115" />
+            <path class="constellation-line line-6" d="M140,115 L200,130" />
+            <path class="constellation-line line-7" d="M200,130 L260,150" />
+        </svg>
+    </div>
+
     <!-- Approach Section -->
     <section id="approach" class="approach">
         <div class="section-container">
@@ -250,6 +307,31 @@
         </div>
     </section>
 
+    <!-- SAGITTARIUS CONSTELLATION - Between Approach and Contact -->
+    <div class="constellation-divider" data-constellation="sagittarius" aria-hidden="true">
+        <svg class="constellation-svg" viewBox="0 0 240 200">
+            <!-- Stars - Sagittarius (teapot asterism) -->
+            <circle cx="60" cy="140" r="3" class="star star-1" />
+            <circle cx="100" cy="160" r="3" class="star star-2" />
+            <circle cx="140" cy="150" r="3.5" class="star star-3" />
+            <circle cx="160" cy="120" r="3" class="star star-4" />
+            <circle cx="140" cy="90" r="3" class="star star-5" />
+            <circle cx="100" cy="80" r="3.5" class="star star-6" />
+            <circle cx="80" cy="100" r="3" class="star star-7" />
+            <circle cx="180" cy="60" r="2.5" class="star star-8" />
+
+            <!-- Constellation lines - teapot shape -->
+            <path class="constellation-line line-1" d="M60,140 L100,160" />
+            <path class="constellation-line line-2" d="M100,160 L140,150" />
+            <path class="constellation-line line-3" d="M140,150 L160,120" />
+            <path class="constellation-line line-4" d="M160,120 L140,90" />
+            <path class="constellation-line line-5" d="M140,90 L100,80" />
+            <path class="constellation-line line-6" d="M100,80 L80,100" />
+            <path class="constellation-line line-7" d="M80,100 L60,140" />
+            <path class="constellation-line line-8" d="M140,90 L180,60" />
+        </svg>
+    </div>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="section-container">
@@ -275,6 +357,25 @@
             </div>
         </div>
     </section>
+
+    <!-- Ocean waves at bottom of page -->
+    <div class="ocean-waves" aria-hidden="true">
+        <svg class="wave wave-back" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path
+                d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+        </svg>
+        <svg class="wave wave-mid" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path
+                d="M0,288L48,272C96,256,192,224,288,218.7C384,213,480,235,576,245.3C672,256,768,256,864,245.3C960,235,1056,213,1152,208C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+        </svg>
+        <svg class="wave wave-front" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path
+                d="M0,256L48,261.3C96,267,192,277,288,272C384,267,480,245,576,240C672,235,768,245,864,256C960,267,1056,277,1152,272C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+        </svg>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -323,6 +424,81 @@
         document.querySelectorAll('.service-card, .principle, .stat, .contact-card').forEach(el => {
             observer.observe(el);
         });
+
+        // Constellation scroll animation
+        const constellations = document.querySelectorAll('.constellation-divider');
+
+        function updateConstellations() {
+            constellations.forEach(constellation => {
+                const rect = constellation.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // Calculate how far through the viewport the constellation is
+                // 0 = just entering bottom, 1 = at center, 2 = exiting top
+                const progress = 1 - (rect.top / windowHeight);
+
+                // Clamp progress for drawing lines (0 to 1 range for the drawing phase)
+                const drawProgress = Math.max(0, Math.min(1, (progress - 0.2) * 1.5));
+
+                // Fade in/out based on position
+                let opacity = 0;
+                if (progress > 0.1 && progress < 1.8) {
+                    // Fade in from 0.1 to 0.4
+                    if (progress < 0.4) {
+                        opacity = (progress - 0.1) / 0.3;
+                    }
+                    // Full opacity from 0.4 to 1.4
+                    else if (progress < 1.4) {
+                        opacity = 1;
+                    }
+                    // Fade out from 1.4 to 1.8
+                    else {
+                        opacity = 1 - ((progress - 1.4) / 0.4);
+                    }
+                }
+
+                constellation.style.opacity = opacity;
+
+                // Draw constellation lines progressively
+                const lines = constellation.querySelectorAll('.constellation-line');
+                const totalLines = lines.length;
+
+                lines.forEach((line, index) => {
+                    const lineProgress = (drawProgress * totalLines) - index;
+                    const lineDrawPercent = Math.max(0, Math.min(1, lineProgress));
+
+                    // Get the total length of the path
+                    const length = line.getTotalLength();
+                    line.style.strokeDasharray = length;
+                    line.style.strokeDashoffset = length * (1 - lineDrawPercent);
+                });
+
+                // Reveal stars progressively
+                const stars = constellation.querySelectorAll('.star');
+                stars.forEach((star, index) => {
+                    const starProgress = (drawProgress * (stars.length + 2)) - index;
+                    const starOpacity = Math.max(0, Math.min(1, starProgress));
+                    star.style.opacity = starOpacity;
+                });
+            });
+        }
+
+        // Initialize constellation line lengths
+        constellations.forEach(constellation => {
+            const lines = constellation.querySelectorAll('.constellation-line');
+            lines.forEach(line => {
+                const length = line.getTotalLength();
+                line.style.strokeDasharray = length;
+                line.style.strokeDashoffset = length;
+            });
+        });
+
+        // Update on scroll
+        window.addEventListener('scroll', updateConstellations, { passive: true });
+        window.addEventListener('resize', updateConstellations, { passive: true });
+
+        // Initial update
+        updateConstellations();
 
         // Nav background on scroll
         const nav = document.querySelector('.nav');
