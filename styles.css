@@ -1,6 +1,5 @@
 /* ============================================
    Learning Voyage - Modern Website Styles
-   Typography scaled from radial logo text
    ============================================ */
 
 /* CSS Custom Properties */
@@ -10,7 +9,7 @@
     --primary-dark: #258ab8;
     --primary-light: #76e1e6;
     --accent: #5fd4de;
-    
+
     /* Neutral Colors */
     --bg-dark: #0a0f14;
     --bg-card: #111920;
@@ -18,56 +17,35 @@
     --text-primary: #f0f4f8;
     --text-secondary: #8b9cad;
     --text-muted: #5a6a7a;
-    
-    /* Ocean colors */
-    --ocean-deep: #0a1628;
-    
-    /* Typography Scale */
-    --logo-text-size: clamp(16px, 4vw, 30px);
-    
-    --text-scale-hero: 2;
-    --text-scale-section: 1.5;
-    --text-scale-card-title: 0.8;
-    --text-scale-body: 0.6;
-    --text-scale-small: 0.5;
-    --text-scale-nav: 0.55;
-    --text-scale-label: 0.45;
-    --text-scale-stat: 2.5;
-    
-    --font-size-hero: calc(var(--logo-text-size) * var(--text-scale-hero));
-    --font-size-section: calc(var(--logo-text-size) * var(--text-scale-section));
-    --font-size-card-title: calc(var(--logo-text-size) * var(--text-scale-card-title));
-    --font-size-body: calc(var(--logo-text-size) * var(--text-scale-body));
-    --font-size-small: calc(var(--logo-text-size) * var(--text-scale-small));
-    --font-size-nav: calc(var(--logo-text-size) * var(--text-scale-nav));
-    --font-size-label: calc(var(--logo-text-size) * var(--text-scale-label));
-    --font-size-stat: calc(var(--logo-text-size) * var(--text-scale-stat));
-    
-    /* Spacing */
-    --space-xs: calc(var(--logo-text-size) * 0.35);
-    --space-sm: calc(var(--logo-text-size) * 0.6);
-    --space-md: calc(var(--logo-text-size) * 1);
-    --space-lg: calc(var(--logo-text-size) * 1.5);
-    --space-xl: calc(var(--logo-text-size) * 2.5);
-    --space-2xl: calc(var(--logo-text-size) * 4);
-    
-    /* Typography - Montserrat */
-    --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-    
+
+    /* Fluid Spacing - scales from mobile to 5K */
+    --space-xs: clamp(0.4rem, 0.5vw, 0.75rem);
+    --space-sm: clamp(0.75rem, 1vw, 1.5rem);
+    --space-md: clamp(1rem, 1.5vw, 2.25rem);
+    --space-lg: clamp(1.5rem, 2.5vw, 4rem);
+    --space-xl: clamp(2.5rem, 4vw, 6rem);
+    --space-2xl: clamp(4rem, 6vw, 10rem);
+
+    /* Typography */
+    --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Lexend', -apple-system, BlinkMacSystemFont, sans-serif;
+
     /* Transitions */
     --transition-fast: 150ms ease;
     --transition-base: 250ms ease;
     --transition-slow: 400ms ease;
-    
-    /* Border Radius */
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
+
+    /* Fluid Border Radius */
+    --radius-sm: clamp(6px, 0.5vw, 12px);
+    --radius-md: clamp(8px, 0.75vw, 18px);
+    --radius-lg: clamp(12px, 1.25vw, 30px);
     --radius-full: 9999px;
 }
 
 /* Reset & Base */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -75,26 +53,37 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
-    font-family: var(--font-primary);
+    font-family: var(--font-body);
     font-weight: 400;
-    font-size: var(--font-size-body);
     line-height: 1.6;
     color: var(--text-primary);
-    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--ocean-deep) 100%);
-    min-height: 100vh;
+    background-color: var(--bg-dark);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* ============================================
-   STARFIELD BACKGROUND
-   ============================================ */
+/* Background Effects */
+.bg-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(79, 198, 215, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79, 198, 215, 0.03) 1px, transparent 1px);
+    background-size: clamp(40px, 4vw, 80px) clamp(40px, 4vw, 80px);
+    pointer-events: none;
+    z-index: 0;
+}
 
-.bg-stars {
+/* Twinkling Stars */
+.starfield {
     position: fixed;
     top: 0;
     left: 0;
@@ -102,186 +91,55 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 0;
-    overflow: hidden;
 }
 
-.stars-layer {
+.twinkle-star {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.stars-small {
-    background-image: 
-        radial-gradient(1px 1px at 100px 50px, rgba(255,255,255,0.4), transparent),
-        radial-gradient(1px 1px at 200px 150px, rgba(255,255,255,0.3), transparent),
-        radial-gradient(1px 1px at 300px 80px, rgba(255,255,255,0.35), transparent),
-        radial-gradient(1px 1px at 400px 200px, rgba(255,255,255,0.25), transparent),
-        radial-gradient(1px 1px at 500px 100px, rgba(255,255,255,0.4), transparent),
-        radial-gradient(1px 1px at 600px 250px, rgba(255,255,255,0.3), transparent),
-        radial-gradient(1px 1px at 700px 60px, rgba(255,255,255,0.35), transparent),
-        radial-gradient(1px 1px at 800px 180px, rgba(255,255,255,0.25), transparent),
-        radial-gradient(1px 1px at 900px 120px, rgba(255,255,255,0.4), transparent),
-        radial-gradient(1px 1px at 1000px 220px, rgba(255,255,255,0.3), transparent),
-        radial-gradient(1px 1px at 1100px 40px, rgba(255,255,255,0.35), transparent),
-        radial-gradient(1px 1px at 1200px 160px, rgba(255,255,255,0.25), transparent),
-        radial-gradient(1px 1px at 150px 300px, rgba(255,255,255,0.3), transparent),
-        radial-gradient(1px 1px at 350px 350px, rgba(255,255,255,0.35), transparent),
-        radial-gradient(1px 1px at 550px 320px, rgba(255,255,255,0.25), transparent),
-        radial-gradient(1px 1px at 750px 380px, rgba(255,255,255,0.4), transparent),
-        radial-gradient(1px 1px at 950px 340px, rgba(255,255,255,0.3), transparent),
-        radial-gradient(1px 1px at 1150px 310px, rgba(255,255,255,0.35), transparent);
-    background-size: 1300px 600px;
-    animation: twinkle 8s ease-in-out infinite;
-}
-
-.stars-medium {
-    background-image: 
-        radial-gradient(1.5px 1.5px at 120px 90px, rgba(255,255,255,0.5), transparent),
-        radial-gradient(1.5px 1.5px at 380px 180px, rgba(255,255,255,0.45), transparent),
-        radial-gradient(1.5px 1.5px at 620px 70px, rgba(255,255,255,0.5), transparent),
-        radial-gradient(1.5px 1.5px at 880px 200px, rgba(255,255,255,0.45), transparent),
-        radial-gradient(1.5px 1.5px at 1100px 130px, rgba(255,255,255,0.5), transparent),
-        radial-gradient(1.5px 1.5px at 200px 350px, rgba(255,255,255,0.45), transparent),
-        radial-gradient(1.5px 1.5px at 480px 280px, rgba(255,255,255,0.5), transparent),
-        radial-gradient(1.5px 1.5px at 720px 400px, rgba(255,255,255,0.45), transparent);
-    background-size: 1200px 500px;
-    animation: twinkle 6s ease-in-out infinite;
-    animation-delay: -2s;
-}
-
-.stars-large {
-    background-image: 
-        radial-gradient(2px 2px at 250px 120px, rgba(118,225,230,0.6), transparent),
-        radial-gradient(2px 2px at 700px 80px, rgba(255,255,255,0.7), transparent),
-        radial-gradient(2px 2px at 1050px 180px, rgba(118,225,230,0.55), transparent),
-        radial-gradient(2px 2px at 400px 350px, rgba(255,255,255,0.65), transparent),
-        radial-gradient(2px 2px at 850px 280px, rgba(118,225,230,0.6), transparent);
-    background-size: 1150px 450px;
-    animation: twinkle 10s ease-in-out infinite;
-    animation-delay: -4s;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s ease-in-out infinite;
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+        box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.6);
+    }
 }
 
-/* ============================================
-   CONSTELLATION DIVIDERS
-   ============================================ */
+@keyframes float {
 
-.constellation-divider {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(2vw, -2vw) scale(1.05);
+    }
+
+    66% {
+        transform: translate(-1.5vw, 1.5vw) scale(0.95);
+    }
 }
 
-.constellation-svg {
-    width: 240px;
-    height: auto;
-    max-height: 160px;
-}
-
-.constellation-divider[data-constellation="orion"] .constellation-svg {
-    width: 280px;
-}
-
-.constellation-divider[data-constellation="big-dipper"] .constellation-svg {
-    width: 280px;
-}
-
-.constellation-divider[data-constellation="sagittarius"] .constellation-svg {
-    width: 220px;
-}
-
-/* Constellation stars */
-.constellation-divider .star {
-    fill: rgba(255, 255, 255, 0.9);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-/* Constellation lines */
-.constellation-line {
-    stroke: rgba(118, 225, 230, 0.5);
-    stroke-width: 1.5;
-    fill: none;
-    stroke-linecap: round;
-}
-
-/* ============================================
-   OCEAN WAVES - Bottom of page
-   ============================================ */
-
-.ocean-waves {
-    position: relative;
-    width: 100%;
-    height: 150px;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
-    margin-top: -50px;
-}
-
-.wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-}
-
-.wave-back {
-    opacity: 0.4;
-    animation: waveMove 25s linear infinite;
-}
-
-.wave-back path {
-    fill: var(--primary-dark);
-}
-
-.wave-mid {
-    opacity: 0.3;
-    animation: waveMove 20s linear infinite reverse;
-    animation-delay: -5s;
-}
-
-.wave-mid path {
-    fill: var(--primary);
-}
-
-.wave-front {
-    opacity: 0.2;
-    animation: waveMove 15s linear infinite;
-    animation-delay: -2s;
-}
-
-.wave-front path {
-    fill: var(--primary-light);
-}
-
-@keyframes waveMove {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-/* ============================================
-   TYPOGRAPHY
-   ============================================ */
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-primary);
-    font-weight: 700;
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.02em;
 }
@@ -292,10 +150,7 @@ a {
     transition: color var(--transition-fast);
 }
 
-/* ============================================
-   NAVIGATION
-   ============================================ */
-
+/* Navigation */
 .nav {
     position: fixed;
     top: 0;
@@ -313,7 +168,7 @@ a {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: clamp(900px, 80vw, 1800px);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -321,7 +176,7 @@ a {
 }
 
 .nav-logo-img {
-    height: calc(var(--logo-text-size) * 1.5);
+    height: clamp(32px, 3vw, 60px);
     width: auto;
 }
 
@@ -332,7 +187,7 @@ a {
 }
 
 .nav-links a {
-    font-size: var(--font-size-nav);
+    font-size: clamp(0.8rem, 1vw, 1.1rem);
     font-weight: 500;
     color: var(--text-secondary);
     transition: color var(--transition-fast);
@@ -352,13 +207,10 @@ a {
 
 .nav-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(79, 198, 215, 0.3);
+    box-shadow: 0 clamp(5px, 0.6vw, 10px) clamp(18px, 2vw, 38px) rgba(79, 198, 215, 0.3);
 }
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
-
+/* Hero Section */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -372,7 +224,7 @@ a {
 
 .hero-layout {
     width: 100%;
-    max-width: 900px;
+    max-width: clamp(600px, 60vw, 1200px);
 }
 
 .hero-content {
@@ -386,10 +238,11 @@ a {
 .logo-with-text {
     position: relative;
     width: 100%;
-    max-width: calc(var(--logo-text-size) * 16);
+    max-width: clamp(300px, 50vw, 800px);
     margin-bottom: var(--space-xl);
-    animation: logoFadeIn 1s ease-out forwards, gentleFloat 5s ease-in-out infinite;
-    animation-delay: 0s, 1s;
+    animation: logoFadeIn 1s ease-out forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
 }
 
 @keyframes logoFadeIn {
@@ -397,15 +250,11 @@ a {
         opacity: 0;
         transform: scale(0.9);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
     }
-}
-
-@keyframes gentleFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-25px); }
 }
 
 .logo-glow {
@@ -415,25 +264,48 @@ a {
     transform: translate(-50%, -50%);
     width: 90%;
     height: 90%;
-    background: radial-gradient(
-        ellipse at center,
-        rgba(79, 198, 215, 0.25) 0%,
-        rgba(79, 198, 215, 0.08) 40%,
-        transparent 70%
-    );
-    filter: blur(40px);
+    background: radial-gradient(ellipse at center,
+            rgba(79, 198, 215, 0.3) 0%,
+            rgba(79, 198, 215, 0.1) 40%,
+            transparent 70%);
+    filter: blur(clamp(20px, 3vw, 60px));
     animation: pulseGlow 4s ease-in-out infinite;
     z-index: 0;
 }
 
 @keyframes pulseGlow {
-    0%, 100% { 
-        opacity: 0.6; 
-        transform: translate(-50%, -50%) scale(1); 
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1);
     }
-    50% { 
-        opacity: 1; 
-        transform: translate(-50%, -50%) scale(1.1); 
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+.logo-wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    animation: logoBob 2.5s ease-in-out infinite;
+    animation-delay: 0.15s;
+    /* Slight delay so logo follows the water push */
+}
+
+/* Logo bobbing - driven by the curved text "water" pushing it up */
+@keyframes logoBob {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7%);
     }
 }
 
@@ -442,57 +314,136 @@ a {
     width: 100%;
     height: auto;
     z-index: 1;
-    filter: drop-shadow(0 20px 60px rgba(79, 198, 215, 0.2));
+    filter: drop-shadow(0 clamp(10px, 2vw, 30px) clamp(30px, 4vw, 80px) rgba(79, 198, 215, 0.2));
 }
 
-/* Curved Text SVG */
+/* Water Wave Effect */
+.water-container {
+    position: absolute;
+    bottom: 42%;
+    left: 5%;
+    right: 5%;
+    height: 40px;
+    overflow: visible;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+@keyframes waveMotion {
+
+    0%,
+    100% {
+        d: path("M0,20 Q50,10 100,20 T200,20 T300,20 T400,20");
+    }
+
+    25% {
+        d: path("M0,20 Q50,25 100,15 T200,22 T300,18 T400,20");
+    }
+
+    50% {
+        d: path("M0,20 Q50,15 100,25 T200,18 T300,22 T400,20");
+    }
+
+    75% {
+        d: path("M0,20 Q50,22 100,18 T200,20 T300,20 T400,20");
+    }
+}
+
+/* Curved Text SVG - positioned closer to logo */
 .curved-text-svg {
     position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
+    top: -25%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
     z-index: 2;
     overflow: visible;
+    pointer-events: none;
+    animation: waterPush 2.5s ease-in-out infinite;
 }
 
-.curved-text-reference {
-    font-family: var(--font-primary);
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    fill: transparent;
-    visibility: hidden;
+/* Curved text moves like water surface, pushing logo up */
+@keyframes waterPush {
+
+    0%,
+    100% {
+        transform: translateY(7%);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
 }
 
+/* 
+ * CURVED TEXT SIZE: Uses unitless SVG units for automatic scaling
+ * Values are relative to the viewBox (0 0 420 420)
+ * Text scales perfectly from phone to 5K without any media queries
+ */
 .curved-text-letters {
-    font-family: var(--font-primary);
-    font-size: 30px;
+    font-family: var(--font-display);
+    font-size: 58;
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
 }
 
 .curved-text-letters .letter {
     fill: var(--primary-light);
-    fill-opacity: 0;
-    animation: letterFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: calc(0.6s + (var(--i) * 0.08s));
+    opacity: 0;
+    animation: letterReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(0.1s + (var(--delay) * 0.06s));
 }
 
-.curved-text-letters .letter.space {
-    fill-opacity: 0;
+.curved-text-letters .letter.dot-space {
+    opacity: 0;
+    letter-spacing: 20;
 }
 
-@keyframes letterFadeIn {
-    0% { fill-opacity: 0; }
-    100% { fill-opacity: 1; }
+.curved-text-letters .letter.word-space {
+    opacity: 0;
+}
+
+@keyframes letterReveal {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Dot styling for curved text */
+.curved-text-letters .letter.dot {
+    font-size: 20;
+}
+
+@keyframes logoBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(0.92);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    70% {
+        transform: scale(0.97);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Hero Title */
 .hero-title {
-    font-size: var(--font-size-hero);
+    font-size: clamp(1.5rem, 3.5vw, 4rem);
     margin-bottom: var(--space-md);
     line-height: 1.3;
 }
@@ -502,8 +453,13 @@ a {
     animation: fadeInUp 0.6s ease backwards;
 }
 
-.title-line:nth-child(1) { animation-delay: 1.5s; }
-.title-line:nth-child(2) { animation-delay: 1.7s; }
+.title-line:nth-child(1) {
+    animation-delay: 1.5s;
+}
+
+.title-line:nth-child(2) {
+    animation-delay: 1.7s;
+}
 
 .title-line.highlight {
     background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 50%, var(--primary-dark) 100%);
@@ -513,7 +469,7 @@ a {
 }
 
 .hero-subtitle {
-    font-size: calc(var(--font-size-body) * 1.1);
+    font-size: clamp(0.9rem, 1.2vw, 1.6rem);
     color: var(--text-secondary);
     margin-bottom: var(--space-xl);
     animation: fadeInUp 0.6s ease backwards;
@@ -534,7 +490,7 @@ a {
     padding: var(--space-sm) var(--space-lg);
     border-radius: var(--radius-full);
     font-weight: 600;
-    font-size: var(--font-size-body);
+    font-size: clamp(0.85rem, 1vw, 1.2rem);
     transition: all var(--transition-base);
     cursor: pointer;
 }
@@ -546,7 +502,7 @@ a {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(79, 198, 215, 0.35);
+    box-shadow: 0 clamp(8px, 1vw, 16px) clamp(25px, 3vw, 50px) rgba(79, 198, 215, 0.35);
 }
 
 .btn-secondary {
@@ -560,67 +516,64 @@ a {
     border-color: var(--primary);
 }
 
-/* ============================================
-   SECTIONS COMMON
-   ============================================ */
-
+/* Sections Common */
 section {
     position: relative;
     z-index: 1;
 }
 
 .section-container {
-    max-width: 1200px;
+    max-width: clamp(900px, 80vw, 1800px);
     margin: 0 auto;
     padding: var(--space-2xl) var(--space-lg);
 }
 
 .section-header {
     text-align: center;
-    max-width: 700px;
+    max-width: clamp(500px, 50vw, 1000px);
     margin: 0 auto var(--space-xl);
 }
 
 .section-label {
     display: inline-block;
-    font-size: var(--font-size-label);
+    font-size: clamp(0.75rem, 0.9vw, 1.1rem);
     font-weight: 600;
     color: var(--primary);
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     margin-bottom: var(--space-sm);
 }
 
 .section-title {
-    font-size: var(--font-size-section);
+    font-size: clamp(1.75rem, 3.5vw, 4rem);
     margin-bottom: var(--space-md);
 }
 
 .section-description {
-    font-size: var(--font-size-body);
+    font-size: clamp(0.95rem, 1.1vw, 1.5rem);
     color: var(--text-secondary);
     line-height: 1.7;
 }
 
-/* ============================================
-   SERVICES GRID
-   ============================================ */
+/* Services Section */
+.services {
+    background: linear-gradient(180deg, transparent 0%, rgba(79, 198, 215, 0.02) 50%, transparent 100%);
+}
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
 }
 
 .service-card {
-    background: rgba(17, 25, 32, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(79, 198, 215, 0.1);
+    background: var(--bg-card);
+    border: 1px solid rgba(79, 198, 215, 0.08);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     transition: all var(--transition-base);
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(1.5em);
 }
 
 .service-card.visible {
@@ -629,15 +582,15 @@ section {
 }
 
 .service-card:hover {
-    background: rgba(26, 36, 45, 0.9);
-    border-color: var(--primary);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(79, 198, 215, 0.1);
+    background: var(--bg-card-hover);
+    border-color: rgba(79, 198, 215, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 clamp(12px, 1.5vw, 25px) clamp(35px, 4vw, 75px) rgba(0, 0, 0, 0.3);
 }
 
 .service-icon {
-    width: calc(var(--logo-text-size) * 2);
-    height: calc(var(--logo-text-size) * 2);
+    width: clamp(40px, 3.5vw, 72px);
+    height: clamp(40px, 3.5vw, 72px);
     margin-bottom: var(--space-md);
     color: var(--primary);
 }
@@ -648,168 +601,111 @@ section {
 }
 
 .service-title {
-    font-size: var(--font-size-card-title);
+    font-size: clamp(1.1rem, 1.3vw, 1.75rem);
     margin-bottom: var(--space-sm);
 }
 
 .service-description {
-    font-size: var(--font-size-body);
     color: var(--text-secondary);
+    font-size: clamp(0.85rem, 1vw, 1.25rem);
     margin-bottom: var(--space-md);
     line-height: 1.7;
 }
 
 .service-features {
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
 }
 
 .service-features li {
-    font-size: var(--font-size-small);
-    color: var(--text-muted);
-    padding: var(--space-xs) 0;
-    padding-left: var(--space-md);
-    position: relative;
-}
-
-.service-features li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    background: var(--primary);
-    border-radius: 50%;
-}
-
-.service-features li:hover {
+    font-size: clamp(0.7rem, 0.85vw, 1rem);
     color: var(--primary-light);
-}
-
-.service-card:hover .service-features li {
     background: rgba(79, 198, 215, 0.1);
-    padding: 4px 12px;
+    padding: clamp(3px, 0.3vw, 6px) clamp(8px, 1vw, 16px);
     border-radius: var(--radius-full);
 }
 
-/* ============================================
-   APPROACH SECTION
-   ============================================ */
-
+/* Approach Section */
 .approach-content {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: var(--space-xl);
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+}
+
+.approach-text {
+    max-width: clamp(600px, 55vw, 1100px);
 }
 
 .approach-text .section-label,
 .approach-text .section-title {
-    text-align: left;
+    text-align: center;
 }
 
 .approach-description {
-    font-size: calc(var(--font-size-body) * 1.1);
+    font-size: clamp(0.95rem, 1.1vw, 1.5rem);
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: var(--space-xl);
+    text-align: center;
 }
 
 .principles {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
+    text-align: left;
 }
 
 .principle {
     display: flex;
-    gap: var(--space-md);
+    flex-direction: column;
+    gap: var(--space-sm);
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateY(1em);
     transition: all var(--transition-slow);
+    padding: var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid rgba(79, 198, 215, 0.08);
+    border-radius: var(--radius-lg);
 }
 
 .principle.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 .principle-marker {
-    width: 12px;
-    height: 12px;
-    min-width: 12px;
+    width: clamp(10px, 0.9vw, 16px);
+    height: clamp(10px, 0.9vw, 16px);
+    min-width: clamp(10px, 0.9vw, 16px);
     background: var(--primary);
     border-radius: 50%;
-    margin-top: 6px;
-    box-shadow: 0 0 20px rgba(79, 198, 215, 0.5);
+    box-shadow: 0 0 clamp(12px, 1.5vw, 28px) rgba(79, 198, 215, 0.5);
 }
 
 .principle-content h4 {
-    font-size: calc(var(--font-size-body) * 1.1);
+    font-size: clamp(0.95rem, 1.1vw, 1.5rem);
     margin-bottom: var(--space-xs);
     color: var(--text-primary);
 }
 
 .principle-content p {
-    font-size: var(--font-size-body);
+    font-size: clamp(0.85rem, 1vw, 1.25rem);
     color: var(--text-secondary);
     line-height: 1.6;
 }
 
-.visual-card {
-    background: linear-gradient(135deg, rgba(17, 25, 32, 0.8) 0%, rgba(79, 198, 215, 0.05) 100%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(79, 198, 215, 0.15);
-    border-radius: var(--radius-lg);
-    padding: var(--space-xl);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-}
-
-.stat {
-    text-align: center;
-    padding: var(--space-md);
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all var(--transition-slow);
-}
-
-.stat.visible {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.stat-number {
-    display: block;
-    font-size: var(--font-size-stat);
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-    margin-bottom: var(--space-xs);
-}
-
-.stat-label {
-    font-size: var(--font-size-small);
-    color: var(--text-secondary);
-    font-weight: 500;
-}
-
-/* ============================================
-   CONTACT SECTION
-   ============================================ */
-
+/* Contact Section */
 .contact {
-    background: linear-gradient(180deg, transparent 0%, rgba(79, 198, 215, 0.02) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(79, 198, 215, 0.03) 100%);
 }
 
 .contact-content {
     text-align: center;
-    max-width: 600px;
+    max-width: clamp(450px, 42vw, 850px);
     margin: 0 auto;
 }
 
@@ -818,7 +714,7 @@ section {
 }
 
 .contact-description {
-    font-size: calc(var(--font-size-body) * 1.1);
+    font-size: clamp(0.95rem, 1.1vw, 1.5rem);
     color: var(--text-secondary);
     margin-bottom: var(--space-xl);
     line-height: 1.7;
@@ -835,14 +731,13 @@ section {
     flex-direction: column;
     align-items: center;
     padding: var(--space-xl);
-    background: rgba(17, 25, 32, 0.8);
-    backdrop-filter: blur(10px);
+    background: var(--bg-card);
     border: 1px solid rgba(79, 198, 215, 0.1);
     border-radius: var(--radius-lg);
     transition: all var(--transition-base);
-    min-width: 250px;
+    min-width: clamp(200px, 18vw, 350px);
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(1em);
 }
 
 .contact-card.visible {
@@ -851,15 +746,15 @@ section {
 }
 
 .contact-card:hover {
-    background: rgba(26, 36, 45, 0.9);
+    background: var(--bg-card-hover);
     border-color: var(--primary);
     transform: translateY(-5px);
-    box-shadow: 0 20px 60px rgba(79, 198, 215, 0.15);
+    box-shadow: 0 clamp(12px, 1.5vw, 25px) clamp(35px, 4vw, 75px) rgba(79, 198, 215, 0.15);
 }
 
 .contact-icon {
-    width: calc(var(--logo-text-size) * 1.8);
-    height: calc(var(--logo-text-size) * 1.8);
+    width: clamp(40px, 3.5vw, 72px);
+    height: clamp(40px, 3.5vw, 72px);
     margin-bottom: var(--space-md);
     color: var(--primary);
 }
@@ -870,7 +765,7 @@ section {
 }
 
 .contact-label {
-    font-size: var(--font-size-label);
+    font-size: clamp(0.75rem, 0.9vw, 1.1rem);
     color: var(--text-muted);
     margin-bottom: var(--space-xs);
     text-transform: uppercase;
@@ -878,26 +773,19 @@ section {
 }
 
 .contact-value {
-    font-size: calc(var(--font-size-body) * 1.1);
+    font-size: clamp(0.95rem, 1.1vw, 1.5rem);
     color: var(--primary-light);
     font-weight: 500;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
-
+/* Footer */
 .footer {
-    position: relative;
-    z-index: 2;
     border-top: 1px solid rgba(79, 198, 215, 0.1);
-    background: var(--bg-dark);
-    margin-top: -50px;
-    padding-top: 50px;
+    background: rgba(10, 15, 20, 0.8);
 }
 
 .footer-container {
-    max-width: 1200px;
+    max-width: clamp(900px, 80vw, 1800px);
     margin: 0 auto;
     padding: var(--space-xl) var(--space-lg);
     display: flex;
@@ -914,12 +802,12 @@ section {
 }
 
 .footer-logo {
-    height: calc(var(--logo-text-size) * 2);
+    height: clamp(40px, 3.5vw, 75px);
     width: auto;
 }
 
 .footer-tagline {
-    font-size: var(--font-size-small);
+    font-size: clamp(0.8rem, 0.95vw, 1.2rem);
     color: var(--text-muted);
 }
 
@@ -929,7 +817,7 @@ section {
 }
 
 .footer-links a {
-    font-size: var(--font-size-nav);
+    font-size: clamp(0.8rem, 0.95vw, 1.2rem);
     color: var(--text-secondary);
 }
 
@@ -946,24 +834,27 @@ section {
 }
 
 .footer-copyright p {
-    font-size: var(--font-size-small);
+    font-size: clamp(0.75rem, 0.9vw, 1.1rem);
     color: var(--text-muted);
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
-
+/* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(1.5em);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -971,215 +862,258 @@ section {
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   Trusted By Section
    ============================================ */
 
+.trusted-by {
+    padding: var(--space-xl) var(--space-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.trusted-by .section-container {
+    text-align: center;
+}
+
+.trusted-label {
+    display: block;
+    font-size: clamp(0.7rem, 0.85vw, 1rem);
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: var(--space-lg);
+}
+
+.trusted-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+}
+
+.trusted-logo {
+    color: var(--text-muted);
+    opacity: 0.5;
+    transition: all var(--transition-base);
+}
+
+.trusted-logo:hover {
+    opacity: 0.8;
+    color: var(--text-secondary);
+}
+
+.trusted-logo img {
+    height: clamp(28px, 2.5vw, 54px);
+    width: auto;
+    filter: grayscale(100%) brightness(0.7);
+    transition: all var(--transition-base);
+}
+
+.trusted-logo:hover img {
+    filter: grayscale(50%) brightness(0.9);
+}
+
+/* ============================================
+   Constellation Transitions
+   ============================================ */
+
+.constellation-transition {
+    position: relative;
+    width: 100%;
+    height: clamp(150px, 30vw, 550px);
+    overflow: visible;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-md) 0;
+}
+
+.constellation-transition.visible {
+    opacity: 1;
+}
+
+.constellation-svg {
+    width: clamp(200px, 50vw, 1100px);
+    height: auto;
+    display: block;
+    overflow: visible;
+}
+
+/* Constellation Lines */
+.constellation-line {
+    stroke: rgba(180, 200, 230, 0.3);
+    stroke-width: 0.2px;
+    stroke-linecap: round;
+    fill: none;
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+/* Stars */
+.constellation-group .star {
+    transform-origin: center;
+    transform: scale(0);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.constellation-group .star.visible {
+    transform: scale(1);
+}
+
+/* Star Labels */
+.star-label {
+    fill: rgba(200, 215, 230, 0.7);
+    font-family: 'Georgia', serif;
+    font-size: 2.2px;
+    font-style: italic;
+    letter-spacing: 0.02px;
+    text-anchor: middle;
+    opacity: 0;
+    transition: opacity 0.8s ease 0.15s;
+    pointer-events: none;
+}
+
+.star-label.visible {
+    opacity: 1;
+}
+
+/* Nebula Label */
+.nebula-label {
+    fill: rgba(232, 121, 249, 0.8);
+}
+
+/* Nebula */
+.nebula {
+    filter: blur(2px);
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.nebula.visible {
+    opacity: 0.7;
+}
+
+/* Responsive Design - Layout adjustments only (sizing is fluid) */
 @media (max-width: 1024px) {
-    :root {
-        --logo-text-size: clamp(14px, 3.5vw, 26px);
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
-    
-    .curved-text-letters,
-    .curved-text-reference {
-        font-size: 26px;
-    }
-    
-    .approach-content {
+
+    .principles {
         grid-template-columns: 1fr;
-    }
-    
-    .approach-text .section-label,
-    .approach-text .section-title {
-        text-align: center;
-    }
-    
-    .approach-description {
-        text-align: center;
-    }
-    
-    .visual-card {
-        flex-direction: row;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    
-    .ocean-waves {
-        height: 120px;
-        margin-top: -30px;
-    }
-    
-    .constellation-divider {
-        height: 160px;
-    }
-    
-    .constellation-svg {
-        width: 200px;
-    }
-    
-    .constellation-divider[data-constellation="orion"] .constellation-svg {
-        width: 240px;
-    }
-    
-    .constellation-divider[data-constellation="big-dipper"] .constellation-svg {
-        width: 240px;
-    }
-    
-    .constellation-divider[data-constellation="sagittarius"] .constellation-svg {
-        width: 180px;
     }
 }
 
 @media (max-width: 768px) {
-    :root {
-        --logo-text-size: clamp(12px, 3vw, 20px);
-    }
-    
     .nav-links {
         display: none;
     }
-    
-    .curved-text-letters,
-    .curved-text-reference {
-        font-size: 20px;
-        letter-spacing: 0.14em;
-    }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-cta {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .btn {
         width: 100%;
-        max-width: 280px;
+        max-width: clamp(240px, 70vw, 320px);
         justify-content: center;
     }
-    
-    .visual-card {
-        flex-direction: column;
-    }
-    
+
     .contact-methods {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .contact-card {
         width: 100%;
-        max-width: 300px;
+        max-width: clamp(260px, 80vw, 340px);
     }
-    
+
     .footer-container {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .footer-brand {
         align-items: center;
     }
-    
-    .ocean-waves {
-        height: 80px;
-        margin-top: -20px;
-    }
-    
-    .constellation-divider {
-        height: 140px;
-    }
-    
-    .constellation-svg {
-        width: 180px;
-    }
-    
-    .constellation-divider[data-constellation="orion"] .constellation-svg {
-        width: 200px;
-    }
-    
-    .constellation-divider[data-constellation="big-dipper"] .constellation-svg {
-        width: 200px;
-    }
-    
-    .constellation-divider[data-constellation="sagittarius"] .constellation-svg {
-        width: 150px;
-    }
 }
 
-@media (max-width: 480px) {
-    :root {
-        --logo-text-size: clamp(10px, 2.5vw, 16px);
-    }
-    
-    .curved-text-letters,
-    .curved-text-reference {
-        font-size: 16px;
-        letter-spacing: 0.1em;
-    }
-    
-    .ocean-waves {
-        height: 60px;
-        margin-top: -15px;
-    }
-    
-    .constellation-divider {
-        height: 120px;
-    }
-    
-    .constellation-svg {
-        width: 150px;
-    }
-    
-    .constellation-divider[data-constellation="orion"] .constellation-svg {
-        width: 180px;
-    }
-    
-    .constellation-divider[data-constellation="big-dipper"] .constellation-svg {
-        width: 180px;
-    }
-    
-    .constellation-divider[data-constellation="sagittarius"] .constellation-svg {
-        width: 130px;
-    }
-}
-
-/* ============================================
-   ACCESSIBILITY
-   ============================================ */
-
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    
-    .stars-layer,
-    .wave {
+
+    .gradient-orb {
         animation: none;
     }
-    
+
     .hero-logo {
         animation: none;
     }
-    
-    .curved-text-letters .letter {
-        fill-opacity: 1;
+
+    .logo-wrapper {
         animation: none;
     }
-    
-    .constellation-divider {
-        opacity: 1 !important;
+
+    .curved-text-svg {
+        animation: none;
+        transform: translateY(0);
     }
-    
-    .constellation-divider .star {
-        opacity: 1 !important;
+
+    .twinkle-star {
+        animation: none;
+        opacity: 0.5;
     }
-    
+
+    .wave {
+        animation: none;
+    }
+
+    .curved-text-letters .letter {
+        opacity: 1;
+        animation: none;
+    }
+
+    .constellation-transition {
+        opacity: 0.4;
+    }
+
     .constellation-line {
         stroke-dashoffset: 0 !important;
+        animation: none !important;
+    }
+
+    .constellation-group .star {
+        transform: scale(1) !important;
+        opacity: 1 !important;
+        animation: none !important;
+    }
+
+    .star-label {
+        opacity: 1 !important;
+        animation: none !important;
+    }
+
+    .nebula {
+        opacity: 0.4 !important;
+        animation: none !important;
     }
 }
 

@@ -6,37 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Voyage | AI Strategy & Data Curation</title>
     <meta name="description"
-        content="Learning Voyage - Charting Your Course in AI Strategy, Data Curation, LLM Benchmark Development, and Context Engineering.">
-    <link rel="icon" href="docs/assets/images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="docs/assets/images/Icon4kTransparent.png">
+        content="Learning Voyage - Charting Your Course in AI Strategy, Data Curation, and Context Engineering.">
+    <link rel="icon" href="/docs/assets/images/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Lexend:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-746JVQHL8L"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-746JVQHL8L');
-    </script>
 </head>
 
 <body>
     <!-- Animated background -->
-    <div class="bg-stars" aria-hidden="true">
-        <div class="stars-layer stars-small"></div>
-        <div class="stars-layer stars-medium"></div>
-        <div class="stars-layer stars-large"></div>
-    </div>
+    <div class="bg-grid"></div>
+
+    <!-- Twinkling stars -->
+    <div class="starfield" id="starfield"></div>
+
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
 
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <img src="docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="nav-logo-img">
+                <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="nav-logo-img">
             </a>
             <div class="nav-links">
                 <a href="#services">Services</a>
@@ -50,36 +45,58 @@
     <header class="hero">
         <div class="hero-layout">
             <div class="hero-content">
-                <!-- Logo with curved text -->
+                <!-- Logo with curved text and water effect -->
                 <div class="logo-with-text">
                     <div class="logo-glow"></div>
-                    <img src="docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="hero-logo">
+                    <div class="logo-wrapper">
+                        <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="hero-logo">
+                    </div>
 
+                    <!-- Water wave effect -->
+                    <div class="water-container">
+                        <svg class="water-waves" viewBox="0 0 400 40" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="wave-fade" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="rgba(79, 198, 215, 0.5)" />
+                                    <stop offset="100%" stop-color="rgba(79, 198, 215, 0)" />
+                                </linearGradient>
+                            </defs>
+                            <path class="wave wave-1" d="M0,20 Q50,10 100,20 T200,20 T300,20 T400,20" fill="none"
+                                stroke="rgba(79, 198, 215, 0.5)" stroke-width="2" />
+                            <path class="wave wave-2" d="M0,20 Q50,30 100,20 T200,20 T300,20 T400,20" fill="none"
+                                stroke="rgba(79, 198, 215, 0.3)" stroke-width="1.5" />
+                            <path class="wave wave-3" d="M0,25 Q50,15 100,25 T200,25 T300,25 T400,25" fill="none"
+                                stroke="rgba(79, 198, 215, 0.2)" stroke-width="1" />
+                        </svg>
+                    </div>
+
+                    <!-- Curved text with dots -->
                     <svg class="curved-text-svg" viewBox="0 0 420 420">
                         <defs>
-                            <path id="bottom-curve" d="M 20,210 A 190,190 0 0,0 400,210" fill="none" />
+                            <path id="bottom-curve" d="M 10,210 A 200,200 0 0,0 410,210" fill="none" />
                         </defs>
-                        <text class="curved-text-reference" aria-hidden="true">
-                            <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
-                                LEARNING&#160;&#160;&#160;VOYAGE</textPath>
-                        </text>
                         <text class="curved-text-letters">
                             <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
-                                <tspan class="letter" style="--i: 0">L</tspan>
-                                <tspan class="letter" style="--i: 1">E</tspan>
-                                <tspan class="letter" style="--i: 2">A</tspan>
-                                <tspan class="letter" style="--i: 3">R</tspan>
-                                <tspan class="letter" style="--i: 4">N</tspan>
-                                <tspan class="letter" style="--i: 5">I</tspan>
-                                <tspan class="letter" style="--i: 6">N</tspan>
-                                <tspan class="letter" style="--i: 7">G</tspan>
-                                <tspan class="letter space" style="--i: 8">&#160;&#160;&#160;</tspan>
-                                <tspan class="letter" style="--i: 9">V</tspan>
-                                <tspan class="letter" style="--i: 10">O</tspan>
-                                <tspan class="letter" style="--i: 11">Y</tspan>
-                                <tspan class="letter" style="--i: 12">A</tspan>
-                                <tspan class="letter" style="--i: 13">G</tspan>
-                                <tspan class="letter" style="--i: 14">E</tspan>
+                                <tspan class="letter dot" style="--delay: 0">●</tspan>
+                                <tspan class="letter dot-space">&#160;&#160;&#160;&#160;&#160;</tspan>
+                                <tspan class="letter" style="--delay: 2">L</tspan>
+                                <tspan class="letter" style="--delay: 3">E</tspan>
+                                <tspan class="letter" style="--delay: 4">A</tspan>
+                                <tspan class="letter" style="--delay: 5">R</tspan>
+                                <tspan class="letter" style="--delay: 6">N</tspan>
+                                <tspan class="letter" style="--delay: 7">I</tspan>
+                                <tspan class="letter" style="--delay: 8">N</tspan>
+                                <tspan class="letter" style="--delay: 9">G</tspan>
+                                <tspan class="letter word-space">&#160;&#160;&#160;&#160;&#160;</tspan>
+                                <tspan class="letter" style="--delay: 11">V</tspan>
+                                <tspan class="letter" style="--delay: 12">O</tspan>
+                                <tspan class="letter" style="--delay: 13">Y</tspan>
+                                <tspan class="letter" style="--delay: 14">A</tspan>
+                                <tspan class="letter" style="--delay: 15">G</tspan>
+                                <tspan class="letter" style="--delay: 16">E</tspan>
+                                <tspan class="letter dot-space">&#160;&#160;&#160;&#160;&#160;</tspan>
+                                <tspan class="letter dot-space"> </tspan>
+                                <tspan class="letter dot" style="--delay: 18">●</tspan>
                             </textPath>
                         </text>
                     </svg>
@@ -90,7 +107,7 @@
                     <span class="title-line highlight">Navigating Together.</span>
                 </h1>
                 <p class="hero-subtitle">
-                    AI Strategy · Data Curation · LLM Benchmarks · Context Engineering
+                    AI Strategy · Data Curation · Context Engineering
                 </p>
                 <div class="hero-cta">
                     <a href="#services" class="btn btn-primary">Explore Services</a>
@@ -100,31 +117,119 @@
         </div>
     </header>
 
-    <!-- ORION CONSTELLATION - Between Hero and Services (rotated 90°) -->
-    <div class="constellation-divider" data-constellation="orion" aria-hidden="true">
-        <svg class="constellation-svg" viewBox="0 0 300 180">
-            <!-- Stars - Orion rotated 90 degrees (horizontal) -->
-            <!-- Left side (feet) -->
-            <circle cx="30" cy="50" r="4" class="star star-1 rigel" />
-            <circle cx="25" cy="130" r="2.5" class="star star-2" />
-            <!-- Belt (center) -->
-            <circle cx="120" cy="75" r="2.5" class="star star-3" />
-            <circle cx="130" cy="90" r="2.5" class="star star-4" />
-            <circle cx="140" cy="105" r="2.5" class="star star-5" />
-            <!-- Sword/Nebula -->
-            <circle cx="170" cy="90" r="2" class="star star-6 nebula" />
-            <!-- Right side (shoulders) -->
-            <circle cx="260" cy="40" r="3" class="star star-7" />
-            <circle cx="270" cy="140" r="4" class="star star-8 betelgeuse" />
-
-            <!-- Constellation lines -->
-            <path class="constellation-line line-1" d="M30,50 L120,75" />
-            <path class="constellation-line line-2" d="M25,130 L140,105" />
-            <path class="constellation-line line-3" d="M120,75 L130,90" />
-            <path class="constellation-line line-4" d="M130,90 L140,105" />
-            <path class="constellation-line line-5" d="M130,90 L170,90" />
-            <path class="constellation-line line-6" d="M120,75 L260,40" />
-            <path class="constellation-line line-7" d="M140,105 L270,140" />
+    <!-- Constellation Transition: Orion -->
+    <div class="constellation-transition" data-constellation="orion">
+        <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+            <defs>
+                <filter id="glow-red" x="-200%" y="-200%" width="500%" height="500%">
+                    <feGaussianBlur stdDeviation="0.9" result="blur" />
+                    <feFlood flood-color="#ff6633" flood-opacity="0.6" result="color" />
+                    <feComposite in="color" in2="blur" operator="in" result="glow" />
+                    <feMerge>
+                        <feMergeNode in="glow" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+                <filter id="glow-blue" x="-200%" y="-200%" width="500%" height="500%">
+                    <feGaussianBlur stdDeviation="0.7" result="blur" />
+                    <feFlood flood-color="#4488ff" flood-opacity="0.6" result="color" />
+                    <feComposite in="color" in2="blur" operator="in" result="glow" />
+                    <feMerge>
+                        <feMergeNode in="glow" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+                <filter id="glow-gold" x="-200%" y="-200%" width="500%" height="500%">
+                    <feGaussianBlur stdDeviation="0.8" result="blur" />
+                    <feFlood flood-color="#fbbf24" flood-opacity="0.6" result="color" />
+                    <feComposite in="color" in2="blur" operator="in" result="glow" />
+                    <feMerge>
+                        <feMergeNode in="glow" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+                <filter id="glow-soft" x="-100%" y="-100%" width="300%" height="300%">
+                    <feGaussianBlur stdDeviation="0.4" />
+                    <feMerge>
+                        <feMergeNode />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+                <radialGradient id="nebula-gradient">
+                    <stop offset="0%" stop-color="#e879f9" stop-opacity="0.6" />
+                    <stop offset="60%" stop-color="#a855f7" stop-opacity="0.2" />
+                    <stop offset="100%" stop-color="#4c1d95" stop-opacity="0" />
+                </radialGradient>
+            </defs>
+            <!-- Orion constellation group (removed line between Saiph and Rigel) -->
+            <g class="constellation-group" id="orion-group">
+                <!-- Lines -->
+                <line class="constellation-line" x1="30" y1="35" x2="42" y2="56" />
+                <line class="constellation-line" x1="62" y1="37" x2="55" y2="54" />
+                <line class="constellation-line" x1="42" y1="56" x2="49" y2="55" />
+                <line class="constellation-line" x1="49" y1="55" x2="55" y2="54" />
+                <line class="constellation-line" x1="42" y1="56" x2="35" y2="84" />
+                <line class="constellation-line" x1="55" y1="54" x2="68" y2="82" />
+                <line class="constellation-line" x1="30" y1="35" x2="47" y2="25" />
+                <line class="constellation-line" x1="62" y1="37" x2="47" y2="25" />
+                <line class="constellation-line" x1="30" y1="35" x2="25" y2="28" />
+                <line class="constellation-line" x1="25" y1="28" x2="20" y2="22" />
+                <line class="constellation-line" x1="20" y1="22" x2="18" y2="16" />
+                <line class="constellation-line" x1="18" y1="16" x2="22" y2="9" />
+                <line class="constellation-line" x1="22" y1="9" x2="28" y2="8" />
+                <line class="constellation-line" x1="62" y1="37" x2="82" y2="40" />
+                <line class="constellation-line" x1="82" y1="40" x2="80" y2="34" />
+                <line class="constellation-line" x1="80" y1="34" x2="75" y2="28" />
+                <line class="constellation-line" x1="82" y1="40" x2="81" y2="48" />
+                <line class="constellation-line" x1="81" y1="48" x2="79" y2="54" />
+                <line class="constellation-line" x1="79" y1="54" x2="75" y2="58" />
+                <!-- Sword -->
+                <line class="constellation-line" x1="49" y1="55" x2="44" y2="63" />
+                <line class="constellation-line" x1="44" y1="63" x2="42" y2="68" />
+                <line class="constellation-line" x1="42" y1="68" x2="40" y2="74" />
+                <!-- Nebula M42 -->
+                <circle class="nebula" cx="43" cy="67" r="3" fill="url(#nebula-gradient)" />
+                <text class="star-label nebula-label" x="48" y="65">M42</text>
+                <!-- Stars -->
+                <g class="star-group">
+                    <circle class="star" cx="30" cy="35" r="1.3" fill="#ff8844" filter="url(#glow-red)" />
+                    <text class="star-label" x="30" y="31">Betelgeuse</text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="62" cy="37" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="62" y="33">Bellatrix</text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="68" cy="82" r="1.2" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="68" y="78">Rigel</text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="35" cy="84" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="35" y="80">Saiph</text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="42" cy="56" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="42" y="52">Alnitak</text>
+                </g>
+                <circle class="star" cx="49" cy="55" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                <circle class="star" cx="55" cy="54" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
+                <circle class="star" cx="47" cy="25" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="25" cy="28" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="20" cy="22" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="18" cy="16" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="22" cy="9" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="28" cy="8" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="75" cy="28" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="80" cy="34" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="82" cy="40" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="81" cy="48" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="79" cy="54" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="75" cy="58" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                <!-- Sword stars -->
+                <circle class="star" cx="44" cy="63" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="42" cy="68" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="40" cy="74" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+            </g>
         </svg>
     </div>
 
@@ -182,26 +287,6 @@
                 <article class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" />
-                            <path d="M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                            <path d="M9 14l2 2 4-4" />
-                        </svg>
-                    </div>
-                    <h3 class="service-title">LLM Benchmark Development</h3>
-                    <p class="service-description">
-                        Measure what matters. We create custom benchmark datasets that accurately
-                        evaluate model performance on the tasks that drive your business.
-                    </p>
-                    <ul class="service-features">
-                        <li>Custom eval design</li>
-                        <li>Domain-specific benchmarks</li>
-                        <li>Performance tracking</li>
-                    </ul>
-                </article>
-
-                <article class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M8 9l3 3-3 3M13 15h3" />
                             <path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0z" />
                         </svg>
@@ -221,30 +306,92 @@
         </div>
     </section>
 
-    <!-- BIG DIPPER CONSTELLATION - Between Services and Approach -->
-    <div class="constellation-divider" data-constellation="big-dipper" aria-hidden="true">
-        <svg class="constellation-svg" viewBox="0 0 300 180">
-            <!-- Stars - Big Dipper (accurate positions) -->
-            <!-- Bowl stars -->
-            <circle cx="50" cy="70" r="3.5" class="star star-1" /> <!-- Dubhe -->
-            <circle cx="90" cy="65" r="3" class="star star-2" /> <!-- Merak -->
-            <circle cx="95" cy="110" r="3" class="star star-3" /> <!-- Phecda -->
-            <circle cx="55" cy="105" r="3" class="star star-4" /> <!-- Megrez -->
-            <!-- Handle stars -->
-            <circle cx="140" cy="115" r="3" class="star star-5" /> <!-- Alioth -->
-            <circle cx="200" cy="130" r="3.5" class="star star-6" /> <!-- Mizar -->
-            <circle cx="260" cy="150" r="3" class="star star-7" /> <!-- Alkaid -->
+    <!-- Trusted By Section -->
+    <section class="trusted-by">
+        <div class="section-container">
+            <span class="trusted-label">Trusted By</span>
+            <div class="trusted-logos">
+                <div class="trusted-logo">
+                    <img src="/docs/assets/images/LabelboxLogo.svg" alt="Labelbox">
+                </div>
+                <div class="trusted-logo">
+                    <img src="/docs/assets/images/ScaleLogo.svg" alt="Scale AI">
+                </div>
+                <div class="trusted-logo">
+                    <img src="/docs/assets/images/AlignerrLogo.svg" alt="Alignerr">
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Constellation lines - the dipper shape -->
-            <!-- Bowl -->
-            <path class="constellation-line line-1" d="M50,70 L90,65" />
-            <path class="constellation-line line-2" d="M90,65 L95,110" />
-            <path class="constellation-line line-3" d="M95,110 L55,105" />
-            <path class="constellation-line line-4" d="M55,105 L50,70" />
-            <!-- Handle -->
-            <path class="constellation-line line-5" d="M55,105 L140,115" />
-            <path class="constellation-line line-6" d="M140,115 L200,130" />
-            <path class="constellation-line line-7" d="M200,130 L260,150" />
+    <!-- Constellation Transition: Ursa Major -->
+    <div class="constellation-transition" data-constellation="ursa">
+        <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+            <g class="constellation-group" id="ursa-group">
+                <!-- Lines -->
+                <line class="constellation-line" x1="8" y1="30" x2="16" y2="38" />
+                <line class="constellation-line" x1="16" y1="38" x2="25" y2="40" />
+                <line class="constellation-line" x1="25" y1="40" x2="35" y2="38" />
+                <line class="constellation-line" x1="35" y1="38" x2="50" y2="32" />
+                <line class="constellation-line" x1="50" y1="32" x2="52" y2="45" />
+                <line class="constellation-line" x1="52" y1="45" x2="38" y2="48" />
+                <line class="constellation-line" x1="38" y1="48" x2="35" y2="38" />
+                <line class="constellation-line" x1="50" y1="32" x2="65" y2="30" />
+                <line class="constellation-line" x1="65" y1="30" x2="80" y2="34" />
+                <line class="constellation-line" x1="52" y1="45" x2="62" y2="55" />
+                <line class="constellation-line" x1="62" y1="55" x2="70" y2="65" />
+                <line class="constellation-line" x1="70" y1="65" x2="72" y2="67" />
+                <line class="constellation-line" x1="38" y1="48" x2="42" y2="58" />
+                <line class="constellation-line" x1="42" y1="58" x2="50" y2="60" />
+                <line class="constellation-line" x1="50" y1="60" x2="58" y2="70" />
+                <line class="constellation-line" x1="42" y1="58" x2="38" y2="75" />
+                <line class="constellation-line" x1="38" y1="75" x2="42" y2="82" />
+                <!-- Stars -->
+                <g class="star-group">
+                    <circle class="star" cx="8" cy="30" r="1.1" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="8" y="26">Alkaid</text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="16" cy="38" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="16" y="34">Mizar</text>
+                </g>
+                <circle class="star" cx="25" cy="40" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="35" cy="38" r="0.8" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="38" cy="48" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="38" y="44">Phecda</text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="52" cy="45" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="52" y="41">Merak</text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="50" cy="32" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
+                    <text class="star-label" x="50" y="28">Dubhe</text>
+                </g>
+                <circle class="star" cx="65" cy="30" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="80" cy="34" r="0.7" fill="#fbbf24" filter="url(#glow-gold)" />
+                    <text class="star-label" x="80" y="30">Muscida</text>
+                </g>
+                <circle class="star" cx="62" cy="55" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="70" cy="65" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="70" y="61">Talitha</text>
+                </g>
+                <circle class="star" cx="72" cy="67" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="50" cy="60" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="58" cy="70" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="58" y="66">Tania</text>
+                </g>
+                <circle class="star" cx="42" cy="58" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="38" cy="75" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="42" cy="82" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="42" y="86">Alula</text>
+                </g>
+            </g>
         </svg>
     </div>
 
@@ -287,48 +434,62 @@
                         </div>
                     </div>
                 </div>
-                <div class="approach-visual">
-                    <div class="visual-card">
-                        <div class="stat">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">20%</span>
-                            <span class="stat-label">Avg. Score Improvement</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">96%</span>
-                            <span class="stat-label">Client Success Rate</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- SAGITTARIUS CONSTELLATION - Between Approach and Contact -->
-    <div class="constellation-divider" data-constellation="sagittarius" aria-hidden="true">
-        <svg class="constellation-svg" viewBox="0 0 240 200">
-            <!-- Stars - Sagittarius (teapot asterism) -->
-            <circle cx="60" cy="140" r="3" class="star star-1" />
-            <circle cx="100" cy="160" r="3" class="star star-2" />
-            <circle cx="140" cy="150" r="3.5" class="star star-3" />
-            <circle cx="160" cy="120" r="3" class="star star-4" />
-            <circle cx="140" cy="90" r="3" class="star star-5" />
-            <circle cx="100" cy="80" r="3.5" class="star star-6" />
-            <circle cx="80" cy="100" r="3" class="star star-7" />
-            <circle cx="180" cy="60" r="2.5" class="star star-8" />
-
-            <!-- Constellation lines - teapot shape -->
-            <path class="constellation-line line-1" d="M60,140 L100,160" />
-            <path class="constellation-line line-2" d="M100,160 L140,150" />
-            <path class="constellation-line line-3" d="M140,150 L160,120" />
-            <path class="constellation-line line-4" d="M160,120 L140,90" />
-            <path class="constellation-line line-5" d="M140,90 L100,80" />
-            <path class="constellation-line line-6" d="M100,80 L80,100" />
-            <path class="constellation-line line-7" d="M80,100 L60,140" />
-            <path class="constellation-line line-8" d="M140,90 L180,60" />
+    <!-- Constellation Transition: Aquarius -->
+    <div class="constellation-transition" data-constellation="aquarius">
+        <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+            <g class="constellation-group" id="aquarius-group">
+                <!-- Lines -->
+                <line class="constellation-line" x1="62" y1="30" x2="45" y2="25" />
+                <line class="constellation-line" x1="45" y1="25" x2="52" y2="40" />
+                <line class="constellation-line" x1="62" y1="30" x2="80" y2="40" />
+                <line class="constellation-line" x1="45" y1="25" x2="38" y2="22" />
+                <line class="constellation-line" x1="38" y1="22" x2="36" y2="15" />
+                <line class="constellation-line" x1="38" y1="22" x2="34" y2="20" />
+                <line class="constellation-line" x1="38" y1="22" x2="32" y2="28" />
+                <line class="constellation-line" x1="32" y1="28" x2="22" y2="45" />
+                <line class="constellation-line" x1="22" y1="45" x2="15" y2="52" />
+                <line class="constellation-line" x1="15" y1="52" x2="18" y2="60" />
+                <line class="constellation-line" x1="18" y1="60" x2="20" y2="65" />
+                <line class="constellation-line" x1="20" y1="65" x2="28" y2="68" />
+                <line class="constellation-line" x1="28" y1="68" x2="25" y2="75" />
+                <!-- Stars -->
+                <g class="star-group">
+                    <circle class="star" cx="45" cy="25" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
+                    <text class="star-label" x="45" y="21">Sadalmelik</text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="62" cy="30" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
+                    <text class="star-label" x="62" y="26">Sadalsuud</text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="38" cy="22" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="38" y="18">Zeta</text>
+                </g>
+                <circle class="star" cx="34" cy="20" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="36" cy="15" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="32" cy="28" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="32" y="32">Gamma</text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="80" cy="40" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="80" y="36">Albali</text>
+                </g>
+                <circle class="star" cx="52" cy="40" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="22" cy="45" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="15" cy="52" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="18" cy="60" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="20" cy="65" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="25" cy="75" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="25" y="79">Skat</text>
+                </g>
+                <circle class="star" cx="28" cy="68" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+            </g>
         </svg>
     </div>
 
@@ -343,7 +504,7 @@
                     we'd love to hear about your goals.
                 </p>
                 <div class="contact-methods">
-                    <a href="mailto:info@learningvoyage.ai" class="contact-card">
+                    <a href="mailto:ahoythere@learning.voyage" class="contact-card">
                         <div class="contact-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path
@@ -351,37 +512,18 @@
                             </svg>
                         </div>
                         <span class="contact-label">Email Us</span>
-                        <span class="contact-value">info@learningvoyage.ai</span>
+                        <span class="contact-value">ahoythere@learning.voyage</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ocean waves at bottom of page -->
-    <div class="ocean-waves" aria-hidden="true">
-        <svg class="wave wave-back" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path
-                d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-            </path>
-        </svg>
-        <svg class="wave wave-mid" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path
-                d="M0,288L48,272C96,256,192,224,288,218.7C384,213,480,235,576,245.3C672,256,768,256,864,245.3C960,235,1056,213,1152,208C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-            </path>
-        </svg>
-        <svg class="wave wave-front" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path
-                d="M0,256L48,261.3C96,267,192,277,288,272C384,267,480,245,576,240C672,235,768,245,864,256C960,267,1056,277,1152,272C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-            </path>
-        </svg>
-    </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="footer-logo">
+                <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="footer-logo">
                 <p class="footer-tagline">Charting Your Course. Navigating Together.</p>
             </div>
             <div class="footer-links">
@@ -396,6 +538,25 @@
     </footer>
 
     <script>
+        // Generate twinkling stars
+        function createStarfield() {
+            const starfield = document.getElementById('starfield');
+            const numStars = 150;
+
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'twinkle-star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = (Math.random() * 2 + 1) + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 5 + 's';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                starfield.appendChild(star);
+            }
+        }
+        createStarfield();
+
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -425,81 +586,6 @@
             observer.observe(el);
         });
 
-        // Constellation scroll animation
-        const constellations = document.querySelectorAll('.constellation-divider');
-
-        function updateConstellations() {
-            constellations.forEach(constellation => {
-                const rect = constellation.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-
-                // Calculate how far through the viewport the constellation is
-                // 0 = just entering bottom, 1 = at center, 2 = exiting top
-                const progress = 1 - (rect.top / windowHeight);
-
-                // Clamp progress for drawing lines (0 to 1 range for the drawing phase)
-                const drawProgress = Math.max(0, Math.min(1, (progress - 0.2) * 1.5));
-
-                // Fade in/out based on position
-                let opacity = 0;
-                if (progress > 0.1 && progress < 1.8) {
-                    // Fade in from 0.1 to 0.4
-                    if (progress < 0.4) {
-                        opacity = (progress - 0.1) / 0.3;
-                    }
-                    // Full opacity from 0.4 to 1.4
-                    else if (progress < 1.4) {
-                        opacity = 1;
-                    }
-                    // Fade out from 1.4 to 1.8
-                    else {
-                        opacity = 1 - ((progress - 1.4) / 0.4);
-                    }
-                }
-
-                constellation.style.opacity = opacity;
-
-                // Draw constellation lines progressively
-                const lines = constellation.querySelectorAll('.constellation-line');
-                const totalLines = lines.length;
-
-                lines.forEach((line, index) => {
-                    const lineProgress = (drawProgress * totalLines) - index;
-                    const lineDrawPercent = Math.max(0, Math.min(1, lineProgress));
-
-                    // Get the total length of the path
-                    const length = line.getTotalLength();
-                    line.style.strokeDasharray = length;
-                    line.style.strokeDashoffset = length * (1 - lineDrawPercent);
-                });
-
-                // Reveal stars progressively
-                const stars = constellation.querySelectorAll('.star');
-                stars.forEach((star, index) => {
-                    const starProgress = (drawProgress * (stars.length + 2)) - index;
-                    const starOpacity = Math.max(0, Math.min(1, starProgress));
-                    star.style.opacity = starOpacity;
-                });
-            });
-        }
-
-        // Initialize constellation line lengths
-        constellations.forEach(constellation => {
-            const lines = constellation.querySelectorAll('.constellation-line');
-            lines.forEach(line => {
-                const length = line.getTotalLength();
-                line.style.strokeDasharray = length;
-                line.style.strokeDashoffset = length;
-            });
-        });
-
-        // Update on scroll
-        window.addEventListener('scroll', updateConstellations, { passive: true });
-        window.addEventListener('resize', updateConstellations, { passive: true });
-
-        // Initial update
-        updateConstellations();
-
         // Nav background on scroll
         const nav = document.querySelector('.nav');
         window.addEventListener('scroll', () => {
@@ -509,6 +595,132 @@
                 nav.classList.remove('scrolled');
             }
         });
+
+        // Constellation Animation System - triggers when first star enters viewport (both directions)
+        const constellationTransitions = document.querySelectorAll('.constellation-transition');
+
+        function updateConstellations() {
+            constellationTransitions.forEach(constellation => {
+                const rect = constellation.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                const stars = constellation.querySelectorAll('.star');
+
+                // Find the topmost and bottommost star positions
+                let minStarY = Infinity;
+                let maxStarY = -Infinity;
+                stars.forEach(star => {
+                    const cy = parseFloat(star.getAttribute('cy'));
+                    if (cy < minStarY) minStarY = cy;
+                    if (cy > maxStarY) maxStarY = cy;
+                });
+
+                const svgElement = constellation.querySelector('.constellation-svg');
+                if (!svgElement) return;
+
+                const svgRect = svgElement.getBoundingClientRect();
+                const svgHeight = svgRect.height;
+
+                // Calculate pixel position of first and last stars
+                const firstStarViewportY = svgRect.top + (minStarY / 100) * svgHeight;
+                const lastStarViewportY = svgRect.top + (maxStarY / 100) * svgHeight;
+
+                // Check if any star is in viewport
+                const firstStarVisible = firstStarViewportY < windowHeight && firstStarViewportY > -svgHeight;
+                const lastStarVisible = lastStarViewportY > 0 && lastStarViewportY < windowHeight + svgHeight;
+
+                const shouldAnimate = firstStarVisible || lastStarVisible;
+
+                if (shouldAnimate) {
+                    constellation.classList.add('visible');
+
+                    // Calculate scanline position based on scroll
+                    // Animation completes when constellation is ~40% through viewport (before center)
+                    const totalTravel = windowHeight + svgRect.height;
+                    const currentPosition = windowHeight - svgRect.top;
+                    const progress = Math.max(0, Math.min(1, currentPosition / totalTravel));
+
+                    // Map progress to scanline Y position in SVG coordinates (0-100)
+                    // Using 200 multiplier makes animation complete much earlier
+                    const scanY = progress * 200 - 20;
+
+                    const lines = constellation.querySelectorAll('.constellation-line');
+                    const labels = constellation.querySelectorAll('.star-label');
+                    const nebula = constellation.querySelector('.nebula');
+
+                    // Update lines based on scanline
+                    lines.forEach(line => {
+                        const y1 = parseFloat(line.getAttribute('y1'));
+                        const y2 = parseFloat(line.getAttribute('y2'));
+                        const top = Math.min(y1, y2);
+                        const bottom = Math.max(y1, y2);
+                        const len = Math.hypot(
+                            parseFloat(line.getAttribute('x2')) - parseFloat(line.getAttribute('x1')),
+                            y2 - y1
+                        );
+
+                        line.style.strokeDasharray = len;
+
+                        const h = Math.max(bottom - top, 5);
+                        let p = (scanY - top) / h;
+                        p = Math.max(0, Math.min(1, p));
+                        line.style.strokeDashoffset = len * (1 - p);
+                    });
+
+                    // Update stars based on scanline
+                    stars.forEach(star => {
+                        const cy = parseFloat(star.getAttribute('cy'));
+                        if (scanY > cy) {
+                            star.classList.add('visible');
+                        } else {
+                            star.classList.remove('visible');
+                        }
+                    });
+
+                    // Update labels based on scanline
+                    labels.forEach(label => {
+                        const y = parseFloat(label.getAttribute('y'));
+                        if (scanY > y + 5) {
+                            label.classList.add('visible');
+                        } else {
+                            label.classList.remove('visible');
+                        }
+                    });
+
+                    // Update nebula based on scanline
+                    if (nebula) {
+                        const cy = parseFloat(nebula.getAttribute('cy'));
+                        if (scanY > cy) {
+                            nebula.classList.add('visible');
+                        } else {
+                            nebula.classList.remove('visible');
+                        }
+                    }
+                } else {
+                    // Reset when completely out of view
+                    constellation.classList.remove('visible');
+                    const lines = constellation.querySelectorAll('.constellation-line');
+                    lines.forEach(line => {
+                        const len = Math.hypot(
+                            parseFloat(line.getAttribute('x2')) - parseFloat(line.getAttribute('x1')),
+                            parseFloat(line.getAttribute('y2')) - parseFloat(line.getAttribute('y1'))
+                        );
+                        line.style.strokeDasharray = len;
+                        line.style.strokeDashoffset = len;
+                    });
+                    stars.forEach(star => star.classList.remove('visible'));
+                    constellation.querySelectorAll('.star-label').forEach(label => label.classList.remove('visible'));
+                    const nebula = constellation.querySelector('.nebula');
+                    if (nebula) nebula.classList.remove('visible');
+                }
+            });
+        }
+
+        // Run on scroll and resize
+        window.addEventListener('scroll', updateConstellations, { passive: true });
+        window.addEventListener('resize', updateConstellations);
+
+        // Initial run
+        updateConstellations();
     </script>
 </body>
 
