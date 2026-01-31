@@ -101,13 +101,10 @@ body {
 }
 
 @keyframes twinkle {
-
-    0%,
-    100% {
+    0%, 100% {
         opacity: 0;
         transform: scale(0.5);
     }
-
     50% {
         opacity: 0.5;
         transform: scale(0.8);
@@ -116,28 +113,19 @@ body {
 }
 
 @keyframes float {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translate(0, 0) scale(1);
     }
-
     33% {
         transform: translate(2vw, -2vw) scale(1.05);
     }
-
     66% {
         transform: translate(-1.5vw, 1.5vw) scale(0.95);
     }
 }
 
 /* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 600;
     line-height: 1.2;
@@ -250,7 +238,6 @@ a {
         opacity: 0;
         transform: scale(0.9);
     }
-
     to {
         opacity: 1;
         transform: scale(1);
@@ -274,13 +261,10 @@ a {
 }
 
 @keyframes pulseGlow {
-
-    0%,
-    100% {
+    0%, 100% {
         opacity: 0.6;
         transform: translate(-50%, -50%) scale(1);
     }
-
     50% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1.1);
@@ -293,17 +277,12 @@ a {
     z-index: 1;
     animation: logoBob 2.5s ease-in-out infinite;
     animation-delay: 0.15s;
-    /* Slight delay so logo follows the water push */
 }
 
-/* Logo bobbing - driven by the curved text "water" pushing it up */
 @keyframes logoBob {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-7%);
     }
@@ -330,26 +309,21 @@ a {
 }
 
 @keyframes waveMotion {
-
-    0%,
-    100% {
+    0%, 100% {
         d: path("M0,20 Q50,10 100,20 T200,20 T300,20 T400,20");
     }
-
     25% {
         d: path("M0,20 Q50,25 100,15 T200,22 T300,18 T400,20");
     }
-
     50% {
         d: path("M0,20 Q50,15 100,25 T200,18 T300,22 T400,20");
     }
-
     75% {
         d: path("M0,20 Q50,22 100,18 T200,20 T300,20 T400,20");
     }
 }
 
-/* Curved Text SVG - positioned closer to logo */
+/* Curved Text SVG */
 .curved-text-svg {
     position: absolute;
     top: -25%;
@@ -362,24 +336,15 @@ a {
     animation: waterPush 2.5s ease-in-out infinite;
 }
 
-/* Curved text moves like water surface, pushing logo up */
 @keyframes waterPush {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(7%);
     }
-
     50% {
         transform: translateY(0);
     }
 }
 
-/* 
- * CURVED TEXT SIZE: Uses unitless SVG units for automatic scaling
- * Values are relative to the viewBox (0 0 420 420)
- * Text scales perfectly from phone to 5K without any media queries
- */
 .curved-text-letters {
     font-family: var(--font-display);
     font-size: 58;
@@ -405,40 +370,20 @@ a {
 }
 
 @keyframes letterReveal {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-/* Dot styling for curved text */
 .curved-text-letters .letter.dot {
     font-size: 20;
 }
 
 @keyframes logoBounce {
-    0% {
-        transform: scale(1);
-    }
-
-    30% {
-        transform: scale(0.92);
-    }
-
-    50% {
-        transform: scale(1.08);
-    }
-
-    70% {
-        transform: scale(0.97);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    30% { transform: scale(0.92); }
+    50% { transform: scale(1.08); }
+    70% { transform: scale(0.97); }
+    100% { transform: scale(1); }
 }
 
 /* Hero Title */
@@ -453,13 +398,8 @@ a {
     animation: fadeInUp 0.6s ease backwards;
 }
 
-.title-line:nth-child(1) {
-    animation-delay: 1.5s;
-}
-
-.title-line:nth-child(2) {
-    animation-delay: 1.7s;
-}
+.title-line:nth-child(1) { animation-delay: 1.5s; }
+.title-line:nth-child(2) { animation-delay: 1.7s; }
 
 .title-line.highlight {
     background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 50%, var(--primary-dark) 100%);
@@ -562,8 +502,9 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 320px);
     gap: var(--space-lg);
+    justify-content: center;
 }
 
 .service-card {
@@ -840,13 +781,8 @@ section {
 
 /* Animations */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes fadeInUp {
@@ -854,17 +790,13 @@ section {
         opacity: 0;
         transform: translateY(1.5em);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* ============================================
-   Trusted By Section
-   ============================================ */
-
+/* Trusted By Section */
 .trusted-by {
     padding: var(--space-xl) var(--space-lg);
     position: relative;
@@ -915,10 +847,7 @@ section {
     filter: grayscale(50%) brightness(0.9);
 }
 
-/* ============================================
-   Constellation Transitions
-   ============================================ */
-
+/* Constellation Transitions */
 .constellation-transition {
     position: relative;
     width: 100%;
@@ -945,7 +874,6 @@ section {
     overflow: visible;
 }
 
-/* Constellation Lines */
 .constellation-line {
     stroke: rgba(180, 200, 230, 0.3);
     stroke-width: 0.2px;
@@ -954,7 +882,6 @@ section {
     transition: stroke-dashoffset 0.3s ease;
 }
 
-/* Stars */
 .constellation-group .star {
     transform-origin: center;
     transform: scale(0);
@@ -965,7 +892,6 @@ section {
     transform: scale(1);
 }
 
-/* Star Labels */
 .star-label {
     fill: rgba(200, 215, 230, 0.7);
     font-family: 'Georgia', serif;
@@ -982,12 +908,10 @@ section {
     opacity: 1;
 }
 
-/* Nebula Label */
 .nebula-label {
     fill: rgba(232, 121, 249, 0.8);
 }
 
-/* Nebula */
 .nebula {
     filter: blur(2px);
     opacity: 0;
@@ -998,12 +922,11 @@ section {
     opacity: 0.7;
 }
 
-/* Responsive Design - Layout adjustments only (sizing is fluid) */
+/* Responsive Design */
 @media (max-width: 1024px) {
     .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: 320px;
     }
-
     .principles {
         grid-template-columns: 1fr;
     }
@@ -1013,37 +936,30 @@ section {
     .nav-links {
         display: none;
     }
-
     .services-grid {
         grid-template-columns: 1fr;
     }
-
     .hero-cta {
         flex-direction: column;
         align-items: center;
     }
-
     .btn {
         width: 100%;
         max-width: clamp(240px, 70vw, 320px);
         justify-content: center;
     }
-
     .contact-methods {
         flex-direction: column;
         align-items: center;
     }
-
     .contact-card {
         width: 100%;
         max-width: clamp(260px, 80vw, 340px);
     }
-
     .footer-container {
         flex-direction: column;
         text-align: center;
     }
-
     .footer-brand {
         align-items: center;
     }
@@ -1051,66 +967,41 @@ section {
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-
-    .gradient-orb {
-        animation: none;
-    }
-
-    .hero-logo {
-        animation: none;
-    }
-
-    .logo-wrapper {
-        animation: none;
-    }
-
+    .gradient-orb { animation: none; }
+    .hero-logo { animation: none; }
+    .logo-wrapper { animation: none; }
     .curved-text-svg {
         animation: none;
         transform: translateY(0);
     }
-
     .twinkle-star {
         animation: none;
         opacity: 0.5;
     }
-
-    .wave {
-        animation: none;
-    }
-
+    .wave { animation: none; }
     .curved-text-letters .letter {
         opacity: 1;
         animation: none;
     }
-
-    .constellation-transition {
-        opacity: 0.4;
-    }
-
+    .constellation-transition { opacity: 0.4; }
     .constellation-line {
         stroke-dashoffset: 0 !important;
         animation: none !important;
     }
-
     .constellation-group .star {
         transform: scale(1) !important;
         opacity: 1 !important;
         animation: none !important;
     }
-
     .star-label {
         opacity: 1 !important;
         animation: none !important;
     }
-
     .nebula {
         opacity: 0.4 !important;
         animation: none !important;
