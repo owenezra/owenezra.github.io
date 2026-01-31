@@ -562,9 +562,8 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 320px);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
-    justify-content: center;
 }
 
 .service-card {
@@ -1002,7 +1001,7 @@ section {
 /* Responsive Design - Layout adjustments only (sizing is fluid) */
 @media (max-width: 1024px) {
     .services-grid {
-        grid-template-columns: 320px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     .principles {
@@ -1016,7 +1015,7 @@ section {
     }
 
     .services-grid {
-        grid-template-columns: 320px;
+        grid-template-columns: 1fr;
     }
 
     .hero-cta {
