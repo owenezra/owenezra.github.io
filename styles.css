@@ -562,8 +562,9 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 320px);
     gap: var(--space-lg);
+    justify-content: center;
 }
 
 .service-card {
