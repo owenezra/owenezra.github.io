@@ -1002,7 +1002,7 @@ section {
 /* Responsive Design - Layout adjustments only (sizing is fluid) */
 @media (max-width: 1024px) {
     .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 320px;
     }
 
     .principles {
