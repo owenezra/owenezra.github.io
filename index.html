@@ -740,8 +740,7 @@
 
                     for (let i = 0; i < lineData.length; i++) {
                         const ln = lineData[i];
-                        const lineDur = Math.max(0.05, duration * 0.5).toFixed(2) + 's';
-                        ln.el.style.transition = 'stroke-dashoffset ' + lineDur + ' ease-out';
+                        ln.el.style.transition = 'stroke-dashoffset ' + durStr + ' ease-out';
                         if (scanY > ln.triggerY + lineDelay) {
                             ln.el.style.strokeDashoffset = 0;
                         } else {
