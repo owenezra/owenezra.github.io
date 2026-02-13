@@ -658,25 +658,32 @@
             });
             const yRange = maxStarY - minStarY || 1;
 
-            // Pre-compute line data — each line needs both endpoint stars visible
-            const lineData = [];
-            lines.forEach(line => {
-                const y1 = parseFloat(line.getAttribute('y1'));
-                const y2 = parseFloat(line.getAttribute('y2'));
-                const len = Math.hypot(
-                    parseFloat(line.getAttribute('x2')) - parseFloat(line.getAttribute('x1')),
-                    y2 - y1
-                );
-                // Line appears after the later (lower) of its two stars
-                const triggerY = Math.max(y1, y2);
-                line.style.strokeDasharray = len;
-                line.style.strokeDashoffset = len;
-                lineData.push({ el: line, triggerY, len });
+            // Pre-compute star data with coordinate lookup
+            const starData = [];
+            const starByPos = {};  // "cx,cy" → index into starData
+            stars.forEach(s => {
+                const cx = parseFloat(s.getAttribute('cx'));
+                const cy = parseFloat(s.getAttribute('cy'));
+                const idx = starData.length;
+                starData.push({ el: s, cx, cy, visible: false, settledAt: Infinity });
+                starByPos[cx + ',' + cy] = idx;
             });
 
-            // Pre-compute star Y values
-            const starData = [];
-            stars.forEach(s => starData.push({ el: s, cy: parseFloat(s.getAttribute('cy')) }));
+            // Pre-compute line data — link each line to its two endpoint stars
+            const lineData = [];
+            lines.forEach(line => {
+                const x1 = parseFloat(line.getAttribute('x1'));
+                const y1 = parseFloat(line.getAttribute('y1'));
+                const x2 = parseFloat(line.getAttribute('x2'));
+                const y2 = parseFloat(line.getAttribute('y2'));
+                const len = Math.hypot(x2 - x1, y2 - y1);
+                // Find the actual star elements at each endpoint
+                const starA = starByPos[x1 + ',' + y1];
+                const starB = starByPos[x2 + ',' + y2];
+                line.style.strokeDasharray = len;
+                line.style.strokeDashoffset = len;
+                lineData.push({ el: line, len, starA, starB });
+            });
 
             // Split label text into individual character tspans for letter-by-letter reveal
             const labelData = [];
@@ -726,32 +733,35 @@
                     }
                     const scanY = minStarY + adjusted * (maxStarY + 10 - minStarY);
 
-                    // Build a set of visible star positions
-                    const visibleStarYs = new Set();
-                    for (let i = 0; i < starData.length; i++) {
-                        if (scanY > starData[i].cy) visibleStarYs.add(starData[i].cy);
-                    }
-
-                    // Scroll down: lines appear after both stars (delayed)
-                    // Scroll up: lines disappear as soon as either star goes
-                    // Scroll down: delay so star visually pops in before line draws
-                    // Scroll up: immediate — line retracts as soon as star goes
-                    const lineDelay = self.direction === 1 ? 6 : 0;
-
-                    for (let i = 0; i < lineData.length; i++) {
-                        const ln = lineData[i];
-                        ln.el.style.transition = 'stroke-dashoffset ' + durStr + ' ease-out';
-                        if (scanY > ln.triggerY + lineDelay) {
-                            ln.el.style.strokeDashoffset = 0;
-                        } else {
-                            ln.el.style.strokeDashoffset = ln.len;
-                        }
-                    }
+                    // Update star visibility first — track when each star settles
+                    const now = performance.now();
+                    const settleDuration = duration * 1000; // ms matching CSS transition
                     for (let i = 0; i < starData.length; i++) {
                         const s = starData[i];
                         s.el.style.transition = 'transform ' + durStr + ' ease-out';
-                        if (scanY > s.cy) s.el.classList.add('visible');
-                        else s.el.classList.remove('visible');
+                        const shouldBeVisible = scanY > s.cy;
+                        if (shouldBeVisible && !s.visible) {
+                            // Star just appeared — schedule its settle time
+                            s.visible = true;
+                            s.settledAt = now + settleDuration;
+                            s.el.classList.add('visible');
+                        } else if (!shouldBeVisible && s.visible) {
+                            // Star gone — immediately unsettled
+                            s.visible = false;
+                            s.settledAt = Infinity;
+                            s.el.classList.remove('visible');
+                        }
+                    }
+
+                    // Lines: only draw when BOTH endpoint stars are settled (transition complete)
+                    const lineDur = Math.max(0.05, duration * 0.5);
+                    const lineDurStr = lineDur.toFixed(2) + 's';
+                    for (let i = 0; i < lineData.length; i++) {
+                        const ln = lineData[i];
+                        ln.el.style.transition = 'stroke-dashoffset ' + lineDurStr + ' ease-out';
+                        const aSettled = ln.starA !== undefined && now >= starData[ln.starA].settledAt;
+                        const bSettled = ln.starB !== undefined && now >= starData[ln.starB].settledAt;
+                        ln.el.style.strokeDashoffset = (aSettled && bSettled) ? 0 : ln.len;
                     }
                     for (let i = 0; i < labelData.length; i++) {
                         const lb = labelData[i];
