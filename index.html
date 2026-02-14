@@ -666,13 +666,12 @@
                 const cx = parseFloat(s.getAttribute('cx'));
                 const cy = parseFloat(s.getAttribute('cy'));
                 const idx = starData.length;
-                const data = { el: s, cx, cy, visible: false, settled: false, settleTimer: null };
-
-                // Helper: settle a star and draw any connected lines
-                function settleStarAndDrawLines() {
-                    if (data.settled || !data.visible) return;
+                const data = { el: s, cx, cy, visible: false, settled: false };
+                // transitionend fires when scale-in completes
+                s.addEventListener('transitionend', (e) => {
+                    if (e.propertyName !== 'transform' || !data.visible) return;
                     data.settled = true;
-                    if (data.settleTimer) { clearTimeout(data.settleTimer); data.settleTimer = null; }
+                    // Draw connected lines
                     for (let j = 0; j < lineData.length; j++) {
                         const ln = lineData[j];
                         if (ln.starA === undefined || ln.starB === undefined) continue;
@@ -681,14 +680,6 @@
                             ln.el.style.strokeDashoffset = 0;
                         }
                     }
-                }
-
-                data.settleStar = settleStarAndDrawLines;
-
-                // transitionend fires when scale-in completes
-                s.addEventListener('transitionend', (e) => {
-                    if (e.propertyName !== 'transform' && e.propertyName !== '-webkit-transform') return;
-                    settleStarAndDrawLines();
                 });
                 starData.push(data);
                 starByPos[cx + ',' + cy] = idx;
@@ -759,9 +750,7 @@
                     const scanY = minStarY + adjusted * (maxStarY + 10 - minStarY);
 
                     // Fast scroll threshold: below this, skip transition (instant appear)
-                    // Touch devices: use higher threshold so more scrolling takes the reliable instant path
-                    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-                    const fastThreshold = isTouch ? 0.4 : 0.15;
+                    const fastThreshold = 0.15;
                     const isFast = duration < fastThreshold;
 
                     for (let i = 0; i < starData.length; i++) {
@@ -771,23 +760,18 @@
                             s.visible = true;
                             if (isFast) {
                                 // Fast scroll: instant appear + settled
+                                s.settled = true;
                                 s.el.style.transition = 'none';
                                 s.el.classList.add('visible');
-                                s.settleStar();
                             } else {
                                 // Slow scroll: animate, transitionend will set settled
                                 s.settled = false;
-                                if (s.settleTimer) clearTimeout(s.settleTimer);
                                 s.el.style.transition = 'transform ' + durStr + ' ease-out';
                                 s.el.classList.add('visible');
-                                // Timeout fallback — mobile browsers sometimes swallow transitionend
-                                // Keep short (120ms) so lines draw before user scrolls past
-                                s.settleTimer = setTimeout(s.settleStar, 120);
                             }
                         } else if (!shouldBeVisible && s.visible) {
                             s.visible = false;
                             s.settled = false;
-                            if (s.settleTimer) { clearTimeout(s.settleTimer); s.settleTimer = null; }
                             s.el.style.transition = 'transform ' + durStr + ' ease-out';
                             s.el.classList.remove('visible');
                         }
@@ -846,13 +830,8 @@
                     }
                 },
                 onLeave: () => {
-                    lineData.forEach(ln => { ln.el.style.transition = 'none'; ln.el.style.strokeDashoffset = 0; });
-                    starData.forEach(s => {
-                        if (s.settleTimer) { clearTimeout(s.settleTimer); s.settleTimer = null; }
-                        s.visible = true; s.settled = true;
-                        s.el.style.transition = 'none';
-                        s.el.classList.add('visible');
-                    });
+                    lineData.forEach(ln => { ln.el.style.strokeDashoffset = 0; });
+                    starData.forEach(s => { s.visible = true; s.settled = true; s.el.classList.add('visible'); });
                     labelData.forEach(lb => {
                         lb.el.classList.add('visible');
                         for (let c = 0; c < lb.chars.length; c++) { lb.chars[c].style.opacity = '1';  }
@@ -863,10 +842,7 @@
                 onLeaveBack: () => {
                     constellation.classList.remove('visible');
                     lineData.forEach(ln => { ln.el.style.strokeDashoffset = ln.len; });
-                    starData.forEach(s => {
-                        if (s.settleTimer) { clearTimeout(s.settleTimer); s.settleTimer = null; }
-                        s.visible = false; s.settled = false; s.el.classList.remove('visible');
-                    });
+                    starData.forEach(s => { s.visible = false; s.settled = false; s.el.classList.remove('visible'); });
                     labelData.forEach(lb => {
                         lb.el.classList.remove('visible');
                         const last = lb.chars.length - 1;
