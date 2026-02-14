@@ -759,7 +759,9 @@
                     const scanY = minStarY + adjusted * (maxStarY + 10 - minStarY);
 
                     // Fast scroll threshold: below this, skip transition (instant appear)
-                    const fastThreshold = 0.15;
+                    // Touch devices: use higher threshold so more scrolling takes the reliable instant path
+                    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+                    const fastThreshold = isTouch ? 0.4 : 0.15;
                     const isFast = duration < fastThreshold;
 
                     for (let i = 0; i < starData.length; i++) {
@@ -779,8 +781,8 @@
                                 s.el.style.transition = 'transform ' + durStr + ' ease-out';
                                 s.el.classList.add('visible');
                                 // Timeout fallback — mobile browsers sometimes swallow transitionend
-                                const fallbackMs = Math.round(duration * 1000) + 80;
-                                s.settleTimer = setTimeout(s.settleStar, fallbackMs);
+                                // Keep short (120ms) so lines draw before user scrolls past
+                                s.settleTimer = setTimeout(s.settleStar, 120);
                             }
                         } else if (!shouldBeVisible && s.visible) {
                             s.visible = false;
