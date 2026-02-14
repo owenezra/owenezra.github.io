@@ -844,8 +844,13 @@
                     }
                 },
                 onLeave: () => {
-                    lineData.forEach(ln => { ln.el.style.strokeDashoffset = 0; });
-                    starData.forEach(s => { s.visible = true; s.settled = true; s.el.classList.add('visible'); });
+                    lineData.forEach(ln => { ln.el.style.transition = 'none'; ln.el.style.strokeDashoffset = 0; });
+                    starData.forEach(s => {
+                        if (s.settleTimer) { clearTimeout(s.settleTimer); s.settleTimer = null; }
+                        s.visible = true; s.settled = true;
+                        s.el.style.transition = 'none';
+                        s.el.classList.add('visible');
+                    });
                     labelData.forEach(lb => {
                         lb.el.classList.add('visible');
                         for (let c = 0; c < lb.chars.length; c++) { lb.chars[c].style.opacity = '1';  }
@@ -856,7 +861,10 @@
                 onLeaveBack: () => {
                     constellation.classList.remove('visible');
                     lineData.forEach(ln => { ln.el.style.strokeDashoffset = ln.len; });
-                    starData.forEach(s => { s.visible = false; s.settled = false; s.el.classList.remove('visible'); });
+                    starData.forEach(s => {
+                        if (s.settleTimer) { clearTimeout(s.settleTimer); s.settleTimer = null; }
+                        s.visible = false; s.settled = false; s.el.classList.remove('visible');
+                    });
                     labelData.forEach(lb => {
                         lb.el.classList.remove('visible');
                         const last = lb.chars.length - 1;
