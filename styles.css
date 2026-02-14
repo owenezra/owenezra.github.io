@@ -971,6 +971,8 @@ section {
 }
 
 /* Responsive Design */
+
+/* Tablet */
 @media (max-width: 1024px) {
     .services-grid {
         grid-template-columns: 320px;
@@ -978,8 +980,15 @@ section {
     .principles {
         grid-template-columns: 1fr;
     }
+    .constellation-transition {
+        height: 40vw;
+    }
+    .constellation-svg {
+        width: 70vw;
+    }
 }
 
+/* Phone */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -1010,6 +1019,19 @@ section {
     }
     .footer-brand {
         align-items: center;
+    }
+    .constellation-transition {
+        height: 65vw;
+        margin: var(--space-sm) 0;
+    }
+    .constellation-svg {
+        width: 90vw;
+    }
+    .star-label {
+        font-size: 3px;
+    }
+    .constellation-line {
+        stroke-width: 0.35px;
     }
 }
 
