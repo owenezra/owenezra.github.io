@@ -684,14 +684,6 @@
                 starByPos[cx + ',' + cy] = idx;
             });
 
-            // Sort stars by cy to assign evenly-spaced reveal ranks
-            // This prevents clusters of stars at similar Y values from appearing simultaneously
-            const sortedIndices = starData.map((s, i) => i).sort((a, b) => starData[a].cy - starData[b].cy);
-            sortedIndices.forEach((idx, rank) => {
-                starData[idx].rank = rank;
-            });
-            const starCount = starData.length;
-
             // Pre-compute line data — link each line to its two endpoint stars
             const lineData = [];
             lines.forEach(line => {
@@ -754,14 +746,15 @@
                         else if (p < 0.15) adjusted = 0;
                         else adjusted = (p - 0.15) / 0.5;
                     }
+                    const scanY = minStarY + adjusted * (maxStarY + 10 - minStarY);
+
                     // Fast scroll threshold: below this, skip transition (instant appear)
                     const fastThreshold = 0.15;
                     const isFast = duration < fastThreshold;
 
                     for (let i = 0; i < starData.length; i++) {
                         const s = starData[i];
-                        // Rank-based reveal: each star gets an equal slice of the adjusted progress
-                        const shouldBeVisible = adjusted > s.rank / starCount;
+                        const shouldBeVisible = scanY > s.cy;
                         if (shouldBeVisible && !s.visible) {
                             s.visible = true;
                             if (isFast) {
@@ -805,8 +798,7 @@
                     }
                     for (let i = 0; i < labelData.length; i++) {
                         const lb = labelData[i];
-                        const labelProgress = (lb.y + 4 - minStarY) / (maxStarY - minStarY + 10);
-                        const isVisible = adjusted > labelProgress;
+                        const isVisible = scanY > lb.y + 4;
                         if (isVisible && !lb.wasVisible) {
                             // Just appeared — set staggered fade in
                             lb.el.classList.add('visible');
@@ -827,8 +819,7 @@
                         }
                     }
                     if (nebula) {
-                        const nebulaProgress = (nebulaCy - minStarY) / (maxStarY - minStarY + 10);
-                        if (adjusted > nebulaProgress) {
+                        if (scanY > nebulaCy) {
                             nebula.classList.add('visible');
                             if (nebulaLabel) nebulaLabel.classList.add('visible');
                         } else {
