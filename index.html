@@ -15,6 +15,14 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
+    <!-- AI Agent Discoverability (WebMCP / AEO) -->
+    <meta name="ai:page-type" content="professional-services">
+    <meta name="ai:service-category" content="AI consulting">
+    <meta name="ai:primary-action" content="requestConsultation">
+    <meta name="ai:consultant" content="Owen Onderdonk">
+    <meta name="ai:specialties" content="AI strategy, data quality, team training, workflow automation">
+    <meta name="ai:contact" content="ahoythere@learning.voyage">
+
 </head>
 
 <body>
@@ -104,7 +112,7 @@
     </header>
 
     <!-- Constellation Transition: Orion -->
-    <div class="constellation-transition" data-constellation="orion">
+    <aside class="constellation-transition" aria-hidden="true" data-constellation="orion">
         <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
             <defs>
                 <filter id="glow-red" x="-200%" y="-200%" width="500%" height="500%">
@@ -175,27 +183,27 @@
                 <line class="constellation-line" x1="42" y1="68" x2="40" y2="74" />
                 <!-- Nebula M42 -->
                 <circle class="nebula" cx="43" cy="67" r="3" fill="url(#nebula-gradient)" />
-                <text class="star-label nebula-label" x="48" y="65">M42</text>
+                <text class="star-label nebula-label" x="48" y="65" data-label="M42"></text>
                 <!-- Stars -->
                 <g class="star-group">
                     <circle class="star" cx="30" cy="35" r="1.3" fill="#ff8844" filter="url(#glow-red)" />
-                    <text class="star-label" x="30" y="31">Betelgeuse</text>
+                    <text class="star-label" x="30" y="31" data-label="Betelgeuse"></text>
                 </g>
                 <g class="star-group">
                     <circle class="star" cx="62" cy="37" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="62" y="33">Bellatrix</text>
+                    <text class="star-label" x="62" y="33" data-label="Bellatrix"></text>
                 </g>
                 <g class="star-group">
                     <circle class="star" cx="68" cy="82" r="1.2" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="68" y="78">Rigel</text>
+                    <text class="star-label" x="68" y="78" data-label="Rigel"></text>
                 </g>
                 <g class="star-group">
                     <circle class="star" cx="35" cy="84" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="35" y="80">Saiph</text>
+                    <text class="star-label" x="35" y="80" data-label="Saiph"></text>
                 </g>
                 <g class="star-group">
                     <circle class="star" cx="42" cy="56" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="42" y="52">Alnitak</text>
+                    <text class="star-label" x="42" y="52" data-label="Alnitak"></text>
                 </g>
                 <circle class="star" cx="49" cy="55" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
                 <circle class="star" cx="55" cy="54" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
@@ -217,7 +225,7 @@
                 <circle class="star" cx="40" cy="74" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
             </g>
         </svg>
-    </div>
+    </aside>
 
     <!-- Services Section -->
     <section id="services" class="services">
@@ -232,7 +240,7 @@
             </div>
 
             <div class="services-grid">
-                <article class="service-card">
+                <div class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
@@ -250,9 +258,9 @@
                         <li>Vendor evaluation</li>
                         <li>ROI analysis</li>
                     </ul>
-                </article>
+                </div>
 
-                <article class="service-card">
+                <div class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
@@ -270,9 +278,9 @@
                         <li>Dataset validation</li>
                         <li>Training data audit</li>
                     </ul>
-                </article>
+                </div>
 
-                <article class="service-card">
+                <div class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
@@ -290,7 +298,7 @@
                         <li>Hands-on training</li>
                         <li>Ongoing support</li>
                     </ul>
-                </article>
+                </div>
             </div>
         </div>
     </section>
@@ -341,7 +349,7 @@
     </section>
 
     <!-- Constellation Transition: Ursa Major -->
-    <div class="constellation-transition" data-constellation="ursa">
+    <aside class="constellation-transition" aria-hidden="true" data-constellation="ursa">
         <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
             <g class="constellation-group" id="ursa-group">
                 <!-- Lines -->
@@ -365,51 +373,51 @@
                 <!-- Stars -->
                 <g class="star-group">
                     <circle class="star" cx="8" cy="30" r="1.1" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="8" y="26">Alkaid</text>
+                    <text class="star-label" x="8" y="26" data-label="Alkaid"></text>
                 </g>
                 <g class="star-group">
                     <circle class="star" cx="16" cy="38" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="16" y="34">Mizar</text>
+                    <text class="star-label" x="16" y="34" data-label="Mizar"></text>
                 </g>
                 <circle class="star" cx="25" cy="40" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
                 <circle class="star" cx="35" cy="38" r="0.8" fill="#f8fafc" filter="url(#glow-soft)" />
                 <g class="star-group">
                     <circle class="star" cx="38" cy="48" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="38" y="44">Phecda</text>
+                    <text class="star-label" x="38" y="44" data-label="Phecda"></text>
                 </g>
                 <g class="star-group">
                     <circle class="star" cx="52" cy="45" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="52" y="41">Merak</text>
+                    <text class="star-label" x="52" y="41" data-label="Merak"></text>
                 </g>
                 <g class="star-group">
                     <circle class="star" cx="50" cy="32" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
-                    <text class="star-label" x="50" y="28">Dubhe</text>
+                    <text class="star-label" x="50" y="28" data-label="Dubhe"></text>
                 </g>
                 <circle class="star" cx="65" cy="30" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
                 <g class="star-group">
                     <circle class="star" cx="80" cy="34" r="0.7" fill="#fbbf24" filter="url(#glow-gold)" />
-                    <text class="star-label" x="80" y="30">Muscida</text>
+                    <text class="star-label" x="80" y="30" data-label="Muscida"></text>
                 </g>
                 <circle class="star" cx="62" cy="55" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
                 <g class="star-group">
                     <circle class="star" cx="70" cy="65" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="70" y="61">Talitha</text>
+                    <text class="star-label" x="70" y="61" data-label="Talitha"></text>
                 </g>
                 <circle class="star" cx="72" cy="67" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
                 <circle class="star" cx="50" cy="60" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
                 <g class="star-group">
                     <circle class="star" cx="58" cy="70" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="58" y="66">Tania</text>
+                    <text class="star-label" x="58" y="66" data-label="Tania"></text>
                 </g>
                 <circle class="star" cx="42" cy="58" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
                 <circle class="star" cx="38" cy="75" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
                 <g class="star-group">
                     <circle class="star" cx="42" cy="82" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="42" y="86">Alula</text>
+                    <text class="star-label" x="42" y="86" data-label="Alula"></text>
                 </g>
             </g>
         </svg>
-    </div>
+    </aside>
 
     <!-- Process Section -->
     <section id="process" class="approach">
@@ -458,7 +466,7 @@
     </section>
 
     <!-- Constellation Transition: Aquarius -->
-    <div class="constellation-transition" data-constellation="aquarius">
+    <aside class="constellation-transition" aria-hidden="true" data-constellation="aquarius">
         <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
             <g class="constellation-group" id="aquarius-group">
                 <!-- Lines -->
@@ -478,11 +486,11 @@
                 <!-- Stars -->
                 <g class="star-group">
                     <circle class="star" cx="45" cy="25" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
-                    <text class="star-label" x="45" y="21">Sadalmelik</text>
+                    <text class="star-label" x="45" y="21" data-label="Sadalmelik"></text>
                 </g>
                 <g class="star-group">
                     <circle class="star" cx="62" cy="30" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
-                    <text class="star-label" x="62" y="26">Sadalsuud</text>
+                    <text class="star-label" x="62" y="26" data-label="Sadalsuud"></text>
                 </g>
                 <g class="star-group">
                     <circle class="star" cx="38" cy="22" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
@@ -491,11 +499,11 @@
                 <circle class="star" cx="36" cy="15" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
                 <g class="star-group">
                     <circle class="star" cx="32" cy="28" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="32" y="32">Gamma</text>
+                    <text class="star-label" x="32" y="32" data-label="Gamma"></text>
                 </g>
                 <g class="star-group">
                     <circle class="star" cx="80" cy="40" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="80" y="36">Albali</text>
+                    <text class="star-label" x="80" y="36" data-label="Albali"></text>
                 </g>
                 <circle class="star" cx="52" cy="40" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
                 <circle class="star" cx="22" cy="45" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
@@ -504,12 +512,12 @@
                 <circle class="star" cx="20" cy="65" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
                 <g class="star-group">
                     <circle class="star" cx="25" cy="75" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="25" y="79">Skat</text>
+                    <text class="star-label" x="25" y="79" data-label="Skat"></text>
                 </g>
                 <circle class="star" cx="28" cy="68" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
             </g>
         </svg>
-    </div>
+    </aside>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -648,6 +656,8 @@
             const lines = constellation.querySelectorAll('.constellation-line');
             const nebula = constellation.querySelector('.nebula');
             const nebulaLabel = constellation.querySelector('.nebula-label');
+            // Populate label text from data-label (kept out of HTML for Reader Mode)
+            if (nebulaLabel && nebulaLabel.dataset.label) nebulaLabel.textContent = nebulaLabel.dataset.label;
 
             // Find Y range of all stars
             let minStarY = Infinity, maxStarY = -Infinity;
@@ -703,7 +713,7 @@
             // Split label text into individual character tspans for letter-by-letter reveal
             const labelData = [];
             labels.forEach(l => {
-                const text = l.textContent;
+                const text = l.getAttribute('data-label') || l.textContent;
                 const y = parseFloat(l.getAttribute('y'));
                 l.textContent = '';
                 const chars = [];
@@ -855,6 +865,105 @@
                 }
             });
         });
+    </script>
+
+    <!-- WebMCP: AI Agent Tool Registration -->
+    <!-- https://webmachinelearning.github.io/webmcp/ -->
+    <script>
+    (function() {
+        if (!('modelContext' in navigator)) return;
+
+        // Tool: Get services offered by Learning Voyage
+        navigator.modelContext.registerTool({
+            name: 'getServices',
+            description: 'Get detailed information about Learning Voyage AI consulting services, including what each service covers and who it is for.',
+            inputSchema: { type: 'object', properties: {} },
+            async execute() {
+                return { content: [{ type: 'text', text: JSON.stringify({
+                    company: 'Learning Voyage LLC',
+                    tagline: 'Charting Your Course. Navigating Together.',
+                    services: [
+                        {
+                            name: 'AI Strategy & Assessment',
+                            description: 'An honest look at where AI fits in your business and where it does not. No hype, no sales pitch. A clear-eyed roadmap built on real understanding of what these systems can and cannot do.',
+                            includes: ['Readiness assessments', 'Opportunity mapping', 'Vendor evaluation', 'ROI analysis'],
+                            idealFor: 'Organizations exploring AI adoption or unsure where to start'
+                        },
+                        {
+                            name: 'Data Quality & Curation',
+                            description: 'Your AI is only as good as what you feed it. We design quality frameworks, build annotation pipelines, and validate datasets, drawing on hands-on experience evaluating training data for frontier AI models.',
+                            includes: ['Quality frameworks', 'Annotation pipelines', 'Dataset validation', 'Training data audit'],
+                            idealFor: 'Organizations building or fine-tuning AI models and needing reliable training data'
+                        },
+                        {
+                            name: 'Training & Adoption',
+                            description: 'Technology does not transform businesses, people do. With 15 years of experience building technical education programs, we train your team to confidently own and evolve their AI capabilities.',
+                            includes: ['Team workshops', 'Change management', 'Hands-on training', 'Ongoing support'],
+                            idealFor: 'Organizations that have or are deploying AI tools and need their teams to actually use them effectively'
+                        }
+                    ],
+                    process: ['Assess', 'Implement', 'Train'],
+                    contact: 'ahoythere@learning.voyage',
+                    website: 'https://learning.voyage'
+                })}]}
+            }
+        });
+
+        // Tool: Get background on Owen Onderdonk / Learning Voyage
+        navigator.modelContext.registerTool({
+            name: 'getAbout',
+            description: 'Get background information about Owen Onderdonk and Learning Voyage LLC. Useful for understanding credentials, experience, and what makes this consultant different.',
+            inputSchema: { type: 'object', properties: {} },
+            async execute() {
+                return { content: [{ type: 'text', text: JSON.stringify({
+                    consultant: 'Owen Onderdonk',
+                    company: 'Learning Voyage LLC',
+                    background: 'Physics graduate, 15 years building STEM and technical education programs, now an AI evaluation specialist and SME managing 100+ person AI data programs at Labelbox.',
+                    specialties: [
+                        'AI evaluation and data quality',
+                        'Workflow automation and agentic AI systems',
+                        'Technical training and team adoption',
+                        'Program management for large AI data initiatives'
+                    ],
+                    credentials: [
+                        'Subject Matter Expert at Labelbox (top-tier AI data contractor)',
+                        'Hands-on experience evaluating training data for frontier AI models',
+                        'Led STEM education programs for 15 years',
+                        'Physics background with MS in Education'
+                    ],
+                    differentiator: 'Unlike consultants who only advise, Owen has done the actual work -- building annotation pipelines, evaluating model outputs, and running multi-person AI data programs at scale.',
+                    trustedBy: ['Labelbox', 'Scale AI', 'Alignerr'],
+                    contact: 'ahoythere@learning.voyage',
+                    linkedin: 'https://www.linkedin.com/in/owenonderdonk/'
+                })}]}
+            }
+        });
+
+        // Tool: Request a consultation
+        navigator.modelContext.registerTool({
+            name: 'requestConsultation',
+            description: 'Initiate contact with Learning Voyage to request an AI consulting consultation. Returns contact instructions.',
+            inputSchema: {
+                type: 'object',
+                properties: {
+                    topic: { type: 'string', description: 'Brief description of what you want to discuss (e.g. AI strategy, data quality, team training)' },
+                    company: { type: 'string', description: 'Your company or organization name' }
+                }
+            },
+            async execute({ topic, company } = {}) {
+                const subject = encodeURIComponent('Consulting Inquiry' + (company ? ' - ' + company : '') + (topic ? ': ' + topic : ''));
+                const body = encodeURIComponent((company ? 'Company: ' + company + '\n' : '') + (topic ? 'Topic: ' + topic + '\n\n' : '') + 'I\'d like to discuss working with Learning Voyage.');
+                return { content: [{ type: 'text', text: JSON.stringify({
+                    status: 'contact_ready',
+                    instructions: 'Send an email to ahoythere@learning.voyage to request a consultation.',
+                    email: 'ahoythere@learning.voyage',
+                    mailtoLink: 'mailto:ahoythere@learning.voyage?subject=' + subject + '&body=' + body,
+                    linkedin: 'https://www.linkedin.com/in/owenonderdonk/',
+                    responseTime: 'Usually within 1 business day'
+                })}]}
+            }
+        });
+    })();
     </script>
 </body>
 
