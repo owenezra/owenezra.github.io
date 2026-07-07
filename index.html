@@ -7,11 +7,34 @@
     <title>Learning Voyage | AI Strategy, Data Quality & Team Training</title>
     <meta name="description"
         content="Learning Voyage - AI strategy, data quality, and team training for businesses that want AI that actually works. Led by a physicist turned educator turned AI evaluation specialist.">
-    <link rel="icon" href="/docs/assets/images/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#0a0f14">
+    <link rel="canonical" href="https://learning.voyage/">
+    <link rel="icon" type="image/png" sizes="32x32" href="/docs/assets/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/docs/assets/images/favicon-192.png">
+    <link rel="apple-touch-icon" href="/docs/assets/images/apple-touch-icon.png">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://learning.voyage/">
+    <meta property="og:site_name" content="Learning Voyage">
+    <meta property="og:title" content="Learning Voyage | AI Strategy, Data Quality & Team Training">
+    <meta property="og:description"
+        content="AI strategy, data quality, and team training for businesses that want AI that actually works. Led by a physicist turned educator turned AI evaluation specialist.">
+    <meta property="og:image" content="https://learning.voyage/docs/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Learning Voyage — ship logo on a night sea beneath the stars">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Learning Voyage | AI Strategy, Data Quality & Team Training">
+    <meta name="twitter:description"
+        content="AI strategy, data quality, and team training for businesses that want AI that actually works.">
+    <meta name="twitter:image" content="https://learning.voyage/docs/assets/images/og-image.png">
+
+    <link rel="preload" as="image" href="/docs/assets/images/LearningVoyageLogo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Lexend:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Lexend:wght@300;400;500;600&family=Fraunces:ital,wght@1,400;1,500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
@@ -23,542 +46,613 @@
     <meta name="ai:specialties" content="AI strategy, data quality, team training, workflow automation">
     <meta name="ai:contact" content="ahoythere@learning.voyage">
 
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Learning Voyage LLC",
+        "url": "https://learning.voyage/",
+        "logo": "https://learning.voyage/docs/assets/images/LearningVoyageLogo.svg",
+        "image": "https://learning.voyage/docs/assets/images/og-image.png",
+        "description": "AI strategy, data quality, and team training for businesses that want AI that actually works.",
+        "slogan": "Charting Your Course. Navigating Together.",
+        "email": "ahoythere@learning.voyage",
+        "founder": {
+            "@type": "Person",
+            "name": "Owen Onderdonk",
+            "sameAs": "https://www.linkedin.com/in/owenonderdonk/"
+        },
+        "knowsAbout": [
+            "AI strategy and readiness assessment",
+            "Data quality and curation",
+            "AI team training and adoption",
+            "Workflow automation"
+        ],
+        "sameAs": ["https://www.linkedin.com/in/owenonderdonk/"]
+    }
+    </script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <!-- Animated background -->
     <div class="bg-grid"></div>
 
     <!-- Twinkling stars -->
     <div class="starfield" id="starfield"></div>
 
-    <div class="gradient-orb orb-1"></div>
-    <div class="gradient-orb orb-2"></div>
-    <div class="gradient-orb orb-3"></div>
-
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" aria-label="Main">
         <div class="nav-container">
-            <a href="#" class="nav-logo" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' })">
-                <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="nav-logo-img">
+            <a href="#" class="nav-logo" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })">
+                <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="" class="nav-logo-img"
+                    width="40" height="40">
+                <span class="nav-wordmark">Learning Voyage</span>
             </a>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="#services">Services</a>
                 <a href="#about">About</a>
                 <a href="#process">How We Work</a>
                 <a href="#contact" class="nav-cta">Get in Touch</a>
             </div>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-layout">
-            <div class="hero-content">
-                <!-- Logo with curved text and water effect -->
-                <div class="logo-with-text">
-                    <div class="logo-glow"></div>
-                    <div class="logo-wrapper">
-                        <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="hero-logo">
-                    </div>
+    <main id="main">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-layout">
+                <div class="hero-content">
+                    <!-- Logo with curved text and water effect -->
+                    <div class="logo-with-text">
+                        <div class="logo-glow"></div>
+                        <div class="logo-wrapper">
+                            <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="hero-logo"
+                                width="600" height="599" fetchpriority="high">
+                        </div>
 
-                    <!-- Water wave effect removed -->
-
-                    <!-- Curved text with dots -->
-                    <svg class="curved-text-svg" viewBox="0 0 420 420">
-                        <defs>
-                            <path id="bottom-curve" d="M 10,210 A 200,200 0 0,0 410,210" fill="none" />
-                        </defs>
-                        <text class="curved-text-letters">
-                            <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
-                                <tspan class="letter dot" style="--delay: 0">●</tspan>
-                                <tspan class="letter dot-space">&#160;&#160;&#160;&#160;&#160;</tspan>
-                                <tspan class="letter" style="--delay: 2">L</tspan>
-                                <tspan class="letter" style="--delay: 3">E</tspan>
-                                <tspan class="letter" style="--delay: 4">A</tspan>
-                                <tspan class="letter" style="--delay: 5">R</tspan>
-                                <tspan class="letter" style="--delay: 6">N</tspan>
-                                <tspan class="letter" style="--delay: 7">I</tspan>
-                                <tspan class="letter" style="--delay: 8">N</tspan>
-                                <tspan class="letter" style="--delay: 9">G</tspan>
-                                <tspan class="letter word-space">&#160;&#160;&#160;&#160;&#160;</tspan>
-                                <tspan class="letter" style="--delay: 11">V</tspan>
-                                <tspan class="letter" style="--delay: 12">O</tspan>
-                                <tspan class="letter" style="--delay: 13">Y</tspan>
-                                <tspan class="letter" style="--delay: 14">A</tspan>
-                                <tspan class="letter" style="--delay: 15">G</tspan>
-                                <tspan class="letter" style="--delay: 16">E</tspan>
-                                <tspan class="letter dot-space">&#160;&#160;&#160;&#160;&#160;</tspan>
-                                <tspan class="letter dot-space"> </tspan>
-                                <tspan class="letter dot" style="--delay: 18">●</tspan>
-                            </textPath>
-                        </text>
-                    </svg>
-                </div>
-
-                <h1 class="hero-title">
-                    <span class="title-line">Charting Your Course.</span>
-                    <span class="title-line highlight">Navigating Together.</span>
-                </h1>
-                <p class="hero-subtitle">
-                    AI Strategy · Data Curation · Team Training
-                </p>
-                <div class="hero-cta">
-                    <a href="#services" class="btn btn-primary">Explore Services</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Constellation Transition: Orion -->
-    <aside class="constellation-transition" aria-hidden="true" data-constellation="orion">
-        <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-            <defs>
-                <filter id="glow-red" x="-200%" y="-200%" width="500%" height="500%">
-                    <feGaussianBlur stdDeviation="0.9" result="blur" />
-                    <feFlood flood-color="#ff6633" flood-opacity="0.6" result="color" />
-                    <feComposite in="color" in2="blur" operator="in" result="glow" />
-                    <feMerge>
-                        <feMergeNode in="glow" />
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                </filter>
-                <filter id="glow-blue" x="-200%" y="-200%" width="500%" height="500%">
-                    <feGaussianBlur stdDeviation="0.7" result="blur" />
-                    <feFlood flood-color="#4488ff" flood-opacity="0.6" result="color" />
-                    <feComposite in="color" in2="blur" operator="in" result="glow" />
-                    <feMerge>
-                        <feMergeNode in="glow" />
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                </filter>
-                <filter id="glow-gold" x="-200%" y="-200%" width="500%" height="500%">
-                    <feGaussianBlur stdDeviation="0.8" result="blur" />
-                    <feFlood flood-color="#fbbf24" flood-opacity="0.6" result="color" />
-                    <feComposite in="color" in2="blur" operator="in" result="glow" />
-                    <feMerge>
-                        <feMergeNode in="glow" />
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                </filter>
-                <filter id="glow-soft" x="-100%" y="-100%" width="300%" height="300%">
-                    <feGaussianBlur stdDeviation="0.4" />
-                    <feMerge>
-                        <feMergeNode />
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                </filter>
-                <radialGradient id="nebula-gradient">
-                    <stop offset="0%" stop-color="#e879f9" stop-opacity="0.6" />
-                    <stop offset="60%" stop-color="#a855f7" stop-opacity="0.2" />
-                    <stop offset="100%" stop-color="#4c1d95" stop-opacity="0" />
-                </radialGradient>
-            </defs>
-            <!-- Orion constellation group -->
-            <g class="constellation-group" id="orion-group">
-                <!-- Lines -->
-                <line class="constellation-line" x1="30" y1="35" x2="42" y2="56" />
-                <line class="constellation-line" x1="62" y1="37" x2="55" y2="54" />
-                <line class="constellation-line" x1="42" y1="56" x2="49" y2="55" />
-                <line class="constellation-line" x1="49" y1="55" x2="55" y2="54" />
-                <line class="constellation-line" x1="42" y1="56" x2="35" y2="84" />
-                <line class="constellation-line" x1="55" y1="54" x2="68" y2="82" />
-                <line class="constellation-line" x1="30" y1="35" x2="47" y2="25" />
-                <line class="constellation-line" x1="62" y1="37" x2="47" y2="25" />
-                <line class="constellation-line" x1="30" y1="35" x2="25" y2="28" />
-                <line class="constellation-line" x1="25" y1="28" x2="20" y2="22" />
-                <line class="constellation-line" x1="20" y1="22" x2="18" y2="16" />
-                <line class="constellation-line" x1="18" y1="16" x2="22" y2="9" />
-                <line class="constellation-line" x1="22" y1="9" x2="28" y2="8" />
-                <line class="constellation-line" x1="62" y1="37" x2="82" y2="40" />
-                <line class="constellation-line" x1="82" y1="40" x2="80" y2="34" />
-                <line class="constellation-line" x1="80" y1="34" x2="75" y2="28" />
-                <line class="constellation-line" x1="82" y1="40" x2="81" y2="48" />
-                <line class="constellation-line" x1="81" y1="48" x2="79" y2="54" />
-                <line class="constellation-line" x1="79" y1="54" x2="75" y2="58" />
-                <!-- Sword -->
-                <line class="constellation-line" x1="49" y1="55" x2="44" y2="63" />
-                <line class="constellation-line" x1="44" y1="63" x2="42" y2="68" />
-                <line class="constellation-line" x1="42" y1="68" x2="40" y2="74" />
-                <!-- Nebula M42 -->
-                <circle class="nebula" cx="43" cy="67" r="3" fill="url(#nebula-gradient)" />
-                <text class="star-label nebula-label" x="48" y="65" data-label="M42"></text>
-                <!-- Stars -->
-                <g class="star-group">
-                    <circle class="star" cx="30" cy="35" r="1.3" fill="#ff8844" filter="url(#glow-red)" />
-                    <text class="star-label" x="30" y="31" data-label="Betelgeuse"></text>
-                </g>
-                <g class="star-group">
-                    <circle class="star" cx="62" cy="37" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="62" y="33" data-label="Bellatrix"></text>
-                </g>
-                <g class="star-group">
-                    <circle class="star" cx="68" cy="82" r="1.2" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="68" y="78" data-label="Rigel"></text>
-                </g>
-                <g class="star-group">
-                    <circle class="star" cx="35" cy="84" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="35" y="80" data-label="Saiph"></text>
-                </g>
-                <g class="star-group">
-                    <circle class="star" cx="42" cy="56" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="42" y="52" data-label="Alnitak"></text>
-                </g>
-                <circle class="star" cx="49" cy="55" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
-                <circle class="star" cx="55" cy="54" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
-                <circle class="star" cx="47" cy="25" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="25" cy="28" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="20" cy="22" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="18" cy="16" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="22" cy="9" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="28" cy="8" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="75" cy="28" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="80" cy="34" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="82" cy="40" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="81" cy="48" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="79" cy="54" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="75" cy="58" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
-                <!-- Sword stars -->
-                <circle class="star" cx="44" cy="63" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="42" cy="68" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="40" cy="74" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-            </g>
-        </svg>
-    </aside>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">What We Do</span>
-                <h2 class="section-title">AI That Works for You</h2>
-                <p class="section-description">
-                    Great AI starts with understanding your business. We find the right opportunities,
-                    build practical solutions, and empower your team to grow with them.
-                </p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                        <!-- Curved text with dots -->
+                        <svg class="curved-text-svg" viewBox="0 0 420 420" aria-hidden="true">
+                            <defs>
+                                <path id="bottom-curve" d="M 10,210 A 200,200 0 0,0 410,210" fill="none" />
+                            </defs>
+                            <text class="curved-text-letters">
+                                <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
+                                    <tspan class="letter dot" style="--delay: 0">●</tspan>
+                                    <tspan class="letter dot-space">&#160;&#160;&#160;&#160;&#160;</tspan>
+                                    <tspan class="letter" style="--delay: 2">L</tspan>
+                                    <tspan class="letter" style="--delay: 3">E</tspan>
+                                    <tspan class="letter" style="--delay: 4">A</tspan>
+                                    <tspan class="letter" style="--delay: 5">R</tspan>
+                                    <tspan class="letter" style="--delay: 6">N</tspan>
+                                    <tspan class="letter" style="--delay: 7">I</tspan>
+                                    <tspan class="letter" style="--delay: 8">N</tspan>
+                                    <tspan class="letter" style="--delay: 9">G</tspan>
+                                    <tspan class="letter word-space">&#160;&#160;&#160;&#160;&#160;</tspan>
+                                    <tspan class="letter" style="--delay: 11">V</tspan>
+                                    <tspan class="letter" style="--delay: 12">O</tspan>
+                                    <tspan class="letter" style="--delay: 13">Y</tspan>
+                                    <tspan class="letter" style="--delay: 14">A</tspan>
+                                    <tspan class="letter" style="--delay: 15">G</tspan>
+                                    <tspan class="letter" style="--delay: 16">E</tspan>
+                                    <tspan class="letter dot-space">&#160;&#160;&#160;&#160;&#160;</tspan>
+                                    <tspan class="letter dot-space"> </tspan>
+                                    <tspan class="letter dot" style="--delay: 18">●</tspan>
+                                </textPath>
+                            </text>
                         </svg>
                     </div>
-                    <h3 class="service-title">AI Strategy & Assessment</h3>
-                    <p class="service-description">
-                        An honest look at where AI fits in your business -- and where it doesn't. No hype,
-                        no sales pitch. Just a clear-eyed roadmap built on real understanding of what
-                        these systems can and can't do.
-                    </p>
-                    <ul class="service-features">
-                        <li>Readiness assessments</li>
-                        <li>Opportunity mapping</li>
-                        <li>Vendor evaluation</li>
-                        <li>ROI analysis</li>
-                    </ul>
-                </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Data Quality & Curation</h3>
-                    <p class="service-description">
-                        Your AI is only as good as what you feed it. We design quality frameworks,
-                        build annotation pipelines, and validate datasets -- drawing on hands-on experience
-                        evaluating training data for frontier AI models.
+                    <h1 class="hero-title">
+                        <span class="title-line">Charting Your Course.</span>
+                        <span class="title-line highlight">Navigating Together.</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        AI Strategy · Data Curation · Team Training
                     </p>
-                    <ul class="service-features">
-                        <li>Quality frameworks</li>
-                        <li>Annotation pipelines</li>
-                        <li>Dataset validation</li>
-                        <li>Training data audit</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                        </svg>
+                    <div class="hero-cta">
+                        <a href="#services" class="btn btn-primary">Explore Services</a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                     </div>
-                    <h3 class="service-title">Training & Adoption</h3>
-                    <p class="service-description">
-                        Technology doesn't transform businesses. People do. With 15 years of experience
-                        building technical education programs, we train your team to confidently
-                        own and evolve their AI capabilities.
-                    </p>
-                    <ul class="service-features">
-                        <li>Team workshops</li>
-                        <li>Change management</li>
-                        <li>Hands-on training</li>
-                        <li>Ongoing support</li>
-                    </ul>
+                    <div class="hero-scroll-cue" aria-hidden="true">begin the voyage</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Trusted By Section -->
-    <section class="trusted-by">
-        <div class="section-container">
-            <span class="trusted-label">Trusted By</span>
-            <div class="trusted-logos">
-                <div class="trusted-logo">
-                    <img src="/docs/assets/images/LabelboxLogo.svg" alt="Labelbox">
-                </div>
-                <div class="trusted-logo">
-                    <img src="/docs/assets/images/ScaleLogo.svg" alt="Scale AI">
-                </div>
-                <div class="trusted-logo">
-                    <img src="/docs/assets/images/AlignerrLogo.svg" alt="Alignerr">
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Constellation Transition: Orion -->
+        <aside class="constellation-transition" aria-hidden="true" data-constellation="orion">
+            <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                    <filter id="glow-red" x="-200%" y="-200%" width="500%" height="500%">
+                        <feGaussianBlur stdDeviation="0.9" result="blur" />
+                        <feFlood flood-color="#ff6633" flood-opacity="0.6" result="color" />
+                        <feComposite in="color" in2="blur" operator="in" result="glow" />
+                        <feMerge>
+                            <feMergeNode in="glow" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <filter id="glow-blue" x="-200%" y="-200%" width="500%" height="500%">
+                        <feGaussianBlur stdDeviation="0.7" result="blur" />
+                        <feFlood flood-color="#4488ff" flood-opacity="0.6" result="color" />
+                        <feComposite in="color" in2="blur" operator="in" result="glow" />
+                        <feMerge>
+                            <feMergeNode in="glow" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <filter id="glow-gold" x="-200%" y="-200%" width="500%" height="500%">
+                        <feGaussianBlur stdDeviation="0.8" result="blur" />
+                        <feFlood flood-color="#fbbf24" flood-opacity="0.6" result="color" />
+                        <feComposite in="color" in2="blur" operator="in" result="glow" />
+                        <feMerge>
+                            <feMergeNode in="glow" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <filter id="glow-soft" x="-100%" y="-100%" width="300%" height="300%">
+                        <feGaussianBlur stdDeviation="0.4" />
+                        <feMerge>
+                            <feMergeNode />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <radialGradient id="nebula-gradient">
+                        <stop offset="0%" stop-color="#e879f9" stop-opacity="0.6" />
+                        <stop offset="60%" stop-color="#a855f7" stop-opacity="0.2" />
+                        <stop offset="100%" stop-color="#4c1d95" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+                <!-- Orion constellation group -->
+                <g class="constellation-group" id="orion-group">
+                    <!-- Lines -->
+                    <line class="constellation-line" x1="30" y1="35" x2="42" y2="56" />
+                    <line class="constellation-line" x1="62" y1="37" x2="55" y2="54" />
+                    <line class="constellation-line" x1="42" y1="56" x2="49" y2="55" />
+                    <line class="constellation-line" x1="49" y1="55" x2="55" y2="54" />
+                    <line class="constellation-line" x1="42" y1="56" x2="35" y2="84" />
+                    <line class="constellation-line" x1="55" y1="54" x2="68" y2="82" />
+                    <line class="constellation-line" x1="30" y1="35" x2="47" y2="25" />
+                    <line class="constellation-line" x1="62" y1="37" x2="47" y2="25" />
+                    <line class="constellation-line" x1="30" y1="35" x2="25" y2="28" />
+                    <line class="constellation-line" x1="25" y1="28" x2="20" y2="22" />
+                    <line class="constellation-line" x1="20" y1="22" x2="18" y2="16" />
+                    <line class="constellation-line" x1="18" y1="16" x2="22" y2="9" />
+                    <line class="constellation-line" x1="22" y1="9" x2="28" y2="8" />
+                    <line class="constellation-line" x1="62" y1="37" x2="82" y2="40" />
+                    <line class="constellation-line" x1="82" y1="40" x2="80" y2="34" />
+                    <line class="constellation-line" x1="80" y1="34" x2="75" y2="28" />
+                    <line class="constellation-line" x1="82" y1="40" x2="81" y2="48" />
+                    <line class="constellation-line" x1="81" y1="48" x2="79" y2="54" />
+                    <line class="constellation-line" x1="79" y1="54" x2="75" y2="58" />
+                    <!-- Sword -->
+                    <line class="constellation-line" x1="49" y1="55" x2="44" y2="63" />
+                    <line class="constellation-line" x1="44" y1="63" x2="42" y2="68" />
+                    <line class="constellation-line" x1="42" y1="68" x2="40" y2="74" />
+                    <!-- Nebula M42 -->
+                    <circle class="nebula" cx="43" cy="67" r="3" fill="url(#nebula-gradient)" />
+                    <text class="star-label nebula-label" x="48" y="65" data-label="M42"></text>
+                    <!-- Stars -->
+                    <g class="star-group">
+                        <circle class="star" cx="30" cy="35" r="1.3" fill="#ff8844" filter="url(#glow-red)" />
+                        <text class="star-label" x="30" y="31" data-label="Betelgeuse"></text>
+                    </g>
+                    <g class="star-group">
+                        <circle class="star" cx="62" cy="37" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                        <text class="star-label" x="62" y="33" data-label="Bellatrix"></text>
+                    </g>
+                    <g class="star-group">
+                        <circle class="star" cx="68" cy="82" r="1.2" fill="#aaccff" filter="url(#glow-blue)" />
+                        <text class="star-label" x="68" y="78" data-label="Rigel"></text>
+                    </g>
+                    <g class="star-group">
+                        <circle class="star" cx="35" cy="84" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
+                        <text class="star-label" x="35" y="80" data-label="Saiph"></text>
+                    </g>
+                    <g class="star-group">
+                        <circle class="star" cx="42" cy="56" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                        <text class="star-label" x="42" y="52" data-label="Alnitak"></text>
+                    </g>
+                    <circle class="star" cx="49" cy="55" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                    <circle class="star" cx="55" cy="54" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
+                    <circle class="star" cx="47" cy="25" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="25" cy="28" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="20" cy="22" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="18" cy="16" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="22" cy="9" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="28" cy="8" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="75" cy="28" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="80" cy="34" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="82" cy="40" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="81" cy="48" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="79" cy="54" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="75" cy="58" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <!-- Sword stars -->
+                    <circle class="star" cx="44" cy="63" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="42" cy="68" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="40" cy="74" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                </g>
+            </svg>
+        </aside>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="section-container">
-            <div class="about-content">
-                <span class="section-label">Who We Are</span>
-                <h2 class="section-title">Built to Teach</h2>
-                <div class="about-body">
-                    <div class="about-text">
-                        <p>
-                            Learning Voyage was built around a simple idea: AI should make your team
-                            stronger, not more dependent. When it's done right, it fits naturally into
-                            the way you already work -- and your people feel confident using it.
-                        </p>
-                        <p>
-                            We focus on finding the AI solutions that genuinely match your business,
-                            building them to be practical and maintainable, and making sure the knowledge
-                            grows with your team.
-                        </p>
-                        <p>
-                            The best technology is the kind your team actually uses. That's what we help you build.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Constellation Transition: Ursa Major -->
-    <aside class="constellation-transition" aria-hidden="true" data-constellation="ursa">
-        <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-            <g class="constellation-group" id="ursa-group">
-                <!-- Lines -->
-                <line class="constellation-line" x1="8" y1="30" x2="16" y2="38" />
-                <line class="constellation-line" x1="16" y1="38" x2="25" y2="40" />
-                <line class="constellation-line" x1="25" y1="40" x2="35" y2="38" />
-                <line class="constellation-line" x1="35" y1="38" x2="50" y2="32" />
-                <line class="constellation-line" x1="50" y1="32" x2="52" y2="45" />
-                <line class="constellation-line" x1="52" y1="45" x2="38" y2="48" />
-                <line class="constellation-line" x1="38" y1="48" x2="35" y2="38" />
-                <line class="constellation-line" x1="50" y1="32" x2="65" y2="30" />
-                <line class="constellation-line" x1="65" y1="30" x2="80" y2="34" />
-                <line class="constellation-line" x1="52" y1="45" x2="62" y2="55" />
-                <line class="constellation-line" x1="62" y1="55" x2="70" y2="65" />
-                <line class="constellation-line" x1="70" y1="65" x2="72" y2="67" />
-                <line class="constellation-line" x1="38" y1="48" x2="42" y2="58" />
-                <line class="constellation-line" x1="42" y1="58" x2="50" y2="60" />
-                <line class="constellation-line" x1="50" y1="60" x2="58" y2="70" />
-                <line class="constellation-line" x1="42" y1="58" x2="38" y2="75" />
-                <line class="constellation-line" x1="38" y1="75" x2="42" y2="82" />
-                <!-- Stars -->
-                <g class="star-group">
-                    <circle class="star" cx="8" cy="30" r="1.1" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="8" y="26" data-label="Alkaid"></text>
-                </g>
-                <g class="star-group">
-                    <circle class="star" cx="16" cy="38" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="16" y="34" data-label="Mizar"></text>
-                </g>
-                <circle class="star" cx="25" cy="40" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="35" cy="38" r="0.8" fill="#f8fafc" filter="url(#glow-soft)" />
-                <g class="star-group">
-                    <circle class="star" cx="38" cy="48" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="38" y="44" data-label="Phecda"></text>
-                </g>
-                <g class="star-group">
-                    <circle class="star" cx="52" cy="45" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="52" y="41" data-label="Merak"></text>
-                </g>
-                <g class="star-group">
-                    <circle class="star" cx="50" cy="32" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
-                    <text class="star-label" x="50" y="28" data-label="Dubhe"></text>
-                </g>
-                <circle class="star" cx="65" cy="30" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                <g class="star-group">
-                    <circle class="star" cx="80" cy="34" r="0.7" fill="#fbbf24" filter="url(#glow-gold)" />
-                    <text class="star-label" x="80" y="30" data-label="Muscida"></text>
-                </g>
-                <circle class="star" cx="62" cy="55" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                <g class="star-group">
-                    <circle class="star" cx="70" cy="65" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="70" y="61" data-label="Talitha"></text>
-                </g>
-                <circle class="star" cx="72" cy="67" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="50" cy="60" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                <g class="star-group">
-                    <circle class="star" cx="58" cy="70" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="58" y="66" data-label="Tania"></text>
-                </g>
-                <circle class="star" cx="42" cy="58" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="38" cy="75" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                <g class="star-group">
-                    <circle class="star" cx="42" cy="82" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="42" y="86" data-label="Alula"></text>
-                </g>
-            </g>
-        </svg>
-    </aside>
-
-    <!-- Process Section -->
-    <section id="process" class="approach">
-        <div class="section-container">
-            <div class="approach-content">
-                <div class="approach-text">
-                    <span class="section-label">How We Work</span>
-                    <h2 class="section-title">No Black Boxes. No Mystery Deliverables.</h2>
-                    <p class="approach-description">
-                        Every engagement follows a proven path. We start by understanding your business,
-                        build something practical, and make sure your team can run it without us.
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">What We Do</span>
+                    <h2 class="section-title">AI That Works for You</h2>
+                    <p class="section-description">
+                        Great AI starts with understanding your business. We find the right opportunities,
+                        build practical solutions, and empower your team to grow with them.
                     </p>
-
-                    <div class="principles">
-                        <div class="principle">
-                            <div class="principle-marker"></div>
-                            <div class="principle-content">
-                                <h4>1. Assess</h4>
-                                <p>We start by understanding your business, not selling a solution. Through an
-                                    AI Readiness Assessment, we identify real opportunities, flag risks, and build
-                                    a roadmap tailored to your specific context -- not a generic template.</p>
-                            </div>
-                        </div>
-                        <div class="principle">
-                            <div class="principle-marker"></div>
-                            <div class="principle-content">
-                                <h4>2. Implement</h4>
-                                <p>We build practical AI workflows using the right tools for the job -- not the
-                                    trendiest ones. Every solution comes with documentation and is designed for
-                                    your team to own and maintain from day one.</p>
-                            </div>
-                        </div>
-                        <div class="principle">
-                            <div class="principle-marker"></div>
-                            <div class="principle-content">
-                                <h4>3. Train</h4>
-                                <p>We don't hand off and disappear. We train your team through hands-on workshops,
-                                    build their confidence with the new tools, and make sure they can evolve the
-                                    system independently. This is where 15 years of education experience matters most.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Constellation Transition: Aquarius -->
-    <aside class="constellation-transition" aria-hidden="true" data-constellation="aquarius">
-        <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-            <g class="constellation-group" id="aquarius-group">
-                <!-- Lines -->
-                <line class="constellation-line" x1="62" y1="30" x2="45" y2="25" />
-                <line class="constellation-line" x1="45" y1="25" x2="52" y2="40" />
-                <line class="constellation-line" x1="62" y1="30" x2="80" y2="40" />
-                <line class="constellation-line" x1="45" y1="25" x2="38" y2="22" />
-                <line class="constellation-line" x1="38" y1="22" x2="36" y2="15" />
-                <line class="constellation-line" x1="38" y1="22" x2="34" y2="20" />
-                <line class="constellation-line" x1="38" y1="22" x2="32" y2="28" />
-                <line class="constellation-line" x1="32" y1="28" x2="22" y2="45" />
-                <line class="constellation-line" x1="22" y1="45" x2="15" y2="52" />
-                <line class="constellation-line" x1="15" y1="52" x2="18" y2="60" />
-                <line class="constellation-line" x1="18" y1="60" x2="20" y2="65" />
-                <line class="constellation-line" x1="20" y1="65" x2="28" y2="68" />
-                <line class="constellation-line" x1="28" y1="68" x2="25" y2="75" />
-                <!-- Stars -->
-                <g class="star-group">
-                    <circle class="star" cx="45" cy="25" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
-                    <text class="star-label" x="45" y="21" data-label="Sadalmelik"></text>
-                </g>
-                <g class="star-group">
-                    <circle class="star" cx="62" cy="30" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
-                    <text class="star-label" x="62" y="26" data-label="Sadalsuud"></text>
-                </g>
-                <g class="star-group">
-                    <circle class="star" cx="38" cy="22" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
-                </g>
-                <circle class="star" cx="34" cy="20" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="36" cy="15" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                <g class="star-group">
-                    <circle class="star" cx="32" cy="28" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="32" y="32" data-label="Gamma"></text>
-                </g>
-                <g class="star-group">
-                    <circle class="star" cx="80" cy="40" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <text class="star-label" x="80" y="36" data-label="Albali"></text>
-                </g>
-                <circle class="star" cx="52" cy="40" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="22" cy="45" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="15" cy="52" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="18" cy="60" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                <circle class="star" cx="20" cy="65" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                <g class="star-group">
-                    <circle class="star" cx="25" cy="75" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
-                    <text class="star-label" x="25" y="79" data-label="Skat"></text>
-                </g>
-                <circle class="star" cx="28" cy="68" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-            </g>
-        </svg>
-    </aside>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="section-container">
-            <div class="contact-content">
-                <span class="section-label">Let's Connect</span>
-                <h2 class="section-title">Ready to Chart Your Course?</h2>
-                <p class="contact-description">
-                    Whether you're exploring AI possibilities or ready to dive into implementation,
-                    let's talk about what makes sense for your business.
-                </p>
-                <div class="contact-methods">
-                    <a href="mailto:ahoythere@learning.voyage" class="contact-card">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                <path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
                             </svg>
                         </div>
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value">ahoythere@learning.voyage</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer" class="contact-card">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" />
+                        <h3 class="service-title">AI Strategy & Assessment</h3>
+                        <p class="service-description">
+                            An honest look at where AI fits in your business -- and where it doesn't. No hype,
+                            no sales pitch. Just a clear-eyed roadmap built on real understanding of what
+                            these systems can and can't do.
+                        </p>
+                        <ul class="service-features">
+                            <li>Readiness assessments</li>
+                            <li>Opportunity mapping</li>
+                            <li>Vendor evaluation</li>
+                            <li>ROI analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                <path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                             </svg>
                         </div>
-                        <span class="contact-label">LinkedIn</span>
-                        <span class="contact-value">Connect on LinkedIn</span>
-                    </a>
+                        <h3 class="service-title">Data Quality & Curation</h3>
+                        <p class="service-description">
+                            Your AI is only as good as what you feed it. We design quality frameworks,
+                            build annotation pipelines, and validate datasets -- drawing on hands-on experience
+                            evaluating training data for frontier AI models.
+                        </p>
+                        <ul class="service-features">
+                            <li>Quality frameworks</li>
+                            <li>Annotation pipelines</li>
+                            <li>Dataset validation</li>
+                            <li>Training data audit</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Training & Adoption</h3>
+                        <p class="service-description">
+                            Technology doesn't transform businesses. People do. With 15 years of experience
+                            building technical education programs, we train your team to confidently
+                            own and evolve their AI capabilities.
+                        </p>
+                        <ul class="service-features">
+                            <li>Team workshops</li>
+                            <li>Change management</li>
+                            <li>Hands-on training</li>
+                            <li>Ongoing support</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Trusted By Section -->
+        <section class="trusted-by">
+            <div class="section-container">
+                <span class="trusted-label">Trusted By</span>
+                <div class="trusted-logos">
+                    <div class="trusted-logo">
+                        <img src="/docs/assets/images/LabelboxLogo.svg" alt="Labelbox" width="177" height="40" loading="lazy">
+                    </div>
+                    <div class="trusted-logo">
+                        <img src="/docs/assets/images/ScaleLogo.svg" alt="Scale AI" width="93" height="40" loading="lazy">
+                    </div>
+                    <div class="trusted-logo">
+                        <img src="/docs/assets/images/AlignerrLogo.svg" alt="Alignerr" width="173" height="40" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-container">
+                <div class="about-content">
+                    <span class="section-label">Who We Are</span>
+                    <h2 class="section-title">Built to Teach</h2>
+                    <div class="about-body">
+                        <div class="about-text">
+                            <p>
+                                Learning Voyage was built around a simple idea: AI should make your team
+                                stronger, not more dependent. When it's done right, it fits naturally into
+                                the way you already work -- and your people feel confident using it.
+                            </p>
+                            <p>
+                                We focus on finding the AI solutions that genuinely match your business,
+                                building them to be practical and maintainable, and making sure the knowledge
+                                grows with your team.
+                            </p>
+                            <p>
+                                The best technology is the kind your team actually uses. That's what we help you build.
+                            </p>
+                        </div>
+                        <div class="founder-card">
+                            <span class="founder-eyebrow">your navigator</span>
+                            <h3 class="founder-name">Owen Onderdonk</h3>
+                            <p class="founder-role">Physicist turned educator turned AI evaluation specialist.</p>
+                            <ul class="founder-credentials">
+                                <li>Subject-matter expert at Labelbox, managing 100+ person AI data programs</li>
+                                <li>Hands-on evaluation of training data for frontier AI models</li>
+                                <li>15 years designing STEM and technical education programs</li>
+                                <li>Physics background with an M.S. in Education</li>
+                            </ul>
+                            <a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer"
+                                class="founder-link">Connect on LinkedIn →</a>
+                        </div>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat">
+                            <span class="stat-value">15 yrs</span>
+                            <span class="stat-label">building STEM &amp; technical education programs</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">100+</span>
+                            <span class="stat-label">person AI data programs managed at Labelbox</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">Frontier</span>
+                            <span class="stat-label">AI models -- training data evaluated hands-on</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Constellation Transition: Ursa Major -->
+        <aside class="constellation-transition" aria-hidden="true" data-constellation="ursa">
+            <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                <g class="constellation-group" id="ursa-group">
+                    <!-- Lines -->
+                    <line class="constellation-line" x1="8" y1="30" x2="16" y2="38" />
+                    <line class="constellation-line" x1="16" y1="38" x2="25" y2="40" />
+                    <line class="constellation-line" x1="25" y1="40" x2="35" y2="38" />
+                    <line class="constellation-line" x1="35" y1="38" x2="50" y2="32" />
+                    <line class="constellation-line" x1="50" y1="32" x2="52" y2="45" />
+                    <line class="constellation-line" x1="52" y1="45" x2="38" y2="48" />
+                    <line class="constellation-line" x1="38" y1="48" x2="35" y2="38" />
+                    <line class="constellation-line" x1="50" y1="32" x2="65" y2="30" />
+                    <line class="constellation-line" x1="65" y1="30" x2="80" y2="34" />
+                    <line class="constellation-line" x1="52" y1="45" x2="62" y2="55" />
+                    <line class="constellation-line" x1="62" y1="55" x2="70" y2="65" />
+                    <line class="constellation-line" x1="70" y1="65" x2="72" y2="67" />
+                    <line class="constellation-line" x1="38" y1="48" x2="42" y2="58" />
+                    <line class="constellation-line" x1="42" y1="58" x2="50" y2="60" />
+                    <line class="constellation-line" x1="50" y1="60" x2="58" y2="70" />
+                    <line class="constellation-line" x1="42" y1="58" x2="38" y2="75" />
+                    <line class="constellation-line" x1="38" y1="75" x2="42" y2="82" />
+                    <!-- Stars -->
+                    <g class="star-group">
+                        <circle class="star" cx="8" cy="30" r="1.1" fill="#aaccff" filter="url(#glow-blue)" />
+                        <text class="star-label" x="8" y="26" data-label="Alkaid"></text>
+                    </g>
+                    <g class="star-group">
+                        <circle class="star" cx="16" cy="38" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                        <text class="star-label" x="16" y="34" data-label="Mizar"></text>
+                    </g>
+                    <circle class="star" cx="25" cy="40" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="35" cy="38" r="0.8" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <g class="star-group">
+                        <circle class="star" cx="38" cy="48" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                        <text class="star-label" x="38" y="44" data-label="Phecda"></text>
+                    </g>
+                    <g class="star-group">
+                        <circle class="star" cx="52" cy="45" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                        <text class="star-label" x="52" y="41" data-label="Merak"></text>
+                    </g>
+                    <g class="star-group">
+                        <circle class="star" cx="50" cy="32" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
+                        <text class="star-label" x="50" y="28" data-label="Dubhe"></text>
+                    </g>
+                    <circle class="star" cx="65" cy="30" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <g class="star-group">
+                        <circle class="star" cx="80" cy="34" r="0.7" fill="#fbbf24" filter="url(#glow-gold)" />
+                        <text class="star-label" x="80" y="30" data-label="Muscida"></text>
+                    </g>
+                    <circle class="star" cx="62" cy="55" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <g class="star-group">
+                        <circle class="star" cx="70" cy="65" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                        <text class="star-label" x="70" y="61" data-label="Talitha"></text>
+                    </g>
+                    <circle class="star" cx="72" cy="67" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="50" cy="60" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <g class="star-group">
+                        <circle class="star" cx="58" cy="70" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
+                        <text class="star-label" x="58" y="66" data-label="Tania"></text>
+                    </g>
+                    <circle class="star" cx="42" cy="58" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="38" cy="75" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <g class="star-group">
+                        <circle class="star" cx="42" cy="82" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                        <text class="star-label" x="42" y="86" data-label="Alula"></text>
+                    </g>
+                </g>
+            </svg>
+        </aside>
+
+        <!-- Process Section -->
+        <section id="process" class="approach">
+            <div class="section-container">
+                <div class="approach-content">
+                    <div class="approach-text">
+                        <span class="section-label">How We Work</span>
+                        <h2 class="section-title">No Black Boxes. No Mystery Deliverables.</h2>
+                        <p class="approach-description">
+                            Every engagement follows a proven path. We start by understanding your business,
+                            build something practical, and make sure your team can run it without us.
+                        </p>
+
+                        <!-- Course line: drawn on scroll, one waypoint per step -->
+                        <svg class="route" viewBox="0 0 1200 90" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                            <path class="route-path-base" d="M 40,62 Q 120,24 200,44 T 600,50 T 1000,42 T 1160,58" />
+                            <path class="route-path-progress" pathLength="1" d="M 40,62 Q 120,24 200,44 T 600,50 T 1000,42 T 1160,58" />
+                            <circle class="route-waypoint" cx="200" cy="44" r="7" />
+                            <circle class="route-waypoint" cx="600" cy="50" r="7" />
+                            <circle class="route-waypoint" cx="1000" cy="42" r="7" />
+                            <text class="route-star" x="1168" y="64">✦</text>
+                        </svg>
+
+                        <div class="principles">
+                            <div class="principle">
+                                <span class="principle-num" aria-hidden="true">01</span>
+                                <div class="principle-content">
+                                    <h3>Assess</h3>
+                                    <p>We start by understanding your business, not selling a solution. Through an
+                                        AI Readiness Assessment, we identify real opportunities, flag risks, and build
+                                        a roadmap tailored to your specific context -- not a generic template.</p>
+                                </div>
+                            </div>
+                            <div class="principle">
+                                <span class="principle-num" aria-hidden="true">02</span>
+                                <div class="principle-content">
+                                    <h3>Implement</h3>
+                                    <p>We build practical AI workflows using the right tools for the job -- not the
+                                        trendiest ones. Every solution comes with documentation and is designed for
+                                        your team to own and maintain from day one.</p>
+                                </div>
+                            </div>
+                            <div class="principle">
+                                <span class="principle-num" aria-hidden="true">03</span>
+                                <div class="principle-content">
+                                    <h3>Train</h3>
+                                    <p>We don't hand off and disappear. We train your team through hands-on workshops,
+                                        build their confidence with the new tools, and make sure they can evolve the
+                                        system independently. This is where 15 years of education experience matters most.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Constellation Transition: Aquarius -->
+        <aside class="constellation-transition" aria-hidden="true" data-constellation="aquarius">
+            <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                <g class="constellation-group" id="aquarius-group">
+                    <!-- Lines -->
+                    <line class="constellation-line" x1="62" y1="30" x2="45" y2="25" />
+                    <line class="constellation-line" x1="45" y1="25" x2="52" y2="40" />
+                    <line class="constellation-line" x1="62" y1="30" x2="80" y2="40" />
+                    <line class="constellation-line" x1="45" y1="25" x2="38" y2="22" />
+                    <line class="constellation-line" x1="38" y1="22" x2="36" y2="15" />
+                    <line class="constellation-line" x1="38" y1="22" x2="34" y2="20" />
+                    <line class="constellation-line" x1="38" y1="22" x2="32" y2="28" />
+                    <line class="constellation-line" x1="32" y1="28" x2="22" y2="45" />
+                    <line class="constellation-line" x1="22" y1="45" x2="15" y2="52" />
+                    <line class="constellation-line" x1="15" y1="52" x2="18" y2="60" />
+                    <line class="constellation-line" x1="18" y1="60" x2="20" y2="65" />
+                    <line class="constellation-line" x1="20" y1="65" x2="28" y2="68" />
+                    <line class="constellation-line" x1="28" y1="68" x2="25" y2="75" />
+                    <!-- Stars -->
+                    <g class="star-group">
+                        <circle class="star" cx="45" cy="25" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
+                        <text class="star-label" x="45" y="21" data-label="Sadalmelik"></text>
+                    </g>
+                    <g class="star-group">
+                        <circle class="star" cx="62" cy="30" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
+                        <text class="star-label" x="62" y="26" data-label="Sadalsuud"></text>
+                    </g>
+                    <g class="star-group">
+                        <circle class="star" cx="38" cy="22" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
+                    </g>
+                    <circle class="star" cx="34" cy="20" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="36" cy="15" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <g class="star-group">
+                        <circle class="star" cx="32" cy="28" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
+                        <text class="star-label" x="32" y="32" data-label="Gamma"></text>
+                    </g>
+                    <g class="star-group">
+                        <circle class="star" cx="80" cy="40" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                        <text class="star-label" x="80" y="36" data-label="Albali"></text>
+                    </g>
+                    <circle class="star" cx="52" cy="40" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="22" cy="45" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="15" cy="52" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="18" cy="60" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <circle class="star" cx="20" cy="65" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <g class="star-group">
+                        <circle class="star" cx="25" cy="75" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                        <text class="star-label" x="25" y="79" data-label="Skat"></text>
+                    </g>
+                    <circle class="star" cx="28" cy="68" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                </g>
+            </svg>
+        </aside>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-container">
+                <div class="contact-content">
+                    <span class="section-label">Let's Connect</span>
+                    <h2 class="section-title">Ready to Chart Your Course?</h2>
+                    <p class="contact-description">
+                        Whether you're exploring AI possibilities or ready to dive into implementation,
+                        let's talk about what makes sense for your business.
+                    </p>
+                    <div class="contact-methods">
+                        <a href="mailto:ahoythere@learning.voyage" class="contact-card">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">ahoythere@learning.voyage</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" />
+                                </svg>
+                            </div>
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">Connect on LinkedIn</span>
+                        </a>
+                    </div>
+                    <p class="contact-note"><span class="star">✦</span> Replies usually within one business day.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="footer-logo">
+                <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="footer-logo"
+                    width="60" height="60" loading="lazy">
                 <p class="footer-tagline">Charting Your Course. Navigating Together.</p>
             </div>
             <div class="footer-links">
@@ -601,13 +695,28 @@
             resizeTimer = setTimeout(() => document.body.classList.remove('resizing'), 200);
         });
 
-        // Smooth scroll for anchor links
+        // Mobile nav
+        const navEl = document.querySelector('.nav');
+        const navToggle = document.querySelector('.nav-toggle');
+        navToggle.addEventListener('click', () => {
+            const open = navEl.classList.toggle('nav-open');
+            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+
+        // Smooth scroll for anchor links; also closes the mobile menu and moves focus
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                navEl.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                const href = this.getAttribute('href');
+                if (href.length < 2) return;  // bare "#" (logo) is handled by its own onclick
+                const target = document.querySelector(href);
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    target.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
+                    target.setAttribute('tabindex', '-1');
+                    target.focus({ preventScroll: true });
                 }
             });
         });
@@ -626,17 +735,16 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.service-card, .principle, .stat, .contact-card, .about-text').forEach(el => {
+        document.querySelectorAll('.service-card, .principle, .stat, .contact-card, .about-text, .founder-card').forEach(el => {
             observer.observe(el);
         });
 
         // Nav background on scroll
-        const nav = document.querySelector('.nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
+                navEl.classList.add('scrolled');
             } else {
-                nav.classList.remove('scrolled');
+                navEl.classList.remove('scrolled');
             }
         });
 
@@ -645,6 +753,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script>
         // Constellation Animation System — GSAP ScrollTrigger
+        if (window.gsap && window.ScrollTrigger) {
         gsap.registerPlugin(ScrollTrigger);
 
         document.querySelectorAll('.constellation-transition').forEach(constellation => {
@@ -865,6 +974,54 @@
                 }
             });
         });
+
+        // Course line — drawn on scroll through the process section
+        (function () {
+            const route = document.querySelector('.route');
+            if (!route) return;
+            const progressPath = route.querySelector('.route-path-progress');
+            const waypoints = route.querySelectorAll('.route-waypoint');
+            const routeStar = route.querySelector('.route-star');
+            // Path uses pathLength="1"; CSS holds the hidden initial state
+            // Waypoint positions as approximate fractions of total path length
+            const wpFractions = [0.14, 0.5, 0.86];
+            ScrollTrigger.create({
+                trigger: route,
+                start: 'top 92%',
+                end: 'top 40%',
+                onUpdate: (self) => {
+                    const p = self.progress;
+                    progressPath.style.strokeDashoffset = 1 - p;
+                    waypoints.forEach((wp, i) => wp.classList.toggle('reached', p >= wpFractions[i]));
+                    if (routeStar) routeStar.classList.toggle('reached', p >= 0.97);
+                },
+                onLeave: () => {
+                    progressPath.style.strokeDashoffset = 0;
+                    waypoints.forEach(wp => wp.classList.add('reached'));
+                    if (routeStar) routeStar.classList.add('reached');
+                }
+            });
+        })();
+        } else {
+            // GSAP CDN unavailable (blocked/offline): show everything statically
+            document.querySelectorAll('.constellation-transition').forEach(c => {
+                c.classList.add('visible');
+                c.querySelectorAll('.star').forEach(s => s.classList.add('visible'));
+                c.querySelectorAll('.star-label').forEach(l => {
+                    if (l.dataset.label) l.textContent = l.dataset.label;
+                    l.classList.add('visible');
+                });
+                const nb = c.querySelector('.nebula');
+                if (nb) nb.classList.add('visible');
+            });
+            const route = document.querySelector('.route');
+            if (route) {
+                route.querySelector('.route-path-progress').style.strokeDashoffset = 0;
+                route.querySelectorAll('.route-waypoint').forEach(w => w.classList.add('reached'));
+                const star = route.querySelector('.route-star');
+                if (star) star.classList.add('reached');
+            }
+        }
     </script>
 
     <!-- WebMCP: AI Agent Tool Registration -->
