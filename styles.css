@@ -1465,3 +1465,159 @@ button:focus-visible {
     background: rgba(79, 198, 215, 0.3);
     color: var(--text-primary);
 }
+
+/* --------------------------------------------------------------------------
+   Additions for the research-facing repositioning (append-only).
+   Nothing above this block is modified.
+   -------------------------------------------------------------------------- */
+
+/* Section header action row (AutoQA spotlight buttons) */
+.section-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+}
+
+/* Experience context strip (replaces the Trusted By strip) */
+.experience-context {
+    position: relative;
+    z-index: 1;
+    background: rgba(79, 198, 215, 0.03);
+    border-top: 1px solid rgba(79, 198, 215, 0.06);
+    border-bottom: 1px solid rgba(79, 198, 215, 0.06);
+}
+
+.experience-context .section-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm) var(--space-lg);
+    text-align: center;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+}
+
+.experience-context .trusted-label {
+    margin-bottom: 0;
+}
+
+.context-copy {
+    margin: 0;
+    font-size: clamp(0.95rem, 1.1vw, 1.35rem);
+    color: var(--text-primary);
+}
+
+.context-link {
+    font-size: clamp(0.8rem, 0.95vw, 1.05rem);
+    color: var(--primary-light);
+    text-underline-offset: 4px;
+}
+
+/* Sub-heading between principle groups in the work/questions sections */
+.work-list-heading {
+    margin: var(--space-xl) 0 var(--space-lg);
+    font-size: clamp(1.3rem, 2.2vw, 2.2rem);
+    color: var(--text-primary);
+    text-align: center;
+}
+
+/* Separate the questions section from the work section above it */
+.questions-section {
+    border-top: 1px solid rgba(79, 198, 215, 0.06);
+}
+
+/* Allow four contact cards to wrap cleanly */
+.contact-methods {
+    flex-wrap: wrap;
+}
+
+/* Footer relationship-context disclosure */
+.footer-disclosure {
+    width: 100%;
+    max-width: 860px;
+    margin: var(--space-lg) auto 0;
+    text-align: center;
+}
+
+.footer-disclosure p {
+    font-size: clamp(0.75rem, 0.9vw, 1rem);
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* Case study page */
+.case-hero {
+    padding-top: clamp(140px, 20vh, 200px);
+}
+
+.case-facts {
+    display: grid;
+    gap: 0;
+    max-width: 860px;
+    margin: var(--space-lg) auto 0;
+    text-align: left;
+}
+
+.case-facts div {
+    display: grid;
+    grid-template-columns: minmax(120px, 200px) 1fr;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid rgba(79, 198, 215, 0.08);
+}
+
+.case-facts div:last-child {
+    border-bottom: 0;
+}
+
+.case-facts span {
+    font-size: clamp(0.7rem, 0.85vw, 0.95rem);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.case-facts strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.case-prose {
+    max-width: 75ch;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.case-prose p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.2em;
+}
+
+.case-citation {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid rgba(79, 198, 215, 0.12);
+    border-radius: var(--radius-lg);
+    text-align: left;
+}
+
+.case-citation blockquote {
+    margin: 0 0 var(--space-sm);
+    padding-left: var(--space-md);
+    border-left: 2px solid var(--primary);
+    color: var(--text-primary);
+}
+
+/* Reduced-motion: also complete the JS-split label characters */
+@media (prefers-reduced-motion: reduce) {
+    .star-label tspan {
+        opacity: 1 !important;
+    }
+}

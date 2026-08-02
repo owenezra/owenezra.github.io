@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoQA Foundation | Owen Onderdonk</title>
+    <meta name="description"
+        content="A public framework by Owen Onderdonk for defining capability and authority boundaries in LLM-based quality review, with evidence, pilot, and decision tools.">
+    <meta name="theme-color" content="#0a0f14">
+    <link rel="canonical" href="https://learning.voyage/work/autoqa-foundation.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="/docs/assets/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/docs/assets/images/favicon-192.png">
+    <link rel="apple-touch-icon" href="/docs/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://learning.voyage/work/autoqa-foundation.html">
+    <meta property="og:site_name" content="Learning Voyage">
+    <meta property="og:title" content="AutoQA Foundation | Capability and Authority Boundaries">
+    <meta property="og:description"
+        content="A public decision and technical framework for legitimate LLM-based quality review.">
+    <meta property="og:image" content="https://learning.voyage/docs/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Learning Voyage — ship logo on a night sea beneath the stars">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AutoQA Foundation | Owen Onderdonk">
+    <meta name="twitter:description"
+        content="Capability and authority boundaries for LLM-based quality review.">
+    <meta name="twitter:image" content="https://learning.voyage/docs/assets/images/og-image.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Lexend:wght@300;400;500;600&family=Fraunces:ital,wght@1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "AutoQA Foundation: Capability and Authority Boundaries for LLM-Based Quality Review",
+        "description": "A public decision and technical framework defining where LLM-assisted quality review is legitimate and what must be measured before automated findings receive authority.",
+        "url": "https://learning.voyage/work/autoqa-foundation.html",
+        "sameAs": "https://autoqa-foundation.vercel.app/",
+        "version": "0.1.0",
+        "dateModified": "2026-08-02",
+        "author": {
+            "@type": "Person",
+            "name": "Owen Onderdonk",
+            "url": "https://learning.voyage/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Learning Voyage LLC",
+            "url": "https://learning.voyage/"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Animated background -->
+    <div class="bg-grid"></div>
+
+    <!-- Twinkling stars -->
+    <div class="starfield" id="starfield"></div>
+
+    <!-- Navigation -->
+    <nav class="nav scrolled" aria-label="Main">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="" class="nav-logo-img"
+                    width="40" height="40">
+                <span class="nav-wordmark">Learning Voyage</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="/#public-work">Public work</a>
+                <a href="/#work">Work</a>
+                <a href="/#questions">Questions</a>
+                <a href="/#about">About</a>
+                <a href="https://autoqa-foundation.vercel.app/" target="_blank" rel="noopener noreferrer" class="nav-cta">Open project ↗</a>
+            </div>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Case Hero -->
+        <section class="services case-hero">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">Public Research &amp; Operating Framework · Version 0.1.0</span>
+                    <h1 class="section-title">AutoQA Foundation</h1>
+                    <p class="section-description">
+                        Capability and authority boundaries for LLM-based quality review. An automated evaluator
+                        can be useful without being entitled to decide — this project separates those questions
+                        and turns the boundary into a system that can be inspected, measured, and governed.
+                    </p>
+                    <div class="section-actions">
+                        <a href="https://autoqa-foundation.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open the project ↗</a>
+                        <a href="https://autoqa-foundation.vercel.app/limits" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Read the capability limits ↗</a>
+                    </div>
+                    <div class="case-facts">
+                        <div><span>Creator</span><strong>Owen Onderdonk</strong></div>
+                        <div><span>Published through</span><strong>Learning Voyage LLC</strong></div>
+                        <div><span>Status</span><strong>Public working framework</strong></div>
+                        <div><span>Updated</span><strong>August 2, 2026</strong></div>
+                        <div><span>Audience</span><strong>Research, quality, operations, governance</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Problem -->
+        <section class="about">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">The Problem</span>
+                    <h2 class="section-title">A plausible verdict is not the same as a supportable decision.</h2>
+                </div>
+                <div class="case-prose">
+                    <p>Organizations increasingly use language models to inspect human review work, code, long
+                        records, and other model outputs. The useful operating region is real: local evidence
+                        checks, deterministic consistency tests, provenance, evidence assembly, and reasoned
+                        abstention can improve review.</p>
+                    <p>The failure begins when a system is treated as though more context, votes, or model
+                        capability can recover facts absent from the record, resolve instructions that do not
+                        decide the case, or justify consequences without measured error bounds.</p>
+                    <p>AutoQA Foundation was created to state those limits precisely and connect them to
+                        deployment rules rather than leave them as general cautions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Contribution -->
+        <section class="approach">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">Core Contribution</span>
+                    <h2 class="section-title">The record sets the ceiling.</h2>
+                    <p class="section-description">
+                        If identical observable records can require different correct decisions, no evaluator that
+                        sees only those records can be correct in both cases. Better processing cannot manufacture
+                        missing facts or make an ambiguous rule decide itself.
+                    </p>
+                </div>
+                <div class="principles">
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">01</span>
+                        <div class="principle-content">
+                            <h3>Four honest outcomes</h3>
+                            <p>Supported, contradicted, insufficient, and contract-ambiguous remain separate.
+                                A binary pass/fail system does not escape uncertainty; it hides it.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">02</span>
+                        <div class="principle-content">
+                            <h3>Three kinds of boundary</h3>
+                            <p>Permanent task limits, generation-relative capability measurements, and
+                                authorization limits are treated separately so model improvement is not confused
+                                with permission to act.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">03</span>
+                        <div class="principle-content">
+                            <h3>Risk at a stated coverage</h3>
+                            <p>Authority depends on lane-level calibration, untouched adjudicated data, abstention
+                                behavior, and a measured false-accusation bound — not one aggregate accuracy number.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">04</span>
+                        <div class="principle-content">
+                            <h3>Human-owned consequences</h3>
+                            <p>Evidence can be assembled automatically; consequential interpretation remains
+                                contestable and assigned to a named human owner until the exact lane earns
+                                limited authority.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The System -->
+        <section class="approach questions-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">The System</span>
+                    <h2 class="section-title">A decision package, not a single essay.</h2>
+                </div>
+                <div class="principles">
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">01</span>
+                        <div class="principle-content">
+                            <h3>Decision brief</h3>
+                            <p>A leadership-facing case for adopting defined limits of use before granting
+                                additional authority.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">02</span>
+                        <div class="principle-content">
+                            <h3>Capability limits</h3>
+                            <p>A master identifiability limit, eight derived limits, violation signatures,
+                                objections, and a worked 500,000-token review example.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">03</span>
+                        <div class="principle-content">
+                            <h3>Technical guide</h3>
+                            <p>Task-oriented guidance for evaluating a judge, designing a bounded pilot, adopting
+                                individual components, and running the reference implementation.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">04</span>
+                        <div class="principle-content">
+                            <h3>Evidence ledger &amp; library</h3>
+                            <p>Source-level claim records, retrieved support, caveats, schemas, templates,
+                                rendered documents, and the broader research archive.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">05</span>
+                        <div class="principle-content">
+                            <h3>Pilot &amp; decision controls</h3>
+                            <p>A shadow-mode measurement protocol, stop conditions, role ownership, and a local
+                                generator for a decision note that does not silently expand authority.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why It Matters -->
+        <section class="approach questions-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">Why It Matters</span>
+                    <h2 class="section-title">One framework, three kinds of user.</h2>
+                </div>
+                <div class="principles">
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">01</span>
+                        <div class="principle-content">
+                            <h3>Research &amp; evaluation teams</h3>
+                            <p>Separates claims the record can decide from claims that require retrieval
+                                measurement, structured evidence assembly, interpretation ownership, or abstention.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">02</span>
+                        <div class="principle-content">
+                            <h3>Operations &amp; quality leaders</h3>
+                            <p>Provides concrete release conditions, audit requirements, escalation paths, and
+                                stop decisions rather than a vague promise of model-assisted QA.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num" aria-hidden="true">03</span>
+                        <div class="principle-content">
+                            <h3>Executives &amp; governance owners</h3>
+                            <p>Distinguishes capability from authority, making it possible to approve useful
+                                assistance without accidentally authorizing automated adverse action.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Status & Limitations -->
+        <section class="about">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">Status &amp; Limitations</span>
+                    <h2 class="section-title">What this project does not claim.</h2>
+                </div>
+                <div class="case-prose">
+                    <p>AutoQA Foundation is an independent public research and decision-support project. It is
+                        not a certification body, a peer-reviewed standard, or evidence that any particular
+                        automated QA system is accurate.</p>
+                    <p>The synthetic reference implementation demonstrates mechanics rather than real-world
+                        accuracy. Any production authority still requires instrument-specific, lane-level
+                        measurement on untouched adjudicated data and must be recalibrated after material
+                        configuration changes.</p>
+                    <p>The project is intentionally de-branded so the operating boundary can be evaluated
+                        independently of any employer, vendor, or proposed deployment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Citation -->
+        <section class="about">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">Attribution</span>
+                    <h2 class="section-title">Suggested project citation</h2>
+                </div>
+                <div class="case-citation">
+                    <blockquote>Onderdonk, Owen. <cite>AutoQA Foundation: Capability and Authority Boundaries
+                            for LLM-Based Quality Review.</cite> Version 0.1.0, 2026.</blockquote>
+                    <p>Created by Owen Onderdonk through Learning Voyage LLC. The public project remains available
+                        at <a href="https://autoqa-foundation.vercel.app/" target="_blank" rel="noopener noreferrer">autoqa-foundation.vercel.app</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect -->
+        <section id="contact" class="contact">
+            <div class="section-container">
+                <div class="contact-content">
+                    <span class="section-label">Discuss the Boundary</span>
+                    <h2 class="section-title">Working on model-assisted evaluation, human review, or automated QA?</h2>
+                    <p class="contact-description">
+                        I am interested in research, operating, and governance problems where the distinction
+                        between evidence, judgment, and authority matters.
+                    </p>
+                    <div class="contact-methods">
+                        <a href="mailto:ahoythere@learning.voyage?subject=AutoQA%20Foundation" class="contact-card">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">ahoythere@learning.voyage</span>
+                        </a>
+                        <a href="/" class="contact-card">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                    <path d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                </svg>
+                            </div>
+                            <span class="contact-label">Return</span>
+                            <span class="contact-value">Back to Learning Voyage</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="footer-logo"
+                    width="60" height="60" loading="lazy">
+                <p class="footer-tagline">Charting Your Course. Navigating Together.</p>
+            </div>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/#work">Work</a>
+                <a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/owenezra" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+            <div class="footer-disclosure">
+                <p><strong>Project status:</strong> AutoQA Foundation is an independent working framework created
+                    by Owen Onderdonk through Learning Voyage LLC. It does not certify systems or replace legal,
+                    statistical, security, or domain-expert review.</p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 Learning Voyage LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Generate twinkling stars
+        function createStarfield() {
+            const starfield = document.getElementById('starfield');
+            const numStars = 60;
+
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'twinkle-star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = (Math.random() * 2 + 1) + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 5 + 's';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                starfield.appendChild(star);
+            }
+        }
+        createStarfield();
+
+        // Disable transitions during resize to prevent stutter
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            document.body.classList.add('resizing');
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => document.body.classList.remove('resizing'), 200);
+        });
+
+        // Mobile nav
+        const navEl = document.querySelector('.nav');
+        const navToggle = document.querySelector('.nav-toggle');
+        navToggle.addEventListener('click', () => {
+            const open = navEl.classList.toggle('nav-open');
+            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.principle, .contact-card, .case-facts, .case-citation, .case-prose').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
