@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoQA Foundation | Owen Onderdonk</title>
+  <meta name="description" content="A public framework by Owen Onderdonk for defining capability and authority boundaries in LLM-based quality review, with evidence, pilot, and decision tools.">
+  <meta name="theme-color" content="#07131d">
+  <link rel="canonical" href="https://learning.voyage/work/autoqa-foundation.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="/docs/assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/docs/assets/images/favicon-192.png">
+  <link rel="apple-touch-icon" href="/docs/assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://learning.voyage/work/autoqa-foundation.html">
+  <meta property="og:site_name" content="Learning Voyage">
+  <meta property="og:title" content="AutoQA Foundation | Capability and Authority Boundaries">
+  <meta property="og:description" content="A public decision and technical framework for legitimate LLM-based quality review.">
+  <meta property="og:image" content="https://learning.voyage/assets/autoqa-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AutoQA Foundation — capability, evidence and authority">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AutoQA Foundation | Owen Onderdonk">
+  <meta name="twitter:description" content="Capability and authority boundaries for LLM-based quality review.">
+  <meta name="twitter:image" content="https://learning.voyage/assets/autoqa-og.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "AutoQA Foundation: Capability and Authority Boundaries for LLM-Based Quality Review",
+    "description": "A public decision and technical framework defining where LLM-assisted quality review is legitimate and what must be measured before automated findings receive authority.",
+    "url": "https://learning.voyage/work/autoqa-foundation.html",
+    "sameAs": "https://autoqa-foundation.vercel.app/",
+    "version": "0.1.0",
+    "dateModified": "2026-08-02",
+    "author": {
+      "@type": "Person",
+      "name": "Owen Onderdonk",
+      "url": "https://learning.voyage/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Learning Voyage LLC",
+      "url": "https://learning.voyage/"
+    }
+  }
+  </script>
+</head>
+<body class="case-study-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header is-scrolled">
+    <div class="shell nav-shell">
+      <a class="brand" href="/" aria-label="Learning Voyage — home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+          <path d="M24 7v34M7 24h34" stroke="currentColor" stroke-width="1" opacity=".25"/>
+          <path d="M24 10l5.2 12.8L24 38l-5.2-15.2L24 10Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-copy"><strong>Learning Voyage</strong><span>Owen Onderdonk</span></span>
+      </a>
+      <nav class="site-nav case-nav" aria-label="Case study navigation">
+        <a href="/">Home</a>
+        <a href="/#selected-work">Selected work</a>
+        <a class="nav-contact" href="https://autoqa-foundation.vercel.app/" target="_blank" rel="noopener noreferrer">Open project ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero" aria-labelledby="case-title">
+      <div class="case-grid" aria-hidden="true"></div>
+      <div class="shell case-hero-layout">
+        <div>
+          <p class="eyebrow">PUBLIC RESEARCH &amp; OPERATING FRAMEWORK · VERSION 0.1.0</p>
+          <h1 id="case-title">AutoQA Foundation</h1>
+          <p class="case-deck">Capability and authority boundaries for LLM-based quality review.</p>
+          <p class="case-lede">An automated evaluator can be useful without being entitled to decide. AutoQA Foundation separates those questions and turns the boundary into a system that can be inspected, measured, and governed.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://autoqa-foundation.vercel.app/" target="_blank" rel="noopener noreferrer">Open the project <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://autoqa-foundation.vercel.app/limits" target="_blank" rel="noopener noreferrer">Read the capability limits <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <aside class="case-facts" aria-label="Project facts">
+          <div><span>Creator</span><strong>Owen Onderdonk</strong></div>
+          <div><span>Published through</span><strong>Learning Voyage LLC</strong></div>
+          <div><span>Status</span><strong>Public working framework</strong></div>
+          <div><span>Updated</span><strong>August 2, 2026</strong></div>
+          <div><span>Audience</span><strong>Research, quality, operations, governance</strong></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section case-section" aria-labelledby="problem-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">THE PROBLEM</p>
+          <h2 id="problem-title">A plausible verdict is not the same as a supportable decision.</h2>
+        </div>
+        <div class="case-prose">
+          <p>Organizations increasingly use language models to inspect human review work, code, long records, and other model outputs. The useful operating region is real: local evidence checks, deterministic consistency tests, provenance, evidence assembly, and reasoned abstention can improve review.</p>
+          <p>The failure begins when a system is treated as though more context, votes, or model capability can recover facts absent from the record, resolve instructions that do not decide the case, or justify consequences without measured error bounds.</p>
+          <p>AutoQA Foundation was created to state those limits precisely and connect them to deployment rules rather than leave them as general cautions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section case-core" aria-labelledby="core-title">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow">CORE CONTRIBUTION</p><h2 id="core-title">The record sets the ceiling.</h2></div>
+          <p>If identical observable records can require different correct decisions, no evaluator that sees only those records can be correct in both cases. Better processing cannot manufacture missing facts or make an ambiguous rule decide itself.</p>
+        </div>
+        <div class="case-principle-grid">
+          <article><span>01</span><h3>Four honest outcomes</h3><p>Supported, contradicted, insufficient, and contract-ambiguous remain separate. A binary pass/fail system does not escape uncertainty; it hides it.</p></article>
+          <article><span>02</span><h3>Three kinds of boundary</h3><p>Permanent task limits, generation-relative capability measurements, and authorization limits are treated separately so model improvement is not confused with permission to act.</p></article>
+          <article><span>03</span><h3>Risk at a stated coverage</h3><p>Authority depends on lane-level calibration, untouched adjudicated data, abstention behavior, and a measured false-accusation bound—not one aggregate accuracy number.</p></article>
+          <article><span>04</span><h3>Human-owned consequences</h3><p>Evidence can be assembled automatically; consequential interpretation remains contestable and assigned to a named human owner until the exact lane earns limited authority.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" aria-labelledby="system-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading"><p class="eyebrow">THE SYSTEM</p><h2 id="system-title">A decision package, not a single essay.</h2></div>
+        <div class="artifact-list">
+          <article><h3>Decision brief</h3><p>A leadership-facing case for adopting defined limits of use before granting additional authority.</p></article>
+          <article><h3>Capability limits</h3><p>A master identifiability limit, eight derived limits, violation signatures, objections, and a worked 500,000-token review example.</p></article>
+          <article><h3>Technical guide</h3><p>Task-oriented guidance for evaluating a judge, designing a bounded pilot, adopting individual components, and running the reference implementation.</p></article>
+          <article><h3>Evidence ledger and library</h3><p>Source-level claim records, retrieved support, caveats, schemas, templates, rendered documents, and the broader research archive.</p></article>
+          <article><h3>Pilot and decision controls</h3><p>A shadow-mode measurement protocol, stop conditions, role ownership, and a local generator for a decision note that does not silently expand authority.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" aria-labelledby="value-title">
+      <div class="shell">
+        <div class="section-heading"><p class="eyebrow">WHY IT MATTERS</p><h2 id="value-title">One framework, three kinds of user.</h2></div>
+        <div class="audience-grid">
+          <article><h3>Research and evaluation teams</h3><p>Separates claims the record can decide from claims that require retrieval measurement, structured evidence assembly, interpretation ownership, or abstention.</p></article>
+          <article><h3>Operations and quality leaders</h3><p>Provides concrete release conditions, audit requirements, escalation paths, and stop decisions rather than a vague promise of model-assisted QA.</p></article>
+          <article><h3>Executives and governance owners</h3><p>Distinguishes capability from authority, making it possible to approve useful assistance without accidentally authorizing automated adverse action.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section limitations" aria-labelledby="limits-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading"><p class="eyebrow">STATUS &amp; LIMITATIONS</p><h2 id="limits-title">What this project does not claim.</h2></div>
+        <div class="case-prose">
+          <p>AutoQA Foundation is an independent public research and decision-support project. It is not a certification body, a peer-reviewed standard, or evidence that any particular automated QA system is accurate.</p>
+          <p>The synthetic reference implementation demonstrates mechanics rather than real-world accuracy. Any production authority still requires instrument-specific, lane-level measurement on untouched adjudicated data and must be recalibrated after material configuration changes.</p>
+          <p>The project is intentionally de-branded so the operating boundary can be evaluated independently of any employer, vendor, or proposed deployment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section citation-section" aria-labelledby="citation-title">
+      <div class="shell citation-card">
+        <div><p class="eyebrow">ATTRIBUTION</p><h2 id="citation-title">Suggested project citation</h2></div>
+        <blockquote>Onderdonk, Owen. <cite>AutoQA Foundation: Capability and Authority Boundaries for LLM-Based Quality Review.</cite> Version 0.1.0, 2026.</blockquote>
+        <p>Created by Owen Onderdonk through Learning Voyage LLC. The public project remains available at <a class="inline-link" href="https://autoqa-foundation.vercel.app/" target="_blank" rel="noopener noreferrer">autoqa-foundation.vercel.app</a>.</p>
+      </div>
+    </section>
+
+    <section class="section connect" aria-labelledby="case-connect-title">
+      <div class="shell connect-card">
+        <div><p class="eyebrow">DISCUSS THE BOUNDARY</p><h2 id="case-connect-title">Working on model-assisted evaluation, human review, or automated QA?</h2><p>I am interested in research, operating, and governance problems where the distinction between evidence, judgment, and authority matters.</p></div>
+        <div class="connect-actions">
+          <a class="button button-primary" href="mailto:ahoythere@learning.voyage?subject=AutoQA%20Foundation">Email Owen</a>
+          <a class="button button-secondary" href="/">Return to Learning Voyage</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><p class="footer-brand">Learning Voyage LLC</p><p>AI data, evaluation, research operations, and open infrastructure.</p></div>
+      <div class="disclosure"><p><strong>Project status:</strong> AutoQA Foundation is an independent working framework. It does not certify systems or replace legal, statistical, security, or domain-expert review.</p></div>
+      <div class="footer-links"><a href="/">Home</a><a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/owenezra" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+  </footer>
+</body>
+</html>
