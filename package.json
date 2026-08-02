@@ -1,0 +1,9 @@
+{
+  "name": "learning-voyage-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site for learning.voyage — Owen Onderdonk / Learning Voyage LLC",
+  "scripts": {
+    "dev": "node tools/dev-server.js"
+  }
+}
