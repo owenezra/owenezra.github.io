@@ -63,6 +63,8 @@ plus a system Chrome or `playwright install chromium`.
 ## Local preview
 
 ```bash
+npm run dev                    # node tools/dev-server.js (forwards --host/--port)
+# or
 python3 -m http.server 8000
 # http://localhost:8000/  and  /work/autoqa-foundation.html
 ```
