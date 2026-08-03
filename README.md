@@ -74,13 +74,18 @@ python -m unittest discover -s tests -v
 ## Local preview
 
 ```bash
-python -m http.server 8000
+npm run dev
 ```
+
+No dependencies to install — the dev server is a single dependency-free Node
+script that forwards host/port arguments (`npm run dev -- --port 8080`).
 
 Then open:
 
-- `http://localhost:8000/`
-- `http://localhost:8000/work/autoqa-foundation.html`
+- `http://localhost:7100/`
+- `http://localhost:7100/work/autoqa-foundation.html`
+
+Any static server works too (for example `python -m http.server 8000`).
 
 ## Publication checks
 
