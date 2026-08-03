@@ -1,1127 +1,583 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Voyage | AI Strategy, Data Quality & Team Training</title>
-    <meta name="description"
-        content="Learning Voyage - AI strategy, data quality, and team training for businesses that want AI that actually works. Led by a physicist turned educator turned AI evaluation specialist.">
-    <meta name="theme-color" content="#0a0f14">
-    <link rel="canonical" href="https://learning.voyage/">
-    <link rel="icon" type="image/png" sizes="32x32" href="/docs/assets/images/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/docs/assets/images/favicon-192.png">
-    <link rel="apple-touch-icon" href="/docs/assets/images/apple-touch-icon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Owen Onderdonk | AI Data, Evaluation & Research Operations</title>
+  <meta name="description" content="AI data and evaluation systems by Owen Onderdonk, creator of AutoQA Foundation, for research operations, quality systems, data partnerships, and agent environments.">
+  <meta name="theme-color" content="#07131d">
+  <link rel="canonical" href="https://learning.voyage/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" as="image" href="/docs/assets/images/LearningVoyageLogo.svg">
 
-    <!-- Open Graph / Twitter -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://learning.voyage/">
-    <meta property="og:site_name" content="Learning Voyage">
-    <meta property="og:title" content="Learning Voyage | AI Strategy, Data Quality & Team Training">
-    <meta property="og:description"
-        content="AI strategy, data quality, and team training for businesses that want AI that actually works. Led by a physicist turned educator turned AI evaluation specialist.">
-    <meta property="og:image" content="https://learning.voyage/docs/assets/images/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Learning Voyage — ship logo on a night sea beneath the stars">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Learning Voyage | AI Strategy, Data Quality & Team Training">
-    <meta name="twitter:description"
-        content="AI strategy, data quality, and team training for businesses that want AI that actually works.">
-    <meta name="twitter:image" content="https://learning.voyage/docs/assets/images/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://learning.voyage/">
+  <meta property="og:site_name" content="Learning Voyage">
+  <meta property="og:title" content="Owen Onderdonk | AI Data, Evaluation & Research Operations">
+  <meta property="og:description" content="AI data, evaluation, and research operations by Owen Onderdonk. Public work includes AutoQA Foundation.">
+  <meta property="og:image" content="https://learning.voyage/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Owen Onderdonk — AI Data, Evaluation and Research Operations">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Owen Onderdonk | AI Data, Evaluation & Research Operations">
+  <meta name="twitter:description" content="AI data, evaluation, and research operations. Creator of AutoQA Foundation.">
+  <meta name="twitter:image" content="https://learning.voyage/assets/og-image.png">
 
-    <link rel="preload" as="image" href="/docs/assets/images/LearningVoyageLogo.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Lexend:wght@300;400;500;600&family=Fraunces:ital,wght@1,400;1,500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 
-    <!-- AI Agent Discoverability (WebMCP / AEO) -->
-    <meta name="ai:page-type" content="professional-services">
-    <meta name="ai:service-category" content="AI consulting">
-    <meta name="ai:primary-action" content="requestConsultation">
-    <meta name="ai:consultant" content="Owen Onderdonk">
-    <meta name="ai:specialties" content="AI strategy, data quality, team training, workflow automation">
-    <meta name="ai:contact" content="ahoythere@learning.voyage">
-
-    <!-- Structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://learning.voyage/#owen-onderdonk",
+        "name": "Owen Onderdonk",
+        "url": "https://learning.voyage/",
+        "jobTitle": "AI Data & Evaluation Program Lead",
+        "description": "Independent AI data and evaluation program lead working across research data operations, human quality systems, data partnerships, proprietary enterprise data, and agent environments.",
+        "worksFor": {
+          "@id": "https://learning.voyage/#organization"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/owenonderdonk/",
+          "https://github.com/owenezra",
+          "https://autoqa-foundation.vercel.app/"
+        ],
+        "knowsAbout": [
+          "AI training data",
+          "AI evaluation",
+          "Research data operations",
+          "Human data quality",
+          "Data partnerships",
+          "Dataset provenance",
+          "Reinforcement learning environments",
+          "Agent evaluation",
+          "Instructional design",
+          "Technical program management"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://learning.voyage/#organization",
         "name": "Learning Voyage LLC",
         "url": "https://learning.voyage/",
-        "logo": "https://learning.voyage/docs/assets/images/LearningVoyageLogo.svg",
-        "image": "https://learning.voyage/docs/assets/images/og-image.png",
-        "description": "AI strategy, data quality, and team training for businesses that want AI that actually works.",
-        "slogan": "Charting Your Course. Navigating Together.",
         "email": "ahoythere@learning.voyage",
         "founder": {
-            "@type": "Person",
-            "name": "Owen Onderdonk",
-            "sameAs": "https://www.linkedin.com/in/owenonderdonk/"
+          "@id": "https://learning.voyage/#owen-onderdonk"
         },
-        "knowsAbout": [
-            "AI strategy and readiness assessment",
-            "Data quality and curation",
-            "AI team training and adoption",
-            "Workflow automation"
-        ],
-        "sameAs": ["https://www.linkedin.com/in/owenonderdonk/"]
-    }
-    </script>
+        "description": "Owen Onderdonk's independent practice for AI data, evaluation, research operations, and open infrastructure work."
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://learning.voyage/work/autoqa-foundation.html#project",
+        "name": "AutoQA Foundation",
+        "url": "https://learning.voyage/work/autoqa-foundation.html",
+        "sameAs": "https://autoqa-foundation.vercel.app/",
+        "creator": {
+          "@id": "https://learning.voyage/#owen-onderdonk"
+        },
+        "publisher": {
+          "@id": "https://learning.voyage/#organization"
+        },
+        "version": "0.1.0",
+        "dateModified": "2026-07-19",
+        "description": "A public decision and technical framework defining capability and authority boundaries for LLM-based quality review."
+      }
+    ]
+  }
+  </script>
 </head>
-
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- Animated background -->
-    <div class="bg-grid"></div>
+  <div class="starfield" data-starfield aria-hidden="true"></div>
 
-    <!-- Twinkling stars -->
-    <div class="starfield" id="starfield"></div>
+  <header class="site-header" data-header>
+    <div class="shell nav-shell">
+      <a class="brand" href="#top" aria-label="Learning Voyage — home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+          <path d="M24 7v34M7 24h34" stroke="currentColor" stroke-width="1" opacity=".25"/>
+          <path d="M24 10l5.2 12.8L24 38l-5.2-15.2L24 10Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-copy">
+          <strong>Learning Voyage</strong>
+          <span>Owen Onderdonk</span>
+        </span>
+      </a>
 
-    <!-- Navigation -->
-    <nav class="nav" aria-label="Main">
-        <div class="nav-container">
-            <a href="#" class="nav-logo" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })">
-                <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="" class="nav-logo-img"
-                    width="40" height="40">
-                <span class="nav-wordmark">Learning Voyage</span>
-            </a>
-            <div class="nav-links" id="nav-links">
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#process">How We Work</a>
-                <a href="#contact" class="nav-cta">Get in Touch</a>
-            </div>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-            </button>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+        <span class="sr-only">Open navigation</span>
+        <span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary" data-menu>
+        <a href="#public-work">Public work</a>
+        <a href="#work">Work</a>
+        <a href="#questions">Questions</a>
+        <a href="#principles">Principles</a>
+        <a href="#about">About</a>
+        <a class="nav-contact" href="#connect">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+
+      <div class="shell hero-layout signature-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">AI DATA · EVALUATION · RESEARCH OPERATIONS</p>
+          <h1 id="hero-title">AI data and evaluation systems for research, training, and deployment.</h1>
+          <p class="hero-lede">I turn model-development goals and proprietary organizational knowledge into data specifications, evaluation programs, quality systems, and reproducible agent environments.</p>
+          <p class="hero-detail">My public work includes AutoQA Foundation, a decision and technical framework defining what LLM-based quality review can legitimately establish, when it must abstain, and what must be measured before automated findings receive authority.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#public-work">Explore AutoQA Foundation</a>
+            <a class="button button-secondary" href="#selected-work">View selected work</a>
+          </div>
         </div>
-    </nav>
 
-    <main id="main">
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="hero-layout">
-                <div class="hero-content">
-                    <!-- Logo with curved text and water effect -->
-                    <div class="logo-with-text">
-                        <div class="logo-glow"></div>
-                        <div class="logo-wrapper">
-                            <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="hero-logo"
-                                width="600" height="599" fetchpriority="high">
-                        </div>
-
-                        <!-- Curved text with dots -->
-                        <svg class="curved-text-svg" viewBox="0 0 420 420" aria-hidden="true">
-                            <defs>
-                                <path id="bottom-curve" d="M 10,210 A 200,200 0 0,0 410,210" fill="none" />
-                            </defs>
-                            <text class="curved-text-letters">
-                                <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
-                                    <tspan class="letter dot" style="--delay: 0">●</tspan>
-                                    <tspan class="letter dot-space">&#160;&#160;&#160;&#160;&#160;</tspan>
-                                    <tspan class="letter" style="--delay: 2">L</tspan>
-                                    <tspan class="letter" style="--delay: 3">E</tspan>
-                                    <tspan class="letter" style="--delay: 4">A</tspan>
-                                    <tspan class="letter" style="--delay: 5">R</tspan>
-                                    <tspan class="letter" style="--delay: 6">N</tspan>
-                                    <tspan class="letter" style="--delay: 7">I</tspan>
-                                    <tspan class="letter" style="--delay: 8">N</tspan>
-                                    <tspan class="letter" style="--delay: 9">G</tspan>
-                                    <tspan class="letter word-space">&#160;&#160;&#160;&#160;&#160;</tspan>
-                                    <tspan class="letter" style="--delay: 11">V</tspan>
-                                    <tspan class="letter" style="--delay: 12">O</tspan>
-                                    <tspan class="letter" style="--delay: 13">Y</tspan>
-                                    <tspan class="letter" style="--delay: 14">A</tspan>
-                                    <tspan class="letter" style="--delay: 15">G</tspan>
-                                    <tspan class="letter" style="--delay: 16">E</tspan>
-                                    <tspan class="letter dot-space">&#160;&#160;&#160;&#160;&#160;</tspan>
-                                    <tspan class="letter dot-space"> </tspan>
-                                    <tspan class="letter dot" style="--delay: 18">●</tspan>
-                                </textPath>
-                            </text>
-                        </svg>
-                    </div>
-
-                    <h1 class="hero-title">
-                        <span class="title-line">Charting Your Course.</span>
-                        <span class="title-line highlight">Navigating Together.</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        AI Strategy · Data Curation · Team Training
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#services" class="btn btn-primary">Explore Services</a>
-                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                    </div>
-                    <div class="hero-scroll-cue" aria-hidden="true">begin the voyage</div>
-                </div>
+        <div class="voyage-visual" aria-label="Learning Voyage animated emblem">
+          <div class="voyage-emblem" data-voyage-emblem>
+            <div class="voyage-logo-glow" aria-hidden="true"></div>
+            <div class="voyage-water" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="voyage-logo-shell">
+              <img
+                class="voyage-logo"
+                src="/docs/assets/images/LearningVoyageLogo.svg"
+                data-logo-fallback="/assets/logo-fallback.svg"
+                alt="Learning Voyage ship beneath a starry sky"
+                width="600"
+                height="599"
+                fetchpriority="high">
             </div>
-        </header>
-
-        <!-- Constellation Transition: Orion -->
-        <aside class="constellation-transition" aria-hidden="true" data-constellation="orion">
-            <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-                <defs>
-                    <filter id="glow-red" x="-200%" y="-200%" width="500%" height="500%">
-                        <feGaussianBlur stdDeviation="0.9" result="blur" />
-                        <feFlood flood-color="#ff6633" flood-opacity="0.6" result="color" />
-                        <feComposite in="color" in2="blur" operator="in" result="glow" />
-                        <feMerge>
-                            <feMergeNode in="glow" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                    <filter id="glow-blue" x="-200%" y="-200%" width="500%" height="500%">
-                        <feGaussianBlur stdDeviation="0.7" result="blur" />
-                        <feFlood flood-color="#4488ff" flood-opacity="0.6" result="color" />
-                        <feComposite in="color" in2="blur" operator="in" result="glow" />
-                        <feMerge>
-                            <feMergeNode in="glow" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                    <filter id="glow-gold" x="-200%" y="-200%" width="500%" height="500%">
-                        <feGaussianBlur stdDeviation="0.8" result="blur" />
-                        <feFlood flood-color="#fbbf24" flood-opacity="0.6" result="color" />
-                        <feComposite in="color" in2="blur" operator="in" result="glow" />
-                        <feMerge>
-                            <feMergeNode in="glow" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                    <filter id="glow-soft" x="-100%" y="-100%" width="300%" height="300%">
-                        <feGaussianBlur stdDeviation="0.4" />
-                        <feMerge>
-                            <feMergeNode />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                    <radialGradient id="nebula-gradient">
-                        <stop offset="0%" stop-color="#e879f9" stop-opacity="0.6" />
-                        <stop offset="60%" stop-color="#a855f7" stop-opacity="0.2" />
-                        <stop offset="100%" stop-color="#4c1d95" stop-opacity="0" />
-                    </radialGradient>
-                </defs>
-                <!-- Orion constellation group -->
-                <g class="constellation-group" id="orion-group">
-                    <!-- Lines -->
-                    <line class="constellation-line" x1="30" y1="35" x2="42" y2="56" />
-                    <line class="constellation-line" x1="62" y1="37" x2="55" y2="54" />
-                    <line class="constellation-line" x1="42" y1="56" x2="49" y2="55" />
-                    <line class="constellation-line" x1="49" y1="55" x2="55" y2="54" />
-                    <line class="constellation-line" x1="42" y1="56" x2="35" y2="84" />
-                    <line class="constellation-line" x1="55" y1="54" x2="68" y2="82" />
-                    <line class="constellation-line" x1="30" y1="35" x2="47" y2="25" />
-                    <line class="constellation-line" x1="62" y1="37" x2="47" y2="25" />
-                    <line class="constellation-line" x1="30" y1="35" x2="25" y2="28" />
-                    <line class="constellation-line" x1="25" y1="28" x2="20" y2="22" />
-                    <line class="constellation-line" x1="20" y1="22" x2="18" y2="16" />
-                    <line class="constellation-line" x1="18" y1="16" x2="22" y2="9" />
-                    <line class="constellation-line" x1="22" y1="9" x2="28" y2="8" />
-                    <line class="constellation-line" x1="62" y1="37" x2="82" y2="40" />
-                    <line class="constellation-line" x1="82" y1="40" x2="80" y2="34" />
-                    <line class="constellation-line" x1="80" y1="34" x2="75" y2="28" />
-                    <line class="constellation-line" x1="82" y1="40" x2="81" y2="48" />
-                    <line class="constellation-line" x1="81" y1="48" x2="79" y2="54" />
-                    <line class="constellation-line" x1="79" y1="54" x2="75" y2="58" />
-                    <!-- Sword -->
-                    <line class="constellation-line" x1="49" y1="55" x2="44" y2="63" />
-                    <line class="constellation-line" x1="44" y1="63" x2="42" y2="68" />
-                    <line class="constellation-line" x1="42" y1="68" x2="40" y2="74" />
-                    <!-- Nebula M42 -->
-                    <circle class="nebula" cx="43" cy="67" r="3" fill="url(#nebula-gradient)" />
-                    <text class="star-label nebula-label" x="48" y="65" data-label="M42"></text>
-                    <!-- Stars -->
-                    <g class="star-group">
-                        <circle class="star" cx="30" cy="35" r="1.3" fill="#ff8844" filter="url(#glow-red)" />
-                        <text class="star-label" x="30" y="31" data-label="Betelgeuse"></text>
-                    </g>
-                    <g class="star-group">
-                        <circle class="star" cx="62" cy="37" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
-                        <text class="star-label" x="62" y="33" data-label="Bellatrix"></text>
-                    </g>
-                    <g class="star-group">
-                        <circle class="star" cx="68" cy="82" r="1.2" fill="#aaccff" filter="url(#glow-blue)" />
-                        <text class="star-label" x="68" y="78" data-label="Rigel"></text>
-                    </g>
-                    <g class="star-group">
-                        <circle class="star" cx="35" cy="84" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
-                        <text class="star-label" x="35" y="80" data-label="Saiph"></text>
-                    </g>
-                    <g class="star-group">
-                        <circle class="star" cx="42" cy="56" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
-                        <text class="star-label" x="42" y="52" data-label="Alnitak"></text>
-                    </g>
-                    <circle class="star" cx="49" cy="55" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
-                    <circle class="star" cx="55" cy="54" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
-                    <circle class="star" cx="47" cy="25" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="25" cy="28" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="20" cy="22" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="18" cy="16" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="22" cy="9" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="28" cy="8" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="75" cy="28" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="80" cy="34" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="82" cy="40" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="81" cy="48" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="79" cy="54" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="75" cy="58" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <!-- Sword stars -->
-                    <circle class="star" cx="44" cy="63" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="42" cy="68" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="40" cy="74" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
-                </g>
+            <svg class="curved-text-svg" viewBox="0 0 420 420" aria-hidden="true">
+              <defs>
+                <path id="signature-bottom-curve" d="M 10,210 A 200,200 0 0,0 410,210" fill="none"></path>
+              </defs>
+              <text class="curved-text-letters">
+                <textPath href="#signature-bottom-curve" startOffset="50%" text-anchor="middle">
+                  <tspan class="letter dot" style="--delay:0">●</tspan>
+                  <tspan class="letter gap">&#160;&#160;&#160;&#160;</tspan>
+                  <tspan class="letter" style="--delay:2">L</tspan>
+                  <tspan class="letter" style="--delay:3">E</tspan>
+                  <tspan class="letter" style="--delay:4">A</tspan>
+                  <tspan class="letter" style="--delay:5">R</tspan>
+                  <tspan class="letter" style="--delay:6">N</tspan>
+                  <tspan class="letter" style="--delay:7">I</tspan>
+                  <tspan class="letter" style="--delay:8">N</tspan>
+                  <tspan class="letter" style="--delay:9">G</tspan>
+                  <tspan class="letter gap">&#160;&#160;&#160;&#160;</tspan>
+                  <tspan class="letter" style="--delay:11">V</tspan>
+                  <tspan class="letter" style="--delay:12">O</tspan>
+                  <tspan class="letter" style="--delay:13">Y</tspan>
+                  <tspan class="letter" style="--delay:14">A</tspan>
+                  <tspan class="letter" style="--delay:15">G</tspan>
+                  <tspan class="letter" style="--delay:16">E</tspan>
+                  <tspan class="letter gap">&#160;&#160;&#160;&#160;</tspan>
+                  <tspan class="letter dot" style="--delay:18">●</tspan>
+                </textPath>
+              </text>
             </svg>
-        </aside>
-
-        <!-- Services Section -->
-        <section id="services" class="services">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-label">What We Do</span>
-                    <h2 class="section-title">AI That Works for You</h2>
-                    <p class="section-description">
-                        Great AI starts with understanding your business. We find the right opportunities,
-                        build practical solutions, and empower your team to grow with them.
-                    </p>
-                </div>
-
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
-                                <path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-                            </svg>
-                        </div>
-                        <h3 class="service-title">AI Strategy & Assessment</h3>
-                        <p class="service-description">
-                            An honest look at where AI fits in your business -- and where it doesn't. No hype,
-                            no sales pitch. Just a clear-eyed roadmap built on real understanding of what
-                            these systems can and can't do.
-                        </p>
-                        <ul class="service-features">
-                            <li>Readiness assessments</li>
-                            <li>Opportunity mapping</li>
-                            <li>Vendor evaluation</li>
-                            <li>ROI analysis</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
-                                <path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Data Quality & Curation</h3>
-                        <p class="service-description">
-                            Your AI is only as good as what you feed it. We design quality frameworks,
-                            build annotation pipelines, and validate datasets -- drawing on hands-on experience
-                            evaluating training data for frontier AI models.
-                        </p>
-                        <ul class="service-features">
-                            <li>Quality frameworks</li>
-                            <li>Annotation pipelines</li>
-                            <li>Dataset validation</li>
-                            <li>Training data audit</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
-                                <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Training & Adoption</h3>
-                        <p class="service-description">
-                            Technology doesn't transform businesses. People do. With 15 years of experience
-                            building technical education programs, we train your team to confidently
-                            own and evolve their AI capabilities.
-                        </p>
-                        <ul class="service-features">
-                            <li>Team workshops</li>
-                            <li>Change management</li>
-                            <li>Hands-on training</li>
-                            <li>Ongoing support</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Trusted By Section -->
-        <section class="trusted-by">
-            <div class="section-container">
-                <span class="trusted-label">Trusted By</span>
-                <div class="trusted-logos">
-                    <div class="trusted-logo">
-                        <img src="/docs/assets/images/LabelboxLogo.svg" alt="Labelbox" width="177" height="40" loading="lazy">
-                    </div>
-                    <div class="trusted-logo">
-                        <img src="/docs/assets/images/ScaleLogo.svg" alt="Scale AI" width="93" height="40" loading="lazy">
-                    </div>
-                    <div class="trusted-logo">
-                        <img src="/docs/assets/images/AlignerrLogo.svg" alt="Alignerr" width="173" height="40" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="section-container">
-                <div class="about-content">
-                    <span class="section-label">Who We Are</span>
-                    <h2 class="section-title">Built to Teach</h2>
-                    <div class="about-body">
-                        <div class="about-text">
-                            <p>
-                                Learning Voyage was built around a simple idea: AI should make your team
-                                stronger, not more dependent. When it's done right, it fits naturally into
-                                the way you already work -- and your people feel confident using it.
-                            </p>
-                            <p>
-                                We focus on finding the AI solutions that genuinely match your business,
-                                building them to be practical and maintainable, and making sure the knowledge
-                                grows with your team.
-                            </p>
-                            <p>
-                                The best technology is the kind your team actually uses. That's what we help you build.
-                            </p>
-                        </div>
-                        <div class="founder-card">
-                            <span class="founder-eyebrow">your navigator</span>
-                            <h3 class="founder-name">Owen Onderdonk</h3>
-                            <p class="founder-role">Physicist turned educator turned AI evaluation specialist.</p>
-                            <ul class="founder-credentials">
-                                <li>Subject-matter expert at Labelbox, managing 3000+ person AI data programs</li>
-                                <li>Hands-on evaluation of training data for frontier AI models</li>
-                                <li>15 years designing STEM and technical education programs</li>
-                                <li>Physics background with an M.S. in Education</li>
-                            </ul>
-                            <a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer"
-                                class="founder-link">Connect on LinkedIn →</a>
-                        </div>
-                    </div>
-                    <div class="stats-row">
-                        <div class="stat">
-                            <span class="stat-value">15 yrs</span>
-                            <span class="stat-label">building STEM &amp; technical education programs</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">3000+</span>
-                            <span class="stat-label">person AI data programs managed at Labelbox</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">Frontier</span>
-                            <span class="stat-label">AI models -- training data evaluated hands-on</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Constellation Transition: Ursa Major -->
-        <aside class="constellation-transition" aria-hidden="true" data-constellation="ursa">
-            <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-                <g class="constellation-group" id="ursa-group">
-                    <!-- Lines -->
-                    <line class="constellation-line" x1="8" y1="30" x2="16" y2="38" />
-                    <line class="constellation-line" x1="16" y1="38" x2="25" y2="40" />
-                    <line class="constellation-line" x1="25" y1="40" x2="35" y2="38" />
-                    <line class="constellation-line" x1="35" y1="38" x2="50" y2="32" />
-                    <line class="constellation-line" x1="50" y1="32" x2="52" y2="45" />
-                    <line class="constellation-line" x1="52" y1="45" x2="38" y2="48" />
-                    <line class="constellation-line" x1="38" y1="48" x2="35" y2="38" />
-                    <line class="constellation-line" x1="50" y1="32" x2="65" y2="30" />
-                    <line class="constellation-line" x1="65" y1="30" x2="80" y2="34" />
-                    <line class="constellation-line" x1="52" y1="45" x2="62" y2="55" />
-                    <line class="constellation-line" x1="62" y1="55" x2="70" y2="65" />
-                    <line class="constellation-line" x1="70" y1="65" x2="72" y2="67" />
-                    <line class="constellation-line" x1="38" y1="48" x2="42" y2="58" />
-                    <line class="constellation-line" x1="42" y1="58" x2="50" y2="60" />
-                    <line class="constellation-line" x1="50" y1="60" x2="58" y2="70" />
-                    <line class="constellation-line" x1="42" y1="58" x2="38" y2="75" />
-                    <line class="constellation-line" x1="38" y1="75" x2="42" y2="82" />
-                    <!-- Stars -->
-                    <g class="star-group">
-                        <circle class="star" cx="8" cy="30" r="1.1" fill="#aaccff" filter="url(#glow-blue)" />
-                        <text class="star-label" x="8" y="26" data-label="Alkaid"></text>
-                    </g>
-                    <g class="star-group">
-                        <circle class="star" cx="16" cy="38" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
-                        <text class="star-label" x="16" y="34" data-label="Mizar"></text>
-                    </g>
-                    <circle class="star" cx="25" cy="40" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="35" cy="38" r="0.8" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <g class="star-group">
-                        <circle class="star" cx="38" cy="48" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
-                        <text class="star-label" x="38" y="44" data-label="Phecda"></text>
-                    </g>
-                    <g class="star-group">
-                        <circle class="star" cx="52" cy="45" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
-                        <text class="star-label" x="52" y="41" data-label="Merak"></text>
-                    </g>
-                    <g class="star-group">
-                        <circle class="star" cx="50" cy="32" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
-                        <text class="star-label" x="50" y="28" data-label="Dubhe"></text>
-                    </g>
-                    <circle class="star" cx="65" cy="30" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <g class="star-group">
-                        <circle class="star" cx="80" cy="34" r="0.7" fill="#fbbf24" filter="url(#glow-gold)" />
-                        <text class="star-label" x="80" y="30" data-label="Muscida"></text>
-                    </g>
-                    <circle class="star" cx="62" cy="55" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <g class="star-group">
-                        <circle class="star" cx="70" cy="65" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                        <text class="star-label" x="70" y="61" data-label="Talitha"></text>
-                    </g>
-                    <circle class="star" cx="72" cy="67" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="50" cy="60" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <g class="star-group">
-                        <circle class="star" cx="58" cy="70" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
-                        <text class="star-label" x="58" y="66" data-label="Tania"></text>
-                    </g>
-                    <circle class="star" cx="42" cy="58" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="38" cy="75" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <g class="star-group">
-                        <circle class="star" cx="42" cy="82" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                        <text class="star-label" x="42" y="86" data-label="Alula"></text>
-                    </g>
-                </g>
-            </svg>
-        </aside>
-
-        <!-- Process Section -->
-        <section id="process" class="approach">
-            <div class="section-container">
-                <div class="approach-content">
-                    <div class="approach-text">
-                        <span class="section-label">How We Work</span>
-                        <h2 class="section-title">No Black Boxes. No Mystery Deliverables.</h2>
-                        <p class="approach-description">
-                            Every engagement follows a proven path. We start by understanding your business,
-                            build something practical, and make sure your team can run it without us.
-                        </p>
-
-                        <!-- Course line: drawn on scroll, one waypoint per step -->
-                        <svg class="route" viewBox="0 0 1200 90" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                            <path class="route-path-base" d="M 40,62 Q 120,24 200,44 T 600,50 T 1000,42 T 1160,58" />
-                            <path class="route-path-progress" pathLength="1" d="M 40,62 Q 120,24 200,44 T 600,50 T 1000,42 T 1160,58" />
-                            <circle class="route-waypoint" cx="200" cy="44" r="7" />
-                            <circle class="route-waypoint" cx="600" cy="50" r="7" />
-                            <circle class="route-waypoint" cx="1000" cy="42" r="7" />
-                            <text class="route-star" x="1168" y="64">✦</text>
-                        </svg>
-
-                        <div class="principles">
-                            <div class="principle">
-                                <span class="principle-num" aria-hidden="true">01</span>
-                                <div class="principle-content">
-                                    <h3>Assess</h3>
-                                    <p>We start by understanding your business, not selling a solution. Through an
-                                        AI Readiness Assessment, we identify real opportunities, flag risks, and build
-                                        a roadmap tailored to your specific context -- not a generic template.</p>
-                                </div>
-                            </div>
-                            <div class="principle">
-                                <span class="principle-num" aria-hidden="true">02</span>
-                                <div class="principle-content">
-                                    <h3>Implement</h3>
-                                    <p>We build practical AI workflows using the right tools for the job -- not the
-                                        trendiest ones. Every solution comes with documentation and is designed for
-                                        your team to own and maintain from day one.</p>
-                                </div>
-                            </div>
-                            <div class="principle">
-                                <span class="principle-num" aria-hidden="true">03</span>
-                                <div class="principle-content">
-                                    <h3>Train</h3>
-                                    <p>We don't hand off and disappear. We train your team through hands-on workshops,
-                                        build their confidence with the new tools, and make sure they can evolve the
-                                        system independently. This is where 15 years of education experience matters most.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Constellation Transition: Aquarius -->
-        <aside class="constellation-transition" aria-hidden="true" data-constellation="aquarius">
-            <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-                <g class="constellation-group" id="aquarius-group">
-                    <!-- Lines -->
-                    <line class="constellation-line" x1="62" y1="30" x2="45" y2="25" />
-                    <line class="constellation-line" x1="45" y1="25" x2="52" y2="40" />
-                    <line class="constellation-line" x1="62" y1="30" x2="80" y2="40" />
-                    <line class="constellation-line" x1="45" y1="25" x2="38" y2="22" />
-                    <line class="constellation-line" x1="38" y1="22" x2="36" y2="15" />
-                    <line class="constellation-line" x1="38" y1="22" x2="34" y2="20" />
-                    <line class="constellation-line" x1="38" y1="22" x2="32" y2="28" />
-                    <line class="constellation-line" x1="32" y1="28" x2="22" y2="45" />
-                    <line class="constellation-line" x1="22" y1="45" x2="15" y2="52" />
-                    <line class="constellation-line" x1="15" y1="52" x2="18" y2="60" />
-                    <line class="constellation-line" x1="18" y1="60" x2="20" y2="65" />
-                    <line class="constellation-line" x1="20" y1="65" x2="28" y2="68" />
-                    <line class="constellation-line" x1="28" y1="68" x2="25" y2="75" />
-                    <!-- Stars -->
-                    <g class="star-group">
-                        <circle class="star" cx="45" cy="25" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
-                        <text class="star-label" x="45" y="21" data-label="Sadalmelik"></text>
-                    </g>
-                    <g class="star-group">
-                        <circle class="star" cx="62" cy="30" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
-                        <text class="star-label" x="62" y="26" data-label="Sadalsuud"></text>
-                    </g>
-                    <g class="star-group">
-                        <circle class="star" cx="38" cy="22" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
-                    </g>
-                    <circle class="star" cx="34" cy="20" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="36" cy="15" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <g class="star-group">
-                        <circle class="star" cx="32" cy="28" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
-                        <text class="star-label" x="32" y="32" data-label="Gamma"></text>
-                    </g>
-                    <g class="star-group">
-                        <circle class="star" cx="80" cy="40" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                        <text class="star-label" x="80" y="36" data-label="Albali"></text>
-                    </g>
-                    <circle class="star" cx="52" cy="40" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="22" cy="45" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="15" cy="52" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="18" cy="60" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <circle class="star" cx="20" cy="65" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                    <g class="star-group">
-                        <circle class="star" cx="25" cy="75" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
-                        <text class="star-label" x="25" y="79" data-label="Skat"></text>
-                    </g>
-                    <circle class="star" cx="28" cy="68" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
-                </g>
-            </svg>
-        </aside>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="section-container">
-                <div class="contact-content">
-                    <span class="section-label">Let's Connect</span>
-                    <h2 class="section-title">Ready to Chart Your Course?</h2>
-                    <p class="contact-description">
-                        Whether you're exploring AI possibilities or ready to dive into implementation,
-                        let's talk about what makes sense for your business.
-                    </p>
-                    <div class="contact-methods">
-                        <a href="mailto:ahoythere@learning.voyage" class="contact-card">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
-                                    <path
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <span class="contact-label">Email</span>
-                            <span class="contact-value">ahoythere@learning.voyage</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer" class="contact-card">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
-                                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" />
-                                </svg>
-                            </div>
-                            <span class="contact-label">LinkedIn</span>
-                            <span class="contact-value">Connect on LinkedIn</span>
-                        </a>
-                    </div>
-                    <p class="contact-note"><span class="star">✦</span> Replies usually within one business day.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <img src="/docs/assets/images/LearningVoyageLogo.svg" alt="Learning Voyage" class="footer-logo"
-                    width="60" height="60" loading="lazy">
-                <p class="footer-tagline">Charting Your Course. Navigating Together.</p>
-            </div>
-            <div class="footer-links">
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#process">How We Work</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; 2026 Learning Voyage. All rights reserved.</p>
-            </div>
+          </div>
+          <p class="voyage-visual-caption">Learning Voyage is the independent practice behind this work.</p>
         </div>
-    </footer>
 
-    <script>
-        // Generate twinkling stars
-        function createStarfield() {
-            const starfield = document.getElementById('starfield');
-            const numStars = 60;
+        <div class="hero-focus-rail" aria-label="Current focus">
+          <span>Research data operations</span>
+          <span>Data sourcing and partnerships</span>
+          <span>Proprietary data for AI</span>
+          <span>Agent environments</span>
+          <span>Human oversight</span>
+        </div>
+      </div>
+    </section>
 
-            for (let i = 0; i < numStars; i++) {
-                const star = document.createElement('div');
-                star.className = 'twinkle-star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.width = (Math.random() * 2 + 1) + 'px';
-                star.style.height = star.style.width;
-                star.style.animationDelay = Math.random() * 5 + 's';
-                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                starfield.appendChild(star);
-            }
-        }
-        createStarfield();
+    <aside class="constellation-transition" data-constellation="orion" aria-hidden="true">
+      <div class="constellation-haze"></div>
+      <p class="constellation-name">ORION</p>
+      <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
 
-        // Disable transitions during resize to prevent stutter
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            document.body.classList.add('resizing');
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => document.body.classList.remove('resizing'), 200);
-        });
+          <defs>
+            <filter id="orion-glow-red" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur stdDeviation="0.9" result="blur"></feGaussianBlur>
+              <feFlood flood-color="#ff774d" flood-opacity="0.65" result="color"></feFlood>
+              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
+              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <filter id="orion-glow-blue" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur stdDeviation="0.75" result="blur"></feGaussianBlur>
+              <feFlood flood-color="#78a9ff" flood-opacity="0.65" result="color"></feFlood>
+              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
+              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <filter id="orion-glow-gold" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur stdDeviation="0.8" result="blur"></feGaussianBlur>
+              <feFlood flood-color="#f2c66d" flood-opacity="0.7" result="color"></feFlood>
+              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
+              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <filter id="orion-glow-soft" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="0.38"></feGaussianBlur>
+              <feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <radialGradient id="orion-nebula-gradient">
+              <stop offset="0%" stop-color="#e879f9" stop-opacity="0.62"></stop>
+              <stop offset="60%" stop-color="#a855f7" stop-opacity="0.22"></stop>
+              <stop offset="100%" stop-color="#4c1d95" stop-opacity="0"></stop>
+            </radialGradient>
+          </defs>
+        <g class="constellation-group" id="orion-group"><line class="constellation-line" x1="30" y1="35" x2="42" y2="56"></line><line class="constellation-line" x1="62" y1="37" x2="55" y2="54"></line><line class="constellation-line" x1="42" y1="56" x2="49" y2="55"></line><line class="constellation-line" x1="49" y1="55" x2="55" y2="54"></line><line class="constellation-line" x1="42" y1="56" x2="35" y2="84"></line><line class="constellation-line" x1="55" y1="54" x2="68" y2="82"></line><line class="constellation-line" x1="30" y1="35" x2="47" y2="25"></line><line class="constellation-line" x1="62" y1="37" x2="47" y2="25"></line><line class="constellation-line" x1="30" y1="35" x2="25" y2="28"></line><line class="constellation-line" x1="25" y1="28" x2="20" y2="22"></line><line class="constellation-line" x1="20" y1="22" x2="18" y2="16"></line><line class="constellation-line" x1="18" y1="16" x2="22" y2="9"></line><line class="constellation-line" x1="22" y1="9" x2="28" y2="8"></line><line class="constellation-line" x1="62" y1="37" x2="82" y2="40"></line><line class="constellation-line" x1="82" y1="40" x2="80" y2="34"></line><line class="constellation-line" x1="80" y1="34" x2="75" y2="28"></line><line class="constellation-line" x1="82" y1="40" x2="81" y2="48"></line><line class="constellation-line" x1="81" y1="48" x2="79" y2="54"></line><line class="constellation-line" x1="79" y1="54" x2="75" y2="58"></line><line class="constellation-line" x1="49" y1="55" x2="44" y2="63"></line><line class="constellation-line" x1="44" y1="63" x2="42" y2="68"></line><line class="constellation-line" x1="42" y1="68" x2="40" y2="74"></line><circle class="nebula" cx="43" cy="67" r="3" fill="url(#orion-nebula-gradient)"></circle><text class="star-label nebula-label" x="48" y="65" data-label="M42"></text><g class="star-group"><circle class="star" cx="30" cy="35" r="1.3" fill="#ff8844" filter="url(#orion-glow-red)"></circle><text class="star-label" x="30" y="31" data-label="Betelgeuse"></text></g><g class="star-group"><circle class="star" cx="62" cy="37" r="0.9" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><text class="star-label" x="62" y="33" data-label="Bellatrix"></text></g><g class="star-group"><circle class="star" cx="68" cy="82" r="1.2" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><text class="star-label" x="68" y="78" data-label="Rigel"></text></g><g class="star-group"><circle class="star" cx="35" cy="84" r="0.8" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><text class="star-label" x="35" y="80" data-label="Saiph"></text></g><g class="star-group"><circle class="star" cx="42" cy="56" r="0.9" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><text class="star-label" x="42" y="52" data-label="Alnitak"></text></g><circle class="star" cx="49" cy="55" r="0.9" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><circle class="star" cx="55" cy="54" r="0.8" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><circle class="star" cx="47" cy="25" r="0.6" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="25" cy="28" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="20" cy="22" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="18" cy="16" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="22" cy="9" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="28" cy="8" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="75" cy="28" r="0.3" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="80" cy="34" r="0.3" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="82" cy="40" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="81" cy="48" r="0.3" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="79" cy="54" r="0.3" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="75" cy="58" r="0.3" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="44" cy="63" r="0.5" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="42" cy="68" r="0.5" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="40" cy="74" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle></g>
+      </svg>
+    </aside>
 
-        // Mobile nav
-        const navEl = document.querySelector('.nav');
-        const navToggle = document.querySelector('.nav-toggle');
-        navToggle.addEventListener('click', () => {
-            const open = navEl.classList.toggle('nav-open');
-            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
+    <section class="section public-work" id="public-work" aria-labelledby="public-work-title">
+      <div class="shell">
+        <article class="project-spotlight">
+          <div class="spotlight-meta">
+            <span>Flagship public work</span>
+            <span>AutoQA Foundation 0.1.0</span>
+          </div>
+          <div class="spotlight-layout">
+            <div class="spotlight-copy">
+              <p class="eyebrow">CAPABILITY · EVIDENCE · AUTHORITY</p>
+              <h2 id="public-work-title">Define the boundary before automating the verdict.</h2>
+              <p class="spotlight-lede">I created AutoQA Foundation as a public, de-branded decision and technical system for determining where LLM-assisted quality review is useful, where the available record cannot support a verdict, and what must be measured before a system may influence consequential decisions.</p>
+              <p>The project turns a broad argument about “model-as-judge” reliability into an inspectable operating model: explicit result states, capability limits, authorization rules, measurement requirements, a bounded pilot protocol, and a source-level evidence record.</p>
+              <div class="spotlight-actions">
+                <a class="button button-primary" href="/work/autoqa-foundation.html">Read the case study</a>
+                <a class="button button-secondary" href="https://autoqa-foundation.vercel.app/" target="_blank" rel="noopener noreferrer">Open AutoQA Foundation <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+            <ul class="spotlight-points">
+              <li><strong>Master limit</strong><span>Record identifiability: processing cannot recover facts or resolve interpretations absent from the observable record.</span></li>
+              <li><strong>Honest outputs</strong><span>Supported, contradicted, insufficient, and contract-ambiguous remain distinct rather than being forced into pass or fail.</span></li>
+              <li><strong>Authority boundary</strong><span>Automated consequences require lane-level calibration, measured false-accusation risk, abstention, and named human ownership.</span></li>
+              <li><strong>Operational package</strong><span>Decision brief, theoretical limits, technical guide, evidence ledger, source library, pilot protocol, and decision-note generator.</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        // Smooth scroll for anchor links; also closes the mobile menu and moves focus
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                navEl.classList.remove('nav-open');
-                navToggle.setAttribute('aria-expanded', 'false');
-                const href = this.getAttribute('href');
-                if (href.length < 2) return;  // bare "#" (logo) is handled by its own onclick
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
-                    target.setAttribute('tabindex', '-1');
-                    target.focus({ preventScroll: true });
-                }
-            });
-        });
+    <section class="experience-context" aria-label="Selected experience context">
+      <div class="shell context-layout">
+        <p class="context-label">Selected project experience</p>
+        <p>Data and evaluation work supporting <strong>frontier AI</strong> and <strong>technology organizations</strong> through external AI data partners.</p>
+        <a href="#disclosure">Relationship context</a>
+      </div>
+    </section>
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    <section class="evidence" aria-label="Selected evidence">
+      <div class="shell evidence-grid">
+        <article>
+          <strong>3,000+</strong>
+          <p>contributors in programs for which I defined standards, calibration, or quality controls</p>
+        </article>
+        <article>
+          <strong>7 prototypes</strong>
+          <p>for one evaluation framework during a three-month client collaboration</p>
+        </article>
+        <article>
+          <strong>15 years</strong>
+          <p>building technical education, assessment, and program-delivery systems</p>
+        </article>
+        <article>
+          <strong>Full progression</strong>
+          <p>data creator → reviewer → reviewer of reviewers → project and program lead</p>
+        </article>
+      </div>
+    </section>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">WHAT I DO</p>
+            <h2 id="work-title">The layer between a hard question and dependable evidence.</h2>
+          </div>
+          <p>I work where research intent, domain expertise, data production, quality control, and operational delivery have to become one coherent system. Each area below is labeled to distinguish established work from current development.</p>
+        </div>
 
-        document.querySelectorAll('.service-card, .principle, .stat, .contact-card, .about-text, .founder-card').forEach(el => {
-            observer.observe(el);
-        });
+        <div class="capability-grid">
+          <article class="capability-card">
+            <div class="card-labels"><span class="card-number">01</span><span class="card-status">Established</span></div>
+            <h3>Research data operations</h3>
+            <p>Translate capability goals and failure modes into task definitions, contributor requirements, calibration sets, quality controls, review workflows, and acceptance criteria.</p>
+          </article>
+          <article class="capability-card">
+            <div class="card-labels"><span class="card-number">02</span><span class="card-status">Established</span></div>
+            <h3>Evaluation systems</h3>
+            <p>Design benchmark logic, reviewer protocols, functionality tests, and claim-verification pipelines that produce inspectable evidence instead of unsupported verdicts.</p>
+          </article>
+          <article class="capability-card">
+            <div class="card-labels"><span class="card-number">03</span><span class="card-status direction">Current direction</span></div>
+            <h3>Data partnerships and marketplace quality</h3>
+            <p>Applying my requirements, quality, and program-operations background to provider qualification, buyer requirement translation, provenance, licensing scope, sample review, and marketplace standards.</p>
+          </article>
+          <article class="capability-card">
+            <div class="card-labels"><span class="card-number">04</span><span class="card-status direction">Current direction</span></div>
+            <h3>Proprietary data for enterprise AI</h3>
+            <p>Exploring how organizations can identify authoritative sources, permissions, data gaps, and evaluation methods so internal knowledge becomes governed, testable input for retrieval, fine-tuning, or agent workflows.</p>
+          </article>
+          <article class="capability-card">
+            <div class="card-labels"><span class="card-number">05</span><span class="card-status development">In development</span></div>
+            <h3>Agent environments and RL</h3>
+            <p>Develop real-data environments and long-horizon tasks with hidden variation, strong baselines, and reproducible grading—turning scarce expertise into reusable training and evaluation signal.</p>
+          </article>
+          <article class="capability-card">
+            <div class="card-labels"><span class="card-number">06</span><span class="card-status">Established</span></div>
+            <h3>Human quality systems</h3>
+            <p>Build calibration, second-level review, escalation, and adjudication structures for domains where expert judgment cannot be reduced to a simple automated check.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        // Nav background on scroll
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navEl.classList.add('scrolled');
-            } else {
-                navEl.classList.remove('scrolled');
-            }
-        });
+    <section class="section selected-work" id="selected-work" aria-labelledby="selected-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">SELECTED WORK</p>
+          <h2 id="selected-title">Concrete systems, not an abstract AI strategy practice.</h2>
+        </div>
 
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script>
-        // Constellation Animation System — GSAP ScrollTrigger
-        if (window.gsap && window.ScrollTrigger) {
-        gsap.registerPlugin(ScrollTrigger);
+        <div class="work-list">
+          <article class="work-item">
+            <div class="work-meta"><span>2024–present</span><span>Frontier-model data</span></div>
+            <div class="work-copy">
+              <h3>Data creation, multi-level review, and program operations</h3>
+              <p>I entered frontier-model data work in February 2024 by creating complex mathematics training data, then advanced to reviewer and second-level reviewer oversight. In February 2025, my scope expanded into project development, program management, and general operations through a direct contractor relationship with an AI data company.</p>
+              <p>Selected projects have included managing data and evaluation work supporting a frontier AI lab through an external AI data partner.</p>
+            </div>
+          </article>
 
-        document.querySelectorAll('.constellation-transition').forEach(constellation => {
-            const svgElement = constellation.querySelector('.constellation-svg');
-            if (!svgElement) return;
+          <article class="work-item">
+            <div class="work-meta"><span>Evaluation design</span><span>7 iterations</span></div>
+            <div class="work-copy">
+              <h3>Turning an emerging capability into an operational evaluation</h3>
+              <p>Developed a pilot evaluation framework through seven prototypes over three months of client collaboration, refining specifications, calibration benchmarks, functionality tests, review workflows, and acceptance criteria as the capability and evidence evolved.</p>
+            </div>
+          </article>
 
-            const stars = constellation.querySelectorAll('.star');
-            const labels = constellation.querySelectorAll('.star-label:not(.nebula-label)');
-            const lines = constellation.querySelectorAll('.constellation-line');
-            const nebula = constellation.querySelector('.nebula');
-            const nebulaLabel = constellation.querySelector('.nebula-label');
-            // Populate label text from data-label (kept out of HTML for Reader Mode)
-            if (nebulaLabel && nebulaLabel.dataset.label) nebulaLabel.textContent = nebulaLabel.dataset.label;
+          <article class="work-item">
+            <div class="work-meta"><span>Quality systems</span><span>3,000+ contributors</span></div>
+            <div class="work-copy">
+              <h3>Standards and calibration at scale</h3>
+              <p>Defined technical standards, calibration benchmarks, functionality tests, and reviewer controls for programs involving more than 3,000 contributors. The objective was not simply throughput; it was consistent interpretation and defensible evidence across a distributed workforce.</p>
+            </div>
+          </article>
 
-            // Find Y range of all stars
-            let minStarY = Infinity, maxStarY = -Infinity;
-            stars.forEach(star => {
-                const cy = parseFloat(star.getAttribute('cy'));
-                if (cy < minStarY) minStarY = cy;
-                if (cy > maxStarY) maxStarY = cy;
-            });
-            const yRange = maxStarY - minStarY || 1;
+          <article class="work-item">
+            <div class="work-meta"><span>Verification</span><span>Human + AI</span></div>
+            <div class="work-copy">
+              <h3>AI-assisted claim verification and code review</h3>
+              <p>Built multi-stage pipelines for claim verification and calibrated quality review; evaluated AI-generated code for correctness, security, and performance; and coordinated multi-agent workflows for planning, code review, and verification.</p>
+              <p>This work led to AutoQA Foundation, where the central question is not only whether an automated reviewer can produce a plausible verdict, but what the record can identify and what evidence is required before that verdict receives authority.</p>
+              <a class="text-link" href="/work/autoqa-foundation.html">Read the AutoQA case study <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
 
-            // Pre-compute star data with coordinate lookup
-            const starData = [];
-            const starByPos = {};  // "cx,cy" → index into starData
-            stars.forEach(s => {
-                const cx = parseFloat(s.getAttribute('cx'));
-                const cy = parseFloat(s.getAttribute('cy'));
-                const idx = starData.length;
-                const data = { el: s, cx, cy, visible: false, settled: false };
-                // transitionend fires when scale-in completes
-                s.addEventListener('transitionend', (e) => {
-                    if (e.propertyName !== 'transform' || !data.visible) return;
-                    data.settled = true;
-                    // Draw connected lines
-                    for (let j = 0; j < lineData.length; j++) {
-                        const ln = lineData[j];
-                        if (ln.starA === undefined || ln.starB === undefined) continue;
-                        if (starData[ln.starA].settled && starData[ln.starB].settled) {
-                            ln.el.style.transition = 'stroke-dashoffset 0.3s ease-out';
-                            ln.el.style.strokeDashoffset = 0;
-                        }
-                    }
-                });
-                starData.push(data);
-                starByPos[cx + ',' + cy] = idx;
-            });
+          <article class="work-item">
+            <div class="work-meta"><span>Open source</span><span>Adversarial review</span></div>
+            <div class="work-copy">
+              <h3>Agentic Council</h3>
+              <p>A multi-model adversarial-review engine that requires claims to be checked against files, allowlisted URLs, or sandboxed commands rather than accepted from the acting model’s own account of its work.</p>
+              <a class="text-link" href="https://github.com/owenezra/agentic-council" target="_blank" rel="noopener noreferrer">View the repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
 
-            // Pre-compute line data — link each line to its two endpoint stars
-            const lineData = [];
-            lines.forEach(line => {
-                const x1 = parseFloat(line.getAttribute('x1'));
-                const y1 = parseFloat(line.getAttribute('y1'));
-                const x2 = parseFloat(line.getAttribute('x2'));
-                const y2 = parseFloat(line.getAttribute('y2'));
-                const len = Math.hypot(x2 - x1, y2 - y1);
-                // Find the actual star elements at each endpoint
-                const starA = starByPos[x1 + ',' + y1];
-                const starB = starByPos[x2 + ',' + y2];
-                line.style.strokeDasharray = len;
-                line.style.strokeDashoffset = len;
-                lineData.push({ el: line, len, starA, starB });
-            });
+          <article class="work-item">
+            <div class="work-meta"><span>Current development</span><span>RL environments</span></div>
+            <div class="work-copy">
+              <h3>Real-data agent and control environments</h3>
+              <p>Developing difficult, reproducible environments with real or measured data, hidden variation, explicit baselines, and deterministic grading. The goal is to convert scarce domain knowledge into repeatable training signal without reducing the task to a static benchmark.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-            // Split label text into individual character tspans for letter-by-letter reveal
-            const labelData = [];
-            labels.forEach(l => {
-                const text = l.getAttribute('data-label') || l.textContent;
-                const y = parseFloat(l.getAttribute('y'));
-                l.textContent = '';
-                const chars = [];
-                for (let c = 0; c < text.length; c++) {
-                    const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
-                    tspan.textContent = text[c];
-                    tspan.style.opacity = '0';
-                    const delay = (c * 0.04) + 's';
-                    tspan.style.transition = 'opacity 0.4s ease-out ' + delay;
-                    l.appendChild(tspan);
-                    chars.push(tspan);
-                }
-                labelData.push({ el: l, y, chars, charCount: text.length, wasVisible: false });
-            });
-            const nebulaCy = nebula ? parseFloat(nebula.getAttribute('cy')) : null;
+    <aside class="constellation-transition" data-constellation="ursa" aria-hidden="true">
+      <div class="constellation-haze"></div>
+      <p class="constellation-name">URSA MAJOR</p>
+      <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
 
-            // GSAP ScrollTrigger — scrubs a progress value from 0 to 1
-            ScrollTrigger.create({
-                trigger: constellation,
-                start: 'top 90%',
-                end: 'bottom 10%',
-                onEnter: () => constellation.classList.add('visible'),
-                onEnterBack: () => constellation.classList.add('visible'),
-                onUpdate: (self) => {
-                    // Scale transition durations to scroll speed
-                    const vel = Math.abs(self.getVelocity());
-                    // Fast scroll (~2000+px/s) = snappy (0.1s), slow scroll = smooth (0.6s)
-                    const duration = Math.max(0.08, Math.min(0.6, 0.6 - vel / 4000));
-                    const durStr = duration.toFixed(2) + 's';
+          <defs>
+            <filter id="ursa-glow-red" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur stdDeviation="0.9" result="blur"></feGaussianBlur>
+              <feFlood flood-color="#ff774d" flood-opacity="0.65" result="color"></feFlood>
+              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
+              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <filter id="ursa-glow-blue" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur stdDeviation="0.75" result="blur"></feGaussianBlur>
+              <feFlood flood-color="#78a9ff" flood-opacity="0.65" result="color"></feFlood>
+              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
+              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <filter id="ursa-glow-gold" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur stdDeviation="0.8" result="blur"></feGaussianBlur>
+              <feFlood flood-color="#f2c66d" flood-opacity="0.7" result="color"></feFlood>
+              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
+              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <filter id="ursa-glow-soft" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="0.38"></feGaussianBlur>
+              <feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <radialGradient id="ursa-nebula-gradient">
+              <stop offset="0%" stop-color="#e879f9" stop-opacity="0.62"></stop>
+              <stop offset="60%" stop-color="#a855f7" stop-opacity="0.22"></stop>
+              <stop offset="100%" stop-color="#4c1d95" stop-opacity="0"></stop>
+            </radialGradient>
+          </defs>
+        <g class="constellation-group" id="ursa-group"><line class="constellation-line" x1="8" y1="30" x2="16" y2="38"></line><line class="constellation-line" x1="16" y1="38" x2="25" y2="40"></line><line class="constellation-line" x1="25" y1="40" x2="35" y2="38"></line><line class="constellation-line" x1="35" y1="38" x2="50" y2="32"></line><line class="constellation-line" x1="50" y1="32" x2="52" y2="45"></line><line class="constellation-line" x1="52" y1="45" x2="38" y2="48"></line><line class="constellation-line" x1="38" y1="48" x2="35" y2="38"></line><line class="constellation-line" x1="50" y1="32" x2="65" y2="30"></line><line class="constellation-line" x1="65" y1="30" x2="80" y2="34"></line><line class="constellation-line" x1="52" y1="45" x2="62" y2="55"></line><line class="constellation-line" x1="62" y1="55" x2="70" y2="65"></line><line class="constellation-line" x1="70" y1="65" x2="72" y2="67"></line><line class="constellation-line" x1="38" y1="48" x2="42" y2="58"></line><line class="constellation-line" x1="42" y1="58" x2="50" y2="60"></line><line class="constellation-line" x1="50" y1="60" x2="58" y2="70"></line><line class="constellation-line" x1="42" y1="58" x2="38" y2="75"></line><line class="constellation-line" x1="38" y1="75" x2="42" y2="82"></line><g class="star-group"><circle class="star" cx="8" cy="30" r="1.1" fill="#aaccff" filter="url(#ursa-glow-blue)"></circle><text class="star-label" x="8" y="26" data-label="Alkaid"></text></g><g class="star-group"><circle class="star" cx="16" cy="38" r="0.9" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="16" y="34" data-label="Mizar"></text></g><circle class="star" cx="25" cy="40" r="0.9" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><circle class="star" cx="35" cy="38" r="0.8" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><g class="star-group"><circle class="star" cx="38" cy="48" r="0.9" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="38" y="44" data-label="Phecda"></text></g><g class="star-group"><circle class="star" cx="52" cy="45" r="0.9" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="52" y="41" data-label="Merak"></text></g><g class="star-group"><circle class="star" cx="50" cy="32" r="1.1" fill="#fbbf24" filter="url(#ursa-glow-gold)"></circle><text class="star-label" x="50" y="28" data-label="Dubhe"></text></g><circle class="star" cx="65" cy="30" r="0.5" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><g class="star-group"><circle class="star" cx="80" cy="34" r="0.7" fill="#fbbf24" filter="url(#ursa-glow-gold)"></circle><text class="star-label" x="80" y="30" data-label="Muscida"></text></g><circle class="star" cx="62" cy="55" r="0.6" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><g class="star-group"><circle class="star" cx="70" cy="65" r="0.6" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="70" y="61" data-label="Talitha"></text></g><circle class="star" cx="72" cy="67" r="0.5" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><circle class="star" cx="50" cy="60" r="0.6" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><g class="star-group"><circle class="star" cx="58" cy="70" r="0.7" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="58" y="66" data-label="Tania"></text></g><circle class="star" cx="42" cy="58" r="0.5" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><circle class="star" cx="38" cy="75" r="0.6" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><g class="star-group"><circle class="star" cx="42" cy="82" r="0.6" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="42" y="86" data-label="Alula"></text></g></g>
+      </svg>
+    </aside>
 
-                    const p = self.progress;
-                    let adjusted;
-                    if (self.direction === 1) {
-                        // Drawing: finish by ~50% scroll
-                        adjusted = Math.min(p * 2.0, 1.0);
-                    } else {
-                        // Un-drawing: hold fully drawn until 35%, then un-draw from 35%→0%
-                        // Un-draw spread across 65%→15% of scroll range (higher on page)
-                        if (p > 0.65) adjusted = 1.0;
-                        else if (p < 0.15) adjusted = 0;
-                        else adjusted = (p - 0.15) / 0.5;
-                    }
-                    const scanY = minStarY + adjusted * (maxStarY + 10 - minStarY);
+    <section class="section questions" id="questions" aria-labelledby="questions-title">
+      <div class="shell questions-layout">
+        <div class="questions-intro">
+          <p class="eyebrow">CURRENT QUESTIONS</p>
+          <h2 id="questions-title">The problems I want to work on next.</h2>
+          <p>These are research and infrastructure questions, not a list of packaged consulting services.</p>
+        </div>
+        <ol class="question-list">
+          <li><span>01</span><p>What evidence should support the claim that an AI dataset is “audited” or fit for purpose?</p></li>
+          <li><span>02</span><p>How should a model team specify data utility before acquisition, rather than discovering requirements after delivery?</p></li>
+          <li><span>03</span><p>How can scarce domain expertise become reusable, interactive training signal through agent environments and RL tasks?</p></li>
+          <li><span>04</span><p>Where should model-assisted quality review stop and calibrated human adjudication begin? <a class="inline-link" href="/work/autoqa-foundation.html">AutoQA Foundation makes this boundary explicit.</a></p></li>
+          <li><span>05</span><p>How can organizations make AI systems built on proprietary data layers measurable, governable, and inspectable?</p></li>
+          <li><span>06</span><p>What open standards would make private or paid data markets more transparent without forcing the underlying data to be public?</p></li>
+        </ol>
+      </div>
+    </section>
 
-                    // Fast scroll threshold: below this, skip transition (instant appear)
-                    const fastThreshold = 0.15;
-                    const isFast = duration < fastThreshold;
+    <section class="section principles" id="principles" aria-labelledby="principles-title">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">OPERATING PRINCIPLES</p>
+            <h2 id="principles-title">How I think about AI data.</h2>
+          </div>
+          <p>Data work fails when access, quality, rights, and utility are collapsed into one vague promise. I treat them as separate claims that require separate evidence.</p>
+        </div>
+        <div class="principle-grid">
+          <article><h3>Utility is conditional</h3><p>A dataset is useful only relative to a model objective, training stage, evaluation design, and acceptance threshold.</p></article>
+          <article><h3>Rights are not quality</h3><p>Clear provenance and licensing do not establish technical value; technical value does not establish permission to use the data.</p></article>
+          <article><h3>Evaluation comes first</h3><p>Teams should decide how success will be measured before scaling collection, annotation, retrieval, or fine-tuning.</p></article>
+          <article><h3>Automation needs boundaries</h3><p>Model-assisted review is useful when it narrows human attention and cites evidence—not when it hides subjective judgment behind a score. <a class="inline-link" href="/work/autoqa-foundation.html">See the operating boundary.</a></p></article>
+          <article><h3>Open does not mean free</h3><p>Open specifications, audit standards, and interoperability can improve markets even when datasets remain paid, private, or access-controlled.</p></article>
+          <article><h3>Accountability requires inspection</h3><p>The people responsible for a system need to understand its sources, tests, failure modes, and escalation paths.</p></article>
+        </div>
+      </div>
+    </section>
 
-                    for (let i = 0; i < starData.length; i++) {
-                        const s = starData[i];
-                        const shouldBeVisible = scanY > s.cy;
-                        if (shouldBeVisible && !s.visible) {
-                            s.visible = true;
-                            if (isFast) {
-                                // Fast scroll: instant appear + settled
-                                s.settled = true;
-                                s.el.style.transition = 'none';
-                                s.el.classList.add('visible');
-                            } else {
-                                // Slow scroll: animate, transitionend will set settled
-                                s.settled = false;
-                                s.el.style.transition = 'transform ' + durStr + ' ease-out';
-                                s.el.classList.add('visible');
-                            }
-                        } else if (!shouldBeVisible && s.visible) {
-                            s.visible = false;
-                            s.settled = false;
-                            s.el.style.transition = 'transform ' + durStr + ' ease-out';
-                            s.el.classList.remove('visible');
-                        }
-                    }
+    <aside class="constellation-transition" data-constellation="aquarius" aria-hidden="true">
+      <div class="constellation-haze"></div>
+      <p class="constellation-name">AQUARIUS</p>
+      <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
 
-                    // Lines: draw when both settled, retract when either gone
-                    const lineDur = Math.max(0.05, duration * 0.5);
-                    const lineDurStr = lineDur.toFixed(2) + 's';
-                    for (let i = 0; i < lineData.length; i++) {
-                        const ln = lineData[i];
-                        if (ln.starA === undefined || ln.starB === undefined) continue;
-                        const bothSettled = starData[ln.starA].settled && starData[ln.starB].settled;
-                        const bothVisible = starData[ln.starA].visible && starData[ln.starB].visible;
-                        if (bothSettled) {
-                            if (isFast) {
-                                ln.el.style.transition = 'none';
-                            } else {
-                                ln.el.style.transition = 'stroke-dashoffset 0.3s ease-out';
-                            }
-                            ln.el.style.strokeDashoffset = 0;
-                        } else if (!bothVisible) {
-                            ln.el.style.transition = 'stroke-dashoffset ' + lineDurStr + ' ease-out';
-                            ln.el.style.strokeDashoffset = ln.len;
-                        }
-                    }
-                    for (let i = 0; i < labelData.length; i++) {
-                        const lb = labelData[i];
-                        const isVisible = scanY > lb.y + 4;
-                        if (isVisible && !lb.wasVisible) {
-                            // Just appeared — set staggered fade in
-                            lb.el.classList.add('visible');
-                            for (let c = 0; c < lb.chars.length; c++) {
-                                lb.chars[c].style.transition = 'opacity 0.15s ease-out ' + (c * 0.08) + 's';
-                                lb.chars[c].style.opacity = '1';
-                            }
-                            lb.wasVisible = true;
-                        } else if (!isVisible && lb.wasVisible) {
-                            // Just disappeared — set reverse staggered fade out
-                            lb.el.classList.remove('visible');
-                            const last = lb.chars.length - 1;
-                            for (let c = 0; c < lb.chars.length; c++) {
-                                lb.chars[c].style.transition = 'opacity 0.15s ease-out ' + ((last - c) * 0.08) + 's';
-                                lb.chars[c].style.opacity = '0';
-                            }
-                            lb.wasVisible = false;
-                        }
-                    }
-                    if (nebula) {
-                        if (scanY > nebulaCy) {
-                            nebula.classList.add('visible');
-                            if (nebulaLabel) nebulaLabel.classList.add('visible');
-                        } else {
-                            nebula.classList.remove('visible');
-                            if (nebulaLabel) nebulaLabel.classList.remove('visible');
-                        }
-                    }
-                },
-                onLeave: () => {
-                    lineData.forEach(ln => { ln.el.style.strokeDashoffset = 0; });
-                    starData.forEach(s => { s.visible = true; s.settled = true; s.el.classList.add('visible'); });
-                    labelData.forEach(lb => {
-                        lb.el.classList.add('visible');
-                        for (let c = 0; c < lb.chars.length; c++) { lb.chars[c].style.opacity = '1';  }
-                    });
-                    if (nebula) nebula.classList.add('visible');
-                    if (nebulaLabel) nebulaLabel.classList.add('visible');
-                },
-                onLeaveBack: () => {
-                    constellation.classList.remove('visible');
-                    lineData.forEach(ln => { ln.el.style.strokeDashoffset = ln.len; });
-                    starData.forEach(s => { s.visible = false; s.settled = false; s.el.classList.remove('visible'); });
-                    labelData.forEach(lb => {
-                        lb.el.classList.remove('visible');
-                        const last = lb.chars.length - 1;
-                        for (let c = 0; c < lb.chars.length; c++) {
-                            lb.chars[c].style.transition = 'opacity 0.3s ease-out ' + ((last - c) * 0.04) + 's';
-                            lb.chars[c].style.opacity = '0';
-                        }
-                    });
-                    if (nebula) nebula.classList.remove('visible');
-                    if (nebulaLabel) nebulaLabel.classList.remove('visible');
-                }
-            });
-        });
+          <defs>
+            <filter id="aquarius-glow-red" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur stdDeviation="0.9" result="blur"></feGaussianBlur>
+              <feFlood flood-color="#ff774d" flood-opacity="0.65" result="color"></feFlood>
+              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
+              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <filter id="aquarius-glow-blue" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur stdDeviation="0.75" result="blur"></feGaussianBlur>
+              <feFlood flood-color="#78a9ff" flood-opacity="0.65" result="color"></feFlood>
+              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
+              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <filter id="aquarius-glow-gold" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur stdDeviation="0.8" result="blur"></feGaussianBlur>
+              <feFlood flood-color="#f2c66d" flood-opacity="0.7" result="color"></feFlood>
+              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
+              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <filter id="aquarius-glow-soft" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="0.38"></feGaussianBlur>
+              <feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+            </filter>
+            <radialGradient id="aquarius-nebula-gradient">
+              <stop offset="0%" stop-color="#e879f9" stop-opacity="0.62"></stop>
+              <stop offset="60%" stop-color="#a855f7" stop-opacity="0.22"></stop>
+              <stop offset="100%" stop-color="#4c1d95" stop-opacity="0"></stop>
+            </radialGradient>
+          </defs>
+        <g class="constellation-group" id="aquarius-group"><line class="constellation-line" x1="62" y1="30" x2="45" y2="25"></line><line class="constellation-line" x1="45" y1="25" x2="52" y2="40"></line><line class="constellation-line" x1="62" y1="30" x2="80" y2="40"></line><line class="constellation-line" x1="45" y1="25" x2="38" y2="22"></line><line class="constellation-line" x1="38" y1="22" x2="36" y2="15"></line><line class="constellation-line" x1="38" y1="22" x2="34" y2="20"></line><line class="constellation-line" x1="38" y1="22" x2="32" y2="28"></line><line class="constellation-line" x1="32" y1="28" x2="22" y2="45"></line><line class="constellation-line" x1="22" y1="45" x2="15" y2="52"></line><line class="constellation-line" x1="15" y1="52" x2="18" y2="60"></line><line class="constellation-line" x1="18" y1="60" x2="20" y2="65"></line><line class="constellation-line" x1="20" y1="65" x2="28" y2="68"></line><line class="constellation-line" x1="28" y1="68" x2="25" y2="75"></line><g class="star-group"><circle class="star" cx="45" cy="25" r="1.1" fill="#fbbf24" filter="url(#aquarius-glow-gold)"></circle><text class="star-label" x="45" y="21" data-label="Sadalmelik"></text></g><g class="star-group"><circle class="star" cx="62" cy="30" r="1.1" fill="#fbbf24" filter="url(#aquarius-glow-gold)"></circle><text class="star-label" x="62" y="26" data-label="Sadalsuud"></text></g><circle class="star" cx="38" cy="22" r="0.7" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="34" cy="20" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="36" cy="15" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><g class="star-group"><circle class="star" cx="32" cy="28" r="0.7" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><text class="star-label" x="32" y="32" data-label="Gamma"></text></g><g class="star-group"><circle class="star" cx="80" cy="40" r="0.6" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><text class="star-label" x="80" y="36" data-label="Albali"></text></g><circle class="star" cx="52" cy="40" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="22" cy="45" r="0.6" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="15" cy="52" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="18" cy="60" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="20" cy="65" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><g class="star-group"><circle class="star" cx="25" cy="75" r="0.9" fill="#aaccff" filter="url(#aquarius-glow-blue)"></circle><text class="star-label" x="25" y="79" data-label="Skat"></text></g><circle class="star" cx="28" cy="68" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle></g>
+      </svg>
+    </aside>
 
-        // Course line — drawn on scroll through the process section
-        (function () {
-            const route = document.querySelector('.route');
-            if (!route) return;
-            const progressPath = route.querySelector('.route-path-progress');
-            const waypoints = route.querySelectorAll('.route-waypoint');
-            const routeStar = route.querySelector('.route-star');
-            // Path uses pathLength="1"; CSS holds the hidden initial state
-            // Waypoint positions as approximate fractions of total path length
-            const wpFractions = [0.14, 0.5, 0.86];
-            ScrollTrigger.create({
-                trigger: route,
-                start: 'top 92%',
-                end: 'top 40%',
-                onUpdate: (self) => {
-                    const p = self.progress;
-                    progressPath.style.strokeDashoffset = 1 - p;
-                    waypoints.forEach((wp, i) => wp.classList.toggle('reached', p >= wpFractions[i]));
-                    if (routeStar) routeStar.classList.toggle('reached', p >= 0.97);
-                },
-                onLeave: () => {
-                    progressPath.style.strokeDashoffset = 0;
-                    waypoints.forEach(wp => wp.classList.add('reached'));
-                    if (routeStar) routeStar.classList.add('reached');
-                }
-            });
-        })();
-        } else {
-            // GSAP CDN unavailable (blocked/offline): show everything statically
-            document.querySelectorAll('.constellation-transition').forEach(c => {
-                c.classList.add('visible');
-                c.querySelectorAll('.star').forEach(s => s.classList.add('visible'));
-                c.querySelectorAll('.star-label').forEach(l => {
-                    if (l.dataset.label) l.textContent = l.dataset.label;
-                    l.classList.add('visible');
-                });
-                const nb = c.querySelector('.nebula');
-                if (nb) nb.classList.add('visible');
-            });
-            const route = document.querySelector('.route');
-            if (route) {
-                route.querySelector('.route-path-progress').style.strokeDashoffset = 0;
-                route.querySelectorAll('.route-waypoint').forEach(w => w.classList.add('reached'));
-                const star = route.querySelector('.route-star');
-                if (star) star.classList.add('reached');
-            }
-        }
-    </script>
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="shell about-layout">
+        <div class="about-card">
+          <div class="portrait-placeholder" aria-hidden="true">
+            <span>OO</span>
+          </div>
+          <div>
+            <p class="panel-kicker">Owen Onderdonk</p>
+            <p>AI Data & Evaluation Program Lead</p>
+            <p>Lynchburg, Virginia · Remote</p>
+          </div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">ABOUT</p>
+          <h2 id="about-title">Physics, education, and program design—applied to AI data systems.</h2>
+          <p>I came to AI through physics, technical education, and program development. Over 15 years, I built technical curricula, assessment systems, and operational programs for people learning difficult material.</p>
+          <p>I founded a multi-school engineering program, grew STEM participation by 33%, helped students earn more than 200 professional certifications, trained more than 100 professionals to adopt programming tools, and coached a robotics team to the district’s first championship.</p>
+          <p>The same pattern now appears in my AI work: define the objective, make the reasoning explicit, build a system people can execute, and measure whether it works.</p>
+          <p>I created <a class="inline-link" href="/work/autoqa-foundation.html">AutoQA Foundation</a> to make the capability and authority limits of LLM-based quality review inspectable, testable, and usable in an actual deployment decision.</p>
+          <p>I hold a bachelor’s degree in physics and a master’s degree in education. Learning Voyage LLC is my independent practice and professional home for AI data, evaluation, research operations, and open-infrastructure work.</p>
+        </div>
+      </div>
+    </section>
 
-    <!-- WebMCP: AI Agent Tool Registration -->
-    <!-- https://webmachinelearning.github.io/webmcp/ -->
-    <script>
-    (function() {
-        if (!('modelContext' in navigator)) return;
+    <section class="section connect" id="connect" aria-labelledby="connect-title">
+      <div class="shell connect-card">
+        <div>
+          <p class="eyebrow">CONNECT</p>
+          <h2 id="connect-title">I am interested in difficult data problems, not generic AI pitches.</h2>
+          <p>Reach out about research-data operations, specialized-data sourcing, marketplace quality, proprietary-data systems, human oversight, agent evaluation, or an operating role at the boundary between research and delivery.</p>
+        </div>
+        <div class="connect-actions">
+          <a class="button button-primary" href="mailto:ahoythere@learning.voyage?subject=AI%20data%20or%20evaluation%20conversation">Email Owen</a>
+          <a class="button button-secondary" href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="button button-secondary" href="https://autoqa-foundation.vercel.app/" target="_blank" rel="noopener noreferrer">AutoQA Foundation</a>
+          <a class="button button-secondary" href="https://github.com/owenezra" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        // Tool: Get services offered by Learning Voyage
-        navigator.modelContext.registerTool({
-            name: 'getServices',
-            description: 'Get detailed information about Learning Voyage AI consulting services, including what each service covers and who it is for.',
-            inputSchema: { type: 'object', properties: {} },
-            async execute() {
-                return { content: [{ type: 'text', text: JSON.stringify({
-                    company: 'Learning Voyage LLC',
-                    tagline: 'Charting Your Course. Navigating Together.',
-                    services: [
-                        {
-                            name: 'AI Strategy & Assessment',
-                            description: 'An honest look at where AI fits in your business and where it does not. No hype, no sales pitch. A clear-eyed roadmap built on real understanding of what these systems can and cannot do.',
-                            includes: ['Readiness assessments', 'Opportunity mapping', 'Vendor evaluation', 'ROI analysis'],
-                            idealFor: 'Organizations exploring AI adoption or unsure where to start'
-                        },
-                        {
-                            name: 'Data Quality & Curation',
-                            description: 'Your AI is only as good as what you feed it. We design quality frameworks, build annotation pipelines, and validate datasets, drawing on hands-on experience evaluating training data for frontier AI models.',
-                            includes: ['Quality frameworks', 'Annotation pipelines', 'Dataset validation', 'Training data audit'],
-                            idealFor: 'Organizations building or fine-tuning AI models and needing reliable training data'
-                        },
-                        {
-                            name: 'Training & Adoption',
-                            description: 'Technology does not transform businesses, people do. With 15 years of experience building technical education programs, we train your team to confidently own and evolve their AI capabilities.',
-                            includes: ['Team workshops', 'Change management', 'Hands-on training', 'Ongoing support'],
-                            idealFor: 'Organizations that have or are deploying AI tools and need their teams to actually use them effectively'
-                        }
-                    ],
-                    process: ['Assess', 'Implement', 'Train'],
-                    contact: 'ahoythere@learning.voyage',
-                    website: 'https://learning.voyage'
-                })}]}
-            }
-        });
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <p class="footer-brand">Learning Voyage LLC</p>
+        <p>AI data, evaluation, research operations, and open infrastructure.</p>
+        <p class="footer-project"><a href="/work/autoqa-foundation.html">Public work: AutoQA Foundation</a></p>
+      </div>
+      <div id="disclosure" class="disclosure">
+        <p><strong>Relationship context:</strong> Project descriptions are deliberately generalized to protect confidential client and partner information. Engagements are performed through external AI data partners; nothing on this site implies employment by, endorsement by, or a direct commercial relationship between any end organization and Learning Voyage LLC.</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:ahoythere@learning.voyage">Email</a>
+        <a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/owenezra" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+    <div class="shell copyright">© <span data-year>2026</span> Learning Voyage LLC.</div>
+  </footer>
 
-        // Tool: Get background on Owen Onderdonk / Learning Voyage
-        navigator.modelContext.registerTool({
-            name: 'getAbout',
-            description: 'Get background information about Owen Onderdonk and Learning Voyage LLC. Useful for understanding credentials, experience, and what makes this consultant different.',
-            inputSchema: { type: 'object', properties: {} },
-            async execute() {
-                return { content: [{ type: 'text', text: JSON.stringify({
-                    consultant: 'Owen Onderdonk',
-                    company: 'Learning Voyage LLC',
-                    background: 'Physics graduate, 15 years building STEM and technical education programs, now an AI evaluation specialist and SME managing 300+ person AI data programs at Labelbox.',
-                    specialties: [
-                        'AI evaluation and data quality',
-                        'Workflow automation and agentic AI systems',
-                        'Technical training and team adoption',
-                        'Program management for large AI data initiatives'
-                    ],
-                    credentials: [
-                        'Subject Matter Expert at Labelbox (top-tier AI data contractor)',
-                        'Hands-on experience evaluating training data for frontier AI models',
-                        'Led STEM education programs for 15 years',
-                        'Physics background with MS in Education'
-                    ],
-                    differentiator: 'Unlike consultants who only advise, Owen has done the actual work -- building annotation pipelines, evaluating model outputs, and running multi-person AI data programs at scale.',
-                    trustedBy: ['Labelbox', 'Scale AI', 'Alignerr'],
-                    contact: 'ahoythere@learning.voyage',
-                    linkedin: 'https://www.linkedin.com/in/owenonderdonk/'
-                })}]}
-            }
-        });
-
-        // Tool: Request a consultation
-        navigator.modelContext.registerTool({
-            name: 'requestConsultation',
-            description: 'Initiate contact with Learning Voyage to request an AI consulting consultation. Returns contact instructions.',
-            inputSchema: {
-                type: 'object',
-                properties: {
-                    topic: { type: 'string', description: 'Brief description of what you want to discuss (e.g. AI strategy, data quality, team training)' },
-                    company: { type: 'string', description: 'Your company or organization name' }
-                }
-            },
-            async execute({ topic, company } = {}) {
-                const subject = encodeURIComponent('Consulting Inquiry' + (company ? ' - ' + company : '') + (topic ? ': ' + topic : ''));
-                const body = encodeURIComponent((company ? 'Company: ' + company + '\n' : '') + (topic ? 'Topic: ' + topic + '\n\n' : '') + 'I\'d like to discuss working with Learning Voyage.');
-                return { content: [{ type: 'text', text: JSON.stringify({
-                    status: 'contact_ready',
-                    instructions: 'Send an email to ahoythere@learning.voyage to request a consultation.',
-                    email: 'ahoythere@learning.voyage',
-                    mailtoLink: 'mailto:ahoythere@learning.voyage?subject=' + subject + '&body=' + body,
-                    linkedin: 'https://www.linkedin.com/in/owenonderdonk/',
-                    responseTime: 'Usually within 1 business day'
-                })}]}
-            }
-        });
-    })();
-    </script>
+  <script src="/script.js" defer></script>
 </body>
-
 </html>
