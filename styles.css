@@ -722,10 +722,13 @@ main, .site-footer { position: relative; z-index: 1; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* The production section is 30vw tall and lets the square SVG overflow into
+   empty neighboring space. This layout has bordered content at those
+   boundaries, so the section sizes to the drawing instead: same visual scale,
+   no overlap. */
 .constellation-transition {
   position: relative;
   width: 100%;
-  height: clamp(150px, 30vw, 550px);
   overflow: visible;
   z-index: 1;
   opacity: 0;
@@ -791,7 +794,6 @@ main, .site-footer { position: relative; z-index: 1; }
 
 @media (max-width: 1024px) {
   .route { display: none; }
-  .constellation-transition { height: 40vw; }
   .constellation-svg { width: 70vw; }
 }
 
@@ -812,7 +814,7 @@ main, .site-footer { position: relative; z-index: 1; }
   .hero-focus-rail span { min-height: 50px; }
   .hero-focus-rail span:nth-child(n+3) { border-top: 1px solid var(--line); }
   .hero-focus-rail span:last-child { grid-column: 1 / -1; }
-  .constellation-transition { height: 65vw; margin: 12px 0; }
+  .constellation-transition { margin: 12px 0; }
   .constellation-svg { width: 90vw; }
   .star-label { font-size: 3px; }
   .constellation-line { stroke-width: 0.35px; }
