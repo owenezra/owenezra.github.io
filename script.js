@@ -22,7 +22,6 @@
   });
 
   const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
-  const ease = (value) => 1 - Math.pow(1 - clamp(value), 3);
 
   const syncHeader = () => {
     if (!header) return;
@@ -62,95 +61,334 @@
     });
   }
 
+  // Disable transitions during resize to prevent stutter
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    document.body.classList.add('resizing');
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => document.body.classList.remove('resizing'), 200);
+  });
+
+  // Twinkling stars: production look (60 stars, twinkle keyframes) with a
+  // seeded generator so the layout is reproducible across visits.
   const makeStarfield = () => {
     const field = document.querySelector('[data-starfield]');
     if (!field) return;
-    const count = window.innerWidth < 760 ? 54 : 108;
     let seed = 74291;
     const random = () => {
       seed = (seed * 1664525 + 1013904223) >>> 0;
       return seed / 4294967296;
     };
     const fragment = document.createDocumentFragment();
-    for (let index = 0; index < count; index += 1) {
+    for (let index = 0; index < 60; index += 1) {
       const star = document.createElement('span');
-      star.className = 'starfield-star';
-      star.style.setProperty('--x', `${(random() * 100).toFixed(3)}%`);
-      star.style.setProperty('--y', `${(random() * 100).toFixed(3)}%`);
-      star.style.setProperty('--size', `${(0.65 + random() * 1.55).toFixed(2)}px`);
-      star.style.setProperty('--opacity', `${(0.28 + random() * 0.58).toFixed(2)}`);
-      star.style.setProperty('--duration', `${(2.7 + random() * 5.8).toFixed(2)}s`);
-      star.style.setProperty('--delay', `${(-random() * 6).toFixed(2)}s`);
+      star.className = 'twinkle-star';
+      star.style.left = (random() * 100).toFixed(3) + '%';
+      star.style.top = (random() * 100).toFixed(3) + '%';
+      const size = (random() * 2 + 1).toFixed(2) + 'px';
+      star.style.width = size;
+      star.style.height = size;
+      star.style.animationDelay = (random() * 5).toFixed(2) + 's';
+      star.style.animationDuration = (random() * 3 + 2).toFixed(2) + 's';
       fragment.appendChild(star);
     }
     field.replaceChildren(fragment);
   };
+  makeStarfield();
 
-  const constellations = Array.from(document.querySelectorAll('[data-constellation]')).map((section) => {
-    const lines = Array.from(section.querySelectorAll('.constellation-line'));
-    const stars = Array.from(section.querySelectorAll('.star, .nebula'));
-    const labels = Array.from(section.querySelectorAll('.star-label'));
+  // Scroll fade-ins (html.js gates the hidden state so no-JS stays readable)
+  const fadeTargets = document.querySelectorAll('.capability-card, .work-item, .writing-card, .principle-grid article, .evidence-grid article, .connect-card');
+  if ('IntersectionObserver' in window && fadeTargets.length) {
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    fadeTargets.forEach((el) => fadeObserver.observe(el));
+  }
+
+  // Constellation scan-line reveal. This is a dependency-free port of the
+  // production ScrollTrigger implementation: a virtual scan line moves down
+  // through each constellation with scroll; stars pop in when the line passes
+  // them, connecting lines draw once both endpoint stars have settled, labels
+  // fade in letter by letter, and scrolling back up un-draws the figure.
+  const constellations = Array.from(document.querySelectorAll('.constellation-transition')).map((section) => {
+    const svgElement = section.querySelector('.constellation-svg');
+    if (!svgElement) return null;
+
+    const stars = section.querySelectorAll('.star');
+    const labels = section.querySelectorAll('.star-label:not(.nebula-label)');
+    const lines = section.querySelectorAll('.constellation-line');
+    const nebula = section.querySelector('.nebula');
+    const nebulaLabel = section.querySelector('.nebula-label');
+    if (nebulaLabel && nebulaLabel.dataset.label) nebulaLabel.textContent = nebulaLabel.dataset.label;
+
+    let minStarY = Infinity;
+    let maxStarY = -Infinity;
+    stars.forEach((star) => {
+      const cy = parseFloat(star.getAttribute('cy'));
+      if (cy < minStarY) minStarY = cy;
+      if (cy > maxStarY) maxStarY = cy;
+    });
+
+    const starData = [];
+    const starByPos = {};
+    const lineData = [];
+    stars.forEach((s) => {
+      const cx = parseFloat(s.getAttribute('cx'));
+      const cy = parseFloat(s.getAttribute('cy'));
+      const idx = starData.length;
+      const data = { el: s, cx, cy, visible: false, settled: false };
+      s.addEventListener('transitionend', (e) => {
+        if (e.propertyName !== 'transform' || !data.visible) return;
+        data.settled = true;
+        for (let j = 0; j < lineData.length; j += 1) {
+          const ln = lineData[j];
+          if (ln.starA === undefined || ln.starB === undefined) continue;
+          if (starData[ln.starA].settled && starData[ln.starB].settled) {
+            ln.el.style.transition = 'stroke-dashoffset 0.3s ease-out';
+            ln.el.style.strokeDashoffset = 0;
+          }
+        }
+      });
+      starData.push(data);
+      starByPos[cx + ',' + cy] = idx;
+    });
 
     lines.forEach((line) => {
-      const length = Math.max(0.01, line.getTotalLength());
-      line.dataset.length = String(length);
-      line.style.strokeDasharray = `${length}`;
-      line.style.strokeDashoffset = `${length}`;
+      const x1 = parseFloat(line.getAttribute('x1'));
+      const y1 = parseFloat(line.getAttribute('y1'));
+      const x2 = parseFloat(line.getAttribute('x2'));
+      const y2 = parseFloat(line.getAttribute('y2'));
+      const len = Math.hypot(x2 - x1, y2 - y1);
+      line.style.strokeDasharray = len;
+      line.style.strokeDashoffset = len;
+      lineData.push({ el: line, len, starA: starByPos[x1 + ',' + y1], starB: starByPos[x2 + ',' + y2] });
     });
 
-    labels.forEach((label) => {
-      label.textContent = label.dataset.label || '';
+    const labelData = [];
+    labels.forEach((l) => {
+      const text = l.getAttribute('data-label') || l.textContent;
+      const y = parseFloat(l.getAttribute('y'));
+      l.textContent = '';
+      const chars = [];
+      for (let c = 0; c < text.length; c += 1) {
+        const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+        tspan.textContent = text[c];
+        tspan.style.opacity = '0';
+        tspan.style.transition = 'opacity 0.4s ease-out ' + (c * 0.04) + 's';
+        l.appendChild(tspan);
+        chars.push(tspan);
+      }
+      labelData.push({ el: l, y, chars, wasVisible: false });
     });
 
-    return { section, lines, stars, labels };
-  });
+    const nebulaCy = nebula ? parseFloat(nebula.getAttribute('cy')) : null;
 
-  const renderConstellations = () => {
-    const viewport = window.innerHeight;
-    const noMotion = reducedMotion.matches;
+    return {
+      section, starData, lineData, labelData, nebula, nebulaLabel, nebulaCy,
+      minStarY, maxStarY, lastProgress: 0, lastTime: 0,
+    };
+  }).filter(Boolean);
 
-    constellations.forEach(({ section, lines, stars, labels }) => {
-      const rect = section.getBoundingClientRect();
-      const travel = viewport + rect.height * 0.46;
-      const progress = noMotion ? 1 : clamp((viewport * 0.9 - rect.top) / travel);
+  const finishConstellation = (c) => {
+    c.lineData.forEach((ln) => { ln.el.style.strokeDashoffset = 0; });
+    c.starData.forEach((s) => { s.visible = true; s.settled = true; s.el.classList.add('visible'); });
+    c.labelData.forEach((lb) => {
+      lb.el.classList.add('visible');
+      lb.wasVisible = true;
+      lb.chars.forEach((ch) => { ch.style.opacity = '1'; });
+    });
+    if (c.nebula) c.nebula.classList.add('visible');
+    if (c.nebulaLabel) c.nebulaLabel.classList.add('visible');
+  };
 
-      lines.forEach((line, index) => {
-        const start = (index / Math.max(1, lines.length)) * 0.66;
-        const local = ease(clamp((progress - start) / 0.22));
-        const length = Number(line.dataset.length || 1);
-        line.style.strokeDashoffset = String(length * (1 - local));
-        line.style.opacity = String(0.2 + local * 0.8);
-      });
-
-      stars.forEach((star, index) => {
-        const start = 0.17 + (index / Math.max(1, stars.length)) * 0.68;
-        const local = ease(clamp((progress - start) / 0.13));
-        star.style.opacity = String(local);
-        star.style.transform = `scale(${0.18 + local * 0.82})`;
-      });
-
-      labels.forEach((label, index) => {
-        const start = 0.68 + (index / Math.max(1, labels.length)) * 0.22;
-        const local = ease(clamp((progress - start) / 0.12));
-        label.style.opacity = String(local * 0.78);
+  const resetConstellation = (c) => {
+    c.section.classList.remove('visible');
+    c.lineData.forEach((ln) => { ln.el.style.strokeDashoffset = ln.len; });
+    c.starData.forEach((s) => { s.visible = false; s.settled = false; s.el.classList.remove('visible'); });
+    c.labelData.forEach((lb) => {
+      lb.el.classList.remove('visible');
+      lb.wasVisible = false;
+      const last = lb.chars.length - 1;
+      lb.chars.forEach((ch, i) => {
+        ch.style.transition = 'opacity 0.3s ease-out ' + ((last - i) * 0.04) + 's';
+        ch.style.opacity = '0';
       });
     });
+    if (c.nebula) c.nebula.classList.remove('visible');
+    if (c.nebulaLabel) c.nebulaLabel.classList.remove('visible');
+  };
+
+  const updateConstellation = (c, now) => {
+    const rect = c.section.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const travel = vh * 0.8 + rect.height;
+    const p = clamp((vh * 0.9 - rect.top) / travel);
+
+    if (p <= 0) {
+      if (c.lastProgress > 0) resetConstellation(c);
+      c.lastProgress = 0;
+      c.lastTime = now;
+      return;
+    }
+
+    c.section.classList.add('visible');
+
+    if (p >= 1) {
+      if (c.lastProgress < 1) finishConstellation(c);
+      c.lastProgress = 1;
+      c.lastTime = now;
+      return;
+    }
+
+    const dt = Math.max((now - c.lastTime) / 1000, 1 / 240);
+    const vel = Math.abs(p - c.lastProgress) * travel / dt;
+    const direction = p >= c.lastProgress ? 1 : -1;
+
+    // Fast scroll (~2000+px/s) = snappy (0.08s), slow scroll = smooth (0.6s)
+    const duration = Math.max(0.08, Math.min(0.6, 0.6 - vel / 4000));
+    const durStr = duration.toFixed(2) + 's';
+    const fastThreshold = 0.15;
+    const isFast = duration < fastThreshold;
+
+    let adjusted;
+    if (direction === 1) {
+      // Drawing: finish by ~50% scroll
+      adjusted = Math.min(p * 2.0, 1.0);
+    } else {
+      // Un-drawing: hold fully drawn until 35%, then un-draw from 35% to 0%
+      if (p > 0.65) adjusted = 1.0;
+      else if (p < 0.15) adjusted = 0;
+      else adjusted = (p - 0.15) / 0.5;
+    }
+    const scanY = c.minStarY + adjusted * (c.maxStarY + 10 - c.minStarY);
+
+    for (let i = 0; i < c.starData.length; i += 1) {
+      const s = c.starData[i];
+      const shouldBeVisible = scanY > s.cy;
+      if (shouldBeVisible && !s.visible) {
+        s.visible = true;
+        if (isFast) {
+          s.settled = true;
+          s.el.style.transition = 'none';
+          s.el.classList.add('visible');
+        } else {
+          s.settled = false;
+          s.el.style.transition = 'transform ' + durStr + ' ease-out';
+          s.el.classList.add('visible');
+        }
+      } else if (!shouldBeVisible && s.visible) {
+        s.visible = false;
+        s.settled = false;
+        s.el.style.transition = 'transform ' + durStr + ' ease-out';
+        s.el.classList.remove('visible');
+      }
+    }
+
+    const lineDur = Math.max(0.05, duration * 0.5);
+    const lineDurStr = lineDur.toFixed(2) + 's';
+    for (let i = 0; i < c.lineData.length; i += 1) {
+      const ln = c.lineData[i];
+      if (ln.starA === undefined || ln.starB === undefined) continue;
+      const bothSettled = c.starData[ln.starA].settled && c.starData[ln.starB].settled;
+      const bothVisible = c.starData[ln.starA].visible && c.starData[ln.starB].visible;
+      if (bothSettled) {
+        ln.el.style.transition = isFast ? 'none' : 'stroke-dashoffset 0.3s ease-out';
+        ln.el.style.strokeDashoffset = 0;
+      } else if (!bothVisible) {
+        ln.el.style.transition = 'stroke-dashoffset ' + lineDurStr + ' ease-out';
+        ln.el.style.strokeDashoffset = ln.len;
+      }
+    }
+
+    for (let i = 0; i < c.labelData.length; i += 1) {
+      const lb = c.labelData[i];
+      const isVisible = scanY > lb.y + 4;
+      if (isVisible && !lb.wasVisible) {
+        lb.el.classList.add('visible');
+        for (let ch = 0; ch < lb.chars.length; ch += 1) {
+          lb.chars[ch].style.transition = 'opacity 0.15s ease-out ' + (ch * 0.08) + 's';
+          lb.chars[ch].style.opacity = '1';
+        }
+        lb.wasVisible = true;
+      } else if (!isVisible && lb.wasVisible) {
+        lb.el.classList.remove('visible');
+        const last = lb.chars.length - 1;
+        for (let ch = 0; ch < lb.chars.length; ch += 1) {
+          lb.chars[ch].style.transition = 'opacity 0.15s ease-out ' + ((last - ch) * 0.08) + 's';
+          lb.chars[ch].style.opacity = '0';
+        }
+        lb.wasVisible = false;
+      }
+    }
+
+    if (c.nebula) {
+      if (scanY > c.nebulaCy) {
+        c.nebula.classList.add('visible');
+        if (c.nebulaLabel) c.nebulaLabel.classList.add('visible');
+      } else {
+        c.nebula.classList.remove('visible');
+        if (c.nebulaLabel) c.nebulaLabel.classList.remove('visible');
+      }
+    }
+
+    c.lastProgress = p;
+    c.lastTime = now;
+  };
+
+  // Course line drawn on scroll through the experience section
+  const route = document.querySelector('.route');
+  const routeParts = route ? {
+    progressPath: route.querySelector('.route-path-progress'),
+    waypoints: route.querySelectorAll('.route-waypoint'),
+    routeStar: route.querySelector('.route-star'),
+    wpFractions: [0.14, 0.5, 0.86],
+  } : null;
+
+  const updateRoute = () => {
+    if (!routeParts) return;
+    const rect = route.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const p = clamp((vh * 0.92 - rect.top) / (vh * 0.52));
+    routeParts.progressPath.style.strokeDashoffset = 1 - p;
+    routeParts.waypoints.forEach((wp, i) => wp.classList.toggle('reached', p >= routeParts.wpFractions[i]));
+    if (routeParts.routeStar) routeParts.routeStar.classList.toggle('reached', p >= 0.97);
+  };
+
+  const finishAllStatic = () => {
+    constellations.forEach((c) => {
+      c.section.classList.add('visible');
+      finishConstellation(c);
+    });
+    if (routeParts) {
+      routeParts.progressPath.style.strokeDashoffset = 0;
+      routeParts.waypoints.forEach((wp) => wp.classList.add('reached'));
+      if (routeParts.routeStar) routeParts.routeStar.classList.add('reached');
+    }
   };
 
   let frameRequested = false;
   const requestRender = () => {
     syncHeader();
+    if (reducedMotion.matches) return;
     if (frameRequested) return;
     frameRequested = true;
-    requestAnimationFrame(() => {
-      renderConstellations();
+    requestAnimationFrame((now) => {
+      constellations.forEach((c) => updateConstellation(c, now));
+      updateRoute();
       frameRequested = false;
     });
   };
 
-  makeStarfield();
+  if (reducedMotion.matches) {
+    finishAllStatic();
+  }
+  reducedMotion.addEventListener?.('change', () => {
+    if (reducedMotion.matches) finishAllStatic();
+  });
+
   window.addEventListener('scroll', requestRender, { passive: true });
   window.addEventListener('resize', requestRender, { passive: true });
-  reducedMotion.addEventListener?.('change', requestRender);
   requestRender();
 })();

@@ -26,6 +26,7 @@
   <meta name="twitter:image" content="https://learning.voyage/assets/og-image.png">
 
   <link rel="stylesheet" href="/styles.css">
+  <script>document.documentElement.className += ' js';</script>
 
   <script type="application/ld+json">
 {
@@ -160,12 +161,11 @@
         </div>
 
         <div class="voyage-visual" aria-label="Learning Voyage animated emblem">
-          <div class="voyage-emblem" data-voyage-emblem>
-            <div class="voyage-logo-glow" aria-hidden="true"></div>
-            <div class="voyage-water" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="voyage-logo-shell">
+          <div class="logo-with-text" data-voyage-emblem>
+            <div class="logo-glow" aria-hidden="true"></div>
+            <div class="logo-wrapper">
               <img
-                class="voyage-logo"
+                class="hero-logo voyage-logo"
                 src="/docs/assets/images/LearningVoyageLogo.svg"
                 data-logo-fallback="/assets/favicon.svg"
                 alt="Learning Voyage ship beneath a starry sky"
@@ -175,29 +175,30 @@
             </div>
             <svg class="curved-text-svg" viewBox="0 0 420 420" aria-hidden="true">
               <defs>
-                <path id="signature-bottom-curve" d="M 10,210 A 200,200 0 0,0 410,210" fill="none"></path>
+                <path id="bottom-curve" d="M 10,210 A 200,200 0 0,0 410,210" fill="none"></path>
               </defs>
               <text class="curved-text-letters">
-                <textPath href="#signature-bottom-curve" startOffset="50%" text-anchor="middle">
-                  <tspan class="letter dot" style="--delay:0">●</tspan>
-                  <tspan class="letter gap">&#160;&#160;&#160;&#160;</tspan>
-                  <tspan class="letter" style="--delay:2">L</tspan>
-                  <tspan class="letter" style="--delay:3">E</tspan>
-                  <tspan class="letter" style="--delay:4">A</tspan>
-                  <tspan class="letter" style="--delay:5">R</tspan>
-                  <tspan class="letter" style="--delay:6">N</tspan>
-                  <tspan class="letter" style="--delay:7">I</tspan>
-                  <tspan class="letter" style="--delay:8">N</tspan>
-                  <tspan class="letter" style="--delay:9">G</tspan>
-                  <tspan class="letter gap">&#160;&#160;&#160;&#160;</tspan>
-                  <tspan class="letter" style="--delay:11">V</tspan>
-                  <tspan class="letter" style="--delay:12">O</tspan>
-                  <tspan class="letter" style="--delay:13">Y</tspan>
-                  <tspan class="letter" style="--delay:14">A</tspan>
-                  <tspan class="letter" style="--delay:15">G</tspan>
-                  <tspan class="letter" style="--delay:16">E</tspan>
-                  <tspan class="letter gap">&#160;&#160;&#160;&#160;</tspan>
-                  <tspan class="letter dot" style="--delay:18">●</tspan>
+                <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
+                  <tspan class="letter dot" style="--delay: 0">●</tspan>
+                  <tspan class="letter dot-space">&#160;&#160;&#160;&#160;&#160;</tspan>
+                  <tspan class="letter" style="--delay: 2">L</tspan>
+                  <tspan class="letter" style="--delay: 3">E</tspan>
+                  <tspan class="letter" style="--delay: 4">A</tspan>
+                  <tspan class="letter" style="--delay: 5">R</tspan>
+                  <tspan class="letter" style="--delay: 6">N</tspan>
+                  <tspan class="letter" style="--delay: 7">I</tspan>
+                  <tspan class="letter" style="--delay: 8">N</tspan>
+                  <tspan class="letter" style="--delay: 9">G</tspan>
+                  <tspan class="letter word-space">&#160;&#160;&#160;&#160;&#160;</tspan>
+                  <tspan class="letter" style="--delay: 11">V</tspan>
+                  <tspan class="letter" style="--delay: 12">O</tspan>
+                  <tspan class="letter" style="--delay: 13">Y</tspan>
+                  <tspan class="letter" style="--delay: 14">A</tspan>
+                  <tspan class="letter" style="--delay: 15">G</tspan>
+                  <tspan class="letter" style="--delay: 16">E</tspan>
+                  <tspan class="letter dot-space">&#160;&#160;&#160;&#160;&#160;</tspan>
+                  <tspan class="letter dot-space"> </tspan>
+                  <tspan class="letter dot" style="--delay: 18">●</tspan>
                 </textPath>
               </text>
             </svg>
@@ -215,42 +216,119 @@
       </div>
     </section>
 
-    <aside class="constellation-transition" data-constellation="orion" aria-hidden="true">
-      <div class="constellation-haze"></div>
-      <p class="constellation-name">ORION</p>
-      <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-
-          <defs>
-            <filter id="orion-glow-red" x="-200%" y="-200%" width="500%" height="500%">
-              <feGaussianBlur stdDeviation="0.9" result="blur"></feGaussianBlur>
-              <feFlood flood-color="#ff774d" flood-opacity="0.65" result="color"></feFlood>
-              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
-              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <filter id="orion-glow-blue" x="-200%" y="-200%" width="500%" height="500%">
-              <feGaussianBlur stdDeviation="0.75" result="blur"></feGaussianBlur>
-              <feFlood flood-color="#78a9ff" flood-opacity="0.65" result="color"></feFlood>
-              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
-              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <filter id="orion-glow-gold" x="-200%" y="-200%" width="500%" height="500%">
-              <feGaussianBlur stdDeviation="0.8" result="blur"></feGaussianBlur>
-              <feFlood flood-color="#f2c66d" flood-opacity="0.7" result="color"></feFlood>
-              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
-              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <filter id="orion-glow-soft" x="-100%" y="-100%" width="300%" height="300%">
-              <feGaussianBlur stdDeviation="0.38"></feGaussianBlur>
-              <feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <radialGradient id="orion-nebula-gradient">
-              <stop offset="0%" stop-color="#e879f9" stop-opacity="0.62"></stop>
-              <stop offset="60%" stop-color="#a855f7" stop-opacity="0.22"></stop>
-              <stop offset="100%" stop-color="#4c1d95" stop-opacity="0"></stop>
-            </radialGradient>
-          </defs>
-        <g class="constellation-group" id="orion-group"><line class="constellation-line" x1="30" y1="35" x2="42" y2="56"></line><line class="constellation-line" x1="62" y1="37" x2="55" y2="54"></line><line class="constellation-line" x1="42" y1="56" x2="49" y2="55"></line><line class="constellation-line" x1="49" y1="55" x2="55" y2="54"></line><line class="constellation-line" x1="42" y1="56" x2="35" y2="84"></line><line class="constellation-line" x1="55" y1="54" x2="68" y2="82"></line><line class="constellation-line" x1="30" y1="35" x2="47" y2="25"></line><line class="constellation-line" x1="62" y1="37" x2="47" y2="25"></line><line class="constellation-line" x1="30" y1="35" x2="25" y2="28"></line><line class="constellation-line" x1="25" y1="28" x2="20" y2="22"></line><line class="constellation-line" x1="20" y1="22" x2="18" y2="16"></line><line class="constellation-line" x1="18" y1="16" x2="22" y2="9"></line><line class="constellation-line" x1="22" y1="9" x2="28" y2="8"></line><line class="constellation-line" x1="62" y1="37" x2="82" y2="40"></line><line class="constellation-line" x1="82" y1="40" x2="80" y2="34"></line><line class="constellation-line" x1="80" y1="34" x2="75" y2="28"></line><line class="constellation-line" x1="82" y1="40" x2="81" y2="48"></line><line class="constellation-line" x1="81" y1="48" x2="79" y2="54"></line><line class="constellation-line" x1="79" y1="54" x2="75" y2="58"></line><line class="constellation-line" x1="49" y1="55" x2="44" y2="63"></line><line class="constellation-line" x1="44" y1="63" x2="42" y2="68"></line><line class="constellation-line" x1="42" y1="68" x2="40" y2="74"></line><circle class="nebula" cx="43" cy="67" r="3" fill="url(#orion-nebula-gradient)"></circle><text class="star-label nebula-label" x="48" y="65" data-label="M42"></text><g class="star-group"><circle class="star" cx="30" cy="35" r="1.3" fill="#ff8844" filter="url(#orion-glow-red)"></circle><text class="star-label" x="30" y="31" data-label="Betelgeuse"></text></g><g class="star-group"><circle class="star" cx="62" cy="37" r="0.9" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><text class="star-label" x="62" y="33" data-label="Bellatrix"></text></g><g class="star-group"><circle class="star" cx="68" cy="82" r="1.2" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><text class="star-label" x="68" y="78" data-label="Rigel"></text></g><g class="star-group"><circle class="star" cx="35" cy="84" r="0.8" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><text class="star-label" x="35" y="80" data-label="Saiph"></text></g><g class="star-group"><circle class="star" cx="42" cy="56" r="0.9" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><text class="star-label" x="42" y="52" data-label="Alnitak"></text></g><circle class="star" cx="49" cy="55" r="0.9" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><circle class="star" cx="55" cy="54" r="0.8" fill="#aaccff" filter="url(#orion-glow-blue)"></circle><circle class="star" cx="47" cy="25" r="0.6" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="25" cy="28" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="20" cy="22" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="18" cy="16" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="22" cy="9" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="28" cy="8" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="75" cy="28" r="0.3" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="80" cy="34" r="0.3" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="82" cy="40" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="81" cy="48" r="0.3" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="79" cy="54" r="0.3" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="75" cy="58" r="0.3" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="44" cy="63" r="0.5" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="42" cy="68" r="0.5" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle><circle class="star" cx="40" cy="74" r="0.4" fill="#f8fafc" filter="url(#orion-glow-soft)"></circle></g>
-      </svg>
+    <aside class="constellation-transition" aria-hidden="true" data-constellation="orion">
+        <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+            <defs>
+                <filter id="glow-red" x="-200%" y="-200%" width="500%" height="500%">
+                    <feGaussianBlur stdDeviation="0.9" result="blur" />
+                    <feFlood flood-color="#ff6633" flood-opacity="0.6" result="color" />
+                    <feComposite in="color" in2="blur" operator="in" result="glow" />
+                    <feMerge>
+                        <feMergeNode in="glow" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+                <filter id="glow-blue" x="-200%" y="-200%" width="500%" height="500%">
+                    <feGaussianBlur stdDeviation="0.7" result="blur" />
+                    <feFlood flood-color="#4488ff" flood-opacity="0.6" result="color" />
+                    <feComposite in="color" in2="blur" operator="in" result="glow" />
+                    <feMerge>
+                        <feMergeNode in="glow" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+                <filter id="glow-gold" x="-200%" y="-200%" width="500%" height="500%">
+                    <feGaussianBlur stdDeviation="0.8" result="blur" />
+                    <feFlood flood-color="#fbbf24" flood-opacity="0.6" result="color" />
+                    <feComposite in="color" in2="blur" operator="in" result="glow" />
+                    <feMerge>
+                        <feMergeNode in="glow" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+                <filter id="glow-soft" x="-100%" y="-100%" width="300%" height="300%">
+                    <feGaussianBlur stdDeviation="0.4" />
+                    <feMerge>
+                        <feMergeNode />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+                <radialGradient id="nebula-gradient">
+                    <stop offset="0%" stop-color="#e879f9" stop-opacity="0.6" />
+                    <stop offset="60%" stop-color="#a855f7" stop-opacity="0.2" />
+                    <stop offset="100%" stop-color="#4c1d95" stop-opacity="0" />
+                </radialGradient>
+            </defs>
+            <!-- Orion constellation group -->
+            <g class="constellation-group" id="orion-group">
+                <!-- Lines -->
+                <line class="constellation-line" x1="30" y1="35" x2="42" y2="56" />
+                <line class="constellation-line" x1="62" y1="37" x2="55" y2="54" />
+                <line class="constellation-line" x1="42" y1="56" x2="49" y2="55" />
+                <line class="constellation-line" x1="49" y1="55" x2="55" y2="54" />
+                <line class="constellation-line" x1="42" y1="56" x2="35" y2="84" />
+                <line class="constellation-line" x1="55" y1="54" x2="68" y2="82" />
+                <line class="constellation-line" x1="30" y1="35" x2="47" y2="25" />
+                <line class="constellation-line" x1="62" y1="37" x2="47" y2="25" />
+                <line class="constellation-line" x1="30" y1="35" x2="25" y2="28" />
+                <line class="constellation-line" x1="25" y1="28" x2="20" y2="22" />
+                <line class="constellation-line" x1="20" y1="22" x2="18" y2="16" />
+                <line class="constellation-line" x1="18" y1="16" x2="22" y2="9" />
+                <line class="constellation-line" x1="22" y1="9" x2="28" y2="8" />
+                <line class="constellation-line" x1="62" y1="37" x2="82" y2="40" />
+                <line class="constellation-line" x1="82" y1="40" x2="80" y2="34" />
+                <line class="constellation-line" x1="80" y1="34" x2="75" y2="28" />
+                <line class="constellation-line" x1="82" y1="40" x2="81" y2="48" />
+                <line class="constellation-line" x1="81" y1="48" x2="79" y2="54" />
+                <line class="constellation-line" x1="79" y1="54" x2="75" y2="58" />
+                <!-- Sword -->
+                <line class="constellation-line" x1="49" y1="55" x2="44" y2="63" />
+                <line class="constellation-line" x1="44" y1="63" x2="42" y2="68" />
+                <line class="constellation-line" x1="42" y1="68" x2="40" y2="74" />
+                <!-- Nebula M42 -->
+                <circle class="nebula" cx="43" cy="67" r="3" fill="url(#nebula-gradient)" />
+                <text class="star-label nebula-label" x="48" y="65" data-label="M42"></text>
+                <!-- Stars -->
+                <g class="star-group">
+                    <circle class="star" cx="30" cy="35" r="1.3" fill="#ff8844" filter="url(#glow-red)" />
+                    <text class="star-label" x="30" y="31" data-label="Betelgeuse"></text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="62" cy="37" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="62" y="33" data-label="Bellatrix"></text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="68" cy="82" r="1.2" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="68" y="78" data-label="Rigel"></text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="35" cy="84" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="35" y="80" data-label="Saiph"></text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="42" cy="56" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="42" y="52" data-label="Alnitak"></text>
+                </g>
+                <circle class="star" cx="49" cy="55" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                <circle class="star" cx="55" cy="54" r="0.8" fill="#aaccff" filter="url(#glow-blue)" />
+                <circle class="star" cx="47" cy="25" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="25" cy="28" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="20" cy="22" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="18" cy="16" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="22" cy="9" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="28" cy="8" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="75" cy="28" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="80" cy="34" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="82" cy="40" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="81" cy="48" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="79" cy="54" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="75" cy="58" r="0.3" fill="#f8fafc" filter="url(#glow-soft)" />
+                <!-- Sword stars -->
+                <circle class="star" cx="44" cy="63" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="42" cy="68" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="40" cy="74" r="0.4" fill="#f8fafc" filter="url(#glow-soft)" />
+            </g>
+        </svg>
     </aside>
 
     <section class="section public-work" id="public-work" aria-labelledby="public-work-title">
@@ -294,6 +372,14 @@
           <p>I entered frontier-model data work in February 2024 by creating difficult mathematics training data. I then reviewed contributors, audited reviewer decisions, designed standards and calibration systems, and moved into project development, program management, client collaboration, quality leadership, and broader operations.</p>
         </div>
         <p class="section-note">That progression matters. It means I understand not only how a program looks from a dashboard, but how instructions are interpreted, where expert judgment varies, why reviewers disagree, how weak specifications create downstream noise, and what operational controls make the work more reliable.</p>
+        <svg class="route" viewBox="0 0 1200 90" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <path class="route-path-base" d="M 40,62 Q 120,24 200,44 T 600,50 T 1000,42 T 1160,58" />
+          <path class="route-path-progress" pathLength="1" d="M 40,62 Q 120,24 200,44 T 600,50 T 1000,42 T 1160,58" />
+          <circle class="route-waypoint" cx="200" cy="44" r="7" />
+          <circle class="route-waypoint" cx="600" cy="50" r="7" />
+          <circle class="route-waypoint" cx="1000" cy="42" r="7" />
+          <text class="route-star" x="1168" y="64">✦</text>
+        </svg>
         <ol class="progression-list">
           <li>
             <span>01</span>
@@ -339,7 +425,7 @@
       <div class="shell evidence-grid">
         <article>
           <strong>3,000+</strong>
-          <p>contributors in programs for which I defined standards, calibration, functionality tests, or quality controls</p>
+          <p>workforce of the programs I helped develop and run, defining standards, calibration, functionality tests, and quality controls</p>
         </article>
         <article>
           <strong>Seven prototypes</strong>
@@ -438,7 +524,7 @@
             <div class="work-meta"><span>3,000+ contributors</span><span>Established</span></div>
             <div class="work-copy">
               <h3>Standards and calibration at scale</h3>
-              <p>Defined technical standards, calibration benchmarks, functionality tests, and reviewer controls for programs involving more than 3,000 contributors.</p>
+              <p>Helped develop and run programs with a workforce of more than 3,000 contributors, defining the technical standards, calibration benchmarks, functionality tests, and reviewer controls that governed the work.</p>
               <p>The aim was not throughput alone. It was consistent interpretation, visible evidence, and defensible decisions across a distributed workforce.</p>
             </div>
           </article>
@@ -530,42 +616,74 @@
       </div>
     </section>
 
-    <aside class="constellation-transition" data-constellation="ursa" aria-hidden="true">
-      <div class="constellation-haze"></div>
-      <p class="constellation-name">URSA MAJOR</p>
-      <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-
-          <defs>
-            <filter id="ursa-glow-red" x="-200%" y="-200%" width="500%" height="500%">
-              <feGaussianBlur stdDeviation="0.9" result="blur"></feGaussianBlur>
-              <feFlood flood-color="#ff774d" flood-opacity="0.65" result="color"></feFlood>
-              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
-              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <filter id="ursa-glow-blue" x="-200%" y="-200%" width="500%" height="500%">
-              <feGaussianBlur stdDeviation="0.75" result="blur"></feGaussianBlur>
-              <feFlood flood-color="#78a9ff" flood-opacity="0.65" result="color"></feFlood>
-              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
-              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <filter id="ursa-glow-gold" x="-200%" y="-200%" width="500%" height="500%">
-              <feGaussianBlur stdDeviation="0.8" result="blur"></feGaussianBlur>
-              <feFlood flood-color="#f2c66d" flood-opacity="0.7" result="color"></feFlood>
-              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
-              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <filter id="ursa-glow-soft" x="-100%" y="-100%" width="300%" height="300%">
-              <feGaussianBlur stdDeviation="0.38"></feGaussianBlur>
-              <feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <radialGradient id="ursa-nebula-gradient">
-              <stop offset="0%" stop-color="#e879f9" stop-opacity="0.62"></stop>
-              <stop offset="60%" stop-color="#a855f7" stop-opacity="0.22"></stop>
-              <stop offset="100%" stop-color="#4c1d95" stop-opacity="0"></stop>
-            </radialGradient>
-          </defs>
-        <g class="constellation-group" id="ursa-group"><line class="constellation-line" x1="8" y1="30" x2="16" y2="38"></line><line class="constellation-line" x1="16" y1="38" x2="25" y2="40"></line><line class="constellation-line" x1="25" y1="40" x2="35" y2="38"></line><line class="constellation-line" x1="35" y1="38" x2="50" y2="32"></line><line class="constellation-line" x1="50" y1="32" x2="52" y2="45"></line><line class="constellation-line" x1="52" y1="45" x2="38" y2="48"></line><line class="constellation-line" x1="38" y1="48" x2="35" y2="38"></line><line class="constellation-line" x1="50" y1="32" x2="65" y2="30"></line><line class="constellation-line" x1="65" y1="30" x2="80" y2="34"></line><line class="constellation-line" x1="52" y1="45" x2="62" y2="55"></line><line class="constellation-line" x1="62" y1="55" x2="70" y2="65"></line><line class="constellation-line" x1="70" y1="65" x2="72" y2="67"></line><line class="constellation-line" x1="38" y1="48" x2="42" y2="58"></line><line class="constellation-line" x1="42" y1="58" x2="50" y2="60"></line><line class="constellation-line" x1="50" y1="60" x2="58" y2="70"></line><line class="constellation-line" x1="42" y1="58" x2="38" y2="75"></line><line class="constellation-line" x1="38" y1="75" x2="42" y2="82"></line><g class="star-group"><circle class="star" cx="8" cy="30" r="1.1" fill="#aaccff" filter="url(#ursa-glow-blue)"></circle><text class="star-label" x="8" y="26" data-label="Alkaid"></text></g><g class="star-group"><circle class="star" cx="16" cy="38" r="0.9" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="16" y="34" data-label="Mizar"></text></g><circle class="star" cx="25" cy="40" r="0.9" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><circle class="star" cx="35" cy="38" r="0.8" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><g class="star-group"><circle class="star" cx="38" cy="48" r="0.9" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="38" y="44" data-label="Phecda"></text></g><g class="star-group"><circle class="star" cx="52" cy="45" r="0.9" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="52" y="41" data-label="Merak"></text></g><g class="star-group"><circle class="star" cx="50" cy="32" r="1.1" fill="#fbbf24" filter="url(#ursa-glow-gold)"></circle><text class="star-label" x="50" y="28" data-label="Dubhe"></text></g><circle class="star" cx="65" cy="30" r="0.5" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><g class="star-group"><circle class="star" cx="80" cy="34" r="0.7" fill="#fbbf24" filter="url(#ursa-glow-gold)"></circle><text class="star-label" x="80" y="30" data-label="Muscida"></text></g><circle class="star" cx="62" cy="55" r="0.6" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><g class="star-group"><circle class="star" cx="70" cy="65" r="0.6" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="70" y="61" data-label="Talitha"></text></g><circle class="star" cx="72" cy="67" r="0.5" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><circle class="star" cx="50" cy="60" r="0.6" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><g class="star-group"><circle class="star" cx="58" cy="70" r="0.7" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="58" y="66" data-label="Tania"></text></g><circle class="star" cx="42" cy="58" r="0.5" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><circle class="star" cx="38" cy="75" r="0.6" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><g class="star-group"><circle class="star" cx="42" cy="82" r="0.6" fill="#f8fafc" filter="url(#ursa-glow-soft)"></circle><text class="star-label" x="42" y="86" data-label="Alula"></text></g></g>
-      </svg>
+    <aside class="constellation-transition" aria-hidden="true" data-constellation="ursa">
+        <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+            <g class="constellation-group" id="ursa-group">
+                <!-- Lines -->
+                <line class="constellation-line" x1="8" y1="30" x2="16" y2="38" />
+                <line class="constellation-line" x1="16" y1="38" x2="25" y2="40" />
+                <line class="constellation-line" x1="25" y1="40" x2="35" y2="38" />
+                <line class="constellation-line" x1="35" y1="38" x2="50" y2="32" />
+                <line class="constellation-line" x1="50" y1="32" x2="52" y2="45" />
+                <line class="constellation-line" x1="52" y1="45" x2="38" y2="48" />
+                <line class="constellation-line" x1="38" y1="48" x2="35" y2="38" />
+                <line class="constellation-line" x1="50" y1="32" x2="65" y2="30" />
+                <line class="constellation-line" x1="65" y1="30" x2="80" y2="34" />
+                <line class="constellation-line" x1="52" y1="45" x2="62" y2="55" />
+                <line class="constellation-line" x1="62" y1="55" x2="70" y2="65" />
+                <line class="constellation-line" x1="70" y1="65" x2="72" y2="67" />
+                <line class="constellation-line" x1="38" y1="48" x2="42" y2="58" />
+                <line class="constellation-line" x1="42" y1="58" x2="50" y2="60" />
+                <line class="constellation-line" x1="50" y1="60" x2="58" y2="70" />
+                <line class="constellation-line" x1="42" y1="58" x2="38" y2="75" />
+                <line class="constellation-line" x1="38" y1="75" x2="42" y2="82" />
+                <!-- Stars -->
+                <g class="star-group">
+                    <circle class="star" cx="8" cy="30" r="1.1" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="8" y="26" data-label="Alkaid"></text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="16" cy="38" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="16" y="34" data-label="Mizar"></text>
+                </g>
+                <circle class="star" cx="25" cy="40" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="35" cy="38" r="0.8" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="38" cy="48" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="38" y="44" data-label="Phecda"></text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="52" cy="45" r="0.9" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="52" y="41" data-label="Merak"></text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="50" cy="32" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
+                    <text class="star-label" x="50" y="28" data-label="Dubhe"></text>
+                </g>
+                <circle class="star" cx="65" cy="30" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="80" cy="34" r="0.7" fill="#fbbf24" filter="url(#glow-gold)" />
+                    <text class="star-label" x="80" y="30" data-label="Muscida"></text>
+                </g>
+                <circle class="star" cx="62" cy="55" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="70" cy="65" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="70" y="61" data-label="Talitha"></text>
+                </g>
+                <circle class="star" cx="72" cy="67" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="50" cy="60" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="58" cy="70" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="58" y="66" data-label="Tania"></text>
+                </g>
+                <circle class="star" cx="42" cy="58" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="38" cy="75" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="42" cy="82" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="42" y="86" data-label="Alula"></text>
+                </g>
+            </g>
+        </svg>
     </aside>
 
     <section class="section questions" id="questions" aria-labelledby="questions-title">
@@ -643,42 +761,57 @@
       </div>
     </section>
 
-    <aside class="constellation-transition" data-constellation="aquarius" aria-hidden="true">
-      <div class="constellation-haze"></div>
-      <p class="constellation-name">AQUARIUS</p>
-      <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-
-          <defs>
-            <filter id="aquarius-glow-red" x="-200%" y="-200%" width="500%" height="500%">
-              <feGaussianBlur stdDeviation="0.9" result="blur"></feGaussianBlur>
-              <feFlood flood-color="#ff774d" flood-opacity="0.65" result="color"></feFlood>
-              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
-              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <filter id="aquarius-glow-blue" x="-200%" y="-200%" width="500%" height="500%">
-              <feGaussianBlur stdDeviation="0.75" result="blur"></feGaussianBlur>
-              <feFlood flood-color="#78a9ff" flood-opacity="0.65" result="color"></feFlood>
-              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
-              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <filter id="aquarius-glow-gold" x="-200%" y="-200%" width="500%" height="500%">
-              <feGaussianBlur stdDeviation="0.8" result="blur"></feGaussianBlur>
-              <feFlood flood-color="#f2c66d" flood-opacity="0.7" result="color"></feFlood>
-              <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
-              <feMerge><feMergeNode in="glow"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <filter id="aquarius-glow-soft" x="-100%" y="-100%" width="300%" height="300%">
-              <feGaussianBlur stdDeviation="0.38"></feGaussianBlur>
-              <feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
-            </filter>
-            <radialGradient id="aquarius-nebula-gradient">
-              <stop offset="0%" stop-color="#e879f9" stop-opacity="0.62"></stop>
-              <stop offset="60%" stop-color="#a855f7" stop-opacity="0.22"></stop>
-              <stop offset="100%" stop-color="#4c1d95" stop-opacity="0"></stop>
-            </radialGradient>
-          </defs>
-        <g class="constellation-group" id="aquarius-group"><line class="constellation-line" x1="62" y1="30" x2="45" y2="25"></line><line class="constellation-line" x1="45" y1="25" x2="52" y2="40"></line><line class="constellation-line" x1="62" y1="30" x2="80" y2="40"></line><line class="constellation-line" x1="45" y1="25" x2="38" y2="22"></line><line class="constellation-line" x1="38" y1="22" x2="36" y2="15"></line><line class="constellation-line" x1="38" y1="22" x2="34" y2="20"></line><line class="constellation-line" x1="38" y1="22" x2="32" y2="28"></line><line class="constellation-line" x1="32" y1="28" x2="22" y2="45"></line><line class="constellation-line" x1="22" y1="45" x2="15" y2="52"></line><line class="constellation-line" x1="15" y1="52" x2="18" y2="60"></line><line class="constellation-line" x1="18" y1="60" x2="20" y2="65"></line><line class="constellation-line" x1="20" y1="65" x2="28" y2="68"></line><line class="constellation-line" x1="28" y1="68" x2="25" y2="75"></line><g class="star-group"><circle class="star" cx="45" cy="25" r="1.1" fill="#fbbf24" filter="url(#aquarius-glow-gold)"></circle><text class="star-label" x="45" y="21" data-label="Sadalmelik"></text></g><g class="star-group"><circle class="star" cx="62" cy="30" r="1.1" fill="#fbbf24" filter="url(#aquarius-glow-gold)"></circle><text class="star-label" x="62" y="26" data-label="Sadalsuud"></text></g><circle class="star" cx="38" cy="22" r="0.7" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="34" cy="20" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="36" cy="15" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><g class="star-group"><circle class="star" cx="32" cy="28" r="0.7" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><text class="star-label" x="32" y="32" data-label="Gamma"></text></g><g class="star-group"><circle class="star" cx="80" cy="40" r="0.6" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><text class="star-label" x="80" y="36" data-label="Albali"></text></g><circle class="star" cx="52" cy="40" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="22" cy="45" r="0.6" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="15" cy="52" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="18" cy="60" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><circle class="star" cx="20" cy="65" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle><g class="star-group"><circle class="star" cx="25" cy="75" r="0.9" fill="#aaccff" filter="url(#aquarius-glow-blue)"></circle><text class="star-label" x="25" y="79" data-label="Skat"></text></g><circle class="star" cx="28" cy="68" r="0.5" fill="#f8fafc" filter="url(#aquarius-glow-soft)"></circle></g>
-      </svg>
+    <aside class="constellation-transition" aria-hidden="true" data-constellation="aquarius">
+        <svg class="constellation-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+            <g class="constellation-group" id="aquarius-group">
+                <!-- Lines -->
+                <line class="constellation-line" x1="62" y1="30" x2="45" y2="25" />
+                <line class="constellation-line" x1="45" y1="25" x2="52" y2="40" />
+                <line class="constellation-line" x1="62" y1="30" x2="80" y2="40" />
+                <line class="constellation-line" x1="45" y1="25" x2="38" y2="22" />
+                <line class="constellation-line" x1="38" y1="22" x2="36" y2="15" />
+                <line class="constellation-line" x1="38" y1="22" x2="34" y2="20" />
+                <line class="constellation-line" x1="38" y1="22" x2="32" y2="28" />
+                <line class="constellation-line" x1="32" y1="28" x2="22" y2="45" />
+                <line class="constellation-line" x1="22" y1="45" x2="15" y2="52" />
+                <line class="constellation-line" x1="15" y1="52" x2="18" y2="60" />
+                <line class="constellation-line" x1="18" y1="60" x2="20" y2="65" />
+                <line class="constellation-line" x1="20" y1="65" x2="28" y2="68" />
+                <line class="constellation-line" x1="28" y1="68" x2="25" y2="75" />
+                <!-- Stars -->
+                <g class="star-group">
+                    <circle class="star" cx="45" cy="25" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
+                    <text class="star-label" x="45" y="21" data-label="Sadalmelik"></text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="62" cy="30" r="1.1" fill="#fbbf24" filter="url(#glow-gold)" />
+                    <text class="star-label" x="62" y="26" data-label="Sadalsuud"></text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="38" cy="22" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
+                </g>
+                <circle class="star" cx="34" cy="20" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="36" cy="15" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="32" cy="28" r="0.7" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="32" y="32" data-label="Gamma"></text>
+                </g>
+                <g class="star-group">
+                    <circle class="star" cx="80" cy="40" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                    <text class="star-label" x="80" y="36" data-label="Albali"></text>
+                </g>
+                <circle class="star" cx="52" cy="40" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="22" cy="45" r="0.6" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="15" cy="52" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="18" cy="60" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <circle class="star" cx="20" cy="65" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+                <g class="star-group">
+                    <circle class="star" cx="25" cy="75" r="0.9" fill="#aaccff" filter="url(#glow-blue)" />
+                    <text class="star-label" x="25" y="79" data-label="Skat"></text>
+                </g>
+                <circle class="star" cx="28" cy="68" r="0.5" fill="#f8fafc" filter="url(#glow-soft)" />
+            </g>
+        </svg>
     </aside>
 
     <section class="section about" id="about" aria-labelledby="about-title">

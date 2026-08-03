@@ -4,7 +4,7 @@ Learning Voyage LLC is Owen Onderdonk's independent practice and publishing home
 
 ## Owen Onderdonk
 
-Owen is an AI Data & Evaluation Program Lead. He entered frontier-model data work in February 2024 through complex mathematics training-data creation, then progressed through contributor review, reviewer oversight, standards and calibration design, and into project development, program management, and broader operations. Selected work has included managing data and evaluation projects supporting a frontier AI lab through an external AI data partner.
+Owen is an AI Data & Evaluation Program Lead. He entered frontier-model data work in February 2024 through complex mathematics training-data creation, then progressed through contributor review, reviewer oversight, standards and calibration design, and into project development, program management, and broader operations, helping develop and run programs with a workforce of more than 3,000 contributors. Selected work has included managing data and evaluation projects supporting a frontier AI lab through an external AI data partner.
 
 ## Flagship public work
 

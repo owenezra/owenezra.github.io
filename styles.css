@@ -522,20 +522,22 @@ p { color: var(--muted); }
 }
 main, .site-footer { position: relative; z-index: 1; }
 
-.starfield-star {
+.twinkle-star {
   position: absolute;
-  left: var(--x);
-  top: var(--y);
-  width: var(--size);
-  height: var(--size);
+  background: white;
   border-radius: 50%;
-  background: rgba(231, 247, 251, var(--opacity));
-  box-shadow: 0 0 calc(var(--size) * 5) rgba(113, 216, 221, .22);
-  animation: voyage-twinkle var(--duration) ease-in-out var(--delay) infinite alternate;
+  animation: twinkle 3s ease-in-out infinite;
 }
-@keyframes voyage-twinkle {
-  from { opacity: .25; transform: scale(.75); }
-  to { opacity: 1; transform: scale(1.35); }
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.6);
+  }
 }
 
 .signature-hero {
@@ -553,88 +555,123 @@ main, .site-footer { position: relative; z-index: 1; }
   align-content: center;
   min-width: 0;
 }
-.voyage-emblem {
+.logo-with-text {
   position: relative;
   width: min(100%, 470px);
-  aspect-ratio: 1;
-  isolation: isolate;
-  animation: voyage-emblem-arrive 1.25s cubic-bezier(.2,.78,.22,1) both;
+  animation: logoFadeIn 1s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
 }
-.voyage-logo-shell {
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.logo-glow {
   position: absolute;
-  inset: 8.8%;
-  z-index: 3;
-  display: grid;
-  place-items: center;
-  animation: voyage-float 7.2s ease-in-out 1.1s infinite;
-  transform-origin: 50% 63%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  background: radial-gradient(ellipse at center,
+      rgba(79, 198, 215, 0.3) 0%,
+      rgba(79, 198, 215, 0.1) 40%,
+      transparent 70%);
+  filter: blur(clamp(20px, 3vw, 60px));
+  animation: pulseGlow 4s ease-in-out infinite;
+  z-index: 0;
 }
-.voyage-logo {
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+.logo-wrapper {
+  position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 24px 34px rgba(0,0,0,.32));
+  z-index: 1;
+  animation: logoBob 2.5s ease-in-out infinite;
+  animation-delay: 0.15s;
+}
+@keyframes logoBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7%);
+  }
+}
+.hero-logo {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  filter: drop-shadow(0 clamp(10px, 2vw, 30px) clamp(30px, 4vw, 80px) rgba(79, 198, 215, 0.2));
 }
 .voyage-logo.is-fallback {
   width: 54%;
-  height: 54%;
+  margin-inline: auto;
   opacity: .72;
 }
-.voyage-logo-glow {
-  position: absolute;
-  inset: 17%;
-  z-index: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(113,216,221,.25), rgba(56,119,164,.1) 42%, transparent 72%);
-  filter: blur(18px);
-  animation: voyage-glow 5.8s ease-in-out infinite alternate;
-}
-.voyage-water {
-  position: absolute;
-  z-index: 2;
-  left: 16%;
-  right: 16%;
-  bottom: 18%;
-  height: 18%;
-  overflow: hidden;
-  opacity: .62;
-  mask-image: linear-gradient(to bottom, #000, transparent 92%);
-}
-.voyage-water span {
-  position: absolute;
-  left: -12%;
-  width: 124%;
-  height: 1px;
-  border-radius: 50%;
-  background: linear-gradient(90deg, transparent, rgba(113,216,221,.72), rgba(255,255,255,.5), rgba(113,216,221,.72), transparent);
-  box-shadow: 0 0 10px rgba(113,216,221,.38);
-  transform-origin: center;
-  animation: voyage-water-shift 4.6s ease-in-out infinite alternate;
-}
-.voyage-water span:nth-child(1) { top: 24%; animation-delay: -.8s; }
-.voyage-water span:nth-child(2) { top: 50%; animation-delay: -2.1s; opacity: .68; }
-.voyage-water span:nth-child(3) { top: 76%; animation-delay: -3.2s; opacity: .4; }
 .curved-text-svg {
   position: absolute;
-  inset: 0;
-  z-index: 5;
-  width: 100%;
-  height: 100%;
+  top: -25%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  z-index: 2;
   overflow: visible;
   pointer-events: none;
+  animation: waterPush 2.5s ease-in-out infinite;
 }
+@keyframes waterPush {
+  0%, 100% {
+    transform: translateY(7%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+/* The production stylesheet declares unitless font sizes here (58/20), which
+   browsers drop as invalid CSS; the live site therefore renders these letters
+   at 16px. Declare the as-rendered values so the wordmark matches production. */
 .curved-text-letters {
-  fill: rgba(229, 246, 249, .9);
-  font: 680 13px/1 ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: 5.2px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
 }
 .curved-text-letters .letter {
+  fill: #76e1e6;
   opacity: 0;
-  animation: voyage-letter-reveal .62s cubic-bezier(.2,.8,.2,1) forwards;
-  animation-delay: calc(.42s + var(--delay, 0) * 55ms);
+  animation: letterReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(0.1s + (var(--delay) * 0.06s));
 }
-.curved-text-letters .gap { letter-spacing: 0; }
-.curved-text-letters .dot { fill: var(--gold); font-size: 7px; }
+.curved-text-letters .letter.dot-space {
+  opacity: 0;
+}
+.curved-text-letters .letter.word-space {
+  opacity: 0;
+}
+@keyframes letterReveal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.curved-text-letters .letter.dot {
+  font-size: 16px;
+}
 .voyage-visual-caption {
   max-width: 34ch;
   margin: -4px auto 0;
@@ -687,81 +724,80 @@ main, .site-footer { position: relative; z-index: 1; }
 
 .constellation-transition {
   position: relative;
-  min-height: clamp(390px, 57vw, 660px);
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
-  background:
-    radial-gradient(circle at 50% 48%, rgba(48, 111, 152, .105), transparent 34%),
-    linear-gradient(180deg, rgba(6,17,27,.96), rgba(8,22,33,.98) 48%, rgba(6,17,27,.96));
+  width: 100%;
+  height: clamp(150px, 30vw, 550px);
+  overflow: visible;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
 }
-.constellation-transition::before,
-.constellation-transition::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: min(86vw, 980px);
-  height: 1px;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, rgba(113,216,221,.16), transparent);
-}
-.constellation-transition::before { top: 12%; }
-.constellation-transition::after { bottom: 12%; }
-.constellation-haze {
-  position: absolute;
-  width: min(70vw, 760px);
-  aspect-ratio: 1.8;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(113,216,221,.08), transparent 67%);
-  filter: blur(34px);
+.constellation-transition.visible {
+  opacity: 1;
 }
 .constellation-svg {
-  position: relative;
-  z-index: 2;
-  width: min(78vw, 780px);
+  width: clamp(200px, 50vw, 1100px);
   height: auto;
+  display: block;
   overflow: visible;
-  filter: drop-shadow(0 0 24px rgba(78,173,201,.1));
-}
-.constellation-name {
-  position: absolute;
-  left: max(24px, calc((100% - min(1180px, calc(100% - 40px))) / 2));
-  top: 50%;
-  z-index: 3;
-  margin: 0;
-  transform: translateY(-50%) rotate(-90deg);
-  transform-origin: left top;
-  color: rgba(158,177,189,.42);
-  font: 650 .64rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
-  letter-spacing: .32em;
 }
 .constellation-line {
-  fill: none;
-  stroke: rgba(133, 205, 222, .5);
-  stroke-width: .22;
+  stroke: rgba(180, 200, 230, 0.3);
+  stroke-width: 0.2px;
   stroke-linecap: round;
-  vector-effect: non-scaling-stroke;
+  fill: none;
+  transition: stroke-dashoffset 0.5s ease-out;
 }
-.star,
-.nebula {
+.constellation-group .star {
   transform-box: fill-box;
   transform-origin: center;
-  opacity: 0;
-  transform: scale(.18);
+  transform: scale(0);
+  transition: transform 0.6s ease-out;
+}
+.constellation-group .star.visible {
+  transform: scale(1);
 }
 .star-label {
-  fill: rgba(201, 222, 231, .72);
-  font: 1.45px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  fill: rgba(200, 215, 230, 0.7);
+  font-family: 'Georgia', serif;
+  font-size: 2.2px;
+  font-style: italic;
+  letter-spacing: 0.02px;
   text-anchor: middle;
   opacity: 0;
-  letter-spacing: .04em;
+  transition: opacity 0.5s ease-out;
+  pointer-events: none;
 }
-.nebula-label { text-anchor: start; fill: rgba(220,190,248,.74); }
+.star-label.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+.nebula-label {
+  fill: rgba(232, 121, 249, 0.8);
+}
+.nebula {
+  filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+.nebula.visible {
+  opacity: 0.7;
+  transition: opacity 0.5s ease-out;
+}
+
+@media (max-width: 1024px) {
+  .route { display: none; }
+  .constellation-transition { height: 40vw; }
+  .constellation-svg { width: 70vw; }
+}
 
 @media (max-width: 980px) {
   .signature-hero { grid-template-columns: minmax(0, 1.08fr) minmax(290px, .72fr); gap: 38px; }
-  .voyage-emblem { width: min(100%, 390px); }
+  .logo-with-text { width: min(100%, 390px); }
   .hero-focus-rail { grid-template-columns: repeat(3, 1fr); }
   .hero-focus-rail span:nth-child(4), .hero-focus-rail span:nth-child(5) { border-top: 1px solid var(--line); }
 }
@@ -769,29 +805,44 @@ main, .site-footer { position: relative; z-index: 1; }
 @media (max-width: 760px) {
   .signature-hero { grid-template-columns: 1fr; padding-top: 56px; }
   .voyage-visual { grid-row: 1; }
-  .voyage-emblem { width: min(92vw, 340px); }
+  .logo-with-text { width: min(80vw, 320px); margin-inline: auto; }
   .voyage-visual-caption { display: none; }
   .signature-hero .hero-copy { grid-row: 2; }
   .hero-focus-rail { grid-row: 3; grid-template-columns: 1fr 1fr; }
   .hero-focus-rail span { min-height: 50px; }
   .hero-focus-rail span:nth-child(n+3) { border-top: 1px solid var(--line); }
   .hero-focus-rail span:last-child { grid-column: 1 / -1; }
-  .constellation-transition { min-height: 330px; }
-  .constellation-svg { width: min(94vw, 620px); }
-  .constellation-name { left: 18px; font-size: .56rem; }
-  .star-label { display: none; }
+  .constellation-transition { height: 65vw; margin: 12px 0; }
+  .constellation-svg { width: 90vw; }
+  .star-label { font-size: 3px; }
+  .constellation-line { stroke-width: 0.35px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .starfield-star,
-  .voyage-emblem,
-  .voyage-logo-shell,
-  .voyage-logo-glow,
-  .voyage-water span,
-  .curved-text-letters .letter {
-    animation: none !important;
+  .twinkle-star { animation: none; opacity: 0.5; }
+  .logo-with-text { animation: none; opacity: 1; }
+  .logo-wrapper,
+  .logo-glow,
+  .hero-logo { animation: none; }
+  .curved-text-svg { animation: none; transform: translateY(0); }
+  .curved-text-letters .letter { opacity: 1; animation: none; }
+  .curved-text-letters .letter.dot-space,
+  .curved-text-letters .letter.word-space { opacity: 0; }
+  .hero-copy .eyebrow, .hero-copy h1, .hero-lede, .hero-detail,
+  .hero-actions, .hero-tertiary, .hero-focus-rail { animation: none; opacity: 1; }
+  .route-path-progress { stroke-dashoffset: 0 !important; }
+  .route-waypoint { fill: var(--aqua); stroke: #94e8e8; }
+  .route-star { opacity: 1; }
+  .constellation-transition { opacity: 1; }
+  .constellation-line { stroke-dashoffset: 0 !important; animation: none !important; }
+  .constellation-group .star { transform: scale(1) !important; opacity: 1 !important; animation: none !important; }
+  .star-label { opacity: 1 !important; animation: none !important; }
+  .nebula { opacity: 0.4 !important; animation: none !important; }
+  .js .capability-card, .js .work-item, .js .writing-card,
+  .js .principle-grid article, .js .evidence-grid article, .js .connect-card {
+    opacity: 1;
+    transform: none;
   }
-  .curved-text-letters .letter { opacity: 1; }
 }
 
 
@@ -850,4 +901,94 @@ main, .site-footer { position: relative; z-index: 1; }
 @media (max-width: 760px) {
   .education-grid { grid-template-columns: 1fr; }
   .progression-list li { grid-template-columns: 40px 1fr; gap: 14px; }
+}
+
+/* Course line — drawn on scroll through the experience section */
+.route {
+  width: 100%;
+  max-width: 1200px;
+  margin: 34px auto 6px;
+  display: block;
+  overflow: visible;
+}
+.route-path-base {
+  stroke: rgba(79, 198, 215, 0.18);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 8;
+  stroke-linecap: round;
+  fill: none;
+}
+.route-path-progress {
+  stroke: var(--aqua);
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
+  filter: drop-shadow(0 0 4px rgba(79, 198, 215, 0.5));
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.route-waypoint {
+  fill: var(--paper);
+  stroke: rgba(79, 198, 215, 0.4);
+  stroke-width: 1.5;
+  transition: fill 0.4s ease, stroke 0.4s ease;
+}
+.route-waypoint.reached {
+  fill: var(--aqua);
+  stroke: #94e8e8;
+}
+.route-star {
+  fill: rgba(251, 191, 36, 0.78);
+  font-size: 18px;
+  text-anchor: middle;
+  opacity: 0.35;
+  transition: opacity 0.4s ease;
+}
+.route-star.reached {
+  opacity: 1;
+}
+
+/* Hero entrance cascade (CSS-only, mirrors production timing) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.5em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-copy .eyebrow { animation: fadeInUp 0.6s ease backwards; animation-delay: 1.4s; }
+.hero-copy h1 { animation: fadeInUp 0.6s ease backwards; animation-delay: 1.5s; }
+.hero-lede { animation: fadeInUp 0.6s ease backwards; animation-delay: 1.7s; }
+.hero-detail { animation: fadeInUp 0.6s ease backwards; animation-delay: 1.9s; }
+.hero-actions { animation: fadeInUp 0.6s ease backwards; animation-delay: 2.1s; }
+.hero-tertiary { animation: fadeInUp 0.6s ease backwards; animation-delay: 2.3s; }
+.hero-focus-rail { animation: fadeIn 1s ease backwards; animation-delay: 2.5s; }
+
+/* Scroll fade-ins. Gated on html.js so content stays visible without JS, and
+   on no-preference so reduced-motion users never see a hidden state. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .capability-card, .js .work-item, .js .writing-card,
+  .js .principle-grid article, .js .evidence-grid article, .js .connect-card {
+    opacity: 0;
+    transform: translateY(1em);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .js .capability-card.visible, .js .work-item.visible, .js .writing-card.visible,
+  .js .principle-grid article.visible, .js .evidence-grid article.visible, .js .connect-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Disable transitions during resize */
+body.resizing,
+body.resizing * {
+  transition: none !important;
 }
