@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real-Data Agent Environments | Owen Onderdonk</title>
+  <meta name="description" content="Current work by Owen Onderdonk on long-horizon agent and control tasks using real or measured data, hidden variation, explicit baselines, and reproducible grading.">
+  <meta name="theme-color" content="#07131d">
+  <link rel="canonical" href="https://learning.voyage/work/agent-environments.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://learning.voyage/work/agent-environments.html">
+  <meta property="og:site_name" content="Learning Voyage">
+  <meta property="og:title" content="Real-Data Agent and Control Environments">
+  <meta property="og:description" content="Long-horizon tasks built from real or measured constraints, hidden variation, and reproducible grading. Work in development by Owen Onderdonk.">
+  <meta property="og:image" content="https://learning.voyage/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Real-Data Agent and Control Environments",
+    "description": "Current work by Owen Onderdonk on long-horizon agent and control tasks using real or measured data, hidden variation, explicit baselines, and reproducible grading.",
+    "url": "https://learning.voyage/work/agent-environments.html",
+    "datePublished": "2026-08-03",
+    "dateModified": "2026-08-03",
+    "author": {
+      "@type": "Person",
+      "name": "Owen Onderdonk",
+      "url": "https://learning.voyage/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Learning Voyage LLC",
+      "url": "https://learning.voyage/"
+    }
+  }
+  </script>
+</head>
+<body class="case-study-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header is-scrolled">
+    <div class="shell nav-shell">
+      <a class="brand" href="/" aria-label="Learning Voyage — home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+          <path d="M24 7v34M7 24h34" stroke="currentColor" stroke-width="1" opacity=".25"/>
+          <path d="M24 10l5.2 12.8L24 38l-5.2-15.2L24 10Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-copy"><strong>Learning Voyage</strong><span>Owen Onderdonk</span></span>
+      </a>
+      <nav class="site-nav case-nav" aria-label="Project navigation">
+        <a href="/">Home</a>
+        <a href="/work/index.html">Selected work</a>
+        <a class="nav-contact" href="/#connect">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero" aria-labelledby="case-title">
+      <div class="case-grid" aria-hidden="true"></div>
+      <div class="shell case-hero-layout">
+        <div>
+          <p class="eyebrow">CURRENT DEVELOPMENT · AGENT ENVIRONMENTS AND REINFORCEMENT LEARNING</p>
+          <h1 id="case-title">Turn scarce expertise into interactive training signal.</h1>
+          <p class="case-deck">Long-horizon tasks built from real or measured constraints, hidden variation, and reproducible grading.</p>
+          <p class="case-lede">I am developing agent and control environments that preserve the structure of a real problem rather than reducing it to a static answer key. The agent observes a state, takes actions, receives consequences, and must adapt across conditions it cannot solve by memorizing one scenario.</p>
+        </div>
+        <aside class="case-facts" aria-label="Project facts">
+          <div><span>Author</span><strong>Owen Onderdonk</strong></div>
+          <div><span>Published through</span><strong>Learning Voyage LLC</strong></div>
+          <div><span>Status</span><strong>In development</strong></div>
+          <div><span>Not claimed</span><strong>A validated benchmark suite or published research result</strong></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section case-section" aria-labelledby="why-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">WHY ENVIRONMENTS</p>
+          <h2 id="why-title">A dataset records what happened. An environment can test what an agent does next.</h2>
+        </div>
+        <div class="case-prose">
+          <p>Many forms of expert knowledge are procedural.</p>
+          <p>The expert does not merely recognize a label. The expert observes a changing system, chooses among constrained actions, interprets feedback, manages tradeoffs, and recovers when the initial plan fails.</p>
+          <p>A well-designed environment can preserve those dynamics:</p>
+          <ul class="article-list">
+            <li>sequential decisions;</li>
+            <li>delayed consequences;</li>
+            <li>partial observability;</li>
+            <li>changing conditions;</li>
+            <li>resource constraints;</li>
+            <li>safety or compliance boundaries;</li>
+            <li>tradeoffs among competing objectives;</li>
+            <li>adaptation after failure.</li>
+          </ul>
+          <p>This can provide a richer training and evaluation signal than a collection of isolated examples.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section case-core" aria-labelledby="commitments-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">DESIGN COMMITMENTS</p>
+          <h2 id="commitments-title">Difficulty must survive inspection.</h2>
+        </div>
+        <div class="artifact-list">
+          <article><h3>Real or measured source material</h3><p>Use observed, measured, or otherwise authentic source data wherever possible. The source, license, provenance, preprocessing, and limitations should be documented. Synthetic generation should not be used to conceal the absence of a real data-generating process.</p></article>
+          <article><h3>Interactive structure</h3><p>The agent should make decisions over time. A task that can be solved by reading a hidden answer from a static file is not functioning as an environment.</p></article>
+          <article><h3>Hidden variation</h3><p>Evaluation conditions should vary in ways that prevent the agent from overfitting one fixed scenario while remaining reproducible for grading. Hidden variation must test generalization, not introduce arbitrary grader luck.</p></article>
+          <article><h3>Explicit baselines</h3><p>Include a weak baseline, a strong reference solution, and diagnostic subscores when they help explain performance. A difficult task is not credible merely because one agent scored poorly. The reward needs anchors.</p></article>
+          <article><h3>Reproducible grading</h3><p>The same submitted policy or artifact should receive the same score under the same declared seed and environment version, subject only to explicitly documented numerical tolerance. The grader should not depend on an uncalibrated language-model verdict.</p></article>
+          <article><h3>Separation of public and private information</h3><p>Publish enough of the environment contract for an agent to act legitimately while preserving private evaluation conditions that test generalization. Hidden data should not conceal the task definition or make success depend on guessing undocumented rules.</p></article>
+          <article><h3>Inspectable failure</h3><p>A score should be accompanied by enough diagnostics to distinguish poor policy behavior, constraint violation, numerical instability, missing output, and grader failure.</p></article>
+          <article><h3>Resource honesty</h3><p>CPU, GPU, runtime, memory, and dependency requirements should be explicit and tested in the same container or execution environment used for grading.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" aria-labelledby="current-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">CURRENT WORK</p>
+          <h2 id="current-title">Control, adaptation, and long-horizon evaluation.</h2>
+        </div>
+        <div class="case-prose">
+          <p>Current work includes task-authoring infrastructure and control tasks involving traction, per-side dynamics, payload variation, disturbances, and other conditions that require a policy to adapt rather than replay a fixed answer.</p>
+          <p>The broader development direction includes:</p>
+          <ul class="article-list">
+            <li>vehicle and robotics control;</li>
+            <li>hidden physical parameters;</li>
+            <li>real weather, terrain, demand, or sensor records;</li>
+            <li>risk-sensitive decision making;</li>
+            <li>policies that must trade performance against safety;</li>
+            <li>tasks where the agent can inspect evidence but cannot alter the grader;</li>
+            <li>deterministic verification of final artifacts and rollouts.</li>
+          </ul>
+          <p>This page describes the problem and method. Individual repositories will be linked only after their documentation, provenance, license, and attribution are ready for a general audience.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" aria-labelledby="credible-title">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow">WHAT MAKES A TASK CREDIBLE</p><h2 id="credible-title">Difficulty is not the same as validity.</h2></div>
+          <p>A task can stump a strong agent for the wrong reasons: missing dependencies, contradictory instructions, an unstable simulator, a hidden requirement not implied by the public contract, a scorer that cannot distinguish meaningful performance, a reference solution that does not reproduce, impossible runtime or hardware assumptions, or data whose license or provenance is unclear.</p>
+        </div>
+        <div class="principle-grid">
+          <article><h3>Reference integrity</h3><p>The reference solution runs in the final environment and achieves the intended score.</p></article>
+          <article><h3>Baseline separation</h3><p>Weak, competent, and strong behavior occupy meaningfully different reward regions.</p></article>
+          <article><h3>Perturbation robustness</h3><p>Small irrelevant changes do not produce large score changes, while task-relevant failures are detected.</p></article>
+          <article><h3>Cross-platform stability</h3><p>Declared CPU, GPU, or accelerator paths are tested, and numerical tolerances are justified.</p></article>
+          <article><h3>License and provenance integrity</h3><p>Every non-original asset and dataset has a traceable source and permitted use.</p></article>
+          <article><h3>Agent-facing completeness</h3><p>The public instruction and environment contract contain enough information for legitimate problem solving.</p></article>
+          <article><h3>Grader privacy</h3><p>Private evaluation assets remain inaccessible to the acting agent without relying on security through obscurity for the task definition itself.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" aria-labelledby="relationship-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">RELATIONSHIP TO AI DATA WORK</p>
+          <h2 id="relationship-title">An environment is another way to specify evidence.</h2>
+        </div>
+        <div class="case-prose">
+          <p>The connection to my data and evaluation work is direct. In both cases, the central questions are:</p>
+          <ul class="article-list">
+            <li>What capability is the system expected to demonstrate?</li>
+            <li>What evidence would distinguish success from a plausible imitation?</li>
+            <li>Which variation matters?</li>
+            <li>What knowledge should be public?</li>
+            <li>What should remain hidden for evaluation?</li>
+            <li>How should partial success be scored?</li>
+            <li>What failure modes require hard constraints?</li>
+            <li>How can another person reproduce the result?</li>
+          </ul>
+          <p>Task design, calibration, acceptance criteria, provenance, and quality control remain essential. The object being evaluated changes from a human-produced artifact to an agent policy or trajectory.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section limitations" aria-labelledby="nonclaims-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">BOUNDARIES AND NON-CLAIMS</p>
+          <h2 id="nonclaims-title">What this work does not yet establish.</h2>
+        </div>
+        <div class="case-prose">
+          <p>This work is in development. It does not yet establish:</p>
+          <ul class="article-list">
+            <li>a generally accepted benchmark;</li>
+            <li>a comprehensive agent-capability taxonomy;</li>
+            <li>a new reinforcement-learning algorithm;</li>
+            <li>state-of-the-art policy performance;</li>
+            <li>that real data automatically makes an environment realistic;</li>
+            <li>that a low frontier-agent score proves the task measures a useful capability;</li>
+            <li>that deterministic grading eliminates all specification risk.</li>
+          </ul>
+          <p>The public claim is narrower: I am building and evaluating methods for authoring difficult, reproducible, real-data agent and control tasks.</p>
+          <p><strong>Next milestones</strong></p>
+          <ol class="article-list">
+            <li>Publish a clean project index with one page per environment.</li>
+            <li>Record source, license, checksums, and preprocessing for every dataset and asset.</li>
+            <li>Run the reference solution inside the final container.</li>
+            <li>Publish weak and strong baseline results.</li>
+            <li>Document hidden variation without leaking private evaluation values.</li>
+            <li>Add deterministic grader and perturbation tests.</li>
+            <li>Publish agent-attempt results with full configuration and failure analysis.</li>
+            <li>Separate task difficulty from infrastructure failure.</li>
+            <li>Feature the strongest complete environment publicly once it stands on its own.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section connect" aria-labelledby="case-connect-title">
+      <div class="shell connect-card">
+        <div><p class="eyebrow">CONTINUE THE CONVERSATION</p><h2 id="case-connect-title">Working on a real-data environment that needs a stronger task contract?</h2><p>I am interested in agent and control problems where measured data, hidden variation, expert constraints, and reproducible grading must fit together.</p></div>
+        <div class="connect-actions">
+          <a class="button button-primary" href="mailto:ahoythere@learning.voyage?subject=Real-Data%20Agent%20Environments">Email Owen</a>
+          <a class="button button-secondary" href="/work/index.html">Read selected work</a>
+          <a class="button button-secondary" href="/#questions">View current questions</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><p class="footer-brand">Learning Voyage LLC</p><p>Owen Onderdonk's independent practice and publishing home for AI data, evaluation, research operations, and open infrastructure.</p></div>
+      <div class="disclosure"><p><strong>Status note:</strong> This page describes work in development. Individual environments and benchmark results should be treated as established only when their repositories, licenses, tests, and evaluation records are published.</p></div>
+      <div class="footer-links"><a href="/">Home</a><a href="/attribution.html">Source and attribution</a><a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/owenezra" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+  </footer>
+</body>
+</html>

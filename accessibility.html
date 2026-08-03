@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility | Learning Voyage</title>
+  <meta name="description" content="Accessibility commitments for learning.voyage: semantic structure, keyboard operability, contrast, reduced-motion support, and how to report an issue.">
+  <meta name="theme-color" content="#07131d">
+  <link rel="canonical" href="https://learning.voyage/accessibility.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://learning.voyage/accessibility.html">
+  <meta property="og:site_name" content="Learning Voyage">
+  <meta property="og:title" content="Accessibility | Learning Voyage">
+  <meta property="og:description" content="Accessibility commitments and issue reporting for learning.voyage.">
+  <meta property="og:image" content="https://learning.voyage/assets/og-image.png">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Accessibility",
+    "url": "https://learning.voyage/accessibility.html",
+    "author": {
+      "@type": "Person",
+      "name": "Owen Onderdonk",
+      "url": "https://learning.voyage/"
+    }
+  }
+  </script>
+</head>
+<body class="case-study-page article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header is-scrolled">
+    <div class="shell nav-shell">
+      <a class="brand" href="/" aria-label="Learning Voyage — home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+          <path d="M24 7v34M7 24h34" stroke="currentColor" stroke-width="1" opacity=".25"/>
+          <path d="M24 10l5.2 12.8L24 38l-5.2-15.2L24 10Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-copy"><strong>Learning Voyage</strong><span>Owen Onderdonk</span></span>
+      </a>
+      <nav class="site-nav case-nav" aria-label="Page navigation">
+        <a href="/">Home</a>
+        <a href="/attribution.html">Source and attribution</a>
+        <a class="nav-contact" href="/#connect">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="article-shell">
+      <p class="eyebrow">ACCESSIBILITY</p>
+      <h1>The decorative layer must never gate the content.</h1>
+      <p class="article-lede">This site uses an animated emblem, a starfield, and constellation transitions as identity. They are built to stay out of the way of reading, navigation, and assistive technology.</p>
+
+      <h2>Commitments</h2>
+      <ul>
+        <li>Semantic HTML landmarks, one main heading per page, and a logical heading order.</li>
+        <li>A skip link to main content on every page.</li>
+        <li>Keyboard-operable navigation, including the mobile menu, with visible focus states.</li>
+        <li>No information conveyed by hover, color, or animation alone; project statuses are written labels.</li>
+        <li>Text and control contrast targeted at WCAG 2.1 AA against the dark background.</li>
+        <li>Decorative visuals (starfield, emblem glow, constellation figures) are marked <code>aria-hidden</code> and receive no keyboard focus.</li>
+        <li>Core content remains readable when JavaScript is unavailable.</li>
+      </ul>
+
+      <h2>Reduced motion</h2>
+      <p>When the operating system requests reduced motion (<code>prefers-reduced-motion: reduce</code>), the site presents a complete static design: constellation lines render fully drawn, stars and labels are visible immediately, the emblem does not float or shimmer, the starfield does not twinkle, and smooth scrolling is disabled. Nothing requires an animation to finish before it can be read or reached.</p>
+
+      <h2>Known limitations</h2>
+      <ul>
+        <li>The constellation figures are decorative renderings and are hidden from assistive technology rather than described.</li>
+        <li>Long pages rely on in-page navigation anchors; a table of contents is not yet provided on every page.</li>
+      </ul>
+
+      <h2>Report an issue</h2>
+      <p>If anything on this site is difficult to read, navigate, or operate with your setup, please email <a class="inline-link" href="mailto:ahoythere@learning.voyage?subject=Accessibility">ahoythere@learning.voyage</a> and describe the page, your assistive technology or input method, and the barrier. Reports are treated as defects, not feedback.</p>
+    </div>
+
+    <section class="section connect" aria-labelledby="a11y-connect-title">
+      <div class="shell connect-card">
+        <div><p class="eyebrow">CONTINUE</p><h2 id="a11y-connect-title">Back to the work.</h2><p>The homepage carries the full narrative; the selected-work page carries the evidence.</p></div>
+        <div class="connect-actions">
+          <a class="button button-primary" href="/">Return home</a>
+          <a class="button button-secondary" href="/work/index.html">View selected work</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><p class="footer-brand">Learning Voyage LLC</p><p>Owen Onderdonk's independent practice and publishing home for AI data, evaluation, research operations, and open infrastructure.</p></div>
+      <div class="disclosure"><p><strong>Relationship context:</strong> Project references describe work supported through external AI data partners. They do not imply employment, endorsement, or a direct commercial relationship between end clients and Learning Voyage LLC.</p></div>
+      <div class="footer-links"><a href="/">Home</a><a href="/attribution.html">Source and attribution</a><a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/owenezra" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+  </footer>
+</body>
+</html>

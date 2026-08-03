@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What “Audited Data” Should Mean | Owen Onderdonk</title>
+  <meta name="description" content="A proposal for treating an AI-data audit as a versioned claim-and-evidence record covering provenance, rights, technical quality, representation, and utility.">
+  <meta name="theme-color" content="#07131d">
+  <link rel="canonical" href="https://learning.voyage/writing/what-audited-should-mean-for-ai-data.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://learning.voyage/writing/what-audited-should-mean-for-ai-data.html">
+  <meta property="og:site_name" content="Learning Voyage">
+  <meta property="og:title" content="What “Audited Data” Should Mean">
+  <meta property="og:description" content="An audit should identify the claims examined, the evidence used, the procedure followed, the version assessed, the unresolved questions, and the accountable party.">
+  <meta property="og:image" content="https://learning.voyage/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Audited Data Should Mean",
+    "description": "A proposal for treating an AI-data audit as a versioned claim-and-evidence record covering provenance, rights, technical quality, representation, utility, and limitations.",
+    "url": "https://learning.voyage/writing/what-audited-should-mean-for-ai-data.html",
+    "datePublished": "2026-08-03",
+    "dateModified": "2026-08-03",
+    "author": {
+      "@type": "Person",
+      "name": "Owen Onderdonk",
+      "url": "https://learning.voyage/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Learning Voyage LLC",
+      "url": "https://learning.voyage/"
+    }
+  }
+  </script>
+</head>
+<body class="case-study-page article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header is-scrolled">
+    <div class="shell nav-shell">
+      <a class="brand" href="/" aria-label="Learning Voyage — home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+          <path d="M24 7v34M7 24h34" stroke="currentColor" stroke-width="1" opacity=".25"/>
+          <path d="M24 10l5.2 12.8L24 38l-5.2-15.2L24 10Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-copy"><strong>Learning Voyage</strong><span>Owen Onderdonk</span></span>
+      </a>
+      <nav class="site-nav case-nav" aria-label="Article navigation">
+        <a href="/">Home</a>
+        <a href="/writing/index.html">Writing</a>
+        <a class="nav-contact" href="/#connect">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="article-shell">
+      <p class="eyebrow">WORKING NOTE · DATA MARKETS</p>
+      <h1>What “audited data” should mean.</h1>
+      <p class="article-lede">“Audited” is a powerful word. It suggests that someone independent looked closely, applied a defined standard, and found the asset worthy of trust. In AI data markets, that implication can easily outrun the evidence.</p>
+
+      <p>One provider may use “audited” to mean the schema validates. Another may mean a sample was manually inspected. Another may mean provenance documents exist. A marketplace may mean that the seller passed an identity check. A buyer may hear that the dataset is legally safe, technically sound, representative, and useful for training.</p>
+      <p>Those are different claims.</p>
+      <p>An audit should not be a badge that compresses them into one signal. It should be a versioned claim-and-evidence record.</p>
+
+      <h2>Define the audit object</h2>
+      <p>The first question is: what exactly was audited? Possibilities include:</p>
+      <ul>
+        <li>a dataset version;</li>
+        <li>a data-producing process;</li>
+        <li>a provider organization;</li>
+        <li>a labeling workflow;</li>
+        <li>a license chain;</li>
+        <li>a sample;</li>
+        <li>a model-utility claim;</li>
+        <li>a delivery and update process.</li>
+      </ul>
+      <p>A provider audit does not automatically establish the quality of every dataset. A sample audit does not establish the absence of rare failures. A provenance audit does not establish model utility.</p>
+      <p>The audit object, version, and time window should be explicit.</p>
+
+      <h2>Separate the claim families</h2>
+      <p>A useful audit can organize findings into distinct lanes.</p>
+      <h3>Provenance</h3>
+      <p>Source identity; acquisition method; chain of custody; transformations; version history; confidence and gaps.</p>
+      <h3>Rights and permitted use</h3>
+      <p>Ownership or authorization basis; license terms; downstream restrictions; privacy and consent; geographic or sector limits; unresolved legal questions. This lane should be reviewed by qualified counsel where legal conclusions are required. A technical auditor should not silently convert documentation presence into a legal opinion.</p>
+      <h3>Technical integrity</h3>
+      <p>Schema conformance; file validity; missingness; duplication; corruption; documentation; reproducibility of preprocessing.</p>
+      <h3>Content or label quality</h3>
+      <p>Sampling method; reviewer qualifications; criterion; agreement and adjudication; error types; uncertainty; known blind spots.</p>
+      <h3>Representation</h3>
+      <p>Target population; included and excluded regions; difficulty distribution; demographic, geographic, temporal, or domain coverage; known imbalance.</p>
+      <h3>Utility</h3>
+      <p>Intended model objective; baseline; evaluation design; measured change; transfer to the target distribution; uncertainty and confounds.</p>
+      <h3>Operational maintainability</h3>
+      <p>Refresh cadence; change notification; versioning; deprecation; remediation; support for future audits.</p>
+      <p>These lanes can be combined into a report, but they should not be combined into one unqualified score.</p>
+
+      <h2>Attach evidence to every finding</h2>
+      <p>An audit finding should be traceable. A minimal record includes:</p>
+      <ul>
+        <li>claim;</li>
+        <li>criterion;</li>
+        <li>evidence source;</li>
+        <li>quoted or structured support;</li>
+        <li>procedure;</li>
+        <li>result;</li>
+        <li>confidence;</li>
+        <li>limitation;</li>
+        <li>reviewer or system;</li>
+        <li>version;</li>
+        <li>date;</li>
+        <li>appeal or correction history.</li>
+      </ul>
+      <p>The evidence may be public, private, or access controlled. It does not all need to be published. But the buyer should know what type of evidence exists and who was allowed to inspect it.</p>
+
+      <h2>Use honest result states</h2>
+      <p>Pass and fail are not enough. An audit may find:</p>
+      <ul>
+        <li><strong>supported</strong> — the evidence satisfies the criterion;</li>
+        <li><strong>contradicted</strong> — affirmative evidence conflicts with the claim;</li>
+        <li><strong>insufficient</strong> — the evidence does not decide the claim;</li>
+        <li><strong>not applicable</strong> — the criterion does not apply;</li>
+        <li><strong>contract-ambiguous</strong> — the standard does not determine a unique result;</li>
+        <li><strong>not assessed</strong> — the audit did not examine the claim.</li>
+      </ul>
+      <p>These distinctions prevent an incomplete audit from being read as a clean bill of health.</p>
+
+      <h2>State the scope in the badge</h2>
+      <p>A short public signal can still be useful, but it should be narrow. For example:</p>
+      <blockquote>Provenance documentation and schema integrity reviewed for dataset version 2.3. Model utility, legal sufficiency, and representational fitness were not assessed. Full evidence record available to authorized buyers.</blockquote>
+      <p>That sentence is less marketable than “fully audited.” It is also far more trustworthy.</p>
+
+      <h2>Audit the auditor</h2>
+      <p>An audit process needs its own quality controls:</p>
+      <ul>
+        <li>reviewer qualifications;</li>
+        <li>conflict-of-interest disclosure;</li>
+        <li>versioned criteria;</li>
+        <li>calibration;</li>
+        <li>sampling rationale;</li>
+        <li>second-level review;</li>
+        <li>correction process;</li>
+        <li>reproducible checks;</li>
+        <li>limits on automated judgment;</li>
+        <li>retention of evidence and prior versions.</li>
+      </ul>
+      <p>An automated reviewer can assist with deterministic checks, evidence extraction, and local claim verification. It should not be allowed to convert missing records or ambiguous standards into confident assurance.</p>
+
+      <h2>The practical standard</h2>
+      <p>Before accepting “audited,” ask:</p>
+      <ol>
+        <li>What object and version were examined?</li>
+        <li>Which claims were in scope?</li>
+        <li>Which evidence was available?</li>
+        <li>What procedure was used?</li>
+        <li>Who or what made the judgment?</li>
+        <li>What result states were possible?</li>
+        <li>What was not assessed?</li>
+        <li>What remains unresolved?</li>
+        <li>How can the finding be appealed or updated?</li>
+        <li>What use is the audit intended to support?</li>
+      </ol>
+      <p>An audit should reduce uncertainty.</p>
+      <p>It should not hide it behind a badge.</p>
+    </div>
+
+    <section class="section connect" aria-labelledby="article-connect-title">
+      <div class="shell connect-card">
+        <div><p class="eyebrow">CONTINUE THE CONVERSATION</p><h2 id="article-connect-title">Working on a related data or evaluation problem?</h2><p>I am interested in the operating layer between research intent, evidence, human judgment, and reliable delivery.</p></div>
+        <div class="connect-actions">
+          <a class="button button-primary" href="mailto:ahoythere@learning.voyage?subject=What%20Audited%20Data%20Should%20Mean">Email Owen</a>
+          <a class="button button-secondary" href="/writing/index.html">More writing</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><p class="footer-brand">Learning Voyage LLC</p><p>Owen Onderdonk's independent practice and publishing home for AI data, evaluation, research operations, and open infrastructure.</p></div>
+      <div class="disclosure"><p><strong>Publication note:</strong> This is an independent working note, not a peer-reviewed publication or formal standard.</p></div>
+      <div class="footer-links"><a href="/">Home</a><a href="/attribution.html">Source and attribution</a><a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/owenezra" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+  </footer>
+</body>
+</html>

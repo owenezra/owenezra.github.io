@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Dataset Is Not Useful in the Abstract | Owen Onderdonk</title>
+  <meta name="description" content="Why AI data utility depends on a specific model objective, distribution, evaluation, and acceptance threshold, not on cleanliness or availability alone.">
+  <meta name="theme-color" content="#07131d">
+  <link rel="canonical" href="https://learning.voyage/writing/a-dataset-is-not-useful-in-the-abstract.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://learning.voyage/writing/a-dataset-is-not-useful-in-the-abstract.html">
+  <meta property="og:site_name" content="Learning Voyage">
+  <meta property="og:title" content="A Dataset Is Not Useful in the Abstract">
+  <meta property="og:description" content="A dataset can be accurate, clean, representative, and legally usable while still being the wrong evidence for the capability a model team is trying to build.">
+  <meta property="og:image" content="https://learning.voyage/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "A Dataset Is Not Useful in the Abstract",
+    "description": "Why AI data utility depends on a specific model objective, distribution, evaluation, and acceptance threshold, and should not be confused with cleanliness or availability.",
+    "url": "https://learning.voyage/writing/a-dataset-is-not-useful-in-the-abstract.html",
+    "datePublished": "2026-08-03",
+    "dateModified": "2026-08-03",
+    "author": {
+      "@type": "Person",
+      "name": "Owen Onderdonk",
+      "url": "https://learning.voyage/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Learning Voyage LLC",
+      "url": "https://learning.voyage/"
+    }
+  }
+  </script>
+</head>
+<body class="case-study-page article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header is-scrolled">
+    <div class="shell nav-shell">
+      <a class="brand" href="/" aria-label="Learning Voyage — home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+          <path d="M24 7v34M7 24h34" stroke="currentColor" stroke-width="1" opacity=".25"/>
+          <path d="M24 10l5.2 12.8L24 38l-5.2-15.2L24 10Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-copy"><strong>Learning Voyage</strong><span>Owen Onderdonk</span></span>
+      </a>
+      <nav class="site-nav case-nav" aria-label="Article navigation">
+        <a href="/">Home</a>
+        <a href="/writing/index.html">Writing</a>
+        <a class="nav-contact" href="/#connect">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="article-shell">
+      <p class="eyebrow">WORKING NOTE · DATA UTILITY</p>
+      <h1>A dataset is not useful in the abstract.</h1>
+      <p class="article-lede">It is useful for a model, at a stage, against an objective, under an evaluation, at an acceptable cost and risk.</p>
+
+      <p>That qualification matters because “data quality” often becomes a container for several different claims:</p>
+      <ul>
+        <li>the files are structurally valid;</li>
+        <li>the records are accurately labeled;</li>
+        <li>the sample represents a population;</li>
+        <li>the source and rights are documented;</li>
+        <li>the data is relevant to a capability;</li>
+        <li>training on it improves the system;</li>
+        <li>the improvement transfers to the intended operating distribution.</li>
+      </ul>
+      <p>Those claims are related, but none substitutes for all the others.</p>
+      <p>A dataset may be perfectly clean and irrelevant. It may be relevant but unrepresentative. It may be representative but impossible to evaluate. It may produce an offline improvement that disappears in deployment. It may be technically valuable but unavailable for the intended use. It may be licensed correctly but so stale or weakly documented that it cannot be maintained.</p>
+      <p>Calling all of that “quality” makes the decision easier to discuss and harder to reason about.</p>
+
+      <h2>Begin with the model claim</h2>
+      <p>Before acquiring or producing data, state the claim the data is expected to support. Examples:</p>
+      <ul>
+        <li>improve performance on a specified class of mathematical reasoning;</li>
+        <li>reduce a known coding failure mode;</li>
+        <li>increase robustness under a defined distribution shift;</li>
+        <li>measure whether an agent can recover from a control disturbance;</li>
+        <li>provide authoritative internal knowledge for a bounded employee workflow.</li>
+      </ul>
+      <p>The claim should be specific enough that a team can imagine evidence against it.</p>
+      <p>“We need better data” is not yet a requirement. “We need examples that distinguish correct use of a particular theorem from a common but plausible misuse, and we will measure change on an untouched evaluation set containing both” is closer.</p>
+
+      <h2>Separate the evidence layers</h2>
+      <p>I find it useful to keep at least five layers distinct.</p>
+      <h3>1. Source integrity</h3>
+      <p>Where did the data come from? How was it produced? Can the source be traced and versioned?</p>
+      <h3>2. Rights and restrictions</h3>
+      <p>What use is permitted? What privacy, contractual, geographic, or downstream constraints apply?</p>
+      <h3>3. Technical integrity</h3>
+      <p>Are files valid, complete, deduplicated where appropriate, documented, and consistent with the declared schema?</p>
+      <h3>4. Representational fitness</h3>
+      <p>Does the data cover the relevant domains, populations, difficulty regions, failure modes, and edge cases?</p>
+      <h3>5. Measured utility</h3>
+      <p>Does use of the data improve the target system on a predeclared evaluation, and does the improvement survive the conditions that matter?</p>
+      <p>A provider may have strong evidence for the first four and no evidence for the fifth. That is not necessarily a defect. The buyer may be the only party capable of measuring model utility. The important point is to state which claim has and has not been established.</p>
+
+      <h2>Design the pilot before the transaction</h2>
+      <p>A pilot should not be a ceremonial sample delivered after the commercial decision is effectively made. It should be the mechanism for reducing uncertainty.</p>
+      <p>A useful pilot specifies:</p>
+      <ul>
+        <li>the subset and why it is representative;</li>
+        <li>the preprocessing and documentation;</li>
+        <li>the model or evaluation context;</li>
+        <li>the baseline;</li>
+        <li>the expected mechanism of value;</li>
+        <li>the metrics;</li>
+        <li>the acceptance threshold;</li>
+        <li>the failure conditions;</li>
+        <li>what may change after feedback;</li>
+        <li>what result would stop the acquisition.</li>
+      </ul>
+      <p>This protects both sides. The buyer learns whether the data supports the intended objective before scaling. The provider learns what “good” means before producing or transferring a much larger asset.</p>
+
+      <h2>Preserve negative findings</h2>
+      <p>Data work tends to preserve successes and discard failed pilots. That is a mistake.</p>
+      <p>A well-run negative result may establish that:</p>
+      <ul>
+        <li>the data does not cover the needed failure mode;</li>
+        <li>labels are not the limiting factor;</li>
+        <li>the evaluation is insensitive;</li>
+        <li>the representation is mismatched;</li>
+        <li>the model cannot use the signal in its current form;</li>
+        <li>a different stage or objective is needed.</li>
+      </ul>
+      <p>Those findings are part of the data's history. They should travel with the asset or remain in the buyer's decision record.</p>
+
+      <h2>The practical standard</h2>
+      <p>A strong data claim has four parts:</p>
+      <ol>
+        <li><strong>Intended use:</strong> what objective the data is meant to support.</li>
+        <li><strong>Evidence:</strong> what is known about source, rights, structure, coverage, and performance.</li>
+        <li><strong>Boundary:</strong> what has not been established.</li>
+        <li><strong>Decision rule:</strong> what result would justify acquisition, scale, revision, or rejection.</li>
+      </ol>
+      <p>That is more cumbersome than saying “high-quality dataset.”</p>
+      <p>It is also more useful.</p>
+    </div>
+
+    <section class="section connect" aria-labelledby="article-connect-title">
+      <div class="shell connect-card">
+        <div><p class="eyebrow">CONTINUE THE CONVERSATION</p><h2 id="article-connect-title">Working on a related data or evaluation problem?</h2><p>I am interested in the operating layer between research intent, evidence, human judgment, and reliable delivery.</p></div>
+        <div class="connect-actions">
+          <a class="button button-primary" href="mailto:ahoythere@learning.voyage?subject=A%20Dataset%20Is%20Not%20Useful%20in%20the%20Abstract">Email Owen</a>
+          <a class="button button-secondary" href="/writing/index.html">More writing</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><p class="footer-brand">Learning Voyage LLC</p><p>Owen Onderdonk's independent practice and publishing home for AI data, evaluation, research operations, and open infrastructure.</p></div>
+      <div class="disclosure"><p><strong>Publication note:</strong> This is an independent working note, not a peer-reviewed publication or formal standard.</p></div>
+      <div class="footer-links"><a href="/">Home</a><a href="/attribution.html">Source and attribution</a><a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/owenezra" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+  </footer>
+</body>
+</html>

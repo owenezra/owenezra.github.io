@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic Council | Owen Onderdonk</title>
+  <meta name="description" content="Owen Onderdonk's working fork of an open-source multi-model adversarial-review engine that checks model claims against files, sources, and sandboxed commands.">
+  <meta name="theme-color" content="#07131d">
+  <link rel="canonical" href="https://learning.voyage/work/agentic-council.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://learning.voyage/work/agentic-council.html">
+  <meta property="og:site_name" content="Learning Voyage">
+  <meta property="og:title" content="Agentic Council — Evidence-Grounded Adversarial Review">
+  <meta property="og:description" content="A working fork of an open-source multi-model review engine that does not treat the acting model's account as ground truth.">
+  <meta property="og:image" content="https://learning.voyage/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Agentic Council — Evidence-Grounded Adversarial Review",
+    "description": "Owen Onderdonk's working fork of an open-source multi-model adversarial-review engine exploring evidence access, independent criticism, and the separation of acting and judging roles.",
+    "url": "https://learning.voyage/work/agentic-council.html",
+    "datePublished": "2026-08-03",
+    "dateModified": "2026-08-03",
+    "author": {
+      "@type": "Person",
+      "name": "Owen Onderdonk",
+      "url": "https://learning.voyage/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Learning Voyage LLC",
+      "url": "https://learning.voyage/"
+    }
+  }
+  </script>
+</head>
+<body class="case-study-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header is-scrolled">
+    <div class="shell nav-shell">
+      <a class="brand" href="/" aria-label="Learning Voyage — home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+          <path d="M24 7v34M7 24h34" stroke="currentColor" stroke-width="1" opacity=".25"/>
+          <path d="M24 10l5.2 12.8L24 38l-5.2-15.2L24 10Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-copy"><strong>Learning Voyage</strong><span>Owen Onderdonk</span></span>
+      </a>
+      <nav class="site-nav case-nav" aria-label="Project navigation">
+        <a href="/">Home</a>
+        <a href="/work/index.html">Selected work</a>
+        <a class="nav-contact" href="https://github.com/owenezra/agentic-council" target="_blank" rel="noopener noreferrer">Open repository ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero" aria-labelledby="case-title">
+      <div class="case-grid" aria-hidden="true"></div>
+      <div class="shell case-hero-layout">
+        <div>
+          <p class="eyebrow">PUBLIC EXPERIMENT · WORKING FORK</p>
+          <h1 id="case-title">Agentic Council</h1>
+          <p class="case-deck">Adversarial review that does not treat the acting model's account as ground truth.</p>
+          <p class="case-lede">Agentic Council is an open-source multi-model review engine. My public repository is a working fork used to explore evidence access, independent criticism, pre-write review, and the separation of acting and judging roles in tool-using coding workflows.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/owenezra/agentic-council" target="_blank" rel="noopener noreferrer">Open the public repository <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="/work/autoqa-foundation.html">Read the AutoQA boundary</a>
+          </div>
+        </div>
+        <aside class="case-facts" aria-label="Project facts">
+          <div><span>Role</span><strong>Working fork with upstream attribution</strong></div>
+          <div><span>Published through</span><strong>Learning Voyage LLC</strong></div>
+          <div><span>Status</span><strong>Experimental verification architecture</strong></div>
+          <div><span>Not claimed</span><strong>A demonstrated guarantee of correctness</strong></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section case-section" aria-labelledby="problem-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">THE PROBLEM</p>
+          <h2 id="problem-title">A model can describe work it did not actually verify.</h2>
+        </div>
+        <div class="case-prose">
+          <p>Tool-using coding agents often produce confident narratives about what they changed, tested, searched, or ruled out.</p>
+          <p>The narrative is not the evidence.</p>
+          <p>A model may say that a requirement is outside the task's boundaries, a dependency is unavailable, a test passed, a risk is negligible, or an implementation is complete without having run the probe that would support the claim.</p>
+          <p>A review system that sees only the acting model's explanation can repeat the same unsupported assumptions.</p>
+          <p>Agentic Council explores a different pattern: make claims contestable, give critics controlled access to external evidence, and require the actor's proposed changes to pass an independent review boundary.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section case-core" aria-labelledby="design-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">CORE DESIGN</p>
+          <h2 id="design-title">Separate the actor, the critics, the evidence, and the write authority.</h2>
+        </div>
+        <div class="artifact-list">
+          <article><h3>Multiple independent critics</h3><p>Critics from different model families review the same proposal against an explicit quality bar. Model diversity does not guarantee truth, but it can expose assumptions and failure modes that one model family misses.</p></article>
+          <article><h3>Evidence requests</h3><p>During review, critics can request content from files, allowlisted web sources, or sandboxed commands. The point is not to give every critic unrestricted agency. It is to let the review architecture retrieve concrete evidence without relying entirely on memory or the actor's self-report.</p></article>
+          <article><h3>Read-only critics</h3><p>Critics do not receive general write authority. Their role is to inspect, challenge, and report. This preserves a meaningful separation between proposing a change and deciding whether the proposal is supportable.</p></article>
+          <article><h3>Review around state change</h3><p>The working architecture reviews edits and can place a gate before a proposed write or respond immediately after a write. A tool that can affect state should not be trusted solely because it can also narrate why the change was safe.</p></article>
+          <article><h3>Logged verdicts and evidence</h3><p>Review outputs, requested evidence, concerns, and dispositions are recorded so the process can be inspected and evaluated rather than reduced to an invisible “second opinion.”</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" aria-labelledby="relevance-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">WHY THIS MATTERS TO MY WORK</p>
+          <h2 id="relevance-title">A verification experiment, not an answer to the governance problem.</h2>
+        </div>
+        <div class="case-prose">
+          <p>Agentic Council is relevant to my broader work for three reasons.</p>
+          <p>First, it treats model output as a set of claims that can be tested against files, commands, and authoritative sources.</p>
+          <p>Second, it makes the acting-versus-judging distinction explicit. The system that proposes an action should not be the only system that determines whether its own evidence is sufficient.</p>
+          <p>Third, it creates a record that can support later adjudication and measurement.</p>
+          <p>Those commitments align with <a class="inline-link" href="/work/autoqa-foundation.html">AutoQA Foundation</a>, but AutoQA adds a necessary caution: more critics, more rounds, or stronger consensus do not create missing information and do not automatically confer authority.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" aria-labelledby="measurement-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">WHAT SHOULD BE MEASURED</p>
+          <h2 id="measurement-title">A review architecture needs an honesty instrument.</h2>
+        </div>
+        <div class="case-prose">
+          <p>The useful question is not “Did the council object?” A high objection rate could mean that the actor is unreliable, the critics over-flag, or the quality bar is poorly specified.</p>
+          <p>A serious evaluation should measure:</p>
+          <ul class="article-list">
+            <li>concern precision;</li>
+            <li>defect recall on an adjudicated sample;</li>
+            <li>false blocks and false warnings;</li>
+            <li>unique findings contributed by each critic or tier;</li>
+            <li>evidence-request usefulness;</li>
+            <li>coverage and abstention;</li>
+            <li>latency and cost;</li>
+            <li>stability across model and prompt changes;</li>
+            <li>recovery after an incorrect block;</li>
+            <li>whether reviewers catch unsupported claims rather than merely produce plausible prose.</li>
+          </ul>
+          <p>Consensus alone is not a validation method.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section limitations" aria-labelledby="nonclaims-title">
+      <div class="shell case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">BOUNDARIES AND NON-CLAIMS</p>
+          <h2 id="nonclaims-title">What this project does not establish.</h2>
+        </div>
+        <div class="case-prose">
+          <p>This project does not establish that:</p>
+          <ul class="article-list">
+            <li>a council of models is more accurate than a well-designed single evaluator;</li>
+            <li>model-family diversity guarantees independent reasoning;</li>
+            <li>majority vote is evidence;</li>
+            <li>a critic with tool access has exhaustively checked a repository or environment;</li>
+            <li>a passed review proves that the code is correct, secure, performant, or aligned with the task's requirements;</li>
+            <li>automatic rollback is appropriate without measured false-block risk;</li>
+            <li>the system should receive consequential authority by default.</li>
+          </ul>
+          <p>It is a working architecture for making review more evidence-oriented and contestable.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section citation-section" aria-labelledby="origin-title">
+      <div class="shell citation-card">
+        <div><p class="eyebrow">ORIGIN AND ATTRIBUTION</p><h2 id="origin-title">A fork should remain visibly a fork.</h2></div>
+        <blockquote>A working fork of an open-source multi-model adversarial-review engine.</blockquote>
+        <p>The public repository is forked from the original Agentic Council project. The repository header displays the upstream source, and the repository carries an MIT license. Upstream attribution is visible on the <a class="inline-link" href="https://github.com/owenezra/agentic-council" target="_blank" rel="noopener noreferrer">repository page</a>. I did not create the original project, and this page does not claim original authorship of it.</p>
+      </div>
+    </section>
+
+    <section class="section connect" aria-labelledby="case-connect-title">
+      <div class="shell connect-card">
+        <div><p class="eyebrow">CONTINUE THE CONVERSATION</p><h2 id="case-connect-title">Working on evidence-grounded agent review?</h2><p>I am interested in architectures that let acting agents, critics, tools, and human owners share evidence without collapsing review into self-certification.</p></div>
+        <div class="connect-actions">
+          <a class="button button-primary" href="mailto:ahoythere@learning.voyage?subject=Agentic%20Council">Email Owen</a>
+          <a class="button button-secondary" href="/work/autoqa-foundation.html">Read AutoQA Foundation</a>
+          <a class="button button-secondary" href="/">Return to Learning Voyage</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><p class="footer-brand">Learning Voyage LLC</p><p>Owen Onderdonk's independent practice and publishing home for AI data, evaluation, research operations, and open infrastructure.</p></div>
+      <div class="disclosure"><p><strong>Attribution note:</strong> Agentic Council is an open-source project; the repository linked here is a working fork with upstream credit preserved. This page does not claim original authorship of the upstream project.</p></div>
+      <div class="footer-links"><a href="/">Home</a><a href="/attribution.html">Source and attribution</a><a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/owenezra" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capability Is Not Authority | Owen Onderdonk</title>
+  <meta name="description" content="Why an automated evaluator can be useful without being authorized to impose consequences, and what measurement, abstention, and ownership must come first.">
+  <meta name="theme-color" content="#07131d">
+  <link rel="canonical" href="https://learning.voyage/writing/capability-is-not-authority.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://learning.voyage/writing/capability-is-not-authority.html">
+  <meta property="og:site_name" content="Learning Voyage">
+  <meta property="og:title" content="Capability Is Not Authority">
+  <meta property="og:description" content="A system may be good enough to retrieve evidence, triage cases, or draft findings while remaining unfit to make an adverse decision.">
+  <meta property="og:image" content="https://learning.voyage/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Capability Is Not Authority",
+    "description": "Why an automated evaluator can be useful without being authorized to impose consequences, and what measurement, abstention, appeal, and ownership are needed before authority expands.",
+    "url": "https://learning.voyage/writing/capability-is-not-authority.html",
+    "datePublished": "2026-08-03",
+    "dateModified": "2026-08-03",
+    "author": {
+      "@type": "Person",
+      "name": "Owen Onderdonk",
+      "url": "https://learning.voyage/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Learning Voyage LLC",
+      "url": "https://learning.voyage/"
+    }
+  }
+  </script>
+</head>
+<body class="case-study-page article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header is-scrolled">
+    <div class="shell nav-shell">
+      <a class="brand" href="/" aria-label="Learning Voyage — home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+          <path d="M24 7v34M7 24h34" stroke="currentColor" stroke-width="1" opacity=".25"/>
+          <path d="M24 10l5.2 12.8L24 38l-5.2-15.2L24 10Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-copy"><strong>Learning Voyage</strong><span>Owen Onderdonk</span></span>
+      </a>
+      <nav class="site-nav case-nav" aria-label="Article navigation">
+        <a href="/">Home</a>
+        <a href="/writing/index.html">Writing</a>
+        <a class="nav-contact" href="/#connect">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="article-shell">
+      <p class="eyebrow">WORKING NOTE · EVALUATION AUTHORITY</p>
+      <h1>Capability is not authority.</h1>
+      <p class="article-lede">An automated evaluator can be useful without being entitled to decide. That distinction is easy to lose because capability and authority are often expressed through the same interface.</p>
+
+      <p>The system returns a score. The score appears precise. A threshold turns it into pass or fail. The disposition triggers feedback, payment, access restriction, or rejection.</p>
+      <p>At that point, an empirical claim about model performance has silently become a governance decision.</p>
+      <p>The model did not make that transition. The organization did.</p>
+
+      <h2>Capability is an empirical question</h2>
+      <p>Capability asks:</p>
+      <blockquote>How well does this exact configured instrument perform on a defined task distribution?</blockquote>
+      <p>The instrument includes more than the base model. It includes:</p>
+      <ul>
+        <li>prompt and criterion wording;</li>
+        <li>tools;</li>
+        <li>retrieval;</li>
+        <li>context construction;</li>
+        <li>evidence sources;</li>
+        <li>preprocessing;</li>
+        <li>sampling;</li>
+        <li>temperature and other inference settings;</li>
+        <li>result schema;</li>
+        <li>post-processing;</li>
+        <li>threshold;</li>
+        <li>abstention policy.</li>
+      </ul>
+      <p>Change one of those materially and the performance claim may no longer transfer.</p>
+      <p>Capability should be measured on untouched, adjudicated data that resembles the deployment distribution—including difficult tails, long records, ambiguous cases, and the error types that matter.</p>
+
+      <h2>Authority is an operating decision</h2>
+      <p>Authority asks:</p>
+      <blockquote>What action may this instrument influence, under what conditions, with what owner and remedy?</blockquote>
+      <p>The answer depends on more than average accuracy. It depends on consequence severity, false-adverse risk, coverage, abstention, appeal, reversibility, auditability, distribution shift, human review capacity, legal and policy constraints, and accountability.</p>
+      <p>A system that is useful for ranking cases may be unfit to reject them. A system that can catch deterministic omissions may be unfit to interpret a subjective criterion. A system that drafts evidence-linked feedback may be unfit to restrict a worker's account.</p>
+      <p>Authority should be narrower than capability until evidence justifies expansion.</p>
+
+      <h2>The record comes first</h2>
+      <p>Before asking how accurate the evaluator is, ask whether the task is identifiable from the record.</p>
+      <p>If the correct decision depends on:</p>
+      <ul>
+        <li>unrecorded intent;</li>
+        <li>unavailable environment state;</li>
+        <li>an external fact the system cannot retrieve;</li>
+        <li>an instruction that permits multiple reasonable interpretations;</li>
+        <li>proof that something is absent from a non-exhaustively searched record;</li>
+      </ul>
+      <p>then no amount of calibration can turn the current input into a fully decidable task.</p>
+      <p>The honest result may be insufficient or contract-ambiguous.</p>
+      <p>Treating those states as model error misdiagnoses the problem. Treating them as worker fault is worse.</p>
+
+      <h2>Measure by lane</h2>
+      <p>One aggregate score hides the structure of the task. A review system may have distinct lanes:</p>
+      <ul>
+        <li>required-field checks;</li>
+        <li>exact policy violations;</li>
+        <li>local claim-versus-evidence comparison;</li>
+        <li>long-record retrieval;</li>
+        <li>code correctness;</li>
+        <li>completeness;</li>
+        <li>severity;</li>
+        <li>instruction interpretation;</li>
+        <li>domain judgment.</li>
+      </ul>
+      <p>Each lane has a different evidence contract and risk profile. Authority should be granted lane by lane, with separate performance, coverage, and false-adverse measurement.</p>
+
+      <h2>Abstention is part of performance</h2>
+      <p>A system that must answer every case may look more productive while producing avoidable error.</p>
+      <p>A useful abstention policy asks the system to decline when:</p>
+      <ul>
+        <li>required evidence is missing;</li>
+        <li>the criterion is ambiguous;</li>
+        <li>retrieval coverage is inadequate;</li>
+        <li>the case falls outside calibration;</li>
+        <li>tool execution failed;</li>
+        <li>sources conflict;</li>
+        <li>the confidence signal is unvalidated;</li>
+        <li>the consequence exceeds the authorized lane.</li>
+      </ul>
+      <p>Performance should be reported at a stated coverage. “95% accurate” means little without knowing which cases the system attempted, which it abstained from, and what happened in the hardest region.</p>
+
+      <h2>Human review must be substantive</h2>
+      <p>“Human in the loop” is not a sufficient control. The human must have:</p>
+      <ul>
+        <li>the relevant record;</li>
+        <li>enough time;</li>
+        <li>the required expertise;</li>
+        <li>authority to disagree;</li>
+        <li>a clear standard;</li>
+        <li>access to the system's evidence and limitations;</li>
+        <li>a path to correct the underlying rule;</li>
+        <li>accountability for the final disposition.</li>
+      </ul>
+      <p>Otherwise the human is a ceremonial approver for an automated decision.</p>
+
+      <h2>A practical release ladder</h2>
+      <p>A conservative deployment can expand in stages.</p>
+      <h3>Stage 1 — Observe</h3>
+      <p>Run in a measurement-only mode. Preserve findings and compare them with adjudicated decisions.</p>
+      <h3>Stage 2 — Assist</h3>
+      <p>Use the system for evidence retrieval, deterministic checks, and dossier assembly.</p>
+      <h3>Stage 3 — Recommend</h3>
+      <p>Allow calibrated lanes to produce nonbinding recommendations with visible evidence and abstention.</p>
+      <h3>Stage 4 — Act narrowly</h3>
+      <p>Authorize a specific, reversible action only where the exact lane has earned it and appeal remains available.</p>
+      <h3>Stage 5 — Revalidate</h3>
+      <p>Reassess after changes to the model, prompt, tools, evidence, criterion, distribution, or consequence.</p>
+      <p>The objective is not to keep automation weak. It is to let authority grow at the speed of evidence rather than the speed of confidence.</p>
+
+      <h2>The practical standard</h2>
+      <p>Before an automated finding receives consequential authority, ask:</p>
+      <ol>
+        <li>Is the task decidable from the authorized record?</li>
+        <li>Is the criterion operational and versioned?</li>
+        <li>Was the exact instrument evaluated?</li>
+        <li>Does the evaluation represent deployment?</li>
+        <li>What is performance at the stated coverage?</li>
+        <li>What is the false-adverse risk?</li>
+        <li>When does the system abstain?</li>
+        <li>Who owns the decision?</li>
+        <li>How can a person appeal?</li>
+        <li>What changes force revalidation?</li>
+      </ol>
+      <p>A system can be valuable long before it is allowed to decide.</p>
+      <p>Recognizing that is not anti-automation. It is how useful automation becomes accountable.</p>
+    </div>
+
+    <section class="section connect" aria-labelledby="article-connect-title">
+      <div class="shell connect-card">
+        <div><p class="eyebrow">CONTINUE THE CONVERSATION</p><h2 id="article-connect-title">Working on a related data or evaluation problem?</h2><p>I am interested in the operating layer between research intent, evidence, human judgment, and reliable delivery. The full framework behind this note is <a class="inline-link" href="/work/autoqa-foundation.html">AutoQA Foundation</a>.</p></div>
+        <div class="connect-actions">
+          <a class="button button-primary" href="mailto:ahoythere@learning.voyage?subject=Capability%20Is%20Not%20Authority">Email Owen</a>
+          <a class="button button-secondary" href="/writing/index.html">More writing</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><p class="footer-brand">Learning Voyage LLC</p><p>Owen Onderdonk's independent practice and publishing home for AI data, evaluation, research operations, and open infrastructure.</p></div>
+      <div class="disclosure"><p><strong>Publication note:</strong> This is an independent working note, not a peer-reviewed publication or formal standard.</p></div>
+      <div class="footer-links"><a href="/">Home</a><a href="/attribution.html">Source and attribution</a><a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/owenezra" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+# Learning Voyage
+
+Learning Voyage LLC is Owen Onderdonk's independent practice and publishing home for AI data, evaluation, research operations, data partnerships, proprietary-data systems, and agent environments.
+
+## Owen Onderdonk
+
+Owen is an AI Data & Evaluation Program Lead. He entered frontier-model data work in February 2024 through complex mathematics training-data creation, then progressed through contributor review, reviewer oversight, standards and calibration design, and into project development, program management, and broader operations. Selected work has included managing data and evaluation projects supporting a frontier AI lab through an external AI data partner.
+
+## Flagship public work
+
+AutoQA Foundation: https://autoqa-foundation.vercel.app/
+Case study: https://learning.voyage/work/autoqa-foundation.html
+
+AutoQA Foundation is an independent public decision and technical framework for LLM-based quality review. It distinguishes supported, contradicted, insufficient, and contract-ambiguous outcomes; separates task limits, model capability, and decision authority; and requires lane-level calibration, abstention, and named human ownership before automated findings receive consequential authority. It is not a certification body, formal standard, or accuracy claim for any particular system.
+
+## Other public work
+
+- Agentic Council (working fork of an open-source multi-model adversarial-review engine): https://learning.voyage/work/agentic-council.html
+- Real-data agent and control environments (in development): https://learning.voyage/work/agent-environments.html
+- Selected work index: https://learning.voyage/work/index.html
+- Questions and principles: https://learning.voyage/questions.html
+- About: https://learning.voyage/about.html
+
+## Current focus
+
+- Research data operations
+- Evaluation and human quality systems
+- Specialized-data sourcing and partnerships
+- Dataset provenance and marketplace quality
+- Proprietary organizational data for AI
+- Real-data agent and reinforcement-learning environments
+
+## Writing
+
+- A Dataset Is Not Useful in the Abstract: https://learning.voyage/writing/a-dataset-is-not-useful-in-the-abstract.html
+- What "Audited Data" Should Mean: https://learning.voyage/writing/what-audited-should-mean-for-ai-data.html
+- Capability Is Not Authority: https://learning.voyage/writing/capability-is-not-authority.html
+
+## Relationship context
+
+References to client organizations describe project work supported through external AI data partners. They do not imply employment, endorsement, or a direct commercial relationship between any end organization and Learning Voyage LLC.
+
+## Contact
+
+Email: ahoythere@learning.voyage
+LinkedIn: https://www.linkedin.com/in/owenonderdonk/
+GitHub: https://github.com/owenezra

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Questions &amp; Principles | Owen Onderdonk</title>
+  <meta name="description" content="Research and operating questions by Owen Onderdonk on AI data utility, evaluation, human judgment, data partnerships, proprietary data, and agent environments.">
+  <meta name="theme-color" content="#07131d">
+  <link rel="canonical" href="https://learning.voyage/questions.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://learning.voyage/questions.html">
+  <meta property="og:site_name" content="Learning Voyage">
+  <meta property="og:title" content="Questions &amp; Principles | Owen Onderdonk">
+  <meta property="og:description" content="The difficult part is deciding what the evidence can actually support.">
+  <meta property="og:image" content="https://learning.voyage/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Questions and Principles — Owen Onderdonk",
+    "description": "Research and operating questions on AI data utility, evaluation, human judgment, provenance, data partnerships, proprietary data, and agent environments.",
+    "url": "https://learning.voyage/questions.html",
+    "author": {
+      "@type": "Person",
+      "name": "Owen Onderdonk",
+      "url": "https://learning.voyage/"
+    }
+  }
+  </script>
+</head>
+<body class="case-study-page article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header is-scrolled">
+    <div class="shell nav-shell">
+      <a class="brand" href="/" aria-label="Learning Voyage — home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+          <path d="M24 7v34M7 24h34" stroke="currentColor" stroke-width="1" opacity=".25"/>
+          <path d="M24 10l5.2 12.8L24 38l-5.2-15.2L24 10Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-copy"><strong>Learning Voyage</strong><span>Owen Onderdonk</span></span>
+      </a>
+      <nav class="site-nav case-nav" aria-label="Page navigation">
+        <a href="/">Home</a>
+        <a href="/work/index.html">Selected work</a>
+        <a class="nav-contact" href="/#connect">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="article-shell">
+      <p class="eyebrow">QUESTIONS AND OPERATING PRINCIPLES</p>
+      <h1>The difficult part is deciding what the evidence can actually support.</h1>
+      <p class="article-lede">My work is organized around a set of questions that recur across training data, evaluation, human review, data partnerships, proprietary organizational data, and agent environments. They are not rhetorical. Each question should change how a specification, pilot, market, or operating system is designed.</p>
+
+      <h2>1. What evidence should support the claim that a dataset is fit for purpose?</h2>
+      <p>A dataset can be clean, well documented, and internally consistent while remaining irrelevant to the capability a team needs.</p>
+      <p>“Fit for purpose” should identify: the model or system objective; the intended training or evaluation stage; the population and operating conditions; the relevant failure modes; the expected contribution of the data; the test that will measure that contribution; the acceptance threshold; and known limitations and excluded uses.</p>
+      <p>The evidence should be attached to those claims rather than compressed into a generic quality badge.</p>
+
+      <h2>2. How should a model team specify utility before acquiring data?</h2>
+      <p>A buyer often knows that more or different data is needed without having operationalized the need.</p>
+      <p>A useful request should distinguish: capability goal; unit of data; domain and expertise; distribution and coverage; format and modality; label or interaction structure; recency; volume; rights and restrictions; evaluation method; pilot design; and acceptance criteria.</p>
+      <p>The specification should remain open to supplier knowledge without becoming so vague that any available dataset appears relevant.</p>
+
+      <h2>3. What should “audited data” mean?</h2>
+      <p>“Audited” can imply much more than a provider has actually established.</p>
+      <p>A credible audit record should say which claims were examined, by whom, against which evidence, using which procedure, under which version, and with what result.</p>
+      <p>At minimum, the claims should remain separate: provenance confidence; rights and permitted-use scope; documentation completeness; structural integrity; label or content quality; representational coverage; privacy and sensitive-data handling; technical utility for a stated objective; known limitations; and unresolved questions.</p>
+      <p>An audit should be a claim-and-evidence record, not a decorative adjective. I develop this in <a class="inline-link" href="/writing/what-audited-should-mean-for-ai-data.html">a full working note</a>.</p>
+
+      <h2>4. How should human disagreement be interpreted?</h2>
+      <p>Human variance can arise from several different causes: ambiguous instructions; insufficient evidence; different but reasonable interpretations; mismatched expertise; attention failure; inconsistent severity; incentive effects; reviewer bias; or a genuinely subjective criterion.</p>
+      <p>Those causes require different interventions. More calibration will not fix a criterion that is underdetermined. More automation will not recover evidence that no one can observe. Majority vote can hide a minority reviewer who is uniquely correct.</p>
+      <p>The objective is not zero disagreement. It is explainable disagreement and a system that knows what to do with it.</p>
+
+      <h2>5. Where should model-assisted review stop?</h2>
+      <p>A model can be useful in several ways: retrieve relevant evidence; normalize claims; check local consistency; flag deterministic omissions; compare a statement with a cited source; assemble a dossier; and route a case for human attention.</p>
+      <p>The boundary appears when the conclusion depends on unrecorded intent, ambiguous policy, exhaustive absence proof, open-ended domain judgment, or a consequence whose false-adverse cost has not been measured.</p>
+      <p>The right output may be an abstention, a request for evidence, or a bounded question for the instruction owner. <a class="inline-link" href="/work/autoqa-foundation.html">AutoQA Foundation</a> makes this boundary explicit.</p>
+
+      <h2>6. How can proprietary knowledge become governed, testable AI infrastructure?</h2>
+      <p>Internal data is heterogeneous. Documents conflict. Databases encode operational rather than semantic truth. Permissions vary. Policies change. Expertise lives partly in people and partly in artifacts.</p>
+      <p>A reliable data layer needs: source inventory; authority ranking; permission mapping; lineage and versioning; conflict policy; retrieval evaluation; output evaluation; citation and traceability; escalation; abstention; and monitoring after source change.</p>
+      <p>The system should be evaluated against a defined organizational use, not against a general impression that it “knows the company.”</p>
+
+      <h2>7. What would make a specialized-data market trustworthy?</h2>
+      <p>A market needs more than listings and payment rails.</p>
+      <p>It needs a shared language for: buyer requirements; provider qualifications; data provenance; licensing scope; sample and pilot review; technical utility; delivery and versioning; quality disputes; remediation; ongoing restrictions; and audit history.</p>
+      <p>Open specifications and evidence records can improve trust even when the underlying data remains private or paid.</p>
+
+      <h2>8. How can scarce expertise become an interactive training signal?</h2>
+      <p>Some expertise is best represented as a sequence of decisions rather than a labeled example.</p>
+      <p>An environment can ask an agent to observe a state, choose an action, manage resources, respond to feedback, balance objectives, recover from error, and adapt across hidden conditions.</p>
+      <p>The challenge is to preserve real constraints, create reproducible rewards, document source data, and ensure that the grader measures the intended capability rather than artifacts of the environment. Current work is described in <a class="inline-link" href="/work/agent-environments.html">the development notes</a>.</p>
+
+      <h2>Operating principles</h2>
+
+      <h3>1. The record sets the ceiling</h3>
+      <p>An evaluator cannot establish facts absent from its authorized evidence. A better model may use the record more effectively. It does not make missing information observable.</p>
+      <p><strong>Design consequence:</strong> include insufficient and contract-ambiguous states; identify the evidence contract before authorizing a verdict.</p>
+
+      <h3>2. Utility is conditional</h3>
+      <p>Data is not useful in the abstract. Its value depends on the objective, model, stage, distribution, representation, evaluation, and acceptance threshold.</p>
+      <p><strong>Design consequence:</strong> require a target use and evaluation plan before treating availability as value.</p>
+
+      <h3>3. Rights and technical value are separate</h3>
+      <p>Permission to use data does not prove that it will help. Technical utility does not prove that the intended use is permitted.</p>
+      <p><strong>Design consequence:</strong> maintain separate evidence and confidence for provenance, rights scope, and utility.</p>
+
+      <h3>4. Evaluation precedes scale</h3>
+      <p>Collection and acquisition create momentum. Weak assumptions become expensive to reverse after volume, contracts, and workflows are established.</p>
+      <p><strong>Design consequence:</strong> design the pilot, acceptance test, and stop condition before scaling.</p>
+
+      <h3>5. A criterion must be operational enough to calibrate</h3>
+      <p>A rubric sentence is not automatically a decision rule. If trained reviewers cannot identify the same target from the same evidence, the problem may be the contract rather than the people.</p>
+      <p><strong>Design consequence:</strong> use examples, counterexamples, boundary cases, and adjudicated calibration before interpreting disagreement as poor performance.</p>
+
+      <h3>6. Automation requires abstention</h3>
+      <p>A system that must always produce pass or fail is forced to convert missing information and ambiguity into error.</p>
+      <p><strong>Design consequence:</strong> make uncertainty states first-class and define their routing before deployment.</p>
+
+      <h3>7. Explanations are not evidence</h3>
+      <p>A fluent rationale can reveal a model's reasoning or help a human inspect the result. It does not independently establish the external facts asserted in the rationale.</p>
+      <p><strong>Design consequence:</strong> link claims to files, tests, authoritative sources, or other external evidence.</p>
+
+      <h3>8. Consensus does not create truth</h3>
+      <p>Multiple reviewers or models may reduce some idiosyncratic errors. They may also share training, prompts, assumptions, missing evidence, or systematic bias.</p>
+      <p><strong>Design consequence:</strong> measure unique contribution, correlated error, false findings, and adjudicated performance rather than relying on vote count.</p>
+
+      <h3>9. Authority is narrower than capability</h3>
+      <p>A system may be useful for triage or evidence assembly while remaining unfit to impose consequences.</p>
+      <p><strong>Design consequence:</strong> authorize actions lane by lane, based on measured risk, coverage, appeal, ownership, and consequence severity.</p>
+
+      <h3>10. Human ownership must be real</h3>
+      <p>A “human in the loop” is not meaningful when the human lacks time, evidence, expertise, or authority to disagree.</p>
+      <p><strong>Design consequence:</strong> define who owns the decision, what record they receive, how they can challenge the system, and what happens after appeal.</p>
+
+      <h3>11. Open infrastructure can coexist with private data</h3>
+      <p>Transparency does not require publishing the underlying dataset. Specifications, schemas, provenance records, audit methods, evaluation protocols, and interoperability rules can be open while access remains controlled.</p>
+      <p><strong>Design consequence:</strong> open the contract and evidence structure wherever possible, even when the data cannot be open.</p>
+
+      <h3>12. Limitations belong in the product</h3>
+      <p>A limitation hidden in a technical appendix is not an operating control.</p>
+      <p><strong>Design consequence:</strong> put non-claims, excluded uses, uncertainty, and stop conditions where users and decision owners encounter them.</p>
+
+      <h2>Closing</h2>
+      <p>A strong system makes its claims smaller and its evidence better.</p>
+      <p>The common objective is not caution for its own sake. It is to build data and evaluation systems that can move faster because their assumptions, evidence, failure modes, and ownership are explicit.</p>
+    </div>
+
+    <section class="section connect" aria-labelledby="q-connect-title">
+      <div class="shell connect-card">
+        <div><p class="eyebrow">CONTINUE</p><h2 id="q-connect-title">Discuss a difficult data or evaluation problem.</h2><p>A useful first message names the model or organizational objective, the available evidence, and the part of the data or evaluation system that is currently uncertain.</p></div>
+        <div class="connect-actions">
+          <a class="button button-primary" href="mailto:ahoythere@learning.voyage?subject=Questions%20and%20Principles">Email Owen</a>
+          <a class="button button-secondary" href="/work/index.html">View selected work</a>
+          <a class="button button-secondary" href="/">Return home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><p class="footer-brand">Learning Voyage LLC</p><p>Owen Onderdonk's independent practice and publishing home for AI data, evaluation, research operations, and open infrastructure.</p></div>
+      <div class="disclosure"><p><strong>Publication note:</strong> These are independent working positions, not peer-reviewed publications or formal standards.</p></div>
+      <div class="footer-links"><a href="/">Home</a><a href="/attribution.html">Source and attribution</a><a href="https://www.linkedin.com/in/owenonderdonk/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/owenezra" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+  </footer>
+</body>
+</html>
