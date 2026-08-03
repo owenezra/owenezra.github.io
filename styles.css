@@ -1465,3 +1465,107 @@ button:focus-visible {
     background: rgba(79, 198, 215, 0.3);
     color: var(--text-primary);
 }
+
+/* ============================================
+   v6 additions -- status chips, questions list,
+   experience strip. Append-only; the original
+   design system above is untouched.
+   ============================================ */
+
+.cap-status {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5em;
+    padding: 0.15em 0.7em;
+    border: 1px solid rgba(79, 198, 215, 0.35);
+    border-radius: var(--radius-full);
+    font-family: var(--font-annotation);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 0.55em;
+    letter-spacing: 0.06em;
+    color: var(--primary-light);
+    white-space: nowrap;
+}
+
+.cap-status.direction {
+    border-color: var(--gold-faint);
+    color: var(--gold-soft);
+}
+
+.cap-status.development {
+    border-color: rgba(147, 165, 181, 0.4);
+    color: var(--text-secondary);
+}
+
+.question-list {
+    list-style: none;
+    counter-reset: question;
+    max-width: clamp(600px, 58vw, 1100px);
+    margin: 0 auto;
+    text-align: left;
+}
+
+.question-list li {
+    counter-increment: question;
+    position: relative;
+    padding: var(--space-md) 0 var(--space-md) clamp(2.6em, 3.4vw, 3.4em);
+    border-bottom: 1px solid var(--line-soft);
+    font-size: clamp(0.95rem, 1.1vw, 1.4rem);
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.question-list li:last-child {
+    border-bottom: 0;
+}
+
+.question-list li::before {
+    content: "0" counter(question);
+    position: absolute;
+    left: 0;
+    top: var(--space-md);
+    font-family: var(--font-annotation);
+    font-style: italic;
+    font-size: 1.05em;
+    color: var(--gold-soft);
+}
+
+#experience-strip .experience-line {
+    max-width: clamp(560px, 52vw, 1000px);
+    margin: 0 auto var(--space-sm);
+    font-size: clamp(1rem, 1.25vw, 1.6rem);
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+#experience-strip .experience-note {
+    font-size: clamp(0.75rem, 0.85vw, 1rem);
+    color: var(--text-muted);
+}
+
+.flagship-actions {
+    justify-content: center;
+    margin-top: var(--space-xl);
+}
+
+.flagship-note {
+    text-align: center;
+    max-width: clamp(560px, 52vw, 980px);
+    margin: var(--space-md) auto 0;
+}
+
+.footer-disclosure {
+    margin-top: var(--space-xs);
+    font-size: clamp(0.7rem, 0.8vw, 0.95rem);
+    color: var(--text-muted);
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+    .flagship-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
