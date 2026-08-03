@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+<title id="title">Learning Voyage ship emblem</title><desc id="desc">A small sailing ship crossing a luminous sea beneath stars.</desc>
+<defs>
+  <radialGradient id="sky" cx="50%" cy="34%" r="66%"><stop offset="0" stop-color="#174d67"/><stop offset=".55" stop-color="#09273d"/><stop offset="1" stop-color="#041521"/></radialGradient>
+  <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2ac2d0" stop-opacity=".8"/><stop offset="1" stop-color="#076287" stop-opacity=".25"/></linearGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<circle cx="300" cy="300" r="276" fill="url(#sky)" stroke="#71d8dd" stroke-opacity=".45" stroke-width="5"/>
+<circle cx="300" cy="300" r="252" fill="none" stroke="#e4bf75" stroke-opacity=".22" stroke-width="2"/>
+<g fill="#eefcff">
+  <circle cx="165" cy="145" r="5"/><circle cx="420" cy="126" r="4"/><circle cx="472" cy="205" r="3"/><circle cx="226" cy="98" r="3"/>
+  <path d="M365 80l5 14 14 5-14 5-5 14-5-14-14-5 14-5z"/><path d="M121 228l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/>
+</g>
+<ellipse cx="300" cy="438" rx="220" ry="72" fill="#20bfd0" opacity=".12" filter="url(#soft)"/>
+<g stroke="#dffbff" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M295 185v206" stroke-width="8"/>
+  <path d="M294 201L184 344h110z" fill="#effeff" fill-opacity=".92" stroke-width="4"/>
+  <path d="M305 222l108 116H305z" fill="#71d8dd" fill-opacity=".8" stroke-width="4"/>
+  <path d="M154 364h292l-42 62H206z" fill="#0a354d" stroke-width="7"/>
+  <path d="M128 440c48-25 85 25 133 0s85 25 133 0 76 20 98 3" fill="none" stroke="#8feef1" stroke-width="12"/>
+  <path d="M146 474c44-22 76 21 120 0s77 21 121 0 68 16 89 4" fill="none" stroke="url(#sea)" stroke-width="10"/>
+</g>
+</svg>

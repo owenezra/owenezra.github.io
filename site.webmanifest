@@ -1,0 +1,15 @@
+{
+  "name": "Learning Voyage \u2014 Owen Onderdonk",
+  "short_name": "Learning Voyage",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07131d",
+  "theme_color": "#07131d",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

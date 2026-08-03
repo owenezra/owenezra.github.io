@@ -1,0 +1,30 @@
+# Learning Voyage
+
+Learning Voyage LLC is Owen Onderdonk's independent practice and professional home for AI data, evaluation, research operations, data partnerships, proprietary-data systems, and agent environments.
+
+## Owen Onderdonk
+
+Owen is an AI Data & Evaluation Program Lead with experience progressing from complex mathematics training-data creation to reviewer, reviewer oversight, project development, program management, and general operations for frontier-model data programs.
+
+## Flagship public work
+
+AutoQA Foundation: https://autoqa-foundation.vercel.app/
+Case study: https://learning.voyage/work/autoqa-foundation.html
+
+AutoQA Foundation is a public decision and technical framework defining the capability and authority boundaries of LLM-based quality review. It distinguishes supported, contradicted, insufficient, and contract-ambiguous outcomes and requires lane-level measurement before automated findings receive consequential authority.
+
+## Current focus
+
+- Research data operations
+- AI evaluation systems
+- Human quality and calibration systems
+- Specialized-data sourcing and partnerships
+- Dataset provenance and marketplace quality
+- Proprietary organizational data for AI
+- Real-data agent and reinforcement-learning environments
+
+## Contact
+
+Email: ahoythere@learning.voyage
+LinkedIn: https://www.linkedin.com/in/owenonderdonk/
+GitHub: https://github.com/owenezra
